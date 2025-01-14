@@ -1,12 +1,12 @@
 ---
 title: "Add title"
 author: 
-  - name: Stephanie Hicks
-    url: https://stephaniehicks.com
-    affiliation: Department of Biostatistics, Johns Hopkins
-    affiliation_url: https://publichealth.jhu.edu
+  - name: Lindsay N. Hayes
+    url: https://lindsaynhayes.github.io
+    affiliation: Department of Cell Biology, University of Oklahoma Health Sciences Center
+    affiliation_url: https://basicsciences.ouhsc.edu/cb/
 description: "Add title"
-date: 2022-12-01
+date: 2025-01-01
 draft: true
 categories: [add here]
 ---
