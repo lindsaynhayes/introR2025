@@ -18,4 +18,4 @@ Intro to Reproducible Data Analysis Using R is a hands-on course that will intro
 
 ## Course Details
 
-All course details are available on the [Course](lectures.qmd) page. The syllabus is available on Canvas.
+All course details are available on the [Course](lectures.qmd) page. The syllabus is available [here](syllabus.qmd) and on Canvas.
