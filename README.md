@@ -1,18 +1,17 @@
-# Statistical Programming Paradigms and Workflows
+# Introduction to Reproducible Data Analysis Using R 
 
-This repo is for the Johns Hopkins BSPH course titled 'Statistical Programming Paradigms and Workflows' (BSPH 140.777.01) in term 2 for Fall 2024.
+This repo is for the University of Oklahoma Health Sciences Center (OUHSC) course titled 'Introduction to Reproducible Data Analysis Using R' (Cell 6960) in summer 2025. The course number is for 'Directed Readings in Cell Biology' as a place holder until a dedicated course number is created.
 
-- <https://www.stephaniehicks.com/jhustatprogramming2024>
+- <https://lindsaynhayes.github.io/introR2025>
 
 ## Instructor
 
--   Stephanie C. Hicks (<https://www.stephaniehicks.com>)
+-   Lindsay N. Hayes (<https://lindsaynhayes.github.io>)
 
 ## Teaching Assistants
 
--   Joe Sartini
--   Wenxuan Lu
+-   TBD
 
 # If you find errors in the website
 
-Github pull requests are welcome 
+This is a work in progress and many errors are likely. Advice welcome!
