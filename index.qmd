@@ -2,20 +2,20 @@
 title: "Welcome"
 ---
 
-Welcome to the Course Website for PH.140.777 Statistical Programming Paradigms and Workflows!
+Welcome to the Course Website for Cell 6351 Intro to Reproducible Data Analysis Using R!
 
 ## Overview 
 
-Computing and programming are fundamental skills for applied statisticians to efficiently demonstrate the performance of their models with data, to develop reproducible data analyses or robust software, and to effectively communicate their own research interests. However, these skills are often not taught in the classroom, often making it challenging to learn these skills "on the job". 
+Current biomedical research regularly generates large datasets that require increasing computational skills to process and analyze including in genomics, behavior, imaging, and molecular biology. As a result, scientists today require fundamental computational and programming skill-sets to efficiently perform data analyses, generate complex models for testing, develop reproducible data analyses, and effectively communicate results through clear and meaningful graphics. However, these skills are often challenging due to a lack of structured training in data science. 
 
-This hands-on course will cover advanced statistical computing programming paradigms and workflows required for the research and application of statistical methods. Students will be expected to complete readings prior to class, attend lectures to dive deeper into those topics in class, participate in classroom activities, complete projects (both solo and group) practicing and reinforcing the computing and programming skills. There will be a final group project, which will include a major class presentation. 
+Intro to Reproducible Data Analysis Using R is a hands-on course that will introduce the R statistical software including data structures, wrangling data, plotting data, basic statistics, data modeling, and literate coding practices. There is no textbook for the course. All course materials will be provided on Canvas or this website. While no formal background in statistics or programming is necessary, a general knowledge of basic statistics, experimental design, and computer file storage systems will be helpful. All classes will involve active learning/coding activities so a laptop with power cord is required for all sessions. Students will be expected to complete readings prior to class, attend lectures to dive deeper into those topics in class, participate in classroom activities, complete projects practicing and reinforcing the computing and programming skills. There will be a final project, which will include a class presentation. 
 
 ## Course Information
 
-- Course Staff: [Prof. Stephanie Hicks](https://www.stephaniehicks.com), Joe Sartini, and Wenxuan Lu
-- Lectures: 1:30-2:50pm Tuesday and Thursday. See CoursePlus for location details.
-- Office Hours: See CoursePlus for location details.
+- Course Staff: [Prof. Lindsay Hayes](https://lindsaynhayes.github.io)
+- Lectures: 9:00-10:30am Tuesday and Thursday
+- Office Hours: Mondays 1-2pm
 
 ## Course Details
 
-All course details are available on the [Course](lectures.qmd) page. The syllabus is available on CoursePlus. 
+All course details are available on the [Course](lectures.qmd) page. The syllabus is available on Canvas.
