@@ -11,7 +11,7 @@ project:
     - "!lectures/12-programming-in-python/code-demo.qmd"
     
 website:
-  title: "Statistical Programming Paradigms and Workflows"
+  title: "Intro to Reproducible Data Analysis Using R"
   navbar:
     search: true
     right:
@@ -29,7 +29,7 @@ website:
           - text: "Projects"
             href: projects.qmd
       - icon: github
-        href: https://github.com/stephaniehicks/jhustatprogramming2024
+        href: https://github.com/lindsaynhayes/introR2025
 format:
   html:
     theme: simplex
