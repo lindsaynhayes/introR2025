@@ -12,10 +12,11 @@ This repo is for the University of Oklahoma Health Sciences Center (OUHSC) cours
 
 -   TBD
 
-# If you find errors in the website
+# Website
+## If you find errors in the website
 
-This is a work in progress and many errors are likely. Advice welcome!
+This is a constant work in progress and many errors are likely. Advice welcome!
 
-# Design
+## Design
 
 This website was forked from the wonderful Stephanie C. Hicks (<https://www.stephaniehicks.com>) who develops gorgeous websites for her courses. I aspire to generate content that is as well organized and engaging as hers.
