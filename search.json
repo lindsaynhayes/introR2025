@@ -4,154 +4,217 @@
     "href": "syllabus.html",
     "title": "Syllabus",
     "section": "",
-    "text": "Location: In person for Fall 2024\nCourse time: Tuesdays and Thursdays from 1:30-2:50pm (Eastern Daylight Time zone)\nCourse location: W4030\nAssignments: Four projects\n\n\n\n\nStephanie C. Hicks (https://www.stephaniehicks.com)\n\nOffice Location: E3545, Wolfe Street building\nEmail: shicks19@jhu.edu\n\n\nI am an Associate Professor in the Department of Biostatistics at the Bloomberg School of Public Health and Department of Biomedical Engineering in the Whiting School of Engineering at Johns Hopkins University, a faculty member of the Johns Hopkins Data Science Lab, and have affiliations with the Malone Center for Engineering in Healthcare, Center for Computational Biology, the Department of Genetic Medicine, and the Department of Biochemistry and Molecular Biology.\nMy research focuses on developing fast, scalable, statistical methodology and open-source software for genomics and biomedical data analysis for human health and disease. My research is problem-forward: I develop statistical methods and software that are motivated by concrete problems, often with real-world, noisy, messy data. I’m also interested in developing theory for how to incorporate design thinking (alongside statistical thinking) in practice of data analysis.\nIf you want, you can find me on Twitter. I’m also a co-host of the The Corresponding Author podcast, member of the Editorial Board for Genome Biology, an Associate Editor for Reproducibility at the Journal of the American Statistical Association, and co-founder of R-Ladies Baltimore.\n\n\n\nJoe Sartini (jsartin1@jhu.edu) is a third year Ph.D. student in Biostatistics, with interest in models for precision medicine applications. Currently, the focus of his work is extracting meaningful insights from time-series produced by Continuous Glucose Monitoring and other devices worn by Type 2 diabetics. Outside of research, he enjoys participating in endurance sports and weightlifting.\nAngela Zhao (azhao29@jh.edu) is a second year ScM student in Biostatistics interested in functional data analysis and stochastic models. Her main projects involve using physical activity data derived from wearable devices to predict time-to-event outcomes. For leisure, she enjoys bouldering and stand-up comedy.\nInstructor and TA office hours are announced on CoursePlus. If there are conflicts and/or need to cancel office hours, announcements will be made on CoursePlus.\n\n\n\n\nCourse website: https://stephaniehicks.com/jhustatprogramming2023\nGitHub repository with all course material: https://github.com/stephaniehicks/jhustatprogramming2023\n\n\n\n\nUpon successfully completing this course, students will be able to:\n\nWrite unix code with command-line tools\nInstall and configure software necessary for a statistical programming environment and with version control\nWrite code for advanced programming topics in R, Python, SQL, and tidyverse\nBuild and organize a software package with documentation for publishing on the internet\nWrite code using functional or other programming paradigms and discuss strategies for getting data from APIs or working with large data\nBuild an interactive web application using Shiny or other dashboard tools"
+    "text": "Location: In person, Summer 2025\nDates: 7/1/2025 - 7/31/2025\nCourse time: Tuesdays and Thursdays from 9:00-10:20am CST\nCourse location: TBD\nOffice hours: Mondays from 1:00-2:00pm CST\n\n\n\n\nProf. Lindsay Hayes (https://lindsaynhayes.github.io)\n\nOffice Location: BMSB 103\nEmail: Lindsay-Hayes@ouhsc.edu\n\n\nI am an Assistant Professor in the Department of Cell Biology at the University of Oklahoma Health Sciences Center. I am affiliated with the Graduate Programs in Cell Biology and Neuroscience as part of the Graduate Program in Biomedical Sciences.\nMy research field is in developmental neurobiology and neuroimmunology. My lab studies how developmental inflammation leads to impaired brain development and reprogramming of the brain resident immune cells called microglia. We primarily use mouse model systems, but also use human resources to study how neuroinflammation impacts brain function and contributes to risks for neurodevelopmental and psychiatric disorders. My lab uses big data science primary based on genomics data we generate in the lab, but I encourage my lab members to organize and analyze ALL data generated using the principles of reproducible and literate coding.\nIf you want, you can find me on X or Bluesky.\n\n\n\nTBD\n\n\n\n\nCourse website: https://lindsaynhayes.github.io/introR2025\nGitHub repository with all course material: https://github.com/lindsaynhayes/introR2025\n\n\n\n\nIntro to Reproducible Data Analysis Using R will prepare students to explore large datasets, generate publication-quality graphics, perform reproducible and literate data analysis pipelines, and communicate analysis results. The ultimate goal is to teach novice programmers to write modular and descriptive code using R to address relevant scientific questions. The students will use publicly available data as well as apply reproducible scripts to data generated in their laboratories.\n\n\n\nUpon successfully completing this course, students will be able to:\n\nImport and summarize data in R using reproducible and literate programming principles\nAnalyze and evaluate data manipulations and outcomes\nSeek help for roadblocks, debug problems, and communicate results to a broad audience\nTake appropriate steps to evaluate data quality and choose appropriate analyzes\n\nThe goal of this course is to teach novice programmers to write modular code and impart best practices for using R for data analysis. R is commonly used across many scientific disciplines and will be useful to a wide array of students across campus. The course will focus on teaching the fundamentals of the programming language R including data analysis and plotting but will not teach statistical analyses."
   },
   {
     "objectID": "syllabus.html#instructor",
     "href": "syllabus.html#instructor",
     "title": "Syllabus",
     "section": "",
-    "text": "Stephanie C. Hicks (https://www.stephaniehicks.com)\n\nOffice Location: E3545, Wolfe Street building\nEmail: shicks19@jhu.edu\n\n\nI am an Associate Professor in the Department of Biostatistics at the Bloomberg School of Public Health and Department of Biomedical Engineering in the Whiting School of Engineering at Johns Hopkins University, a faculty member of the Johns Hopkins Data Science Lab, and have affiliations with the Malone Center for Engineering in Healthcare, Center for Computational Biology, the Department of Genetic Medicine, and the Department of Biochemistry and Molecular Biology.\nMy research focuses on developing fast, scalable, statistical methodology and open-source software for genomics and biomedical data analysis for human health and disease. My research is problem-forward: I develop statistical methods and software that are motivated by concrete problems, often with real-world, noisy, messy data. I’m also interested in developing theory for how to incorporate design thinking (alongside statistical thinking) in practice of data analysis.\nIf you want, you can find me on Twitter. I’m also a co-host of the The Corresponding Author podcast, member of the Editorial Board for Genome Biology, an Associate Editor for Reproducibility at the Journal of the American Statistical Association, and co-founder of R-Ladies Baltimore."
+    "text": "Prof. Lindsay Hayes (https://lindsaynhayes.github.io)\n\nOffice Location: BMSB 103\nEmail: Lindsay-Hayes@ouhsc.edu\n\n\nI am an Assistant Professor in the Department of Cell Biology at the University of Oklahoma Health Sciences Center. I am affiliated with the Graduate Programs in Cell Biology and Neuroscience as part of the Graduate Program in Biomedical Sciences.\nMy research field is in developmental neurobiology and neuroimmunology. My lab studies how developmental inflammation leads to impaired brain development and reprogramming of the brain resident immune cells called microglia. We primarily use mouse model systems, but also use human resources to study how neuroinflammation impacts brain function and contributes to risks for neurodevelopmental and psychiatric disorders. My lab uses big data science primary based on genomics data we generate in the lab, but I encourage my lab members to organize and analyze ALL data generated using the principles of reproducible and literate coding.\nIf you want, you can find me on X or Bluesky."
   },
   {
     "objectID": "syllabus.html#teaching-assistants",
     "href": "syllabus.html#teaching-assistants",
     "title": "Syllabus",
     "section": "",
-    "text": "Joe Sartini (jsartin1@jhu.edu) is a third year Ph.D. student in Biostatistics, with interest in models for precision medicine applications. Currently, the focus of his work is extracting meaningful insights from time-series produced by Continuous Glucose Monitoring and other devices worn by Type 2 diabetics. Outside of research, he enjoys participating in endurance sports and weightlifting.\nAngela Zhao (azhao29@jh.edu) is a second year ScM student in Biostatistics interested in functional data analysis and stochastic models. Her main projects involve using physical activity data derived from wearable devices to predict time-to-event outcomes. For leisure, she enjoys bouldering and stand-up comedy.\nInstructor and TA office hours are announced on CoursePlus. If there are conflicts and/or need to cancel office hours, announcements will be made on CoursePlus."
+    "text": "TBD"
   },
   {
     "objectID": "syllabus.html#important-links",
     "href": "syllabus.html#important-links",
     "title": "Syllabus",
     "section": "",
-    "text": "Course website: https://stephaniehicks.com/jhustatprogramming2023\nGitHub repository with all course material: https://github.com/stephaniehicks/jhustatprogramming2023"
+    "text": "Course website: https://lindsaynhayes.github.io/introR2025\nGitHub repository with all course material: https://github.com/lindsaynhayes/introR2025"
+  },
+  {
+    "objectID": "syllabus.html#course-description",
+    "href": "syllabus.html#course-description",
+    "title": "Syllabus",
+    "section": "",
+    "text": "Intro to Reproducible Data Analysis Using R will prepare students to explore large datasets, generate publication-quality graphics, perform reproducible and literate data analysis pipelines, and communicate analysis results. The ultimate goal is to teach novice programmers to write modular and descriptive code using R to address relevant scientific questions. The students will use publicly available data as well as apply reproducible scripts to data generated in their laboratories."
   },
   {
     "objectID": "syllabus.html#learning-objectives",
     "href": "syllabus.html#learning-objectives",
     "title": "Syllabus",
     "section": "",
-    "text": "Upon successfully completing this course, students will be able to:\n\nWrite unix code with command-line tools\nInstall and configure software necessary for a statistical programming environment and with version control\nWrite code for advanced programming topics in R, Python, SQL, and tidyverse\nBuild and organize a software package with documentation for publishing on the internet\nWrite code using functional or other programming paradigms and discuss strategies for getting data from APIs or working with large data\nBuild an interactive web application using Shiny or other dashboard tools"
+    "text": "Upon successfully completing this course, students will be able to:\n\nImport and summarize data in R using reproducible and literate programming principles\nAnalyze and evaluate data manipulations and outcomes\nSeek help for roadblocks, debug problems, and communicate results to a broad audience\nTake appropriate steps to evaluate data quality and choose appropriate analyzes\n\nThe goal of this course is to teach novice programmers to write modular code and impart best practices for using R for data analysis. R is commonly used across many scientific disciplines and will be useful to a wide array of students across campus. The course will focus on teaching the fundamentals of the programming language R including data analysis and plotting but will not teach statistical analyses."
   },
   {
-    "objectID": "syllabus.html#courseplus",
-    "href": "syllabus.html#courseplus",
+    "objectID": "syllabus.html#computer-requirements",
+    "href": "syllabus.html#computer-requirements",
     "title": "Syllabus",
-    "section": "Courseplus",
-    "text": "Courseplus\nThe primary communication for the class will go through Courseplus. That is where we will post course announcements, share resources, host most of our asynchronous course discussion, and as the primary means of communication between course participants and course instructors\n\n\n\n\n\n\nImportant\n\n\n\nIf you are registered for the course, you should have access to Courseplus now. Once you have access you will also be able to find all material and dates/times of drop-in hours. Any zoom links will be posted on Courseplus.\n\n\nThe course will make use of the CoursePlus Discussion Forum in order to ask and answer questions regarding any of the course materials. The Instructor and the Teaching Assistant will monitor the discussion boards and answer questions when appropriate."
+    "section": "Computer Requirements",
+    "text": "Computer Requirements\nA laptop is required for the course. The laptop requirements set forth by the College of Medicine can be found here. Specifically, laptops must be encrypted in accordance with University policy. It is the student’s responsibility to ensure that one’s laptop is connected to the OUHSC wireless network.\nIn addition, students need to have R and R Studio installed on their computers before the first class session. Detailed information on this can be found on the course Canvas site.\n\n\n\n\n\n\nBe Prepared\n\n\n\nSince this is a short course it is essential your computers are ready to start working on the first day of class."
   },
   {
-    "objectID": "syllabus.html#github",
-    "href": "syllabus.html#github",
+    "objectID": "syllabus.html#class-preparation",
+    "href": "syllabus.html#class-preparation",
     "title": "Syllabus",
-    "section": "GitHub",
-    "text": "GitHub\nYou can access all course materials (e.g. lectures, project assignments) here\n\nCourse website: https://stephaniehicks.com/jhustatprogramming2023\nGitHub repository with all course material: https://github.com/stephaniehicks/jhustatprogramming2023"
+    "section": "Class Preparation",
+    "text": "Class Preparation\nBefore each class, there will be a set of pre-lecture activities and/or readings to complete. It is important these activities be done before class so that the students can benefit the most from the in-class activities. Students are responsible for completing all assigned readings and materials, whether discussed in class or not (including any written or verbal updates, all lecture material, case studies, independent study, other information provided, etc.). Students are responsible for processing and analyzing data outside of the instruction time, so the student and the data are ready for in-class activities.\n\n\n\n\n\n\nTip\n\n\n\nYou will get as much out of the course as you put into it!"
   },
   {
-    "objectID": "syllabus.html#lectures",
-    "href": "syllabus.html#lectures",
+    "objectID": "syllabus.html#attendance",
+    "href": "syllabus.html#attendance",
     "title": "Syllabus",
-    "section": "Lectures",
-    "text": "Lectures\nThis is course has only one section ending in .01, which means it is an Onsite Synchronous course. This means you are expected to attend class in person. While, I will record the lectures via a zoom recording, I do not plan to post the recordings on CoursePlus. If you have an unexpected / emergency event that comes up and you are unable to attend the lecture in person, you can email me to ask for the recording. I just ask that you briefly provide 1 sentence explanation.\nAttendance is not taken, but I strongly encourage you to attend class to ask questions and participate in class exercises. You will get as much out of the course as you put into it."
+    "section": "Attendance",
+    "text": "Attendance\nThe course design is as a traditional, face-to-face contact where instructors interact with students in the same physical space.\n\n\n\n\n\n\nThis is important\n\n\n\nAttendance is required for all class sessions.\n\n\nAll anticipated absences should be requested in writing at least 24 hours in advance. A limited number of reasons will justify excused absences. These include, but are not limited to, an illness, a personal emergency, a family emergency, or presentation or representation in a leadership capacity at a professional meeting. Students may be required to provide documentation of the reason for the absence and may be required to complete supplementary assignments to make up for missed activities, but the course director and/or instructors are not required to provide make-up opportunities for missed discussions. Each unexcused absence will trigger a 10 point reduction in attendance points (see evaluation and grading below). If a session cannot be in person due to illness or weather, the session may be given by zoom. In such cases, every effort will be made to communicate any changes and to record the session for those that cannot attend synchronously.\nUnexcused lateness of more than 10 minutes will be recorded as an absence. Egregious lack of engagement (e.g., work unrelated to the course, messaging/texting, or using social media for more than 10 minutes of class) will be counted as an absence."
+  },
+  {
+    "objectID": "syllabus.html#participation",
+    "href": "syllabus.html#participation",
+    "title": "Syllabus",
+    "section": "Participation",
+    "text": "Participation\nStudents are required to process and analyze data provided during the course. Students are required to write their own scripts and analyze data independently. Students will be required to submit a final project processing their own data or publicly available data using literate programming concepts."
+  },
+  {
+    "objectID": "syllabus.html#canvas",
+    "href": "syllabus.html#canvas",
+    "title": "Syllabus",
+    "section": "Canvas",
+    "text": "Canvas\nThe primary communication for the class will go through Canvas. That is where we will post course announcements, grading, course discussions, and as the primary means of communication between course participants and course instructors."
   },
   {
     "objectID": "syllabus.html#getting-help",
     "href": "syllabus.html#getting-help",
     "title": "Syllabus",
-    "section": "Getting help",
-    "text": "Getting help\nIn order of preference, here is a preferred list of ways to get help:\n\nWe strongly encourage you to use Courseplus to ask questions first, before joining office hours. The reason for this is so that other students in the class (who likely have similar questions) can also benefit from the questions and answers asked by your colleagues.\nYou are welcome to join office hours to get more group interactive feedback.\nIf you are not able to make the office hours, appointments can be made by email with the instructor."
+    "section": "Getting Help",
+    "text": "Getting Help\nIn order of preference, here is a preferred list of ways to get help:\n\nWe strongly encourage you to use Canvas to ask questions first, before joining office hours. The reason for this is so that other students in the class (who likely have similar questions) can also benefit from the questions and answers asked by your colleagues.\nYou are welcome to join office hours to get feedback.\nIf you are not able to make the office hours, appointments can be made by email with the instructor."
   },
   {
     "objectID": "syllabus.html#textbook-and-other-course-material",
     "href": "syllabus.html#textbook-and-other-course-material",
     "title": "Syllabus",
     "section": "Textbook and Other Course Material",
-    "text": "Textbook and Other Course Material\nThere is no required textbook. We will make use of several freely available textbooks and other materials. All course materials will be provided. We will use the R and Python software for data analysis, which is freely available for download."
+    "text": "Textbook and Other Course Material\nThere is no required textbook. We will make use of several freely available textbooks and other online materials. All course materials will be provided. Required readings will be posted online before the relevant course sessions."
   },
   {
     "objectID": "syllabus.html#software",
     "href": "syllabus.html#software",
     "title": "Syllabus",
     "section": "Software",
-    "text": "Software\nWe will make heavy use of R in this course, so you should have R installed. You can obtain R from the Comprehensive R Archive Network. There are versions available for Mac, Windows, and Unix/Linux. This software is required for this course.\nIt is important that you have the latest version of R installed. For this course we will be using R version 4.4.1. You can determine what version of R you have by starting up R and typing into the console R.version.string and hitting the return/enter key. If you do not have this version of R installed, go to CRAN and download and install the latest version.\nWe will also make use of the RStudio interactive development environment (IDE). RStudio requires that R be installed, and so is an “add-on” to R. You can obtain the RStudio Desktop for free from the RStudio web site. In particular, we will make heavy use of it when developing R packages. It is also essential that you have the latest release of RStudio. You can determine the version of RStudio by looking at menu item Help &gt; About RStudio. You should be using RStudio version 2023.09.1+494 (2023.09.1+494) or higher, which requires R version 3.3.0 or higher."
+    "text": "Software\nWe will make heavy use of R in this course, so you should have R installed before the first class. You can obtain R from the Comprehensive R Archive Network. There are versions available for Mac, Windows, and Unix/Linux. This software is required for this course.\nIt is important that you have the latest version of R installed. For this course we will be using R version 4.4.1. You can determine what version of R you have by starting up R and typing into the console R.version.string and hitting the return/enter key. If you do not have this version of R installed, go to CRAN and download and install the latest version. Newer versions may also work but considerably older versions should be avoided.\nWe will work primarily in RStudio which is an interactive development environment (IDE) for R. RStudio requires that R be installed, and so is an “add-on” to R. You can obtain the RStudio Desktop for free from the RStudio web site. In particular, we will make heavy use of it when developing R packages. It is also essential that you have the latest release of RStudio. You can determine the version of RStudio by looking at menu item Help &gt; About RStudio. You should be using RStudio version 2023.09.1+494 (2023.09.1+494) or higher, which requires R version 3.3.0 or higher."
   },
   {
-    "objectID": "syllabus.html#projects",
-    "href": "syllabus.html#projects",
+    "objectID": "syllabus.html#assignments",
+    "href": "syllabus.html#assignments",
     "title": "Syllabus",
-    "section": "Projects",
-    "text": "Projects\nThere will be 4 assignments, due every 2–3 weeks. Projects will be submitted electronically via the Drop Box on the CoursePlus web site (unless otherwise specified).\nThe project assignments will be due on\n\nProject 1: Friday November 10, 11:59pm\nProject 2: Tuesday November 28, 11:59pm\nProject 3: Tuesday December 12, 11:59pm\nProject 4: Friday December 22, 11:59pm\n\n\nProject collaboration\nPlease feel free to study together and talk to one another about project assignments. The mutual instruction that students give each other is among the most valuable that can be achieved.\nHowever, it is expected that project assignments will be implemented and written up independently unless otherwise specified. Specifically, please do not share analytic code or output. Please do not collaborate on write-up and interpretation. Please do not access or use solutions from any source before your project assignment is submitted for grading."
-  },
-  {
-    "objectID": "syllabus.html#exams",
-    "href": "syllabus.html#exams",
-    "title": "Syllabus",
-    "section": "Exams",
-    "text": "Exams\nThere are no exams in this course."
+    "section": "Assignments",
+    "text": "Assignments\n\nHomework assignments and final projects will be completed independently by students.\nTurn in Homework on canvas as a quarto markdown file and the corresponding html report.\nThe Final project is to identify a data processing problem or question, develop a script to solve the problem, and present the process in a final 10-minute presentation.\nThere are no exams in the course."
   },
   {
     "objectID": "syllabus.html#grading",
     "href": "syllabus.html#grading",
     "title": "Syllabus",
     "section": "Grading",
-    "text": "Grading\nGrades in the course will be based on Projects 1–4. Grades for the projects and the final grade will be issued via the CoursePlus grade book.\n\nRelative weights\nThe grades are based on four projects. The breakdown of grading will be\n\n25% for Project 1\n25% for Project 2\n25% for Project 3\n25% for Project 4"
+    "text": "Grading\nGrades will be issued via the Canvas grade book.\n\nRelative weights\n\n\n\nAssignment\n% of Final Grade\n\n\n\n\nHomework 1\n10\n\n\nHomework 2\n10\n\n\nHomework 3\n10\n\n\nFinal Project\n20\n\n\nAttendance\n50\n\n\nTotal\n100\n\n\n\n\n\nGrading Rubrics\nFor homework:\n\nDid the student successfully complete the analysis and script? Was the correct output generated?\n\n10 (Good), 5 (Fair), 2 (Poor), 0 (none)\n\n\nFor the final project:\n\nDid the final project have a clearly stated analysis goal?\n\n10 (Good), 5 (Fair), 2 (Poor), 0 (none)\n\nDid the final project successfully achieve that goal? Why or why not?\n\n10 (Good), 5 (Fair), 2 (Poor), 0 (none)\n\n\n\n\nCourse evaluation\nWe will allocate 15 minutes in the last course session for students to perform the standard course evaluation, along with comments for the instructor."
   },
   {
-    "objectID": "syllabus.html#policy-for-submitted-projects-late",
-    "href": "syllabus.html#policy-for-submitted-projects-late",
+    "objectID": "syllabus.html#collaboration",
+    "href": "syllabus.html#collaboration",
     "title": "Syllabus",
-    "section": "Policy for submitted projects late",
-    "text": "Policy for submitted projects late\n\n\n\n\n\n\nImportant\n\n\n\nThe instructor and TA(s) will not accept email late day policy requests.\n\n\nThis is the policy for late submissions that applies to Projects 1-4.\n\nEach student will be given three “free late days” for the rest of the course.\nA late day extends the individual project deadline by 24 hours without penalty.\nThe late days can be applied to just one project (e.g. two late days for Project 2), or they can be split across the two projects (one late day for Project 2 and one late day for Project 3). This is entirely left up to the discretion of the student.\nA max of two “free late days” can be applied to any one project.\nFree late days are intended to give you flexibility: you can use them for any reason no questions asked.\nYou do not get any bonus points for not using your late days.\n\nAlthough the each student is only given a total of three “free late days”, we will be accepting homework from students that pass this limit.\n\nWe will deduct 5% off the 100% starting point for each day the assignment is late.\nIf you use two “free late days” for project, but need a 3rd day, there will be no penalty for the first two late days and there will be a 5% penalty for the 3rd late day.\nIf you do not have any more late days for the term, we will deduct 5% for the assignment that is &lt;24 hours late, 10% points for the assignment that is 24-48 hours late, and 15% points for the assignment that is 48-72 hours late.\n\n\n\n\n\n\n\nImportant\n\n\n\nWe will not grade assignments that are more than 3 days (or more than 72 hours) past the original due date.\n\n\n\nRegrading Policy\nIt is very important to us that all assignments are properly graded. If you believe there is an error in your assignment grading, please send an email to the instructor within 7 days of receiving the grade. No re-grade requests will be accepted orally, and no regrade requests will be accepted more than 7 days after you receive the grade for the assignment."
+    "section": "Collaboration",
+    "text": "Collaboration\nPlease feel free to study together and talk to one another about project assignments. The mutual instruction that students give each other is among the most valuable that can be achieved.\nHowever, it is expected that assignments will be implemented and written up independently. Specifically, please do not share analytic code or output. Please do not collaborate on write-up and interpretation. Please do not access or use solutions from any source before your project assignment is submitted for grading."
+  },
+  {
+    "objectID": "syllabus.html#late-work",
+    "href": "syllabus.html#late-work",
+    "title": "Syllabus",
+    "section": "Late Work",
+    "text": "Late Work\nDue to the short duration of the course and the compounding nature of the materials late work will not be accepted."
   },
   {
     "objectID": "syllabus.html#use-of-ai-tools",
     "href": "syllabus.html#use-of-ai-tools",
     "title": "Syllabus",
-    "section": "Use of AI tools",
-    "text": "Use of AI tools\nUse of AI tools (including ChatGPT, Bard, Microsoft Copilot, etc) to assist in completing this assignment/exam is permitted with your writing and/or programming. Be aware, however, that such tools often introduce errors or fabricate information; it is your responsibility to ensure the factual accuracy of whatever you claim as your writing/code. I recommend using such tools particularly for learning to code, just make sure the code does what it is supposed to, and that you understand what the code does.\nWith respect to writing, as with all sources, proper references and use of quotation marks should be used (if precise language generated by the software is used). The reference must include the website and specific prompts used to generate the referenced output."
+    "section": "Use of AI Tools",
+    "text": "Use of AI Tools\nUse of AI tools (including ChatGPT, Bard, Microsoft Copilot, etc) to assist in completing this assignment/exam is permitted with your writing and/or programming. Be aware, however, that such tools often introduce errors or fabricate information; it is your responsibility to ensure the factual accuracy of whatever you claim as your writing/code. I recommend using such tools particularly for learning to code, just make sure the code does what it is supposed to, and that you understand what the code does.\nWith respect to writing, as with all sources, proper references and use of quotation marks should be used (if precise language generated by the software is used). The reference must include the website and specific prompts used to generate the referenced output.\n\n\n\n\n\n\nFor more information:\n\n\n\nRefer to the LLM section of the syllabus on canvas for more information on use of LLMs."
   },
   {
-    "objectID": "syllabus.html#academic-ethics-and-student-conduct-code",
-    "href": "syllabus.html#academic-ethics-and-student-conduct-code",
+    "objectID": "syllabus.html#copyright",
+    "href": "syllabus.html#copyright",
     "title": "Syllabus",
-    "section": "Academic Ethics and Student Conduct Code",
-    "text": "Academic Ethics and Student Conduct Code\nStudents enrolled in the Bloomberg School of Public Health of The Johns Hopkins University assume an obligation to conduct themselves in a manner appropriate to the University’s mission as an institution of higher education. A student is obligated to refrain from acts which he or she knows, or under the circumstances has reason to know, impair the academic integrity of the University. Violations of academic integrity include, but are not limited to: cheating; plagiarism; knowingly furnishing false information to any agent of the University for inclusion in the academic record; violation of the rights and welfare of animal or human subjects in research; and misconduct as a member of either School or University committees or recognized groups or organizations.\nStudents should be familiar with the policies and procedures specified under Policy and Procedure Manual Student-01 (Academic Ethics), available on the school’s portal.\nThe faculty, staff and students of the Bloomberg School of Public Health and the Johns Hopkins University have the shared responsibility to conduct themselves in a manner that upholds the law and respects the rights of others. Students enrolled in the School are subject to the Student Conduct Code (detailed in Policy and Procedure Manual Student-06) and assume an obligation to conduct themselves in a manner which upholds the law and respects the rights of others. They are responsible for maintaining the academic integrity of the institution and for preserving an environment conducive to the safe pursuit of the School’s educational, research, and professional practice missions.\n\nCourse code of Conduct\nWe are committed to providing a welcoming, inclusive, and harassment-free experience for everyone, regardless of gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion (or lack thereof), political beliefs/leanings, or technology choices. We do not tolerate harassment of course participants in any form. Sexual language and imagery is not appropriate for any work event, including group meetings, conferences, talks, parties, Twitter and other online media. This code of conduct applies to all course participants, including instructors and TAs, and applies to all modes of interaction, both in-person and online, including GitHub project repos, Slack channels, and Twitter.\nCourse participants violating these rules will be referred to leadership of the Department of Biostatistics and the Title IX coordinator at JHU and may face expulsion from the class.\nAll class participants agree to:\n\nBe considerate in speech and actions, and actively seek to acknowledge and respect the boundaries of other members.\nBe respectful. Disagreements happen, but do not require poor behavior or poor manners. Frustration is inevitable, but it should never turn into a personal attack. A community where people feel uncomfortable or threatened is not a productive one. Course participants should be respectful both of the other course participants and those outside the course.\nRefrain from demeaning, discriminatory, or harassing behavior and speech. Harassment includes, but is not limited to: deliberate intimidation; stalking; unwanted photography or recording; sustained or willful disruption of talks or other events; inappropriate physical contact; use of sexual or discriminatory imagery, comments, or jokes; and unwelcome sexual attention. If you feel that someone has harassed you or otherwise treated you inappropriately, please alert Stephanie Hicks.\nTake care of each other. Refrain from advocating for, or encouraging, any of the above behavior. And, if someone asks you to stop, then stop. Alert Stephanie Hicks if you notice a dangerous situation, someone in distress, or violations of this code of conduct, even if they seem inconsequential.\n\n\n\nNeed Help?\nPlease speak with Stephanie Hicks or one of the TAs. You can also reach out to Karen Bandeen-Roche, chair of the department of Biostatistics or Margaret Taub, Ombudsman for the Department of Biostatistics.\nYou may also reach out to any Hopkins resource for sexual harassment, discrimination, or misconduct:\n\nJHU Sexual Assault Helpline, 410-516-7333 (confidential)\n\nUniversity Sexual Assault Response and Prevention website\nJohns Hopkins Compliance Hotline, 844-SPEAK2US (844-733-2528)\nHopkins Policies Online\nJHU Office of Institutional Equity 410-516-8075 (nonconfidential)\nJohns Hopkins Student Assistance Program (JHSAP), 443-287-7000\nUniversity Health Services, 410-955-1892\nThe Faculty and Staff Assistance Program (FASAP), 443-997-7000"
+    "section": "Copyright",
+    "text": "Copyright\nThis syllabus and all related course material are protected under US Copyright Law and may not be further disseminated in any form or format without the prior explicit written consent of the faculty member. Failure to comply with this provision may subject the student to disciplinary action and/or state or federal action."
   },
   {
-    "objectID": "syllabus.html#license-and-attribution",
-    "href": "syllabus.html#license-and-attribution",
+    "objectID": "syllabus.html#student-professional-behavior-in-an-academic-program",
+    "href": "syllabus.html#student-professional-behavior-in-an-academic-program",
     "title": "Syllabus",
-    "section": "License and attribution",
-    "text": "License and attribution\nThis Code of Conduct is distributed under a Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license. Portions of above text comprised of language from the Codes of Conduct adopted by rOpenSci and Django, which are licensed by CC BY-SA 4.0 and CC BY 3.0. This work was further inspired by Ada Initiative’s ‘’how to design a code of conduct for your community’’ and Geek Feminism’s Code of conduct evaluations and expanded by Ashley Johnson and Shannon Ellis in the Jeff Leek group."
+    "section": "Student Professional Behavior in an Academic Program",
+    "text": "Student Professional Behavior in an Academic Program\nEthical and professional behaviors are considered a core competency in an academic program and thus are key factors in a student’s good academic standing. Upon acceptance of an offer of admission, the student commits to comply with all professional conduct regulations established by the University, respective college, and program. The complete Student Professional Behavior in an Academic Program policy."
   },
   {
-    "objectID": "syllabus.html#disability-support-service",
-    "href": "syllabus.html#disability-support-service",
+    "objectID": "syllabus.html#academic-misconduct-code",
+    "href": "syllabus.html#academic-misconduct-code",
     "title": "Syllabus",
-    "section": "Disability Support Service",
-    "text": "Disability Support Service\nStudents requiring accommodations for disabilities should register with Student Disability Service (SDS). It is the responsibility of the student to register for accommodations with SDS. Accommodations take effect upon approval and apply to the remainder of the time for which a student is registered and enrolled at the Bloomberg School of Public Health. Once a student has been approved for accommodations, the student will receive formal notification and the student will be encouraged to reach out to the instructor.\nIf you have questions about requesting accommodations, please contact BSPH.dss@jhu.edu."
+    "section": "Academic Misconduct Code",
+    "text": "Academic Misconduct Code\nThe Academic Misconduct Code describes academic misconduct as any acts intended to improperly affect the evaluation of a student’s academic performance or achievement. Academic Misconduct includes but is not limited to cheating, plagiarism, fabrication, fraud, destruction, bribery or intimidation, assisting others in any act proscribed by the Code, or attempting to engage in such acts. The policy and procedures related to academic misconduct are detailed in the Academic Misconduct Code found in Appendix C of the Faculty Handbook."
   },
   {
-    "objectID": "syllabus.html#prerequisites",
-    "href": "syllabus.html#prerequisites",
+    "objectID": "syllabus.html#academic-appeals",
+    "href": "syllabus.html#academic-appeals",
     "title": "Syllabus",
-    "section": "Prerequisites",
-    "text": "Prerequisites\nPrerequisite for the course is Biostatistics 140.776 or knowledge of material from 140.776 is assumed.\nIf you did not take the above course, please contact course instructor to get permission to enroll."
+    "section": "Academic Appeals",
+    "text": "Academic Appeals\nThe Academic Appeals policy outlines the procedure a student must follow to request a hearing for appeals related to evaluation in a course, thesis or dissertation defense, or general or comprehensive exam. It also outlines the appeal process for a suspension or dismissal or under the Student Professional Behavior in an Academic Program Policy and for appeals of decisions resulting in dismissal, expulsion, or suspension from a program or of being required to repeat a semester of year. The sole basis for an academic appeal is an alleged prejudiced or capricious academic evaluation or decision. Policy and procedure details are in Appendix C of the Faculty Handbook."
   },
   {
-    "objectID": "syllabus.html#general-disclaimers",
-    "href": "syllabus.html#general-disclaimers",
+    "objectID": "syllabus.html#accommodation-on-the-basis-of-disability",
+    "href": "syllabus.html#accommodation-on-the-basis-of-disability",
     "title": "Syllabus",
-    "section": "General Disclaimers",
-    "text": "General Disclaimers\nThis syllabus is a general plan, deviations announced to the class by the instructor may be necessary."
+    "section": "Accommodation on the Basis of Disability",
+    "text": "Accommodation on the Basis of Disability\nThe University of Oklahoma is committed to the goal of achieving equal educational opportunity and full participation for students with disabilities. Accommodations on the basis of disability are available by contacting the Accessibility and Disability Resource Center (ADRC) by email at adrc@ou.edu or by calling (405) 325-3852 or Voice (405) 217-3494 (VP). Information on policies and registration with the Accessibility and Disability Resource Center may be found on the ADRC website. Students requesting accommodations related to work in a course must contact the ADRC as soon as possible; accommodations are not made retroactively."
   },
   {
-    "objectID": "syllabus.html#typos-and-corrections",
-    "href": "syllabus.html#typos-and-corrections",
+    "objectID": "syllabus.html#sexual-misconduct",
+    "href": "syllabus.html#sexual-misconduct",
     "title": "Syllabus",
-    "section": "Typos and corrections",
-    "text": "Typos and corrections\nFeel free to submit typos/errors/etc via the github repository associated with the class: https://github.com/stephaniehicks/jhustatprogramming2023. You will have the thanks of your grateful instructor!"
+    "section": "Sexual Misconduct",
+    "text": "Sexual Misconduct\nFor issues regarding gender-based discrimination, sexual harassment, sexual misconduct, stalking, or intimate partner violence, the University offers a variety of resources, including Advocates-On-Call 24/7, counseling services, mutual “No Contact orders,” scheduling adjustments, and disciplinary sanctions against the perpetrator. Information is available from the Institutional Equity Office at (405) 325-2215 (8AM-5PM) or the OU Advocates at (405) 615-0013 (24/7)."
+  },
+  {
+    "objectID": "syllabus.html#adjustment-for-pregnancychildbirth-related-issues",
+    "href": "syllabus.html#adjustment-for-pregnancychildbirth-related-issues",
+    "title": "Syllabus",
+    "section": "Adjustment for Pregnancy/Childbirth Related Issues",
+    "text": "Adjustment for Pregnancy/Childbirth Related Issues\nStudents needing modifications or adjustments to course requirements because of documented pregnancy-related or childbirth-related issues should contact the college’s Assistant/Associate Dean for Student Affairs (or academic advisor) or the Accessibility and Disability Resources Center as soon as possible to discuss. Generally, modifications will be made where medically necessary and similar in scope to accommodations based on temporary disability. See FAQs."
+  },
+  {
+    "objectID": "syllabus.html#course-dropuniversity-withdrawal",
+    "href": "syllabus.html#course-dropuniversity-withdrawal",
+    "title": "Syllabus",
+    "section": "Course Drop/University Withdrawal",
+    "text": "Course Drop/University Withdrawal\nThe student is responsible to submit required University paperwork before the deadlines to drop or withdraw from a course, shown in the Academic Calendar. Missed homework and examination grades will be entered as a grade of zero if a student fails to formally drop the course or withdraw from the University."
+  },
+  {
+    "objectID": "syllabus.html#laptopdevice-encryption-and-anti-virus-software",
+    "href": "syllabus.html#laptopdevice-encryption-and-anti-virus-software",
+    "title": "Syllabus",
+    "section": "Laptop/Device Encryption and Anti-Virus Software",
+    "text": "Laptop/Device Encryption and Anti-Virus Software\nIn advance of examinations, students must check that their laptop or PC includes up-to-date encryption software and the necessary programs for securing the device. Students who obtain new or replacement devices at any time can request access to the Student Virtual Desktop. OU IT will grant student access within 24 hours of request submission. Students can log in here. All students should continue to encrypt their devices with Windows 10 and MacOS encryption tools and install anti-virus software. Instructions and recommendations are linked at: Windows 10 Encryption, MacOS Encryption, and Anti-Virus Software."
+  },
+  {
+    "objectID": "syllabus.html#absences",
+    "href": "syllabus.html#absences",
+    "title": "Syllabus",
+    "section": "Absences",
+    "text": "Absences\nIf you will be absent from a course activity for any reason, it is your responsibility to notify the instructor as specified by the course syllabus."
+  },
+  {
+    "objectID": "syllabus.html#covid-19",
+    "href": "syllabus.html#covid-19",
+    "title": "Syllabus",
+    "section": "COVID-19",
+    "text": "COVID-19\nSee Related Academic Policy Addendum."
+  },
+  {
+    "objectID": "syllabus.html#responsible-conduct-of-research",
+    "href": "syllabus.html#responsible-conduct-of-research",
+    "title": "Syllabus",
+    "section": "Responsible Conduct of Research",
+    "text": "Responsible Conduct of Research\nStudents, as members of the University community, have the responsibility to ensure the integrity and ethical standards of any research activity with which they are associated directly or of which they have sufficient knowledge to determine its appropriateness. Students are governed by the Policy on Ethics in Research Faculty Handbook Section 3.25.\n\nCourse Code of Conduct\nWe are committed to providing a welcoming, inclusive, and harassment-free experience for everyone, regardless of gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion (or lack thereof), political beliefs/leanings, or technology choices. We do not tolerate harassment of course participants in any form. Sexual language and imagery is not appropriate for any work event, including group meetings, conferences, talks, parties, Twitter/X and other online media. This code of conduct applies to all course participants, including instructors and TAs, and applies to all modes of interaction, both in-person and online, including GitHub project repos, Slack channels, and Twitter/X.\nCourse participants violating these rules will be referred the Title IX coordinator and may face expulsion from the class.\nAll class participants agree to:\n\nBe considerate in speech and actions, and actively seek to acknowledge and respect the boundaries of other members.\nBe respectful. Disagreements happen, but do not require poor behavior or poor manners. Frustration is inevitable, but it should never turn into a personal attack. A community where people feel uncomfortable or threatened is not a productive one. Course participants should be respectful both of the other course participants and those outside the course.\nRefrain from demeaning, discriminatory, or harassing behavior and speech. Harassment includes, but is not limited to: deliberate intimidation; stalking; unwanted photography or recording; sustained or willful disruption of talks or other events; inappropriate physical contact; use of sexual or discriminatory imagery, comments, or jokes; and unwelcome sexual attention. If you feel that someone has harassed you or otherwise treated you inappropriately, please alert Lindsay Hayes.\nTake care of each other. Refrain from advocating for, or encouraging, any of the above behavior. And, if someone asks you to stop, then stop. Alert Lindsay Hayes if you notice a dangerous situation, someone in distress, or violations of this code of conduct, even if they seem inconsequential.\n\n\n\nLicense and attribution\nThis Code of Conduct is distributed under a Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license. Portions of above text comprised of language from the Codes of Conduct adopted by rOpenSci and Django, which are licensed by CC BY-SA 4.0 and CC BY 3.0. This work was further inspired by Ada Initiative’s ‘’how to design a code of conduct for your community’’ and Geek Feminism’s Code of conduct evaluations and expanded by Ashley Johnson and Shannon Ellis in the Jeff Leek group, and Stephanie C. Hicks."
   },
   {
     "objectID": "readings/10-flexdashboard/index.html",
@@ -809,28 +872,28 @@
     "href": "index.html",
     "title": "Welcome",
     "section": "",
-    "text": "Welcome to the Course Website for PH.140.777 Statistical Programming Paradigms and Workflows!"
+    "text": "Welcome to the Course Website for Cell 6351 Intro to Reproducible Data Analysis Using R!"
   },
   {
     "objectID": "index.html#overview",
     "href": "index.html#overview",
     "title": "Welcome",
     "section": "Overview",
-    "text": "Overview\nComputing and programming are fundamental skills for applied statisticians to efficiently demonstrate the performance of their models with data, to develop reproducible data analyses or robust software, and to effectively communicate their own research interests. However, these skills are often not taught in the classroom, often making it challenging to learn these skills “on the job”.\nThis hands-on course will cover advanced statistical computing programming paradigms and workflows required for the research and application of statistical methods. Students will be expected to complete readings prior to class, attend lectures to dive deeper into those topics in class, participate in classroom activities, complete projects (both solo and group) practicing and reinforcing the computing and programming skills. There will be a final group project, which will include a major class presentation."
+    "text": "Overview\nCurrent biomedical research regularly generates large datasets that require increasing computational skills to process and analyze including in genomics, behavior, imaging, and molecular biology. As a result, scientists today require fundamental computational and programming skill-sets to efficiently perform data analyses, generate complex models for testing, develop reproducible data analyses, and effectively communicate results through clear and meaningful graphics. However, these skills are often challenging due to a lack of structured training in data science.\nIntro to Reproducible Data Analysis Using R is a hands-on course that will introduce the R statistical software including data structures, wrangling data, plotting data, basic statistics, data modeling, and literate coding practices. There is no textbook for the course. All course materials will be provided on Canvas or this website. While no formal background in statistics or programming is necessary, a general knowledge of basic statistics, experimental design, and computer file storage systems will be helpful. All classes will involve active learning/coding activities so a laptop with power cord is required for all sessions. Students will be expected to complete readings prior to class, attend lectures to dive deeper into those topics in class, participate in classroom activities, complete projects practicing and reinforcing the computing and programming skills. There will be a final project, which will include a class presentation."
   },
   {
     "objectID": "index.html#course-information",
     "href": "index.html#course-information",
     "title": "Welcome",
     "section": "Course Information",
-    "text": "Course Information\n\nCourse Staff: Prof. Stephanie Hicks, Joe Sartini, and Wenxuan Lu\nLectures: 1:30-2:50pm Tuesday and Thursday. See CoursePlus for location details.\nOffice Hours: See CoursePlus for location details."
+    "text": "Course Information\n\nCourse Staff: Prof. Lindsay Hayes\nLectures: 9:00-10:30am Tuesday and Thursday\nOffice Hours: Mondays 1-2pm"
   },
   {
     "objectID": "index.html#course-details",
     "href": "index.html#course-details",
     "title": "Welcome",
     "section": "Course Details",
-    "text": "Course Details\nAll course details are available on the Course page. The syllabus is available on CoursePlus."
+    "text": "Course Details\nAll course details are available on the Course page. The syllabus is available here and on Canvas."
   },
   {
     "objectID": "lectures.html",
