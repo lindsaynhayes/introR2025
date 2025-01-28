@@ -1,0 +1,44 @@
+250114
+1. fork and update
+- fork jhustatprogramming2024 from stephaniehicks
+- make updates to readme, index, and syllabus files
+
+2. try to deploy and ran into problems I think bc link to Dr. Hicks gh-pages authentication.
+I think there were multiple problems:
+- git authentication link was not set up correction
+- maybe the fork links to Hick's directory
+- also want to find a way to when the page renders it automatically goes to gh-pages branch and not main _sites directory
+
+try to solve these problems one-by-one
+
+3. Set up proper authentication because git clone or git push was failing to authenticate
+https://docs.github.com/en/get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls
+https://docs.github.com/en/get-started/getting-started-with-git/caching-your-github-credentials-in-git
+
+- Cloning with HTTPS URLs
+- Download GitHub CLI (https://github.com/cli/cli#installation)
+sudo port install gh
+sudo port selfupdate && sudo port upgrade gh
+- I think the selfupdate worked but the port upgrade did not moved forward anyway
+gh auth login
+select https
+Y to credentials
+- success!
+
+4. Detach fork (kinda a scary process but it did work)
+https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/detaching-a-fork
+- in terminal create a clone of the fork
+git clone --bare https://github.com/lindsaynhayes/introR2025.git
+- created a new directory introR2025.git with some wierd files in it
+- delete the forked director (scary yes, make a back up)
+- create a new responsitory from scratch with the same name introR2025
+- Mirror-push the repository back to teh same remote URL. This failed at first because of the credential thing, but if the above works then this will work.
+git --git-dir introR2025.git push --mirror https://github.com/lindsaynhayes/introR2025.git
+- what do you know it indeed worked and now I have the right files in the directory and a gh-pages branch. AND the correct .html files in the gh-pages branch, my version not Hick's version. I do not know how that happened, but its what I wanted. Hicks is now listed as a contributor on the repository. Great!
+- remove the .git directory
+rm -rf introR2025.git
+
+5. Next look into how to get it to build the site to gh-pages instead of main branch so the .qmd files are in main and the htmls are in gh-pages. 
+
+
+
