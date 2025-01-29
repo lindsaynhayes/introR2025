@@ -1,5 +1,5 @@
 ---
-title: "Welcome to the course"
+title: "Welcome to the Course!"
 author: 
   - name: Lindsay Hayes
     url: https://lindsaynhayes.github.io
