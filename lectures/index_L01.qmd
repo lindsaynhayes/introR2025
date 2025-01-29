@@ -61,22 +61,22 @@ Material for this lecture was borrowed and adopted from
 
 ## Summary 
 
-- Access all course material on CoursePlus and course website (<https://www.stephaniehicks.com/jhustatprogramming2024>)
-- Lectures will be recorded followed by an in-class activity. Later in the course, the in-class activity will be to work on the final project
-- At the end of each class, fill out the [reflection card](https://forms.gle/YE9kpBf7aVnx8VMdA) (not graded, but helpful to both the student and instructor)
-- Integrated developer environment (IDEs) can make you more efficient as a programmer! 
-- Quarto is an open-source scientific and technical publishing system to create reproducible, production quality articles, presentations, dashboards, websites, blogs, and books in HTML, PDF, MS Word, and more
-- You can think of Quarto as a natural successor to RMarkdown
+- Access all course material on the course website (<https://lindsaynhayes.github.io/introR2025/>).
+- **RStudio** makes you a more efficient programmer and gives you easy access to all the components of data analysis.
+- **Quarto** is an open-source scientific and technical publishing system to create reproducible, production quality data analysis reports and much more. During the course we will primarily use the HTML output format.
 
 ## Additional practice
 
 Here are some additional practice questions to help you think about the material discussed.
 
-::: callout-note
+::: callout-caution
 ### Questions
 
-1.  In either RStudio or VSCode, create a new Quarto document. Read the instructions. Practice running the chunks individually. Then render the document and practice the appropriate keyboard short cut. Verify that you can modify the code, re-run it, and see modified output.
+1.  In RStudio, create a new R project and then create a new Quarto document in that R project. Read the instructions. Practice running the chunks individually using the "play" button and the keyboard short cut. 
 
-2.  Create one new Quarto document for each of the three built-in formats: HTML, PDF and Word. Render each of the three documents. How do the outputs differ? How do the inputs differ? (You may need to install LaTeX in order to build the PDF output --- RStudio will prompt you if this is necessary.)
+2.  Change the settings of the Quarto document to display the output "inline" or in the "console". 
+
+3.  Render the document and view the HTML output. Verify that you can modify the code, re-run it, and see modified output.
+
 
 :::
