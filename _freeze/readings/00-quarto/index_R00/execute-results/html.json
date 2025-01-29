@@ -1,0 +1,15 @@
+{
+  "hash": "842d9c228befb5bd1751b9a4f2d06f2f",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"The Command Line & Literate Programming\"\nsubtitle: \"00-RStudio\"\ndescription: \"Welcome to R and R Studio\"\nauthor: \n  - name: Lindsay Hayes\n    url: https://lindsaynhayes.github.io\n    affiliation: Department of Cell Biology, OUHSC\ndate: 2025-07-01\ndraft: true\n---\n\n::: {.cell}\n\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
