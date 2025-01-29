@@ -648,7 +648,7 @@
     "href": "readings.html",
     "title": "Important reading materials",
     "section": "",
-    "text": "The following contains relevant reading materials you should read prior to each class:\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\n2024-11-05\n\n\nFunctional Programming with purrr\n\n\nStephanie Hicks\n\n\n\n\n2024-11-07\n\n\nRetrieving data from APIs with httr2\n\n\nStephanie Hicks\n\n\n\n\n2024-11-07\n\n\nScraping data from the web with rvest\n\n\nStephanie Hicks\n\n\n\n\n2024-11-12\n\n\nRelational databases and SQL basics\n\n\nStephanie Hicks\n\n\n\n\n2024-11-19\n\n\nStrategies for dealing with large data\n\n\nStephanie Hicks\n\n\n\n\n2024-11-21\n\n\nObject Oriented Programming\n\n\nStephanie Hicks\n\n\n\n\n2024-12-03\n\n\nBuilding dashboards with flexdashboard\n\n\nStephanie Hicks\n\n\n\n\n2024-12-10\n\n\nProgramming in Python with reticulate\n\n\nStephanie Hicks\n\n\n\n\n \n\n\ndraft: true\n\n\n \n\n\n\n\n\nNo matching items"
+    "text": "The following contains relevant reading materials you should read prior to each class:\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\n2024-11-05\n\n\nFunctional Programming with purrr\n\n\nStephanie Hicks\n\n\n\n\n2024-11-07\n\n\nRetrieving data from APIs with httr2\n\n\nStephanie Hicks\n\n\n\n\n2024-11-07\n\n\nScraping data from the web with rvest\n\n\nStephanie Hicks\n\n\n\n\n2024-11-12\n\n\nRelational databases and SQL basics\n\n\nStephanie Hicks\n\n\n\n\n2024-11-19\n\n\nStrategies for dealing with large data\n\n\nStephanie Hicks\n\n\n\n\n2024-11-21\n\n\nObject Oriented Programming\n\n\nStephanie Hicks\n\n\n\n\n2024-12-03\n\n\nBuilding dashboards with flexdashboard\n\n\nStephanie Hicks\n\n\n\n\n2024-12-10\n\n\nProgramming in Python with reticulate\n\n\nStephanie Hicks\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "projects/03-project/index.html",
@@ -952,13 +952,6 @@
     "text": "Additional practice\nHere are some additional practice questions to help you think about the material discussed.\n\n\n\n\n\n\nQuestions\n\n\n\n\nMove around the computer, get used to moving in and out of directories, see how different file types appear in the Unix shell. Be sure to use the pwd and cd commands, and the different flags for the ls commands.\nPractice using “Tab for Auto-complete” in the shell to autocomplete commands or file names.\nExplore the manual pages of date in the command line to show you what that looks like. Try to figure out what is the argument to print the date since the Unix epoch or 00:00:00 UTC on 1 January 1970 as a function of the number of seconds. Then try to identify what is the argument to display the date in UTC.\nPractice your command line knowledge with Command Challenge."
   },
   {
-    "objectID": "lectures.html",
-    "href": "lectures.html",
-    "title": "Course content",
-    "section": "",
-    "text": "Course content for each lecture is below:\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\nInvalid Date\n\n\nWelcome to the course\n\n\nLindsay Hayes\n\n\n\n\n2024-10-29\n\n\nIntroduction to the command-line\n\n\nStephanie Hicks\n\n\n\n\n2024-10-31\n\n\nIntroduction to version control\n\n\nStephanie Hicks\n\n\n\n\n2024-11-05\n\n\nFunctional programming\n\n\nStephanie Hicks\n\n\n\n\n2024-11-07\n\n\nData Collection\n\n\nStephanie Hicks\n\n\n\n\n2024-11-12\n\n\nDatabase programming paradigms\n\n\nStephanie Hicks\n\n\n\n\n2024-11-14\n\n\nMachine learning paradigms and workflows\n\n\nStephanie Hicks\n\n\n\n\n2024-11-19\n\n\nParallel programming\n\n\nStephanie Hicks\n\n\n\n\n2024-11-21\n\n\nObject-oriented programming\n\n\nStephanie Hicks\n\n\n\n\n2024-11-26\n\n\nR package development and pkgdown\n\n\nStephanie Hicks\n\n\n\n\n2024-12-03\n\n\nBuilding dashboards with flexdashboard\n\n\nStephanie Hicks\n\n\n\n\n2024-12-05\n\n\nProgramming with GitHub Copilot\n\n\nStephanie Hicks & Kinnary Shah\n\n\n\n\n2024-12-10\n\n\nProgramming with Python with reticulate\n\n\nStephanie Hicks\n\n\n\n\n2025-07-01\n\n\nWelcome to the Course!\n\n\nLindsay Hayes\n\n\n\n\n\nNo matching items"
-  },
-  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Welcome",
@@ -987,46 +980,11 @@
     "text": "Course Details\nAll course details are available on the Course page. The syllabus is available here and on Canvas."
   },
   {
-    "objectID": "lectures/00-course-intro/index_SH.html",
-    "href": "lectures/00-course-intro/index_SH.html",
-    "title": "Welcome to the course",
+    "objectID": "lectures.html",
+    "href": "lectures.html",
+    "title": "Course content",
     "section": "",
-    "text": "Before each class, there will be a set of pre-lecture activities and/or readings for you to complete. It is important these activities be done before class so that you can benefit the most from the in-class activities.\nToday we will cover the Pre-reading material about quarto as a way to demonstrate where to find the pre-reading materials going forward. Sometimes, there will not be pre-reading materials here, but rather direct links to external resources that you need to read in advance."
-  },
-  {
-    "objectID": "lectures/00-course-intro/index_SH.html#acknowledgements",
-    "href": "lectures/00-course-intro/index_SH.html#acknowledgements",
-    "title": "Welcome to the course",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements\nMaterial for this lecture was borrowed and adopted from\n\nr4ds book: https://r4ds.hadley.nz/quarto\nQuarto Publishing System: https://quarto.org"
-  },
-  {
-    "objectID": "lectures/00-course-intro/index_SH.html#learning-objectives",
-    "href": "lectures/00-course-intro/index_SH.html#learning-objectives",
-    "title": "Welcome to the course",
-    "section": "Learning objectives",
-    "text": "Learning objectives\n\n\n\n\n\n\nLearning objectives\n\n\n\nAt the end of this lesson you will:\n\nGet an overview of the course (including staff, format, grading, etc)\nBe able to recognize and operate an Integrated Developer Evironment (IDE) to perform statistial programming and data analysis.\nBe able to describe reasons why having a personal website can be useful.\nRecognize what is Quarto and how it’s different from RMarkdown.\nBe able to create a Quarto project and Quarto website."
-  },
-  {
-    "objectID": "lectures/00-course-intro/index_SH.html#slides",
-    "href": "lectures/00-course-intro/index_SH.html#slides",
-    "title": "Welcome to the course",
-    "section": "Slides",
-    "text": "Slides\n\nLecture 00: Welcome and Introductions"
-  },
-  {
-    "objectID": "lectures/00-course-intro/index_SH.html#summary",
-    "href": "lectures/00-course-intro/index_SH.html#summary",
-    "title": "Welcome to the course",
-    "section": "Summary",
-    "text": "Summary\n\nAccess all course material on CoursePlus and course website (https://www.stephaniehicks.com/jhustatprogramming2024)\nLectures will be recorded followed by an in-class activity. Later in the course, the in-class activity will be to work on the final project\nAt the end of each class, fill out the reflection card (not graded, but helpful to both the student and instructor)\nIntegrated developer environment (IDEs) can make you more efficient as a programmer!\nQuarto is an open-source scientific and technical publishing system to create reproducible, production quality articles, presentations, dashboards, websites, blogs, and books in HTML, PDF, MS Word, and more\nYou can think of Quarto as a natural successor to RMarkdown"
-  },
-  {
-    "objectID": "lectures/00-course-intro/index_SH.html#additional-practice",
-    "href": "lectures/00-course-intro/index_SH.html#additional-practice",
-    "title": "Welcome to the course",
-    "section": "Additional practice",
-    "text": "Additional practice\nHere are some additional practice questions to help you think about the material discussed.\n\n\n\n\n\n\nQuestions\n\n\n\n\nIn either RStudio or VSCode, create a new Quarto document. Read the instructions. Practice running the chunks individually. Then render the document and practice the appropriate keyboard short cut. Verify that you can modify the code, re-run it, and see modified output.\nCreate one new Quarto document for each of the three built-in formats: HTML, PDF and Word. Render each of the three documents. How do the outputs differ? How do the inputs differ? (You may need to install LaTeX in order to build the PDF output — RStudio will prompt you if this is necessary.)"
+    "text": "Course content for each lecture is below:\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\n2024-10-29\n\n\nIntroduction to the command-line\n\n\nStephanie Hicks\n\n\n\n\n2024-10-31\n\n\nIntroduction to version control\n\n\nStephanie Hicks\n\n\n\n\n2024-11-05\n\n\nFunctional programming\n\n\nStephanie Hicks\n\n\n\n\n2024-11-07\n\n\nData Collection\n\n\nStephanie Hicks\n\n\n\n\n2024-11-12\n\n\nDatabase programming paradigms\n\n\nStephanie Hicks\n\n\n\n\n2024-11-14\n\n\nMachine learning paradigms and workflows\n\n\nStephanie Hicks\n\n\n\n\n2024-11-19\n\n\nParallel programming\n\n\nStephanie Hicks\n\n\n\n\n2024-11-21\n\n\nObject-oriented programming\n\n\nStephanie Hicks\n\n\n\n\n2024-11-26\n\n\nR package development and pkgdown\n\n\nStephanie Hicks\n\n\n\n\n2024-12-03\n\n\nBuilding dashboards with flexdashboard\n\n\nStephanie Hicks\n\n\n\n\n2024-12-05\n\n\nProgramming with GitHub Copilot\n\n\nStephanie Hicks & Kinnary Shah\n\n\n\n\n2024-12-10\n\n\nProgramming with Python with reticulate\n\n\nStephanie Hicks\n\n\n\n\n2025-07-01\n\n\nWelcome to the Course!\n\n\nLindsay Hayes\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "lectures/02-version-control/index.html",
@@ -1636,47 +1594,5 @@
     "title": "Building dashboards with flexdashboard",
     "section": "Examples",
     "text": "Examples\nThere are a couple examples of simple flex dashboards that use Shiny in the following files that are included with this lecture.\nOpen each one of these files and run it by clicking the “Run document” button that is where the “Knit” button usually is.\nShiny apps must be run rather than knitted, but the idea is the same! Be sure to open the output in a browser tab.\n\nGeyser dashboard\nHere is a dashboard using the faithful dataset in base R, which contains the waiting time between eruptions and the duration of the eruption for the Old Faithful geyser in Yellowstone National Park, Wyoming, USA.\n\n\n---\ntitle: \"Old Faithful Eruptions\"\noutput: \n  flexdashboard::flex_dashboard:\n    orientation: columns\nruntime: shiny\n---\n\n```{r global, include=FALSE}\n# load data in 'global' chunk so it can be shared by all users of the dashboard\nlibrary(datasets)\ndata(faithful)\n```\n\n## Column {.sidebar}\n\nWaiting time between eruptions and the duration of the eruption for the\nOld Faithful geyser in Yellowstone National Park, Wyoming, USA.\n\n```{r}\nselectInput(\"n_breaks\", label = \"Number of bins:\",\n            choices = c(10, 20, 35, 50), selected = 20)\n\nsliderInput(\"bw_adjust\", label = \"Bandwidth adjustment:\",\n            min = 0.2, max = 2, value = 1, step = 0.2)\n```\n\n## Column\n\n### Geyser Eruption Duration\n\n```{r}\nrenderPlot({\n  hist(faithful$eruptions, probability = TRUE, breaks = as.numeric(input$n_breaks),\n       xlab = \"Duration (minutes)\", main = \"Geyser Eruption Duration\")\n  \n  dens &lt;- density(faithful$eruptions, adjust = input$bw_adjust)\n  lines(dens, col = \"blue\")\n})\n```\n\n\n\n\n\n\n\n\nGroup exercise\n\n\n\nFor the next 5 minutes, pair up with a partner (or try it alone) and explore Geyser flexdashboard, which includes interactive elements from Shiny.\n\nPlay with the user input options in the left hand sidebar to see how the user can interact with the data through the dashboard.\nThen look at both the code and the output to see how the code relates to what is shown in the dashboard.\nPlay around with the options in the code chunks to see if you can get a sense of what they are doing.\n\n\n\n\n\nMile per gallon dashboard\nOne thing to point out in the MPGFlexDashboard.Rmd file is the following chunk of code:\n\nformulaText &lt;- reactive({\n    paste(\"mpg ~\", input$variable)\n  })\n\nThis chunk of code allows the title of the graph to change depending on the input given by the user.\nIt uses the reactive() function to specify that the text is not static but will change depending on what is selected by the user.\nYou can see here the object formulaText will contain text consisting of pasting together “mpg ~” and the variable value selected from the user in the drop-down menu.\nThen, this formulaText object is used as the title in the plot! And even more importantly, it is used in the call to the boxplot function, to determine which variable to display in the plot.\nSuper cool!"
-  },
-  {
-    "objectID": "readings/index_R01.html",
-    "href": "readings/index_R01.html",
-    "title": "Welcome to R/RStudio",
-    "section": "",
-    "text": "title: “R & RStudio” subtitle: “01-RStudio” description: “Welcome to R and R Studio” author: - name: Lindsay Hayes url: https://lindsaynhayes.github.io affiliation: Department of Cell Biology, OUHSC date: 2025-07-01 draft: true"
-  },
-  {
-    "objectID": "readings/index_R01.html#what-is-r-what-is-rstudio",
-    "href": "readings/index_R01.html#what-is-r-what-is-rstudio",
-    "title": "Welcome to R/RStudio",
-    "section": "What is R? What is RStudio?",
-    "text": "What is R? What is RStudio?\nThe term R is used to refer to the programming language, the environment for statistical computing and the software that interprets the scripts written using it.\nRStudio is currently a very popular way to not only write your R scripts but also to interact with the R software1. To function correctly, RStudio needs R and therefore both need to be installed on your computer.\nThe RStudio IDE Cheat Sheet provides much more information than will be covered here, but can be useful to learn keyboard shortcuts and discover new features."
-  },
-  {
-    "objectID": "readings/index_R01.html#why-learn-r",
-    "href": "readings/index_R01.html#why-learn-r",
-    "title": "Welcome to R/RStudio",
-    "section": "Why learn R?",
-    "text": "Why learn R?\n\nR does not involve lots of pointing and clicking, and that’s a good thing\nThe learning curve might be steeper than with other software, but with R, the results of your analysis do not rely on remembering a succession of pointing and clicking, but instead on a series of written commands, and that’s a good thing! So, if you want to redo your analysis because you collected more data, you don’t have to remember which button you clicked in which order to obtain your results; you just have to run your script again.\nWorking with scripts makes the steps you used in your analysis clear, and the code you write can be inspected by someone else who can give you feedback and spot mistakes.\nWorking with scripts forces you to have a deeper understanding of what you are doing, and facilitates your learning and comprehension of the methods you use.\n\n\nR code is great for reproducibility\nReproducibility means that someone else (including your future self) can obtain the same results from the same dataset when using the same analysis code.\nR integrates with other tools to generate manuscripts or reports from your code. If you collect more data, or fix a mistake in your dataset, the figures and the statistical tests in your manuscript or report are updated automatically.\nAn increasing number of journals and funding agencies expect analyses to be reproducible, so knowing R will give you an edge with these requirements.\n\n\nR is interdisciplinary and extensible\nWith 10000+ packages that can be installed to extend its capabilities, R provides a framework that allows you to combine statistical approaches from many scientific disciplines to best suit the analytical framework you need to analyse your data. For instance, R has packages for image analysis, GIS, time series, population genetics, and a lot more.\n\n\nR works on data of all shapes and sizes\nThe skills you learn with R scale easily with the size of your dataset. Whether your dataset has hundreds or millions of lines, it won’t make much difference to you.\nR is designed for data analysis. It comes with special data structures and data types that make handling of missing data and statistical factors convenient.\nR can connect to spreadsheets, databases, and many other data formats, on your computer or on the web.\n\n\nR produces high-quality graphics\nThe plotting functionalities in R are extensive, and allow you to adjust any aspect of your graph to convey most effectively the message from your data.\n\n\nR has a large and welcoming community\nThousands of people use R daily. Many of them are willing to help you through mailing lists and websites such as Stack Overflow, or on the RStudio community. These broad user communities extend to specialised areas such as bioinformatics. One such subset of the R community is Bioconductor, a scientific project for analysis and comprehension “of data from current and emerging biological assays.”\n\n\nNot only is R free, but it is also open-source and cross-platform\nAnyone can inspect the source code to see how R works. Because of this transparency, there is less chance for mistakes, and if you (or someone else) find some, you can report and fix bugs."
-  },
-  {
-    "objectID": "readings/index_R01.html#navigating-rstudio",
-    "href": "readings/index_R01.html#navigating-rstudio",
-    "title": "Welcome to R/RStudio",
-    "section": "Navigating RStudio",
-    "text": "Navigating RStudio\nWe will use the RStudio IDE to write code, navigate the files on our computer, inspect the variables we are going to create, and visualize the plots we will generate."
-  },
-  {
-    "objectID": "readings/index_R01.html#references",
-    "href": "readings/index_R01.html#references",
-    "title": "Welcome to R/RStudio",
-    "section": "References",
-    "text": "References\n\n\n\n\n\n\nReferences\n\n\n\nContent pulled from\n\nswcarpentry https://carpentries-incubator.github.io/bioc-intro/20-r-rstudio.html#why-learn-r"
-  },
-  {
-    "objectID": "readings/index_R01.html#footnotes",
-    "href": "readings/index_R01.html#footnotes",
-    "title": "Welcome to R/RStudio",
-    "section": "Footnotes",
-    "text": "Footnotes\n\n\nAs opposed to using R directly from the command line console. There exist other software that interface and integrate with R, but RStudio is particularly well suited for beginners while providing numerous very advanced features.↩︎"
   }
 ]
