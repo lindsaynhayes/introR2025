@@ -2,7 +2,6 @@
   {
     "listing": "/readings.html",
     "items": [
-      "/readings/00-quarto/index.html",
       "/readings/03-functional-programming/index.html",
       "/readings/04-data-collection-apis/index.html",
       "/readings/04-data-collection-html/index.html",
@@ -16,7 +15,6 @@
   {
     "listing": "/lectures.html",
     "items": [
-      "/lectures/00-course-intro/index.html",
       "/lectures/01-command-line/index.html",
       "/lectures/02-version-control/index.html",
       "/lectures/03-functional-programming/index.html",
@@ -28,7 +26,8 @@
       "/lectures/09-r-pkg-dev/index.html",
       "/lectures/10-flexdashboard/index.html",
       "/lectures/11-programming-with-copilot/index.html",
-      "/lectures/12-programming-in-python/index.html"
+      "/lectures/12-programming-in-python/index.html",
+      "/lectures/00-course-intro/index_L00.html"
     ]
   },
   {
