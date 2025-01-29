@@ -31,14 +31,6 @@ Swirl is a great tool to learn R interactively that we will use in the course. F
 
 # Lecture
 
-## Acknowledgements
-
-Material for this lecture was borrowed and adopted from
-
--   r4ds book: <https://r4ds.hadley.nz/quarto>
--   Quarto Publishing System: <https://quarto.org>
-
-
 ## Learning objectives
 
 ::: callout-note
@@ -49,17 +41,23 @@ Material for this lecture was borrowed and adopted from
 -   Get an overview of the course (including staff, format, grading, etc)
 -   Be able to recognize and operate an Integrated Developer Environment (IDE). 
 -   Be able to recognize a Quarto document and describe reasons why to use a unified authoring framework.
--   Be able to create a Quarto project.
+-   Be able to create a R project & Quarto document.
 
 :::
-
 
 ## Slides 
 
 - [Lecture 01: Welcome and Introductions](https://docs.google.com/presentation/d/12EGF_lMFltLHzngleEi6jxZ3phncEhTl5vm05-y_cLI/edit?usp=sharing)
 
+## Acknowledgements
 
-# Post-lecture
+Material for this lecture was borrowed and adopted from
+
+-   sw carpentry: <https://carpentries-incubator.github.io/bioc-intro/20-r-rstudio.html>
+-   data carpentry: <https://datacarpentry.github.io/genomics-r-intro/00-introduction.html>
+
+
+# Post-lecture Practice
 
 ## Summary 
 
