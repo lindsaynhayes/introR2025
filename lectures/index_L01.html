@@ -6,8 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Lindsay Hayes">
+<meta name="dcterms.date" content="2025-07-01">
+<meta name="description" content="Getting Ready for Your First Day!">
 
-<title>Course content – Intro to Reproducible Data Analysis Using R</title>
+<title>Welcome to the Course! – Intro to Reproducible Data Analysis Using R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,24 +26,22 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-c99fe27e5801f76c18b07d7cb569393a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap-c99fe27e5801f76c18b07d7cb569393a.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -68,67 +69,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-lecture-listings .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-lecture-listings'] = new List('listing-lecture-listings', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../styles.css">
 </head>
 
 <body class="nav-fixed">
@@ -138,7 +81,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Intro to Reproducible Data Analysis Using R</span>
     </a>
   </div>
@@ -149,12 +92,12 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> <i class="bi bi-home" role="img">
+    <a class="nav-link" href="../index.html"> <i class="bi bi-home" role="img">
 </i> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./lectures.html" aria-current="page"> <i class="bi bi-book-half" role="img">
+    <a class="nav-link" href="../lectures.html"> <i class="bi bi-book-half" role="img">
 </i> 
 <span class="menu-text">Course</span></a>
   </li>  
@@ -166,11 +109,11 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-resources">    
         <li>
-    <a class="dropdown-item" href="./readings.html">
+    <a class="dropdown-item" href="../readings.html">
  <span class="dropdown-text">Pre-reading</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./projects.html">
+    <a class="dropdown-item" href="../projects.html">
  <span class="dropdown-text">Projects</span></a>
   </li>  
     </ul>
@@ -188,25 +131,66 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#pre-lecture-activities" id="toc-pre-lecture-activities" class="nav-link active" data-scroll-target="#pre-lecture-activities">Pre-lecture activities</a></li>
+  <li><a href="#lecture" id="toc-lecture" class="nav-link" data-scroll-target="#lecture">Lecture</a>
+  <ul class="collapse">
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
+  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
+  </ul></li>
+  <li><a href="#post-lecture-practice" id="toc-post-lecture-practice" class="nav-link" data-scroll-target="#post-lecture-practice">Post-lecture Practice</a>
+  <ul class="collapse">
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#additional-practice" id="toc-additional-practice" class="nav-link" data-scroll-target="#additional-practice">Additional practice</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Course content</h1>
+<h1 class="title">Welcome to the Course!</h1>
 </div>
 
+<div>
+  <div class="description">
+    Getting Ready for Your First Day!
+  </div>
+</div>
 
+<div class="quarto-title-meta-author">
+  <div class="quarto-title-meta-heading">Author</div>
+  <div class="quarto-title-meta-heading">Affiliation</div>
+  
+    <div class="quarto-title-meta-contents">
+    <p class="author"><a href="https://lindsaynhayes.github.io">Lindsay Hayes</a> </p>
+  </div>
+  <div class="quarto-title-meta-contents">
+        <p class="affiliation">
+            Department of Cell Biology, OUHSC
+          </p>
+      </div>
+  </div>
 
-<div class="quarto-title-meta column-page">
+<div class="quarto-title-meta">
 
-    
+      
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 1, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -216,186 +200,113 @@ window.Quarto = {
 </header>
 
 
-<p>Course content for each lecture is below:</p>
-<div id="listing-lecture-listings" class="quarto-listing quarto-listing-container-table">
-<table class="quarto-listing-table table">
-<thead>
-<tr>
-<th>
-Date
-</th>
-<th>
-Title
-</th>
-<th>
-Author
-</th>
-</tr>
-</thead>
-<tbody class="list">
-<tr data-index="0" data-listing-date-sort="NaN" data-listing-file-modified-sort="1738188184845" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="417" data-listing-title-sort="Welcome to the course" data-listing-filename-sort="index_SH.qmd">
-<td>
-<span class="listing-date">Invalid Date</span>
-</td>
-<td>
-<a href="./lectures/00-course-intro/index_SH.html" class="title listing-title">Welcome to the course</a>
-</td>
-<td>
-<span class="listing-author">Lindsay Hayes</span>
-</td>
-</tr>
-<tr data-index="1" data-listing-date-sort="1730160000000" data-listing-file-modified-sort="1738188184845" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1047" data-listing-title-sort="Introduction to the command-line" data-listing-filename-sort="index.qmd">
-<td>
-<span class="listing-date">2024-10-29</span>
-</td>
-<td>
-<a href="./lectures/01-command-line/index.html" class="title listing-title">Introduction to the command-line</a>
-</td>
-<td>
-<span class="listing-author">Stephanie Hicks</span>
-</td>
-</tr>
-<tr data-index="2" data-listing-date-sort="1730332800000" data-listing-file-modified-sort="1738188184845" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1448" data-listing-title-sort="Introduction to version control" data-listing-filename-sort="index.qmd">
-<td>
-<span class="listing-date">2024-10-31</span>
-</td>
-<td>
-<a href="./lectures/02-version-control/index.html" class="title listing-title">Introduction to version control</a>
-</td>
-<td>
-<span class="listing-author">Stephanie Hicks</span>
-</td>
-</tr>
-<tr data-index="3" data-listing-date-sort="1730764800000" data-listing-file-modified-sort="1738188184845" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1458" data-listing-title-sort="Functional programming" data-listing-filename-sort="index.qmd">
-<td>
-<span class="listing-date">2024-11-05</span>
-</td>
-<td>
-<a href="./lectures/03-functional-programming/index.html" class="title listing-title">Functional programming</a>
-</td>
-<td>
-<span class="listing-author">Stephanie Hicks</span>
-</td>
-</tr>
-<tr data-index="4" data-listing-date-sort="1730937600000" data-listing-file-modified-sort="1738188184846" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="799" data-listing-title-sort="Data Collection" data-listing-filename-sort="index.qmd">
-<td>
-<span class="listing-date">2024-11-07</span>
-</td>
-<td>
-<a href="./lectures/04-data-collection/index.html" class="title listing-title">Data Collection</a>
-</td>
-<td>
-<span class="listing-author">Stephanie Hicks</span>
-</td>
-</tr>
-<tr data-index="5" data-listing-date-sort="1731369600000" data-listing-file-modified-sort="1738188184847" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="6" data-listing-word-count-sort="1109" data-listing-title-sort="Database programming paradigms" data-listing-filename-sort="index.qmd">
-<td>
-<span class="listing-date">2024-11-12</span>
-</td>
-<td>
-<a href="./lectures/05-database-programming/index.html" class="title listing-title">Database programming paradigms</a>
-</td>
-<td>
-<span class="listing-author">Stephanie Hicks</span>
-</td>
-</tr>
-<tr data-index="6" data-listing-date-sort="1731542400000" data-listing-file-modified-sort="1738188184847" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="126" data-listing-title-sort="Machine learning paradigms and workflows" data-listing-filename-sort="index.qmd">
-<td>
-<span class="listing-date">2024-11-14</span>
-</td>
-<td>
-<a href="./lectures/06-ml-paradigms-workflows/index.html" class="title listing-title">Machine learning paradigms and workflows</a>
-</td>
-<td>
-<span class="listing-author">Stephanie Hicks</span>
-</td>
-</tr>
-<tr data-index="7" data-listing-date-sort="1731974400000" data-listing-file-modified-sort="1738188184847" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="245" data-listing-title-sort="Parallel programming" data-listing-filename-sort="index.qmd">
-<td>
-<span class="listing-date">2024-11-19</span>
-</td>
-<td>
-<a href="./lectures/07-parallel-programming/index.html" class="title listing-title">Parallel programming</a>
-</td>
-<td>
-<span class="listing-author">Stephanie Hicks</span>
-</td>
-</tr>
-<tr data-index="8" data-listing-date-sort="1732147200000" data-listing-file-modified-sort="1738188184847" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="250" data-listing-title-sort="Object-oriented programming" data-listing-filename-sort="index.qmd">
-<td>
-<span class="listing-date">2024-11-21</span>
-</td>
-<td>
-<a href="./lectures/08-oop-paradigm/index.html" class="title listing-title">Object-oriented programming</a>
-</td>
-<td>
-<span class="listing-author">Stephanie Hicks</span>
-</td>
-</tr>
-<tr data-index="9" data-listing-date-sort="1732579200000" data-listing-file-modified-sort="1738188184848" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="163" data-listing-title-sort="R package development and pkgdown" data-listing-filename-sort="index.qmd">
-<td>
-<span class="listing-date">2024-11-26</span>
-</td>
-<td>
-<a href="./lectures/09-r-pkg-dev/index.html" class="title listing-title">R package development and pkgdown</a>
-</td>
-<td>
-<span class="listing-author">Stephanie Hicks</span>
-</td>
-</tr>
-<tr data-index="10" data-listing-date-sort="1733184000000" data-listing-file-modified-sort="1738188184848" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="4" data-listing-word-count-sort="669" data-listing-title-sort="Building dashboards with flexdashboard" data-listing-filename-sort="index.qmd">
-<td>
-<span class="listing-date">2024-12-03</span>
-</td>
-<td>
-<a href="./lectures/10-flexdashboard/index.html" class="title listing-title">Building dashboards with flexdashboard</a>
-</td>
-<td>
-<span class="listing-author">Stephanie Hicks</span>
-</td>
-</tr>
-<tr data-index="11" data-listing-date-sort="1733356800000" data-listing-file-modified-sort="1738188184848" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="137" data-listing-title-sort="Programming with GitHub Copilot" data-listing-filename-sort="index.qmd">
-<td>
-<span class="listing-date">2024-12-05</span>
-</td>
-<td>
-<a href="./lectures/11-programming-with-copilot/index.html" class="title listing-title">Programming with GitHub Copilot</a>
-</td>
-<td>
-<span class="listing-author">Stephanie Hicks &amp; Kinnary Shah</span>
-</td>
-</tr>
-<tr data-index="12" data-listing-date-sort="1733788800000" data-listing-file-modified-sort="1738188184848" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="202" data-listing-title-sort="Programming with Python with reticulate" data-listing-filename-sort="index.qmd">
-<td>
-<span class="listing-date">2024-12-10</span>
-</td>
-<td>
-<a href="./lectures/12-programming-in-python/index.html" class="title listing-title">Programming with Python with reticulate</a>
-</td>
-<td>
-<span class="listing-author">Stephanie Hicks</span>
-</td>
-</tr>
-<tr data-index="13" data-listing-date-sort="1751328000000" data-listing-file-modified-sort="1738188184848" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="524" data-listing-title-sort="Welcome to the Course!" data-listing-filename-sort="index_L01.qmd">
-<td>
-<span class="listing-date">2025-07-01</span>
-</td>
-<td>
-<a href="./lectures/index_L01.html" class="title listing-title">Welcome to the Course!</a>
-</td>
-<td>
-<span class="listing-author">Lindsay Hayes</span>
-</td>
-</tr>
-</tbody>
-</table>
-<div class="listing-no-matching d-none">
-No matching items
+<section id="pre-lecture-activities" class="level1">
+<h1>Pre-lecture activities</h1>
+<p>The course will <em>exclusively</em> use R in the integrated development environment (IDE) called R Studio. Since the summer semester is only 1 month (10 classes), it is <strong>critical to have your computer set up and ready to go before the first day of class</strong>.</p>
+<p>Throughout the course, there will be a set of pre-lecture activities and/or readings for you to complete. <strong>These activities prepare you for the in-class activities</strong>. Failure to complete them will put you behind in an already compressed course.</p>
+<p>To prepare for the first class:</p>
+<ol type="1">
+<li>Install R and R Studio
+<ul>
+<li><a href="https://www.youtube.com/watch?v=eQFu_zzF96o">installation video tutorial</a></li>
+<li>Detailed instructions on installing R and R Studio are available on <a href="https://swirlstats.com/students.html">swirl</a>.
+<ul>
+<li>Complete step 1 and step 2</li>
+</ul></li>
+</ul></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Swirl is a great tool to learn R interactively that we will use in the course. Feel free to explore more.</p>
+</div>
+</div>
+<ol start="2" type="1">
+<li>In the first class, we will begin to get familiar with R. Complete the <a href="../readings/index_R01.html">Pre-reading material about R</a>. Pre-reading materials for each class are located under <strong>Resources</strong>. Sometimes, pre-reading materials are direct links to external resources for you to read in advance of the lecture.</li>
+</ol>
+</section>
+<section id="lecture" class="level1">
+<h1>Lecture</h1>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Learning objectives
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>At the end of this lesson you will:</strong></p>
+<ul>
+<li>Get an overview of the course (including staff, format, grading, etc)</li>
+<li>Be able to recognize and operate an Integrated Developer Environment (IDE).</li>
+<li>Be able to recognize a Quarto document and describe reasons why to use a unified authoring framework.</li>
+<li>Be able to create a R project &amp; Quarto document.</li>
+</ul>
+</div>
+</div>
+</section>
+<section id="slides" class="level2">
+<h2 class="anchored" data-anchor-id="slides">Slides</h2>
+<ul>
+<li><a href="https://docs.google.com/presentation/d/12EGF_lMFltLHzngleEi6jxZ3phncEhTl5vm05-y_cLI/edit?usp=sharing">Lecture 01: Welcome and Introductions</a></li>
+</ul>
+</section>
+<section id="acknowledgements" class="level2">
+<h2 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
+<p>Material for this lecture was borrowed and adopted from</p>
+<ul>
+<li>sw carpentry: <a href="https://carpentries-incubator.github.io/bioc-intro/20-r-rstudio.html" class="uri">https://carpentries-incubator.github.io/bioc-intro/20-r-rstudio.html</a></li>
+<li>data carpentry: <a href="https://datacarpentry.github.io/genomics-r-intro/00-introduction.html" class="uri">https://datacarpentry.github.io/genomics-r-intro/00-introduction.html</a></li>
+</ul>
+</section>
+</section>
+<section id="post-lecture-practice" class="level1">
+<h1>Post-lecture Practice</h1>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<ul>
+<li>Access all course material on CoursePlus and course website (<a href="https://www.stephaniehicks.com/jhustatprogramming2024" class="uri">https://www.stephaniehicks.com/jhustatprogramming2024</a>)</li>
+<li>Lectures will be recorded followed by an in-class activity. Later in the course, the in-class activity will be to work on the final project</li>
+<li>At the end of each class, fill out the <a href="https://forms.gle/YE9kpBf7aVnx8VMdA">reflection card</a> (not graded, but helpful to both the student and instructor)</li>
+<li>Integrated developer environment (IDEs) can make you more efficient as a programmer!</li>
+<li>Quarto is an open-source scientific and technical publishing system to create reproducible, production quality articles, presentations, dashboards, websites, blogs, and books in HTML, PDF, MS Word, and more</li>
+<li>You can think of Quarto as a natural successor to RMarkdown</li>
+</ul>
+</section>
+<section id="additional-practice" class="level2">
+<h2 class="anchored" data-anchor-id="additional-practice">Additional practice</h2>
+<p>Here are some additional practice questions to help you think about the material discussed.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Questions
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li><p>In either RStudio or VSCode, create a new Quarto document. Read the instructions. Practice running the chunks individually. Then render the document and practice the appropriate keyboard short cut. Verify that you can modify the code, re-run it, and see modified output.</p></li>
+<li><p>Create one new Quarto document for each of the three built-in formats: HTML, PDF and Word. Render each of the three documents. How do the outputs differ? How do the inputs differ? (You may need to install LaTeX in order to build the PDF output — RStudio will prompt you if this is necessary.)</p></li>
+</ol>
 </div>
 </div>
 
 
-
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
