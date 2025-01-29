@@ -3,7 +3,6 @@ project:
   execute-dir: file
   render:
     - "*.qmd"
-    - "!*_SH.qmd"
     - "!readings/00-quarto/diamond-sizes.qmd"
     - "!readings/10-flexdashboard/*.Rmd"
     - "!readings/09-r-pkg-dev-1/*.qmd"
