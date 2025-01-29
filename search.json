@@ -732,14 +732,14 @@
     "href": "lectures/index_L01.html#summary",
     "title": "Welcome to the Course!",
     "section": "Summary",
-    "text": "Summary\n\nAccess all course material on CoursePlus and course website (https://www.stephaniehicks.com/jhustatprogramming2024)\nLectures will be recorded followed by an in-class activity. Later in the course, the in-class activity will be to work on the final project\nAt the end of each class, fill out the reflection card (not graded, but helpful to both the student and instructor)\nIntegrated developer environment (IDEs) can make you more efficient as a programmer!\nQuarto is an open-source scientific and technical publishing system to create reproducible, production quality articles, presentations, dashboards, websites, blogs, and books in HTML, PDF, MS Word, and more\nYou can think of Quarto as a natural successor to RMarkdown"
+    "text": "Summary\n\nAccess all course material on the course website (https://lindsaynhayes.github.io/introR2025/).\nRStudio makes you a more efficient programmer and gives you easy access to all the components of data analysis.\nQuarto is an open-source scientific and technical publishing system to create reproducible, production quality data analysis reports and much more. During the course we will primarily use the HTML output format."
   },
   {
     "objectID": "lectures/index_L01.html#additional-practice",
     "href": "lectures/index_L01.html#additional-practice",
     "title": "Welcome to the Course!",
     "section": "Additional practice",
-    "text": "Additional practice\nHere are some additional practice questions to help you think about the material discussed.\n\n\n\n\n\n\nQuestions\n\n\n\n\nIn either RStudio or VSCode, create a new Quarto document. Read the instructions. Practice running the chunks individually. Then render the document and practice the appropriate keyboard short cut. Verify that you can modify the code, re-run it, and see modified output.\nCreate one new Quarto document for each of the three built-in formats: HTML, PDF and Word. Render each of the three documents. How do the outputs differ? How do the inputs differ? (You may need to install LaTeX in order to build the PDF output — RStudio will prompt you if this is necessary.)"
+    "text": "Additional practice\nHere are some additional practice questions to help you think about the material discussed.\n\n\n\n\n\n\nQuestions\n\n\n\n\nIn RStudio, create a new R project and then create a new Quarto document in that R project. Read the instructions. Practice running the chunks individually using the “play” button and the keyboard short cut.\nChange the settings of the Quarto document to display the output “inline” or in the “console”.\nRender the document and view the HTML output. Verify that you can modify the code, re-run it, and see modified output."
   },
   {
     "objectID": "lectures/11-programming-with-copilot/index.html",
