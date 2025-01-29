@@ -1,4 +1,3 @@
----
 title: "R & RStudio"
 subtitle: "01-RStudio"
 description: "Welcome to R and R Studio"
