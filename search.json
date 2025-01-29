@@ -833,18 +833,11 @@
     "text": "The course will exclusively use R in the integrated development environment (IDE) called R Studio. Since the summer semester is only 1 month (10 classes), it is critical to have your computer set up and ready to go before the first day of class.\nThroughout the course, there will be a set of pre-lecture activities and/or readings for you to complete. These activities prepare you for the in-class activities. Failure to complete them will put you behind in an already compressed course.\nTo prepare for the first class:\n\nInstall R and R Studio\n\ninstallation video tutorial\nDetailed instructions on installing R and R Studio are available on swirl.\n\nComplete step 1 and step 2\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nSwirl is a great tool to learn R interactively that we will use in the course. Feel free to explore more.\n\n\n\nIn the first class, we will begin to get familiar with R. Complete the Pre-reading material about R. Pre-reading materials for each class are located under Resources. Sometimes, pre-reading materials are direct links to external resources for you to read in advance of the lecture."
   },
   {
-    "objectID": "lectures/00-course-intro/index_L00.html#acknowledgements",
-    "href": "lectures/00-course-intro/index_L00.html#acknowledgements",
-    "title": "Welcome to the course",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements\nMaterial for this lecture was borrowed and adopted from\n\nr4ds book: https://r4ds.hadley.nz/quarto\nQuarto Publishing System: https://quarto.org"
-  },
-  {
     "objectID": "lectures/00-course-intro/index_L00.html#learning-objectives",
     "href": "lectures/00-course-intro/index_L00.html#learning-objectives",
     "title": "Welcome to the course",
     "section": "Learning objectives",
-    "text": "Learning objectives\n\n\n\n\n\n\nLearning objectives\n\n\n\nAt the end of this lesson you will:\n\nGet an overview of the course (including staff, format, grading, etc)\nBe able to recognize and operate an Integrated Developer Environment (IDE).\nBe able to recognize a Quarto document and describe reasons why to use a unified authoring framework.\nBe able to create a Quarto project."
+    "text": "Learning objectives\n\n\n\n\n\n\nLearning objectives\n\n\n\nAt the end of this lesson you will:\n\nGet an overview of the course (including staff, format, grading, etc)\nBe able to recognize and operate an Integrated Developer Environment (IDE).\nBe able to recognize a Quarto document and describe reasons why to use a unified authoring framework.\nBe able to create a R project & Quarto document."
   },
   {
     "objectID": "lectures/00-course-intro/index_L00.html#slides",
@@ -852,6 +845,13 @@
     "title": "Welcome to the course",
     "section": "Slides",
     "text": "Slides\n\nLecture 01: Welcome and Introductions"
+  },
+  {
+    "objectID": "lectures/00-course-intro/index_L00.html#acknowledgements",
+    "href": "lectures/00-course-intro/index_L00.html#acknowledgements",
+    "title": "Welcome to the course",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nMaterial for this lecture was borrowed and adopted from\n\nsw carpentry: https://carpentries-incubator.github.io/bioc-intro/20-r-rstudio.html\ndata carpentry: https://datacarpentry.github.io/genomics-r-intro/00-introduction.html"
   },
   {
     "objectID": "lectures/00-course-intro/index_L00.html#summary",
