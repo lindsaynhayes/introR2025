@@ -739,7 +739,7 @@
     "href": "lectures/index_L01.html#additional-practice",
     "title": "Welcome to the Course!",
     "section": "Additional practice",
-    "text": "Additional practice\nHere are some additional practice questions to help you think about the material discussed.\n\n\n\n\n\n\nQuestions\n\n\n\n\nIn RStudio, create a new R project and then create a new Quarto document in that R project. Read the instructions. Practice running the chunks individually using the “play” button and the keyboard short cut.\nChange the settings of the Quarto document to display the output “inline” or in the “console”.\nRender the document and view the HTML output. Verify that you can modify the code, re-run it, and see modified output."
+    "text": "Additional practice\nHere are some additional practice questions to help you think about the material discussed.\nCheck out this article on the 10 Best Practices for Data Science here\n\n\n\n\n\n\nQuestions\n\n\n\n\nIn RStudio, create a new R project and then create a new Quarto document in that R project. Read the instructions. Practice running the chunks individually using the “play” button and the keyboard short cut.\nChange the settings of the Quarto document to display the output “inline” or in the “console”.\nRender the document and view the HTML output. Verify that you can modify the code, re-run it, and see modified output."
   },
   {
     "objectID": "lectures/11-programming-with-copilot/index.html",
