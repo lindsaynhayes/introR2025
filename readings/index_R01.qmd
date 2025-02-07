@@ -1,7 +1,7 @@
 ---
 title: "R & RStudio"
 #subtitle: "01-RStudio"
-description: "Welcome to R and RStudio"
+description: "Reading for Class 01"
 author: 
   - name: Lindsay Hayes
     url: https://lindsaynhayes.github.io
