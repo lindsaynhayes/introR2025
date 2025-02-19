@@ -41,4 +41,18 @@ rm -rf introR2025.git
 5. Next look into how to get it to build the site to gh-pages instead of main branch so the .qmd files are in main and the htmls are in gh-pages. 
 
 
+6. Tips & Tricks
+draft: true in yml heading makes the page not render on the webiste. useful when you know about it!
+---
+title: "R & RStudio"
+#subtitle: "01-RStudio"
+description: "Reading for Class 01"
+author: 
+  - name: Lindsay Hayes
+    url: https://lindsaynhayes.github.io
+    affiliation: Department of Cell Biology, OUHSC
+date: 2025-07-01
+draft: true
+---
+
 

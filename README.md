@@ -10,7 +10,7 @@ This repo is for the University of Oklahoma Health Sciences Center (OUHSC) cours
 
 ## Teaching Assistants
 
--   TBD
+-   Eleana Cabello
 
 # Website
 ## If you find errors in the website

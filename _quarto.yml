@@ -3,12 +3,6 @@ project:
   execute-dir: file
   render:
     - "*.qmd"
-    - "!readings/00-quarto/diamond-sizes.qmd"
-    - "!readings/10-flexdashboard/*.Rmd"
-    - "!readings/09-r-pkg-dev-1/*.qmd"
-    - "!readings/01-command-line-1/*.qmd"
-    - "!lectures/12-programming-in-python/quarto-with*.qmd"
-    - "!lectures/12-programming-in-python/code-demo.qmd"
     
 website:
   title: "Intro to Reproducible Data Analysis Using R"
