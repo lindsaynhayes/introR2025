@@ -8,7 +8,7 @@ knitr: true
 -   Location: In person, Summer 2025
 -   Dates: 7/1/2025 - 7/31/2025
 -   Course time: Tuesdays and Thursdays from 9:00-10:20am CST
--   Course location: TBD
+-   Course location: BMSB324
 -   Office hours: Mondays from 1:00-2:00pm CST
 
 ## Instructor
@@ -21,11 +21,13 @@ I am an Assistant Professor in the [Department of Cell Biology](https://basicsci
 
 My research field is in developmental neurobiology and neuroimmunology. My lab studies how developmental inflammation leads to impaired brain development and reprogramming of the brain resident immune cells called microglia. We primarily use mouse model systems, but also use human resources to study how neuroinflammation impacts brain function and contributes to risks for neurodevelopmental and psychiatric disorders. My lab uses big data science primary based on genomics data we generate in the lab, but I encourage my lab members to organize and analyze **ALL** data generated using the principles of reproducible and literate coding.
 
-If you want, you can find me on [X](https://x.com/Lindsay_4c) or [Bluesky](https://bsky.app/profile/lnhayeslab.bsky.social).
+If you want, you can find me on [Bluesky](https://bsky.app/profile/lnhayeslab.bsky.social).
 
 ## Teaching Assistants
 
-TBD
+-   Eleana Cabello
+    -   Office Location: IRCF
+    -   Email: eleana-cabello\@ouhsc.edu
 
 ## Important Links
 
@@ -191,6 +193,18 @@ Refer to the LLM section of the syllabus on canvas for more information on use o
 :::
 
 # Academic Ethics and Student Conduct Code
+## Course Code of Conduct
+
+We are committed to providing a welcoming, inclusive, and harassment-free experience for everyone, regardless of gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion (or lack thereof), political beliefs/leanings, or technology choices. We do not tolerate harassment of course participants in any form. Sexual language and imagery is not appropriate for any work event, including group meetings, conferences, talks, parties, Twitter/X and other online media. This code of conduct applies to all course participants, including instructors and TAs, and applies to all modes of interaction, both in-person and online, including GitHub project repos, Slack channels, and Twitter/X.
+
+Course participants violating these rules will be referred the Title IX coordinator and may face expulsion from the class.
+
+All class participants agree to:
+
+-   **Be considerate** in speech and actions, and actively seek to acknowledge and respect the boundaries of other members.
+-   **Be respectful**. Disagreements happen, but do not require poor behavior or poor manners. Frustration is inevitable, but it should never turn into a personal attack. A community where people feel uncomfortable or threatened is not a productive one. Course participants should be respectful both of the other course participants and those outside the course.
+-   **Refrain from demeaning, discriminatory, or harassing behavior and speech**. Harassment includes, but is not limited to: deliberate intimidation; stalking; unwanted photography or recording; sustained or willful disruption of talks or other events; inappropriate physical contact; use of sexual or discriminatory imagery, comments, or jokes; and unwelcome sexual attention. If you feel that someone has harassed you or otherwise treated you inappropriately, please alert Lindsay Hayes.
+-   **Take care of each other**. Refrain from advocating for, or encouraging, any of the above behavior. And, if someone asks you to stop, then stop. Alert Lindsay Hayes if you notice a dangerous situation, someone in distress, or violations of this code of conduct, even if they seem inconsequential.
 
 ## Copyright
 
@@ -239,19 +253,6 @@ See Related Academic Policy Addendum.
 ## Responsible Conduct of Research
 
 Students, as members of the University community, have the responsibility to ensure the integrity and ethical standards of any research activity with which they are associated directly or of which they have sufficient knowledge to determine its appropriateness. Students are governed by the Policy on Ethics in Research [Faculty Handbook Section 3.25](www.ouhsc.edu/provost/documents/FacultyHandbookOUHSC.pdf).
-
-### Course Code of Conduct
-
-We are committed to providing a welcoming, inclusive, and harassment-free experience for everyone, regardless of gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion (or lack thereof), political beliefs/leanings, or technology choices. We do not tolerate harassment of course participants in any form. Sexual language and imagery is not appropriate for any work event, including group meetings, conferences, talks, parties, Twitter/X and other online media. This code of conduct applies to all course participants, including instructors and TAs, and applies to all modes of interaction, both in-person and online, including GitHub project repos, Slack channels, and Twitter/X.
-
-Course participants violating these rules will be referred the Title IX coordinator and may face expulsion from the class.
-
-All class participants agree to:
-
--   **Be considerate** in speech and actions, and actively seek to acknowledge and respect the boundaries of other members.
--   **Be respectful**. Disagreements happen, but do not require poor behavior or poor manners. Frustration is inevitable, but it should never turn into a personal attack. A community where people feel uncomfortable or threatened is not a productive one. Course participants should be respectful both of the other course participants and those outside the course.
--   **Refrain from demeaning, discriminatory, or harassing behavior and speech**. Harassment includes, but is not limited to: deliberate intimidation; stalking; unwanted photography or recording; sustained or willful disruption of talks or other events; inappropriate physical contact; use of sexual or discriminatory imagery, comments, or jokes; and unwelcome sexual attention. If you feel that someone has harassed you or otherwise treated you inappropriately, please alert Lindsay Hayes.
--   **Take care of each other**. Refrain from advocating for, or encouraging, any of the above behavior. And, if someone asks you to stop, then stop. Alert Lindsay Hayes if you notice a dangerous situation, someone in distress, or violations of this code of conduct, even if they seem inconsequential.
 
 ### License and attribution
 

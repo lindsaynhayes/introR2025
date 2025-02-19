@@ -29,7 +29,6 @@ What is R and RStudio and why is it important to learn and implement in all your
 -   Organize files and directories for a set of analyses as an R project, and understand the purpose of the working directory.
 -   Use the built-in RStudio help interface to search for more information on R functions.
 -   Demonstrate how to provide sufficient information for troubleshooting with the R user community.
-
 :::
 
 ## What is R & Why learn it??
@@ -42,7 +41,7 @@ The term [R](https://www.r-project.org/) is used to refer to the *programming la
 
 The [RStudio IDE Cheat Sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rstudio-ide.pdf) provides much more information than will be covered here, but can be useful to learn keyboard shortcuts and discover new features.
 
-![Why you need R](../images/cartoon_data.jpg){width=300}
+![Why you need R](../images/L01/cartoon_data.jpg){width=300}
 
 ### R does not involve lots of pointing and clicking, *that's a good thing*
 
@@ -79,7 +78,7 @@ The plotting functions in R are extensive, and allow you to adjust any aspect of
 ### R has a large and welcoming community
 
 Thousands of people use R daily. Many of them are willing to help you through mailing lists and websites such as [Stack
-Overflow](https://stackoverflow.com/), or on the [RStudio community](https://community.rstudio.com/). These broad user communities extend to specialized areas such as bioinformatics. One such subset of the R community is [Bioconductor](https://bioconductor.org/), a scientific project for analysis and comprehension "of data from current and emerging biological assays."
+Overflow](https://stackoverflow.com/), or on the [RStudio community](https://community.rstudio.com/). These broad user communities extend to specialized areas such as bioinformatics. One such subset of the R community is [Bioconductor](https://bioconductor.org/), a scientific project for analysis of data from current and emerging biological assays.
 
 ### R free and open-source!!
 
@@ -89,7 +88,7 @@ Anyone can inspect the source code to see how R works. Because of this transpare
 ## Navigating R in RStudio
 We will use the RStudio IDE to write code, navigate the files on our computer, inspect the variables we are going to create, and visualize the plots we will generate.
 
-![A schematic representing the layout of RStudio](../images/rstudio_session_4pane_layout.png)
+![A schematic representing the layout of RStudio](../images/L01/rstudio_session_4pane_layout.png)
 
 The RStudio window is divided into 4 “Panes”:
 
@@ -100,7 +99,7 @@ The RStudio window is divided into 4 “Panes”:
 
 The placement of these panes and their content can be customized *(Tools > Global Options > Pane Layout)*.
 
-Advantages of using RStudio is that all the information you need to write code is available in a single window. Additionally, with many **shortcuts**, **autocompletion**, and **highlighting** RStudio makes typing easier and less error-prone.
+Advantages of using RStudio is that all the information you need to write code is available in a single window. Additionally, with many **shortcuts**, **autocompletion**, and **highlighting** RStudio makes typing easier and less error-prone. This very text was written in RStudio!
 
 
 ## Managing Projects in RStudio
@@ -110,12 +109,12 @@ The scientific process is naturally incremental and many projects start life as 
 
 Most people tend to organize their projects like this: 
 
-![Bad File Structure](../images/bad_layout.png)
+![Bad File Structure](../images/L01/bad_layout.png)
 There are many reasons why we should ALWAYS avoid this:
 
 -   It is hard to tell which version of the data is the original and which is the modified.
 -   It is messy because it mixes files with various extensions together.
--   It will takes you a lot of time to actually find things, and relate the correct figures to the exact code that has been used to generate it.
+-   It takes a lot of time to actually find things, and relate the correct figures to the exact code used to generate it.
 
 **A good project layout will ultimately make your life easier!!**
 
@@ -126,15 +125,14 @@ There are many reasons why we should ALWAYS avoid this:
 
 ### The Solution
 
-R Project
-Directory Structure (for data science and for life)
-example data structure
+R Project Directory Structure (for data science and for life)
+
+Here are examples of project data management.
+
+![File Structure for Data Analysis](../images/L01/tree1.png){width=300}
 
 
-![File Structure for Data Analysis](../images/tree1.png){width=300}
-
-
-![File Structure for Experiments](../images/tree2.png){width=300}
+![File Structure for Experiments](../images/L01/tree2.png){width=300}
 
 
 
@@ -148,16 +146,9 @@ Advice on File Naming
 -   Avoid quotes and special characters (", $, #)
 -   Use dates in year-month-day format for better file sorting (250701_plot.png)
 -   Use a numbering system to order steps in a pipeline (1.first.qmd, 2.second.qmd, 3.third.qmd)
--   **ANNOTATE**!!!!!!!!!!!!!!!!!!!!!!!!! 📢
+-   📢 **ANNOTATE, LOG, and NOTEKEEP**
 
 :::
-
-
-
-
-
-
-
 
 ## References 
 
