@@ -1,0 +1,15 @@
+{
+  "hash": "dd9cae0b23ce5c7b511a296df72c26de",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Title for Class 2\"\nsubtitle: \"02-Quarto\"\ndescription: \"Reading for Class 02\"\nauthor: \n  - name: Lindsay Hayes\n    url: https://lindsaynhayes.github.io\n    affiliation: Department of Cell Biology, OUHSC\ndate: 2025-07-03\ndraft: true\n---\n\n::: {.cell}\n\n:::\n\n\n# Welcome to Quarto\n\nread [this](https://quarto.org/docs/get-started/hello/rstudio.html)\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
