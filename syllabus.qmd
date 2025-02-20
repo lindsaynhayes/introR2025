@@ -137,26 +137,24 @@ Grades will be issued via the Canvas grade book.
 
 | Assignment    | \% of Final Grade |
 |---------------|-------------------|
-| Homework 1    | 10                |
-| Homework 2    | 10                |
-| Homework 3    | 10                |
-| Final Project | 20                |
-| Attendance    | 50                |
+| Homework 1    | 15                |
+| Homework 2    | 15                |
+| Homework 3    | 15                |
+| Final Project | 35                |
+| Attendance    | 20                |
 | **Total**     | **100**           |
 
 ### Grading Rubrics
 
-For *homework*:
+For *homework* & *final project*:
 
 -   Did the student successfully complete the analysis and script? Was the correct output generated?
-    -   10 (Good), 5 (Fair), 2 (Poor), 0 (none)
-
-For the *final project*:
-
 -   Did the final project have a clearly stated analysis goal?
-    -   10 (Good), 5 (Fair), 2 (Poor), 0 (none)
 -   Did the final project successfully achieve that goal? Why or why not?
-    -   10 (Good), 5 (Fair), 2 (Poor), 0 (none)
+    -   A == Phenomenal/Excellent
+    -   B == Passing
+    -   C == Needs Improvement
+    -   D/F == Did not complete the assignment
 
 ### Course evaluation
 
@@ -193,6 +191,7 @@ Refer to the LLM section of the syllabus on canvas for more information on use o
 :::
 
 # Academic Ethics and Student Conduct Code
+
 ## Course Code of Conduct
 
 We are committed to providing a welcoming, inclusive, and harassment-free experience for everyone, regardless of gender, gender identity and expression, age, sexual orientation, disability, physical appearance, body size, race, ethnicity, religion (or lack thereof), political beliefs/leanings, or technology choices. We do not tolerate harassment of course participants in any form. Sexual language and imagery is not appropriate for any work event, including group meetings, conferences, talks, parties, Twitter/X and other online media. This code of conduct applies to all course participants, including instructors and TAs, and applies to all modes of interaction, both in-person and online, including GitHub project repos, Slack channels, and Twitter/X.
@@ -256,4 +255,4 @@ Students, as members of the University community, have the responsibility to ens
 
 ### License and attribution
 
-This Code of Conduct is distributed under a Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license. Portions of above text comprised of language from the Codes of Conduct adopted by rOpenSci and Django, which are licensed by CC BY-SA 4.0 and CC BY 3.0. This work was further inspired by Ada Initiative's ''how to design a code of conduct for your community'' and Geek Feminism's Code of conduct evaluations and expanded by Ashley Johnson and Shannon Ellis in the Jeff Leek group, and Stephanie C. Hicks. 
+This Code of Conduct is distributed under a Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license. Portions of above text comprised of language from the Codes of Conduct adopted by rOpenSci and Django, which are licensed by CC BY-SA 4.0 and CC BY 3.0. This work was further inspired by Ada Initiative's ''how to design a code of conduct for your community'' and Geek Feminism's Code of conduct evaluations and expanded by Ashley Johnson and Shannon Ellis in the Jeff Leek group, and Stephanie C. Hicks.

@@ -72,7 +72,7 @@ Here are some additional practice questions to help you think about the material
 Check out this article on the 10 Best Practices for Data Science [here](https://medium.com/bitgrit-data-science-publication/10-best-practices-for-data-science-21a748a410e4)
 
 ::: callout-caution
-### Questions
+### Practice Tasks
 
 1.  In RStudio, create a new R project and then create a new Quarto document in that R project. Read the instructions. Practice running the chunks individually using the "play" button and the keyboard short cut. 
 

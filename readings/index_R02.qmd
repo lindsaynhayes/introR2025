@@ -1,0 +1,22 @@
+---
+title: "Title for Class 2"
+subtitle: "02-Quarto"
+description: "Reading for Class 02"
+author: 
+  - name: Lindsay Hayes
+    url: https://lindsaynhayes.github.io
+    affiliation: Department of Cell Biology, OUHSC
+date: 2025-07-03
+draft: true
+---
+
+```{r}
+#| echo: false
+#| message: false
+library(here)
+```
+
+# Welcome to Quarto
+
+read [this](https://quarto.org/docs/get-started/hello/rstudio.html)
+
