@@ -1,0 +1,50 @@
+---
+title: "Getting Started in R"
+author: "Lindsay N. Hayes"
+date: 2025-07-01
+draft: true
+editor_options: 
+  chunk_output_type: console
+---
+
+Script for in-class activity for lecture 01.
+
+## Ways to Use R
+
+### 1. Arithmetic
+
+```{r}
+# addition/subtraction/multiplication/division
+
+193 + 45
+2050 - 2025
+50/250 * 100
+```
+
+### 2. Creating objects
+```{r}
+# vector
+# c(..., recursive = FALSE, use.names = TRUE)
+x <- c(1:225)
+class(x)
+
+# matrix
+# matrix(data, nrow, ncol, byrow, dimnames)
+y <- matrix(1:225, nrow=15, ncol=15, byrow = FALSE)
+class(y)
+
+# logical
+
+over100 <- x>100
+table(over100)
+
+
+```
+
+```{r}
+# install.packages("palmerpenguins")
+library(palmerpenguins)
+data <- penguins_raw
+
+```
+

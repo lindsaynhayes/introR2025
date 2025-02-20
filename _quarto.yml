@@ -3,6 +3,7 @@ project:
   execute-dir: file
   render:
     - "*.qmd"
+    - "!lectures/classswork/*"
     
 website:
   title: "Intro to Reproducible Data Analysis Using R"
