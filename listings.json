@@ -1,8 +1,8 @@
 [
   {
-    "listing": "/readings.html",
+    "listing": "/lectures.html",
     "items": [
-      "/readings/index_R01.html"
+      "/lectures/index_L01.html"
     ]
   },
   {
@@ -12,9 +12,9 @@
     ]
   },
   {
-    "listing": "/lectures.html",
+    "listing": "/readings.html",
     "items": [
-      "/lectures/index_L01.html"
+      "/readings/index_R01.html"
     ]
   }
 ]
