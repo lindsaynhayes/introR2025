@@ -1,8 +1,13 @@
 [
   {
+    "listing": "/activities.html",
+    "items": []
+  },
+  {
     "listing": "/lectures.html",
     "items": [
-      "/lectures/index_L01.html"
+      "/lectures/index_L01.html",
+      "/lectures/classwork/palmerpenguins_intro.html"
     ]
   },
   {

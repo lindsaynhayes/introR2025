@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Course content – Intro to Reproducible Data Analysis Using R</title>
+<title>In-Class Activities – Intro to Reproducible Data Analysis Using R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -71,20 +71,20 @@ ul.task-list li input[type="checkbox"] {
 <script>
 
   window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-lecture-listings .list');
+    const listingTargetEl = window.document.querySelector('#listing-listing .list');
     if (!listingTargetEl) {
       // No listing discovered, do not attach.
       return; 
     }
 
     const options = {
-      valueNames: ['listing-date','listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
+      valueNames: [{ data: ['index'] },{ data: ['categories'] }],
       
-      searchColumns: ["listing-date","listing-title","listing-author"],
+      searchColumns: [],
     };
 
     window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-lecture-listings'] = new List('listing-lecture-listings', options);
+    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
 
     if (window['quarto-listing-loaded']) {
       window['quarto-listing-loaded']();
@@ -154,7 +154,7 @@ window.Quarto = {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./lectures.html" aria-current="page"> <i class="bi bi-book-half" role="img">
+    <a class="nav-link" href="./lectures.html"> <i class="bi bi-book-half" role="img">
 </i> 
 <span class="menu-text">Course</span></a>
   </li>  
@@ -203,7 +203,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Course content</h1>
+<h1 class="title">In-Class Activities</h1>
 </div>
 
 
@@ -220,56 +220,23 @@ window.Quarto = {
 </header>
 
 
-<p>Course content for each lecture is below:</p>
-<div id="listing-lecture-listings" class="quarto-listing quarto-listing-container-table">
+
+
+
+
+<div class="quarto-listing quarto-listing-container-table" id="listing-listing">
 <table class="quarto-listing-table table">
 <thead>
 <tr>
-<th>
-Date
-</th>
-<th>
-Title
-</th>
-<th>
-Author
-</th>
 </tr>
 </thead>
 <tbody class="list">
-<tr data-index="0" data-listing-date-sort="1751328000000" data-listing-file-modified-sort="1740329823113" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="3" data-listing-word-count-sort="468" data-listing-title-sort="Welcome to the Course!" data-listing-filename-sort="index_L01.qmd">
-<td>
-<span class="listing-date">2025-07-01</span>
-</td>
-<td>
-<a href="./lectures/index_L01.html" class="title listing-title">Welcome to the Course!</a>
-</td>
-<td>
-<span class="listing-author">Lindsay Hayes</span>
-</td>
-</tr>
-<tr data-index="1" data-listing-file-modified-sort="1740329823112" data-listing-reading-time-sort="6" data-listing-word-count-sort="1135" data-listing-title-sort="Introduction to palmerpenguins" data-listing-filename-sort="palmerpenguins_intro.qmd">
-<td>
-<span class="listing-date">&nbsp;</span>
-</td>
-<td>
-<a href="./lectures/classwork/palmerpenguins_intro.html" class="title listing-title">Introduction to palmerpenguins</a>
-</td>
-<td>
-<span class="listing-author">&nbsp;</span>
-</td>
-</tr>
 </tbody>
 </table>
 <div class="listing-no-matching d-none">
 No matching items
 </div>
-</div>
-
-
-
-
-</main> <!-- /main -->
+</div></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
