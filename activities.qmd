@@ -1,0 +1,13 @@
+---
+title: "In-Class Activities"
+listing:
+  contents: activities
+  sort: "date desc"
+  type: table
+  categories: false
+  sort-ui: false
+  filter-ui: false
+page-layout: full
+title-block-banner: false
+date-format: iso
+---

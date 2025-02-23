@@ -21,7 +21,9 @@ website:
         menu:
           - text: "Pre-reading"
             href: readings.qmd
-          - text: "Projects"
+          - text: "In-Class Activities"
+            href: activities.qmd
+          - text: "Assignments"
             href: projects.qmd
       - icon: github
         href: https://github.com/lindsaynhayes/introR2025

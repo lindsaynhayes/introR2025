@@ -34,7 +34,7 @@ y <- matrix(1:225, nrow=15, ncol=15, byrow = FALSE)
 class(y)
 
 # logical
-
+# testing each variable in the vector and outputing TRUE or FALSE
 over100 <- x>100
 table(over100)
 
@@ -45,6 +45,8 @@ table(over100)
 # install.packages("palmerpenguins")
 library(palmerpenguins)
 data <- penguins_raw
-
+head(data)
+colnames(data)
+?penguins_raw
 ```
 

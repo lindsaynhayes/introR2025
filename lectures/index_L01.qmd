@@ -79,6 +79,4 @@ Check out this article on the 10 Best Practices for Data Science [here](https://
 2.  Change the settings of the Quarto document to display the output "inline" or in the "console". 
 
 3.  Render the document and view the HTML output. Verify that you can modify the code, re-run it, and see modified output.
-
-
 :::
