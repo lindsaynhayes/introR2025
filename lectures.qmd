@@ -1,5 +1,5 @@
 ---
-title: "Course content"
+title: "Course Content"
 listing:
   id: lecture-listings
   contents: lectures

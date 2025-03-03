@@ -1,5 +1,6 @@
 ---
 title: "Introduction to palmerpenguins"
+date: 2025-07-01
 format: html
 editor: source
 editor_options: 

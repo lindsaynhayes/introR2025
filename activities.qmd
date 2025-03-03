@@ -1,8 +1,9 @@
 ---
 title: "In-Class Activities"
 listing:
+  id: activities-listings
   contents: activities
-  sort: "date desc"
+  sort: "date asc"
   type: table
   categories: false
   sort-ui: false
@@ -11,3 +12,8 @@ page-layout: full
 title-block-banner: false
 date-format: iso
 ---
+
+In-class activities are listed below: 
+
+::: {#activities-listings}
+:::
