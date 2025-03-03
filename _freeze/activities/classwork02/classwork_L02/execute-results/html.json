@@ -1,0 +1,15 @@
+{
+  "hash": "41b52ef8bdd9fc2f3fa8f52e998ab7d2",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Getting Started in R\"\nauthor: \"Lindsay N. Hayes\"\ndate: 2025-07-03\ndraft: true\neditor_options: \n  chunk_output_type: console\n---\n\n\nScript for in-class activity for lecture 01.\n\n## Ways to Use R\n\n### 1. Arithmetic\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# addition/subtraction/multiplication/division\n\n193 + 45\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 238\n```\n\n\n:::\n\n```{.r .cell-code}\n2050 - 2025\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 25\n```\n\n\n:::\n\n```{.r .cell-code}\n50/250 * 100\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] 20\n```\n\n\n:::\n:::\n\n\n### 2. Creating objects\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# vector\n# c(..., recursive = FALSE, use.names = TRUE)\nx <- c(1:225)\nclass(x)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] \"integer\"\n```\n\n\n:::\n\n```{.r .cell-code}\n# matrix\n# matrix(data, nrow, ncol, byrow, dimnames)\ny <- matrix(1:225, nrow=15, ncol=15, byrow = FALSE)\nclass(y)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\n[1] \"matrix\" \"array\" \n```\n\n\n:::\n\n```{.r .cell-code}\n# logical\n# testing each variable in the vector and outputing TRUE or FALSE\nover100 <- x>100\ntable(over100)\n```\n\n::: {.cell-output .cell-output-stdout}\n\n```\nover100\nFALSE  TRUE \n  100   125 \n```\n\n\n:::\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
