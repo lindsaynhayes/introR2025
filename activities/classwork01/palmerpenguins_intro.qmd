@@ -230,17 +230,17 @@ ggplot(data = penguins, aes(x = species, y = bill_length_mm)) + geom_boxplot(aes
   scale_fill_manual(values = c("orange","orchid","cyan3"))
 
 ggplot(data = penguins, aes(x = species, y = bill_length_mm)) + 
-  geom_boxplot(aes(fill = species), outlier.shape = NA) +
+  geom_boxplot(aes(fill = species), outlier.shape = NA, na.rm = TRUE) +
   geom_jitter(aes(color = species),
               width = 0.1, 
-              alpha = 0.7,
+              alpha = 0.7, na.rm = TRUE,
               show.legend = FALSE) +
   scale_color_manual(values = c("darkorange2","darkorchid","cyan4")) +
   scale_fill_manual(values = c("orange","orchid","cyan3"))
 
 # Histogram example: flipper length by species
 ggplot(data = penguins, aes(x = flipper_length_mm)) +
-  geom_histogram(aes(fill = species), alpha = 0.5, position = "identity") +
+  geom_histogram(aes(fill = species), alpha = 0.5, position = "identity", na.rm = TRUE) +
   scale_fill_manual(values = c("darkorange","darkorchid","cyan4"))
 ```
 
