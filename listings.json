@@ -1,13 +1,14 @@
 [
   {
     "listing": "/activities.html",
-    "items": []
+    "items": [
+      "/activities/classwork01/palmerpenguins_intro.html"
+    ]
   },
   {
     "listing": "/lectures.html",
     "items": [
-      "/lectures/index_L01.html",
-      "/lectures/classwork/palmerpenguins_intro.html"
+      "/lectures/index_L01.html"
     ]
   },
   {
