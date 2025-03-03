@@ -9,15 +9,15 @@ editor_options:
 
 ## About the activity
 
-This is a Quarto document, and as you see below there is a combination of narrative text, code chunks, code outputs, citations/references, embedded links, and even embedded static images. Quarto documents are highly customizable and the purpose is to generate a story-telling narrative of data by incorporating all these components into a single document.
+This is a Quarto document that you can [download](https://github.com/lindsaynhayes/introR2025/blob/main/activities/classwork01/palmerpenguins_intro.qmd) from the [github repository for the course](https://github.com/lindsaynhayes/introR2025), and as you see below there is a combination of narrative text, code chunks, code outputs, citations/references, embedded links, and even embedded static images. Quarto documents are highly customizable and the purpose is to generate a story-telling narrative of data by incorporating all these components into a single document.
 
 In order to jump into data analysis we first need **data**! R has several datasets readily available to start explore including:
 
-- Anderson's **Iris** dataset (see `datasets::iris`) The iris data set gives the measurements in centimeters of the variables sepal length and width and petal length and width, respectively, for 50 flowers from each of 3 species of iris. The species are Iris setosa, versicolor, and virginica.
+-   Anderson's **Iris** dataset (see `datasets::iris`). The iris data gives the measurements in centimeters of the variables sepal length and width and petal length and width, respectively, for 50 flowers from each of 3 species of iris. The species are Iris setosa, versicolor, and virginica.
 
--  1974 Motor Trend **Cars** dataset (see `datasets::mtcars`). The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models).
+-   1974 Motor Trend **Cars** dataset (see `datasets::mtcars`). The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models).
 
-- and **many more** (see tab complete options for `datasets::`). 
+-   and **many more** (see tab complete options for `datasets::`).
 
 ```{r}
 #| label: setup
@@ -30,11 +30,11 @@ knitr::opts_chunk$set(
 library(palmerpenguins)
 ```
 
-### Today we will investigate the `palmerpenguins` dataset. 
+### Today we will investigate the `palmerpenguins` dataset.
 
-<img src="figs/palmerpenguins.png" width="15%" style="float:right">
+<img src="figs/palmerpenguins.png" width="15%" style="float:right"/>
 
-The `palmerpenguins` R package contains two datasets. In this introductory vignette, we'll highlight some of the properties of these datasets that make them useful for statistics and data science education, as well as software documentation and testing.
+The `palmerpenguins` R package contains two datasets. In this introductory vignette, we'll highlight some of the properties of these datasets that make them useful for statistics and data science education.
 
 ## Meet the penguins
 
@@ -72,6 +72,7 @@ The curated `palmerpenguins::penguins` dataset contains `r ncol(penguins)` varia
 ```{r}
 data <- penguins
 glimpse(penguins)
+head(penguins)
 ```
 
 The `palmerpenguins::penguins` data contains `r sum(complete.cases(penguins))` complete cases, with `r sum(is.na(penguins))` missing values.
@@ -80,7 +81,7 @@ The `palmerpenguins::penguins` data contains `r sum(complete.cases(penguins))` c
 
 ## Let's Explore
 
-Lets explore, visualization, and analyses some of the penguin data. Below are just a few examples to get you quickly waddling along with *penguins*. You can check out more in `vignette("examples")`.
+Lets explore, visualization, and analyses some of the penguin data. Below are just a few examples to get you quickly waddling along with the *penguins*. You can check out more in `vignette("examples")`.
 
 ### Exploring factors
 
@@ -100,8 +101,12 @@ penguins %>%
 table(penguins$species, penguins$island)
 ```
 
+**Plots** are the easiest way to explore and understand your data.
+
+1\. Lets first plot the number of penguins of each species across the 3 Palmer Archipelago islands.
+
 ```{r}
-#| label: plot-distribution
+#| label: plot-island-distribution
 #| fig-width: 8
 #| fig-height: 4
 
@@ -113,13 +118,18 @@ ggplot(penguins, aes(x = island, fill = species)) +
   coord_flip()
 ```
 
+2\. Next lets look at how many males and females we have of each species of penguins.
+
 ```{r}
 # Count penguins for each species / sex
-penguins %>%
+penguins |>
   count(species, sex, .drop = FALSE)
 ```
 
 ```{r}
+#| label: plot-sex-distribution
+#| fig-width: 8
+#| fig-height: 4
 ggplot(penguins, aes(x = sex, fill = species)) +
   geom_bar(alpha = 0.8) +
   scale_fill_manual(values = c("darkorange","purple","cyan4"), 
@@ -131,13 +141,31 @@ ggplot(penguins, aes(x = sex, fill = species)) +
 
 ### Exploring scatterplots
 
-The `penguins` data also has four continuous variables, making six unique scatterplots possible!
+The `penguins` data also has four numeric variables. Lets plot those variables too!
 
 ```{r}
-penguins %>%
-  dplyr::select(body_mass_g, ends_with("_mm")) %>% 
+penguins |>
+  dplyr::select(where(is.numeric)) |>
   glimpse()
 ```
+
+```{r}
+# Count how many penguins they evaluated each year
+penguins |>
+  count(year, species, .drop = FALSE)
+
+table(penguins$year, penguins$species)
+
+```
+
+Scatterplot example 1: penguin flipper length versus body mass
+
+```{r}
+ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
+  geom_point()
+```
+
+You can add color and/or shape aesthetics in `ggplot2` to layer in factor levels. With three factor variables to work with, you can add another factor layer with facets.
 
 ```{r}
 # Scatterplot example 1: penguin flipper length versus body mass
@@ -151,38 +179,42 @@ ggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +
 ggplot(data = penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +
   geom_point(aes(color = species, 
                  shape = species),
-             size = 2)  +
+                 size = 2)  +
   scale_color_manual(values = c("darkorange","darkorchid","cyan4"))
-```
 
-You can add color and/or shape aesthetics in `ggplot2` to layer in factor levels like we did above. With three factor variables to work with, you can add another factor layer with facets, like the plot below.
-
-```{r}
+# Scatterplot example 3: penguin flipper length versus body mass separated by species and sex
 ggplot(penguins, aes(x = flipper_length_mm,
                      y = body_mass_g)) +
   geom_point(aes(color = sex)) +
-  scale_color_manual(values = c("darkorange","cyan4"), 
-                     na.translate = FALSE) +
+  scale_color_manual(values = c("deeppink2","cornflowerblue"), 
+                     na.translate = FALSE) + # removes the "NA" values
   facet_wrap(~species)
+
+# Scatterplot example 4: penguin flipper length versus body mass separated by all 3 factor variables
+ggplot(penguins, aes(x = flipper_length_mm,
+                     y = body_mass_g)) +
+  geom_point(aes(color = sex, shape = island)) +
+  scale_color_manual(values = c("deeppink2","cornflowerblue"), 
+                     na.translate = FALSE) + # removes the "NA" values
+  facet_wrap(~species)
+
 ```
 
 ### Exploring correlations
 
-Also see `vignette("pca")` for an example principal component analysis.
+```{r}
+#| label: penguin-pairs
+#| fig-width: 8
+#| fig-height: 7
 
-```{r penguin-pairs, eval=FALSE}
-penguins %>%
+penguins |>
   select(species, body_mass_g, ends_with("_mm")) %>% 
   GGally::ggpairs(aes(color = species)) +
   scale_colour_manual(values = c("darkorange","purple","cyan4")) +
   scale_fill_manual(values = c("darkorange","purple","cyan4"))
 ```
 
-```{r include=FALSE, eval=FALSE}
-ggsave("./figs/penguin-ggpairs.png", width = 8)
-```
-
-### Exploring distributions
+### Statistically evaluating distributions
 
 ```{r}
 # Jitter plot example: bill length by species
@@ -193,21 +225,28 @@ ggplot(data = penguins, aes(x = species, y = bill_length_mm)) +
               show.legend = FALSE) +
   scale_color_manual(values = c("darkorange","darkorchid","cyan4"))
 
+# Boxplot examples: bill length by species
+ggplot(data = penguins, aes(x = species, y = bill_length_mm)) + geom_boxplot(aes(fill = species)) +
+  scale_fill_manual(values = c("orange","orchid","cyan3"))
+
+ggplot(data = penguins, aes(x = species, y = bill_length_mm)) + 
+  geom_boxplot(aes(fill = species), outlier.shape = NA) +
+  geom_jitter(aes(color = species),
+              width = 0.1, 
+              alpha = 0.7,
+              show.legend = FALSE) +
+  scale_color_manual(values = c("darkorange2","darkorchid","cyan4")) +
+  scale_fill_manual(values = c("orange","orchid","cyan3"))
+
 # Histogram example: flipper length by species
 ggplot(data = penguins, aes(x = flipper_length_mm)) +
   geom_histogram(aes(fill = species), alpha = 0.5, position = "identity") +
   scale_fill_manual(values = c("darkorange","darkorchid","cyan4"))
 ```
 
-### More
+## Acknowlegements
 
-See more examples in:
-
--   `vignette("examples")`,
--   `vignette("pca")`, and
--   `vignette("user_contributions")`
-
-Or contribute your own!
+This vignette was originally written by Allison Horst, Alison Hill, and Kristen Gorman. You can find info about the `palmerpenguins` package [here](https://allisonhorst.github.io/palmerpenguins/)!
 
 ## Package citation
 

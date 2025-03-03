@@ -1,7 +1,7 @@
 ---
 title: "Getting Started in R"
 author: "Lindsay N. Hayes"
-date: 2025-07-01
+date: 2025-07-03
 draft: true
 editor_options: 
   chunk_output_type: console
@@ -22,6 +22,7 @@ Script for in-class activity for lecture 01.
 ```
 
 ### 2. Creating objects
+
 ```{r}
 # vector
 # c(..., recursive = FALSE, use.names = TRUE)
@@ -41,12 +42,4 @@ table(over100)
 
 ```
 
-```{r}
-# install.packages("palmerpenguins")
-library(palmerpenguins)
-data <- penguins_raw
-head(data)
-colnames(data)
-?penguins_raw
-```
 
