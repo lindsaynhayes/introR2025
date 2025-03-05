@@ -1,11 +1,11 @@
 ---
-title: "Welcome to the Course!"
+title: "Data Wrangling with R"
+#description: "Getting Ready for Your First Day!"
 author: 
   - name: Lindsay Hayes
     url: https://lindsaynhayes.github.io
     affiliation: Department of Cell Biology, OUHSC
-description: "Getting Ready for Your First Day!"
-date: 2025-07-01
+date: 2025-07-03
 editor_options: 
   chunk_output_type: console
 ---
