@@ -1,6 +1,5 @@
 ---
 title: "R & RStudio"
-#subtitle: "01-RStudio"
 description: "Reading for Class 01"
 author: 
   - name: Lindsay Hayes
@@ -18,7 +17,7 @@ library(here)
 
 # Welcome to R/RStudio
 
-What is R and RStudio and why is it important to learn and implement in all your data analysis pipelines from simple to complex? The reading below and the the materials covered during this course will answer this very question. 
+What is R and RStudio and why is it important to learn and implement in all your data analysis pipelines from simple to complex? The reading below and the the materials covered during this course will answer this very question.
 
 ::: callout-note
 ### Learning objectives
@@ -26,22 +25,21 @@ What is R and RStudio and why is it important to learn and implement in all your
 **At the end of this lesson you will:**
 
 -   Describe the purpose of the RStudio Script, Console, Environment, and Plots panes.
--   Organize files and directories for a set of analyses as an R project, and understand the purpose of the working directory.
+-   Organize files and directories for a set of analyses as an R project.
 -   Use the built-in RStudio help interface to search for more information on R functions.
--   Demonstrate how to provide sufficient information for troubleshooting with the R user community.
 :::
 
 ## What is R & Why learn it??
 
 The term [R](https://www.r-project.org/) is used to refer to the *programming language*, the *environment for statistical computing*, and *the software* that interprets the scripts written using it.
 
-[RStudio](https://rstudio.com) is currently a very popular way to not only write your R scripts but also to interact with the R software[^plainr]. To function correctly, RStudio needs R and therefore both need to be installed on your computer.
+[RStudio](https://rstudio.com) is currently a very popular way to not only write your R scripts but also to interact with the R software[^1]. To function correctly, RStudio needs R and therefore both need to be installed on your computer.
 
-[^plainr]: As opposed to using R directly from the command line console.
+[^1]: As opposed to using R directly from the command line console.
 
 The [RStudio IDE Cheat Sheet](https://raw.githubusercontent.com/rstudio/cheatsheets/main/rstudio-ide.pdf) provides much more information than will be covered here, but can be useful to learn keyboard shortcuts and discover new features.
 
-![Why you need R](../images/L01/cartoon_data.jpg){width=300}
+![Why you need R](../images/L01/cartoon_data.jpg){width="300"}
 
 ### R does not involve lots of pointing and clicking, *that's a good thing*
 
@@ -77,15 +75,14 @@ The plotting functions in R are extensive, and allow you to adjust any aspect of
 
 ### R has a large and welcoming community
 
-Thousands of people use R daily. Many of them are willing to help you through mailing lists and websites such as [Stack
-Overflow](https://stackoverflow.com/), or on the [RStudio community](https://community.rstudio.com/). These broad user communities extend to specialized areas such as bioinformatics. One such subset of the R community is [Bioconductor](https://bioconductor.org/), a scientific project for analysis of data from current and emerging biological assays.
+Thousands of people use R daily. Many of them are willing to help you through mailing lists and websites such as [Stack Overflow](https://stackoverflow.com/), or on the [RStudio community](https://community.rstudio.com/). These broad user communities extend to specialized areas such as bioinformatics. One such subset of the R community is [Bioconductor](https://bioconductor.org/), a scientific project for analysis of data from current and emerging biological assays.
 
 ### R free and open-source!!
 
 Anyone can inspect the source code to see how R works. Because of this transparency, there is less chance for mistakes, and if you (or someone else) find some, you can report and fix bugs.
 
-
 ## Navigating R in RStudio
+
 We will use the RStudio IDE to write code, navigate the files on our computer, inspect the variables we are going to create, and visualize the plots we will generate.
 
 ![A schematic representing the layout of RStudio](../images/L01/rstudio_session_4pane_layout.png)
@@ -97,20 +94,19 @@ The RStudio window is divided into 4 “Panes”:
 -   Files/Plots/Packages/Help/Viewer (bottom-right)
 -   R Console, or outputs (bottom-left).
 
-The placement of these panes and their content can be customized *(Tools > Global Options > Pane Layout)*.
+The placement of these panes and their content can be customized *(Tools \> Global Options \> Pane Layout)*.
 
 Advantages of using RStudio is that all the information you need to write code is available in a single window. Additionally, with many **shortcuts**, **autocompletion**, and **highlighting** RStudio makes typing easier and less error-prone. This very text was written in RStudio!
-
 
 ## Managing Projects in RStudio
 
 ### The Problem
-The scientific process is naturally incremental and many projects start life as random notes, some data, some code, then a manuscript, and eventually everything is a bit mixed together. Properly managing the progression of files as a project matures can be challenging. Good data management at the start will save you an *immeasurable* amount of time at the end. 
 
-Most people tend to organize their projects like this: 
+The scientific process is naturally incremental and many projects start life as random notes, some data, some code, then a manuscript, and eventually everything is a bit mixed together. Properly managing the progression of files as a project matures can be challenging. Good data management at the start will save you an *immeasurable* amount of time at the end.
 
-![Bad File Structure](../images/L01/bad_layout.png)
-There are many reasons why we should ALWAYS avoid this:
+Most people tend to organize their projects like this:
+
+![Bad File Structure](../images/L01/bad_layout.png) There are many reasons why we should ALWAYS avoid this:
 
 -   It is hard to tell which version of the data is the original and which is the modified.
 -   It is messy because it mixes files with various extensions together.
@@ -119,38 +115,63 @@ There are many reasons why we should ALWAYS avoid this:
 **A good project layout will ultimately make your life easier!!**
 
 -   It ensure the integrity of your data.
--   It is simpler to share your code with someone else (a lab-mate, collaborator, or supervisor).
+-   It is simpler to share your code with someone else (a lab-mate, collaborator, supervisor, and most importantly the future-you!).
 -   It allows you to easily upload your data and code with your manuscript submission.
 -   It makes it easier to pick the project back up after a break.
 
-### The Solution
+### The Solutions
 
-R Project Directory Structure (for data science and for life)
+1.  One day, you will need to quit R, go do something else, and return to your analysis later. Creating an `RStudio project` will keep your data analysis environment organized and accessible. Creating a `RStudio project` file will:
+
+-   Create a `.Rproj` file.
+-   Opens a RStudio session and sets the directory as the working directory.
+-   Loads any `.RData` files to restore previously imported data.
+-   Loads an open scripts from the previous session.
+-   Loads a `.Rhistory` file to save the history of previous commands used.
+-   Restores any RStudio settings.
+
+::: callout-note
+With Rstudio projects you don't have to keep your session running all the time. You can easily pick up where you left off.
+:::
+
+Read about how to create a [RStudio project](https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects)
+
+2.  R Project Directory Structure (for data science and for life)
 
 Here are examples of project data management.
 
-![File Structure for Data Analysis](../images/L01/tree1.png){width=300}
+![File Structure for Data Analysis](../images/L01/tree1.png){width="300"}
 
-
-![File Structure for Experiments](../images/L01/tree2.png){width=300}
-
-
-
-
+![File Structure for Experiments](../images/L01/tree2.png){width="300"}
 
 ::: callout-important
 Advice on File Naming
 
 -   Avoid spaces in a name (ie: project 1.Rproj)
--   Do use dashes (-), underscores (_), or periods (filename_project1.qmd)
--   Avoid quotes and special characters (", $, #)
+-   Do use dashes (-), underscores (\_), or periods (filename_project1.qmd)
+-   Avoid quotes and special characters (", \$, #)
 -   Use dates in year-month-day format for better file sorting (250701_plot.png)
 -   Use a numbering system to order steps in a pipeline (1.first.qmd, 2.second.qmd, 3.third.qmd)
 -   📢 **ANNOTATE, LOG, and NOTEKEEP**
-
 :::
 
-## References 
+## Getting Help
+
+Finally, there are many ways to get help in the R community. The first choice is always to click on the `Help` tab in the Files pane. You can enter a R function and it will pull up the manual for that command along with the package its a part of. Alternatively you can type `?` before function name in the Console. For example, `?mean` will pull up the help page for the mean function.
+
+Second you can reach out to many online communities. Most of your questions have probably already been asked so a quick google search will yield many results. Here a few of those resources:
+
+-   Stack Overflow: <https://stackoverflow.com/questions>
+
+    -   be sure to read the instructions on [how to ask a good question](https://stackoverflow.com/help/how-to-ask)
+
+-   Posit Community: <https://forum.posit.co/t/rstudio-community-find-help-guide/86831>
+
+-   Bioconductor: <https://bioconductor.org/help/>
+
+-   Stats specific (not R specific): Stack Exchange: <https://stats.stackexchange.com>
+
+## References
 
 ::: callout-tip
 ### References
@@ -159,5 +180,4 @@ Advice on File Naming
 
 -   swcarpentry: R <https://carpentries-incubator.github.io/bioc-intro/20-r-rstudio.html#why-learn-r>
 -   swcarpentry: Project Management <https://swcarpentry.github.io/r-novice-gapminder/instructor/02-project-intro.html>
-
 :::
