@@ -159,8 +159,9 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#managing-projects-in-rstudio" id="toc-managing-projects-in-rstudio" class="nav-link" data-scroll-target="#managing-projects-in-rstudio">Managing Projects in RStudio</a>
   <ul class="collapse">
   <li><a href="#the-problem" id="toc-the-problem" class="nav-link" data-scroll-target="#the-problem">The Problem</a></li>
-  <li><a href="#the-solution" id="toc-the-solution" class="nav-link" data-scroll-target="#the-solution">The Solution</a></li>
+  <li><a href="#the-solutions" id="toc-the-solutions" class="nav-link" data-scroll-target="#the-solutions">The Solutions</a></li>
   </ul></li>
+  <li><a href="#getting-help" id="toc-getting-help" class="nav-link" data-scroll-target="#getting-help">Getting Help</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul></li>
   </ul>
@@ -228,9 +229,8 @@ Learning objectives
 <p><strong>At the end of this lesson you will:</strong></p>
 <ul>
 <li>Describe the purpose of the RStudio Script, Console, Environment, and Plots panes.</li>
-<li>Organize files and directories for a set of analyses as an R project, and understand the purpose of the working directory.</li>
+<li>Organize files and directories for a set of analyses as an R project.</li>
 <li>Use the built-in RStudio help interface to search for more information on R functions.</li>
-<li>Demonstrate how to provide sufficient information for troubleshooting with the R user community.</li>
 </ul>
 </div>
 </div>
@@ -314,14 +314,41 @@ Learning objectives
 <p><strong>A good project layout will ultimately make your life easier!!</strong></p>
 <ul>
 <li>It ensure the integrity of your data.</li>
-<li>It is simpler to share your code with someone else (a lab-mate, collaborator, or supervisor).</li>
+<li>It is simpler to share your code with someone else (a lab-mate, collaborator, supervisor, and most importantly the future-you!).</li>
 <li>It allows you to easily upload your data and code with your manuscript submission.</li>
 <li>It makes it easier to pick the project back up after a break.</li>
 </ul>
 </section>
-<section id="the-solution" class="level3">
-<h3 class="anchored" data-anchor-id="the-solution">The Solution</h3>
-<p>R Project Directory Structure (for data science and for life)</p>
+<section id="the-solutions" class="level3">
+<h3 class="anchored" data-anchor-id="the-solutions">The Solutions</h3>
+<ol type="1">
+<li>One day, you will need to quit R, go do something else, and return to your analysis later. Creating an <code>RStudio project</code> will keep your data analysis environment organized and accessible. Creating a <code>RStudio project</code> file will:</li>
+</ol>
+<ul>
+<li>Create a <code>.Rproj</code> file.</li>
+<li>Opens a RStudio session and sets the directory as the working directory.</li>
+<li>Loads any <code>.RData</code> files to restore previously imported data.</li>
+<li>Loads an open scripts from the previous session.</li>
+<li>Loads a <code>.Rhistory</code> file to save the history of previous commands used.</li>
+<li>Restores any RStudio settings.</li>
+</ul>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>With Rstudio projects you don’t have to keep your session running all the time. You can easily pick up where you left off.</p>
+</div>
+</div>
+<p>Read about how to create a <a href="https://support.posit.co/hc/en-us/articles/200526207-Using-RStudio-Projects">RStudio project</a></p>
+<ol start="2" type="1">
+<li>R Project Directory Structure (for data science and for life)</li>
+</ol>
 <p>Here are examples of project data management.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -357,6 +384,20 @@ Important
 </div>
 </div>
 </section>
+</section>
+<section id="getting-help" class="level2">
+<h2 class="anchored" data-anchor-id="getting-help">Getting Help</h2>
+<p>Finally, there are many ways to get help in the R community. The first choice is always to click on the <code>Help</code> tab in the Files pane. You can enter a R function and it will pull up the manual for that command along with the package its a part of. Alternatively you can type <code>?</code> before function name in the Console. For example, <code>?mean</code> will pull up the help page for the mean function.</p>
+<p>Second you can reach out to many online communities. Most of your questions have probably already been asked so a quick google search will yield many results. Here a few of those resources:</p>
+<ul>
+<li><p>Stack Overflow: <a href="https://stackoverflow.com/questions" class="uri">https://stackoverflow.com/questions</a></p>
+<ul>
+<li>be sure to read the instructions on <a href="https://stackoverflow.com/help/how-to-ask">how to ask a good question</a></li>
+</ul></li>
+<li><p>Posit Community: <a href="https://forum.posit.co/t/rstudio-community-find-help-guide/86831" class="uri">https://forum.posit.co/t/rstudio-community-find-help-guide/86831</a></p></li>
+<li><p>Bioconductor: <a href="https://bioconductor.org/help/" class="uri">https://bioconductor.org/help/</a></p></li>
+<li><p>Stats specific (not R specific): Stack Exchange: <a href="https://stats.stackexchange.com" class="uri">https://stats.stackexchange.com</a></p></li>
+</ul>
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>

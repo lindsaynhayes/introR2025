@@ -8,9 +8,8 @@
 
 <meta name="author" content="Lindsay Hayes">
 <meta name="dcterms.date" content="2025-07-03">
-<meta name="description" content="Reading for Class 02">
 
-<title>Data Wrangling – Intro to Reproducible Data Analysis Using R</title>
+<title>Data Wrangling with R – Intro to Reproducible Data Analysis Using R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -22,40 +21,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -177,18 +142,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#welcome-to-quarto" id="toc-welcome-to-quarto" class="nav-link active" data-scroll-target="#welcome-to-quarto">Welcome to Quarto</a></li>
-  <li><a href="#the-tidyverse" id="toc-the-tidyverse" class="nav-link" data-scroll-target="#the-tidyverse">The Tidyverse</a>
+  <li><a href="#pre-lecture-activities" id="toc-pre-lecture-activities" class="nav-link active" data-scroll-target="#pre-lecture-activities">Pre-lecture activities</a></li>
+  <li><a href="#lecture" id="toc-lecture" class="nav-link" data-scroll-target="#lecture">Lecture</a>
   <ul class="collapse">
-  <li><a href="#what-is-a-package" id="toc-what-is-a-package" class="nav-link" data-scroll-target="#what-is-a-package">What is a package?</a></li>
-  <li><a href="#how-to-get-a-package" id="toc-how-to-get-a-package" class="nav-link" data-scroll-target="#how-to-get-a-package">How to get a package?</a></li>
-  <li><a href="#tidyverse-package" id="toc-tidyverse-package" class="nav-link" data-scroll-target="#tidyverse-package">Tidyverse package</a></li>
+  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
+  <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
+  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
   </ul></li>
-  <li><a href="#tidy-syntax" id="toc-tidy-syntax" class="nav-link" data-scroll-target="#tidy-syntax">Tidy Syntax</a>
+  <li><a href="#post-lecture-practice" id="toc-post-lecture-practice" class="nav-link" data-scroll-target="#post-lecture-practice">Post-lecture Practice</a>
   <ul class="collapse">
-  <li><a href="#import" id="toc-import" class="nav-link" data-scroll-target="#import">Import</a></li>
-  <li><a href="#export" id="toc-export" class="nav-link" data-scroll-target="#export">Export</a></li>
-  <li><a href="#tidy-transform" id="toc-tidy-transform" class="nav-link" data-scroll-target="#tidy-transform">Tidy &amp; Transform</a></li>
+  <li><a href="#summary" id="toc-summary" class="nav-link" data-scroll-target="#summary">Summary</a></li>
+  <li><a href="#additional-practice" id="toc-additional-practice" class="nav-link" data-scroll-target="#additional-practice">Additional practice</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -198,14 +162,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Data Wrangling</h1>
+<h1 class="title">Data Wrangling with R</h1>
 </div>
 
-<div>
-  <div class="description">
-    Reading for Class 02
-  </div>
-</div>
 
 <div class="quarto-title-meta-author">
   <div class="quarto-title-meta-heading">Author</div>
@@ -239,8 +198,42 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Spreadsheets are good for data entry. As a scientists, we have a lot of data in spreadsheets. However, data exploration, manipulation, and visualization tools in spreadsheets are extremely limited and cumbersome when performed manually. Much of your time as a researcher will be spent <strong>data wrangling</strong> to generate the analyses you desire.</p>
-<p>R makes this process easy and most importantly reproducible. This less will teach you how to think about data organization and some practices for effective data wrangling.</p>
+<section id="pre-lecture-activities" class="level1">
+<h1>Pre-lecture activities</h1>
+<p>The course will <em>exclusively</em> use R in the integrated development environment (IDE) called R Studio. Since the summer semester is only 1 month (10 classes), it is <strong>critical to have your computer set up and ready to go before the first day of class</strong>.</p>
+<p>Throughout the course, there will be a set of pre-lecture activities and/or readings for you to complete. <strong>These activities prepare you for the in-class activities</strong>. Failure to complete them will put you behind in an already compressed course.</p>
+<p>To prepare for the first class:</p>
+<ol type="1">
+<li>Install R and R Studio
+<ul>
+<li><a href="https://www.youtube.com/watch?v=eQFu_zzF96o">installation video tutorial</a></li>
+<li>Detailed instructions on installing R and R Studio are available on <a href="https://swirlstats.com/students.html">swirl</a>.
+<ul>
+<li>Complete step 1 and step 2</li>
+</ul></li>
+</ul></li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Tip
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Swirl is a great tool to learn R interactively that we will use in the course. Feel free to explore more.</p>
+</div>
+</div>
+<ol start="2" type="1">
+<li>In the first class, we will begin to get familiar with R. Complete the <a href="https://lindsaynhayes.github.io/introR2025/readings/index_R01.html">Pre-reading material about R</a>. Pre-reading materials for each class are located under <strong>Resources</strong>. Sometimes, pre-reading materials are direct links to external resources for you to read in advance of the lecture.</li>
+</ol>
+</section>
+<section id="lecture" class="level1">
+<h1>Lecture</h1>
+<section id="learning-objectives" class="level2">
+<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -251,148 +244,64 @@ Learning objectives
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>At the end of this lesson you will be able to:</strong></p>
+<p><strong>At the end of this lesson you will:</strong></p>
 <ul>
-<li>Generate and navigate a quarto document</li>
-<li>Import Data into R</li>
-<li>Recognize data format as long or wide format</li>
-<li>Understand when to use both formats and how to convert between long and wide</li>
+<li>Get an overview of the course (including staff, format, grading, etc)</li>
+<li>Be able to recognize and operate an Integrated Developer Environment (IDE).</li>
+<li>Be able to recognize a Quarto document and describe reasons why to use a unified authoring framework.</li>
+<li>Be able to create a R project &amp; Quarto document.</li>
 </ul>
 </div>
 </div>
-<section id="welcome-to-quarto" class="level2">
-<h2 class="anchored" data-anchor-id="welcome-to-quarto">Welcome to Quarto</h2>
-<p>In the first class, we looked at the <code>PalmerPenguins</code> data in a very tidy and curated quarto document to see how you can incorporate narrative text, code, outputs, and more in a single document. I hope you can now appreciate the utility of using Quarto to tell the story of the data analysis. The beautiful html outputs can easily be shared with others and helps build the logic of a data analysis pipeline from beginning to end.</p>
-<p>Read the <a href="https://quarto.org/docs/get-started/hello/rstudio.html">Quarto welcome tutorial</a> to learn about some of the cool tools, such as <code>code-folding</code>, <code>echo=false</code>, and more.</p>
+</section>
+<section id="slides" class="level2">
+<h2 class="anchored" data-anchor-id="slides">Slides</h2>
 <ul>
-<li>Read through Part 1: “Hello, Quarto”</li>
-<li>Read through Part 2: “Computations”.</li>
-<li>Part 3 is more advanced for generating diverse outputs such as pdf documents feel free to explore, but we won’t use this feature.</li>
+<li><a href="https://docs.google.com/presentation/d/12EGF_lMFltLHzngleEi6jxZ3phncEhTl5vm05-y_cLI/edit?usp=sharing">Lecture 01: Welcome and Introductions</a></li>
 </ul>
 </section>
-<section id="the-tidyverse" class="level2">
-<h2 class="anchored" data-anchor-id="the-tidyverse">The Tidyverse</h2>
-<section id="what-is-a-package" class="level3">
-<h3 class="anchored" data-anchor-id="what-is-a-package">What is a package?</h3>
-<p>In R, the fundamental unit of shareable code is the <strong>package.</strong> A package bundles together <em>code</em>, <em>data</em>, <em>documentation</em>, and <em>tests</em>, and is easy to share with others. There are tens of thousands of R packages that exist. Two main repository of R packages exist. <strong>CRAN</strong> or the Comprehensive R Archive Network is the public clearing house for R packages and where you went to install R. <strong>Bioconductor</strong> is an open source project that develops and shares open source software for precise and repeatable analysis of biological data. It is this huge variety of packages that R is so successful because the chances are high that someone has already solved a problem that you’re working on.</p>
-</section>
-<section id="how-to-get-a-package" class="level3">
-<h3 class="anchored" data-anchor-id="how-to-get-a-package">How to get a package?</h3>
-<p>To install packages from CRAN use the <code>install.packages()</code> function. Once the package is installed you can load the pack using the <code>library()</code> function. Installing packages from Bioconductor take a few more steps which we won’t cover just yet.</p>
-<p><img src="figs/tidy_hex.png" width="50%" style="float:right"></p>
-</section>
-<section id="tidyverse-package" class="level3">
-<h3 class="anchored" data-anchor-id="tidyverse-package">Tidyverse package</h3>
-<p>The <a href="https://www.tidyverse.org">Tidyverse</a> which is a collection of R packages that share an underlying design, syntax, and grammer to streamline many main functions used in data science. You can install the complete tidyverse with <code>install.packages("tidyverse")</code>, once the package is installed you can load it using <code>library(tidyverse)</code>.</p>
-<p>The packages installed in tidyverse include:</p>
+<section id="acknowledgements" class="level2">
+<h2 class="anchored" data-anchor-id="acknowledgements">Acknowledgements</h2>
+<p>Material for this lecture was borrowed and adopted from</p>
 <ul>
-<li><code>ggplot2</code> is a graphic package to plot your data.</li>
-<li><code>dplyr</code> and <code>tidyr</code> are packages for data manipulation to subset, re-arrange, and format your dataset.</li>
-<li><code>readr</code> is a tidy way to input or read in data into R.</li>
-<li><code>purrr</code> is a functional programming toolkit to handle looping functions.</li>
-<li><code>tibble</code> is a tidy way of displaying data frames that are easier to view.</li>
-<li><code>stringr</code> is a way of handling text and character strings.</li>
-<li><code>forcats</code> is a package providing tools to handle categorical variables and discrete (non-continuous) variables.</li>
-<li><code>lubridate</code> is a package for working with times and dates.</li>
+<li>sw carpentry: <a href="https://carpentries-incubator.github.io/bioc-intro/20-r-rstudio.html" class="uri">https://carpentries-incubator.github.io/bioc-intro/20-r-rstudio.html</a></li>
+<li>data carpentry: <a href="https://datacarpentry.github.io/genomics-r-intro/00-introduction.html" class="uri">https://datacarpentry.github.io/genomics-r-intro/00-introduction.html</a></li>
 </ul>
-<div class="callout callout-style-default callout-important callout-titled">
+</section>
+</section>
+<section id="post-lecture-practice" class="level1">
+<h1>Post-lecture Practice</h1>
+<section id="summary" class="level2">
+<h2 class="anchored" data-anchor-id="summary">Summary</h2>
+<ul>
+<li>Access all course material on the course website (<a href="https://lindsaynhayes.github.io/introR2025/" class="uri">https://lindsaynhayes.github.io/introR2025/</a>).</li>
+<li><strong>RStudio</strong> makes you a more efficient programmer and gives you easy access to all the components of data analysis.</li>
+<li><strong>Quarto</strong> is an open-source scientific and technical publishing system to create reproducible, production quality data analysis reports and much more. During the course we will primarily use the HTML output format.</li>
+</ul>
+</section>
+<section id="additional-practice" class="level2">
+<h2 class="anchored" data-anchor-id="additional-practice">Additional practice</h2>
+<p>Here are some additional practice questions to help you think about the material discussed.</p>
+<p>Check out this article on the 10 Best Practices for Data Science <a href="https://medium.com/bitgrit-data-science-publication/10-best-practices-for-data-science-21a748a410e4">here</a></p>
+<div class="callout callout-style-default callout-caution callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Important
+Practice Tasks
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>There are nice <a href="https://posit.co/resources/cheatsheets/">cheatsheets</a> for each of the packages to demonstrate what they do in detail!</p>
-</div>
-</div>
-</section>
-</section>
-<section id="tidy-syntax" class="level2">
-<h2 class="anchored" data-anchor-id="tidy-syntax">Tidy Syntax</h2>
-<p>The BIG picture of what we do in data science.</p>
-<img src="figs/base.png" width="90%" style="display:block; margin-left: auto; margin-right: auto">
-<figcaption>
-Figure 1: In our model of the data science process, you start with data import and tidying. Next, you understand your data with an iterative cycle of transforming, visualizing, and modeling. You finish the process by communicating your results to other humans.
-</figcaption>
-<p>In this next class we will focus on the <strong>Import</strong>, <strong>Tidy</strong>, and <strong>Transform</strong> parts of the data science pipeline.</p>
-<section id="import" class="level3">
-<h3 class="anchored" data-anchor-id="import">Import</h3>
-<p>First we need to import data into R. I prefer to import .csv files because I think its a good way to indicate a data file and it eliminates any weird formatting that may exist in excel. I am showing 2 ways to import the data one using base R function <code>read.csv()</code> and the other using the <code>readr</code> function <code>read_csv</code>.</p>
-<p>In base R, the <code>header</code> field determines if the first row of the data had column header titles or not. The <code>stringsAsFactors</code> determines if the character variables in your data set should be set as a factor variable (set as TRUE) or as character (set to FALSE). The <code>row.names</code> field will allow you to specify if the first column is data or the names of the rows.</p>
-<p>In tidyverse, the <code>col_names</code> field specifies if the first row is a header. If you want to specify the type of data for each field you have to specify it using the <code>col_types</code> field. I specified that for you here. There are a lot more options you can look at in the <em>Help</em> section.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="co"># BASE R</span></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># read.csv() is for importing comma-separated files</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>data_base <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="at">file =</span> <span class="st">"data/taylorswift.csv"</span>, </span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">header =</span> <span class="cn">TRUE</span>, </span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>                 <span class="at">sep =</span> <span class="st">","</span>, </span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">stringsAsFactors =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co"># Tidyverse</span></span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>data_tidy <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">"data/taylorswift.csv"</span>,</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>                 <span class="at">col_names =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<p>Using <code>readr</code> you can also import data directly from excel spreadsheets using <code>read_excel</code> or <code>read_xls</code> and even google sheets using <code>read_sheet</code>. However, we won’t use these function in the course. But you are free to explore them on your own from the <a href="https://readr.tidyverse.org">readr package</a>.</p>
-</section>
-<section id="export" class="level3">
-<h3 class="anchored" data-anchor-id="export">Export</h3>
-<p>You can also save files using the <code>write</code> functions for both csv or tsv files.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(data, <span class="at">file =</span> <span class="st">"data/taylorswift.csv"</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">write_tsv</span>(data, <span class="at">file =</span> <span class="st">"data/taylorswift.tsv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
-<section id="tidy-transform" class="level3">
-<h3 class="anchored" data-anchor-id="tidy-transform">Tidy &amp; Transform</h3>
-<p>The next step it to tidy and transform the data into the format that R can use to perform visualization and analysis. We will use some of the tools in <code>dplyr</code> and <code>tidyr</code>.</p>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-A note on pipes!
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>“Piping” is a process of directly sending the output of one funtion into the input of the next function. Piping can be performed in a long line of commands as a way of streamling the code writing to make it easier to read. We will use this a lot in this course.</p>
-<p><code>%&gt;%</code> is the pipe command to connect 2 functions</p>
-<p><code>|&gt;</code> is the same pipe command, but in a different syntax</p>
-<p>The code in the course will mostly use <code>|&gt;</code> because this is the tidyverse way of writing code, but across the internet you will also see <code>%&gt;%</code></p>
-</div>
-</div>
-<section id="assigning-data-types" class="level4">
-<h4 class="anchored" data-anchor-id="assigning-data-types">Assigning Data Types</h4>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Want More?
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>There are so many great tools to learn R and data science!</p>
-<ul>
-<li><p>To explore the tidyverse and data science in more detail check out the <em>R for Data Science</em> <a href="https://r4ds.hadley.nz">textbook</a> written by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund.</p></li>
-<li><p>Want more stats and data science conversations?! Check out the <strong>not so standard deviations</strong> <a href="https://nssdeviations.com">podcast</a> by Roger Peng and Hilary Parker.</p></li>
-</ul>
+<ol type="1">
+<li><p>In RStudio, create a new R project and then create a new Quarto document in that R project. Read the instructions. Practice running the chunks individually using the “play” button and the keyboard short cut.</p></li>
+<li><p>Change the settings of the Quarto document to display the output “inline” or in the “console”.</p></li>
+<li><p>Render the document and view the HTML output. Verify that you can modify the code, re-run it, and see modified output.</p></li>
+</ol>
 </div>
 </div>
 
 
-</section>
 </section>
 </section>
 
