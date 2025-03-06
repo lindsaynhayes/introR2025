@@ -136,8 +136,6 @@ You can also save files using the `write` functions for both csv or tsv files.
 #| eval: false
 
 write_csv(data, file = "data/taylorswift.csv")
-write_tsv(data, file = "data/taylorswift.tsv")
-
 ```
 
 ### Tidy & Transform

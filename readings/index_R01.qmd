@@ -171,6 +171,8 @@ Second you can reach out to many online communities. Most of your questions have
 
 -   Stats specific (not R specific): Stack Exchange: <https://stats.stackexchange.com>
 
+-   R documentation <https://www.rdocumentation.org>
+
 ## References
 
 ::: callout-tip
