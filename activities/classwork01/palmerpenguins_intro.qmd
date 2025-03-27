@@ -208,7 +208,7 @@ ggplot(penguins, aes(x = flipper_length_mm,
 #| fig-height: 7
 
 penguins |>
-  select(species, body_mass_g, ends_with("_mm")) %>% 
+  select(species, body_mass_g, ends_with("_mm")) |>
   GGally::ggpairs(aes(color = species)) +
   scale_colour_manual(values = c("darkorange","purple","cyan4")) +
   scale_fill_manual(values = c("darkorange","purple","cyan4"))

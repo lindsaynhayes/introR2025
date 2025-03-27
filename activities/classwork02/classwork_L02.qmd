@@ -1,5 +1,5 @@
 ---
-title: "Getting Started in R"
+title: "Navigating Data Types in R"
 author: "Lindsay N. Hayes"
 date: 2025-07-03
 draft: true
@@ -7,7 +7,11 @@ editor_options:
   chunk_output_type: console
 ---
 
-Script for in-class activity for lecture 01.
+## About the activity
+
+We will work our way through this quarto document together during class.
+
+First, create a new Quarto Document!
 
 ## Ways to Use R
 
@@ -19,9 +23,14 @@ Script for in-class activity for lecture 01.
 193 + 45
 2050 - 2025
 50/250 * 100
+
+# activity: assign the variable my_age as the current year minus your year of birth. 
+
+
+
 ```
 
-### 2. Creating objects
+### 2. Create R objects
 
 ```{r}
 # vector
@@ -35,11 +44,88 @@ y <- matrix(1:225, nrow=15, ncol=15, byrow = FALSE)
 class(y)
 
 # logical
-# testing each variable in the vector and outputing TRUE or FALSE
+# testing each variable in the vector and outputting TRUE or FALSE
 over100 <- x>100
 table(over100)
 
+```
+
+### Your Turn
+
+### A. Create a vector of all the `homeworlds` in starwars using the `starwars` data.
+
+```{r}
+
+# create vector
+homeworlds <- starwars$homeworld
+
+# how many worlds are there? hint: use the unique function
+unique(homeworlds)
+
+# is there a world called "Ohio"? how would you test this with code?
+table(homeworlds == "Ohio")
+
+# How many characters live on Naboo?
+table(homeworlds == "Naboo")
+
+# Who lives on Naboo? (hint use the "names" variable in the starwars data and the "which" function)
+starwars$name[homeworlds == "Naboo"]
+which(homeworlds == "Naboo")
+starwars$name[which(homeworlds == "Naboo")]
+```
+
+
+
+```{r}
 
 ```
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+### 2. Create a correlation matrix of some of the quality scores in the TaylorSwift data what are some features that are statistically correlated?
+
+```{r}
+
+# install/load the taylor package
+library(taylor)
+data <- taylor_album_songs
+
+# pick what features of the data you want to explore
+colnames(data)
+
+# create a matrix of those features
+mat <- data[,c(12,13,15,17,18,19,20)]
+
+# evaluate the correlation matrix
+mat |> GGally::ggpairs()
+
+# check one of the comparisons using ggplot
+ggplot(data, aes(x=loudness, y=energy, color = album_name)) + geom_point(size=3) + scale_color_albums()
+
+mod <- lm(energy ~ loudness + album_name, data = data)
+summary(mod)
+
+ggplot(data, aes(x=loudness, y=energy, color = album_name)) + geom_point(size=3) + scale_color_albums() + facet_wrap(~album_name)
+
+```
+
+### 3. 
+
+```{r}
+
+
+
+```
