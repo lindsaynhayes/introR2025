@@ -1,15 +1,9 @@
 [
   {
-    "listing": "/lectures.html",
+    "listing": "/readings.html",
     "items": [
-      "/lectures/index_L01.html",
-      "/lectures/index_L02.html"
-    ]
-  },
-  {
-    "listing": "/activities.html",
-    "items": [
-      "/activities/classwork01/palmerpenguins_intro.html"
+      "/readings/index_R01.html",
+      "/readings/index_R02.html"
     ]
   },
   {
@@ -19,10 +13,16 @@
     ]
   },
   {
-    "listing": "/readings.html",
+    "listing": "/activities.html",
     "items": [
-      "/readings/index_R01.html",
-      "/readings/index_R02.html"
+      "/activities/classwork01/palmerpenguins_intro.html"
+    ]
+  },
+  {
+    "listing": "/lectures.html",
+    "items": [
+      "/lectures/index_L01.html",
+      "/lectures/index_L02.html"
     ]
   }
 ]

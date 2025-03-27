@@ -224,6 +224,258 @@
     "text": "Responsible Conduct of Research\nStudents, as members of the University community, have the responsibility to ensure the integrity and ethical standards of any research activity with which they are associated directly or of which they have sufficient knowledge to determine its appropriateness. Students are governed by the Policy on Ethics in Research Faculty Handbook Section 3.25.\n\nLicense and attribution\nThis Code of Conduct is distributed under a Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license. Portions of above text comprised of language from the Codes of Conduct adopted by rOpenSci and Django, which are licensed by CC BY-SA 4.0 and CC BY 3.0. This work was further inspired by Ada Initiative’s ‘’how to design a code of conduct for your community’’ and Geek Feminism’s Code of conduct evaluations and expanded by Ashley Johnson and Shannon Ellis in the Jeff Leek group, and Stephanie C. Hicks."
   },
   {
+    "objectID": "readings/index_R02.html",
+    "href": "readings/index_R02.html",
+    "title": "Navigating Data Types in R",
+    "section": "",
+    "text": "The last class introduced important concepts in data science such as directory structure, working directories, projects, and quarto. This lesson will dig deeper into working in R. We will cover importing and exporting, data objects, and operations.\nSpreadsheets are good for data entry. As a scientists, we have a lot of data in spreadsheets. However, data exploration, manipulation, and visualization tools in spreadsheets are extremely limited and cumbersome when performed manually. Much of your time as a researcher will be spent data wrangling to generate the analyses you desire. R makes this process easy and most importantly reproducible."
+  },
+  {
+    "objectID": "readings/index_R02.html#welcome-to-quarto",
+    "href": "readings/index_R02.html#welcome-to-quarto",
+    "title": "Navigating Data Types in R",
+    "section": "Welcome to Quarto",
+    "text": "Welcome to Quarto\nIn the first class, we looked at the PalmerPenguins data in a very tidy and curated quarto document to see how you can incorporate narrative text, code, outputs, and more in a single document. I hope you can now appreciate the utility of using Quarto to tell the story of the data analysis. The beautiful html outputs can easily be shared with others and helps build the logic of a data analysis pipeline from beginning to end.\nRead the Quarto welcome tutorial to learn about some of the cool tools, such as code-folding, echo=false, and more.\n\nRead through Part 1: “Hello, Quarto”\nRead through Part 2: “Computations”.\nPart 3 is more advanced for generating diverse outputs such as pdf documents feel free to explore, but we won’t use this feature."
+  },
+  {
+    "objectID": "readings/index_R02.html#the-tidyverse",
+    "href": "readings/index_R02.html#the-tidyverse",
+    "title": "Navigating Data Types in R",
+    "section": "The Tidyverse",
+    "text": "The Tidyverse\n\nWhat is a package?\nIn R, the fundamental unit of shareable code is the package. A package bundles together code, data, documentation, and tests, and is easy to share with others. There are tens of thousands of R packages that exist. Two main repository of R packages exist. CRAN or the Comprehensive R Archive Network is the public clearing house for R packages and where you went to install R. Bioconductor is an open source project that develops and shares open source software for precise and repeatable analysis of biological data. It is this huge variety of packages that R is so successful because the chances are high that someone has already solved a problem that you’re working on.\n\n\nHow to get a package?\nTo install packages from CRAN use the install.packages() function. Once the package is installed you can load the pack using the library() function. Installing packages from Bioconductor take a few more steps which we won’t cover just yet.\n\n\n\nTidyverse package\nThe Tidyverse which is a collection of R packages that share an underlying design, syntax, and grammer to streamline many main functions used in data science. You can install the complete tidyverse with install.packages(\"tidyverse\"), once the package is installed you can load it using library(tidyverse).\nThe packages installed in tidyverse include:\n\nggplot2 is a graphic package to plot your data.\ndplyr and tidyr are packages for data manipulation to subset, re-arrange, and format your dataset.\nreadr is a tidy way to input or read in data into R.\npurrr is a functional programming toolkit to handle looping functions.\ntibble is a tidy way of displaying data frames that are easier to view.\nstringr is a way of handling text and character strings.\nforcats is a package providing tools to handle categorical variables and discrete (non-continuous) variables.\nlubridate is a package for working with times and dates.\n\n\n\n\n\n\n\nImportant\n\n\n\nThere are nice cheatsheets for each of the packages to demonstrate what they do in detail!"
+  },
+  {
+    "objectID": "readings/index_R02.html#tidy-syntax",
+    "href": "readings/index_R02.html#tidy-syntax",
+    "title": "Navigating Data Types in R",
+    "section": "Tidy Syntax",
+    "text": "Tidy Syntax\nThe BIG picture of what we do in data science.\n\n\nFigure 1: In our model of the data science process, you start with data import and tidying. Next, you understand your data with an iterative cycle of transforming, visualizing, and modeling. You finish the process by communicating your results to other humans.\n\n\nImport\nFirst we need to import data into R. I prefer to import .csv files because I think its a good way to indicate a data file and it eliminates any weird formatting that may exist in excel. I am showing 2 ways to import the data one using base R function read.csv() and the other using the readr function read_csv.\nIn base R, the header field determines if the first row of the data had column header titles or not. The stringsAsFactors determines if the character variables in your data set should be set as a factor variable (set as TRUE) or as character (set to FALSE). The row.names field will allow you to specify if the first column is data or the names of the rows.\nIn tidyverse, the col_names field specifies if the first row is a header. If you want to specify the type of data for each field you have to specify it using the col_types field. I specified that for you here. There are a lot more options you can look at in the Help section.\n\nlibrary(readr)\n\n# reading in csv is for importing comma-separated files\n\n# base R\ndata_base &lt;- read.csv(file = \"data/taylorswift.csv\", \n                 header = TRUE, \n                 sep = \",\", \n                 stringsAsFactors = TRUE)\n\n\n# Tidyverse\ndata_tidy &lt;- read_csv(file = \"data/taylorswift.csv\",\n                 col_names = TRUE)\n\nUsing readr you can also import data directly from excel spreadsheets using read_excel or read_xls and even google sheets using read_sheet. However, we won’t use these function in the course. But you are free to explore them on your own from the readr package.\n\n\nExport\nYou can also save files using the write functions for both csv or tsv files.\n\n# base R\nwrite.csv(data, file = \"data/taylorswift.csv\")\n\n# Tidyverse\nwrite_csv(data, file = \"data/taylorswift.csv\")\n\n\n\nManipulating Data Types\nR requires data to be in specific formats in order to perform operations on the data. Recall from last class the major types of data!\n\n\n\n\n\n\nDATA TYPES\n\n\n\n\ncharacter\nnumeric\ninteger\nfactor\nlogical\n\n\n\nLets look at data types in the taylorswift data in R\n\n# first load the packages we are going to need\nlibrary(tidyverse)\nlibrary(readr)\nlibrary(ggplot2)\n\n# next import some data, as an example we are using the taylorswift data\ndata &lt;- read_csv(file = \"data/taylorswift.csv\",\n                 col_names = TRUE)\n\n# Its good to start any data analysis with basic data exploration.\n# how many columns of data are there?\nncol(data)\n\n[1] 21\n\n# how many rows of observations are there?\nnrow(data)\n\n[1] 314\n\n# when we imported the data, what is the type of data in each column?\nas.data.frame(map_chr(data, class))\n\n                 map_chr(data, class)\nalbum_name                  character\nalbum_release                    Date\ntrack_number                  numeric\ntrack_name                  character\ndanceability                  numeric\nenergy                        numeric\nkey                           numeric\nloudness                      numeric\nmode                          numeric\nspeechiness                   numeric\nacousticness                  numeric\ninstrumentalness              numeric\nliveness                      numeric\nvalence                       numeric\ntempo                         numeric\ntime_signature                numeric\nduration_ms                   numeric\nexplicit                      logical\nkey_name                    character\nmode_name                   character\nkey_mode                    character\n\nglimpse(data)\n\nRows: 314\nColumns: 21\n$ album_name       &lt;chr&gt; \"Taylor Swift\", \"Taylor Swift\", \"Taylor Swift\", \"Tayl…\n$ album_release    &lt;date&gt; 2006-10-24, 2006-10-24, 2006-10-24, 2006-10-24, 2006…\n$ track_number     &lt;dbl&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 1,…\n$ track_name       &lt;chr&gt; \"Tim McGraw\", \"Picture To Burn\", \"Teardrops On My Gui…\n$ danceability     &lt;dbl&gt; 0.580, 0.658, 0.621, 0.576, 0.418, 0.589, 0.479, 0.59…\n$ energy           &lt;dbl&gt; 0.491, 0.877, 0.417, 0.777, 0.482, 0.805, 0.578, 0.62…\n$ key              &lt;dbl&gt; 0, 7, 10, 9, 5, 5, 2, 8, 4, 2, 2, 8, 7, 4, 10, 5, 7, …\n$ loudness         &lt;dbl&gt; -6.462, -2.098, -6.941, -2.881, -5.769, -4.055, -4.96…\n$ mode             &lt;dbl&gt; 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1, 1,…\n$ speechiness      &lt;dbl&gt; 0.0251, 0.0323, 0.0231, 0.0324, 0.0266, 0.0293, 0.029…\n$ acousticness     &lt;dbl&gt; 0.57500, 0.17300, 0.28800, 0.05100, 0.21700, 0.00491,…\n$ instrumentalness &lt;dbl&gt; 0.00e+00, 0.00e+00, 0.00e+00, 0.00e+00, 0.00e+00, 0.0…\n$ liveness         &lt;dbl&gt; 0.1210, 0.0962, 0.1190, 0.3200, 0.1230, 0.2400, 0.084…\n$ valence          &lt;dbl&gt; 0.425, 0.821, 0.289, 0.428, 0.261, 0.591, 0.192, 0.50…\n$ tempo            &lt;dbl&gt; 76.009, 105.586, 99.953, 115.028, 175.558, 112.982, 1…\n$ time_signature   &lt;dbl&gt; 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,…\n$ duration_ms      &lt;dbl&gt; 232107, 173067, 203040, 199200, 239013, 207107, 24810…\n$ explicit         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALS…\n$ key_name         &lt;chr&gt; \"C\", \"G\", \"A#\", \"A\", \"F\", \"F\", \"D\", \"G#\", \"E\", \"D\", \"…\n$ mode_name        &lt;chr&gt; \"major\", \"major\", \"major\", \"major\", \"major\", \"major\",…\n$ key_mode         &lt;chr&gt; \"C major\", \"G major\", \"A# major\", \"A major\", \"F major…\n\n\nThe most common data type conversions are between: 1) characters -&gt; factors 2) numeric –&gt; factors\nFor example, if we wanted to see how the loudness differs across Taylor Swift albums we need to convert the album_name vector into a factor variable\n\n# note alphabetical order\nggplot(data, aes(x=album_release, y=duration_ms, color = album_name)) + geom_point()\n\n\nggplot(data, aes(x=track_number, y=duration_ms, color = album_name)) + geom_point()\n\n\nmod &lt;- lm(duration_ms ~ album_name, data = data) \nanova(mod)\n\n\n\n\n\n# change the album name from character to factor\ndata$album_name &lt;- as.factor(data$album_name) # order = alphabetical\ndata$album_name &lt;- as_factor(data$album_name) # order = as unique()\n\nmod &lt;- lm(tempo ~ album_name, data = data) \nanova(mod)\n\n\n# sometimes we want numeric variables as numbers and sometimes we want them to be factors. In this case the x axis is spaced based on the time between album releases.\nggplot(data, aes(x=album_release, y = track_number)) + geom_point()\n\n\n\n\n\n\n\n# If we convert the year to a factor variable the time between won't matter and it will be equally distributed.\n\ndata$album_release &lt;- as.factor(data$album_release)\nggplot(data, aes(x=album_release, y = track_number)) + geom_point() + \n  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))\n\n\n\n\n\n\n\n# This makes a big difference not only for the plotting, but will also impact how statistical analyses are performed. So be careful and make sure the data type is correctly specified (continuous versus categorical versus factored versus ordered)\n\n\nggplot(data, aes(x=time_signature, y = key)) + geom_point()\n\nWarning: Removed 3 rows containing missing values or values outside the scale range\n(`geom_point()`).\n\n\n\n\n\n\n\n\n\nExamples I want to include: character to factor and ordered how that makes a difference in plotting and statistics\nnumeric to factor and ordered how that makes a difference in plotting and statistics\n\n\n\n\n\n\nWant More?\n\n\n\nThere are so many great tools to learn R and data science!\n\nTo explore the tidyverse and data science in more detail check out the R for Data Science textbook written by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund.\nWant more stats and data science conversations?! Check out the not so standard deviations podcast by Roger Peng and Hilary Parker."
+  },
+  {
+    "objectID": "readings.html",
+    "href": "readings.html",
+    "title": "Important reading materials",
+    "section": "",
+    "text": "The following contains relevant reading materials you should read prior to each class:\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\n2025-07-01\n\n\nR & RStudio\n\n\nLindsay Hayes\n\n\n\n\n2025-07-03\n\n\nNavigating Data Types in R\n\n\nLindsay Hayes\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "projects.html",
+    "href": "projects.html",
+    "title": "Projects",
+    "section": "",
+    "text": "Date\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\n2024-10-24\n\n\nProject 1\n\n\nStephanie Hicks\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "lectures/index_L01.html",
+    "href": "lectures/index_L01.html",
+    "title": "Welcome to the Course!",
+    "section": "",
+    "text": "The course will exclusively use R in the integrated development environment (IDE) called R Studio. Since the summer semester is only 1 month (10 classes), it is critical to have your computer set up and ready to go before the first day of class.\nThroughout the course, there will be a set of pre-lecture activities and/or readings for you to complete. These activities prepare you for the in-class activities. Failure to complete them will put you behind in an already compressed course.\nTo prepare for the first class:\n\nInstall R and R Studio\n\ninstallation video tutorial\nDetailed instructions on installing R and R Studio are available on swirl.\n\nComplete step 1 and step 2\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nSwirl is a great tool to learn R interactively that we will use in the course. Feel free to explore more.\n\n\n\nIn the first class, we will begin to get familiar with R. Complete the Pre-reading material about R. Pre-reading materials for each class are located under Resources. Sometimes, pre-reading materials are direct links to external resources for you to read in advance of the lecture."
+  },
+  {
+    "objectID": "lectures/index_L01.html#learning-objectives",
+    "href": "lectures/index_L01.html#learning-objectives",
+    "title": "Welcome to the Course!",
+    "section": "Learning objectives",
+    "text": "Learning objectives\n\n\n\n\n\n\nLearning objectives\n\n\n\nAt the end of this lesson you will:\n\nGet an overview of the course (including staff, format, grading, etc)\nBe able to recognize and operate an Integrated Developer Environment (IDE).\nBe able to recognize a Quarto document and describe reasons why to use a unified authoring framework.\nBe able to create a R project & Quarto document."
+  },
+  {
+    "objectID": "lectures/index_L01.html#slides",
+    "href": "lectures/index_L01.html#slides",
+    "title": "Welcome to the Course!",
+    "section": "Slides",
+    "text": "Slides\n\nLecture 01: Welcome and Introductions"
+  },
+  {
+    "objectID": "lectures/index_L01.html#acknowledgements",
+    "href": "lectures/index_L01.html#acknowledgements",
+    "title": "Welcome to the Course!",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nMaterial for this lecture was borrowed and adopted from\n\nsw carpentry: https://carpentries-incubator.github.io/bioc-intro/20-r-rstudio.html\ndata carpentry: https://datacarpentry.github.io/genomics-r-intro/00-introduction.html"
+  },
+  {
+    "objectID": "lectures/index_L01.html#summary",
+    "href": "lectures/index_L01.html#summary",
+    "title": "Welcome to the Course!",
+    "section": "Summary",
+    "text": "Summary\n\nAccess all course material on the course website (https://lindsaynhayes.github.io/introR2025/).\nRStudio makes you a more efficient programmer and gives you easy access to all the components of data analysis.\nQuarto is an open-source scientific and technical publishing system to create reproducible, production quality data analysis reports and much more. During the course we will primarily use the HTML output format."
+  },
+  {
+    "objectID": "lectures/index_L01.html#additional-practice",
+    "href": "lectures/index_L01.html#additional-practice",
+    "title": "Welcome to the Course!",
+    "section": "Additional practice",
+    "text": "Additional practice\nHere are some additional practice questions to help you think about the material discussed.\nCheck out this article on the 10 Best Practices for Data Science here\n\n\n\n\n\n\nPractice Tasks\n\n\n\n\nIn RStudio, create a new R project and then create a new Quarto document in that R project. Read the instructions. Practice running the chunks individually using the “play” button and the keyboard short cut.\nChange the settings of the Quarto document to display the output “inline” or in the “console”.\nRender the document and view the HTML output. Verify that you can modify the code, re-run it, and see modified output."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "Welcome to the Course Website for Cell 6351 Intro to Reproducible Data Analysis Using R!"
+  },
+  {
+    "objectID": "index.html#overview",
+    "href": "index.html#overview",
+    "title": "Welcome",
+    "section": "Overview",
+    "text": "Overview\nCurrent biomedical research regularly generates large datasets that require increasing computational skills to process and analyze including in genomics, behavior, imaging, and molecular biology. As a result, scientists today require fundamental computational and programming skill-sets to efficiently perform data analyses, generate complex models for testing, develop reproducible data analyses, and effectively communicate results through clear and meaningful graphics. However, these skills are often challenging due to a lack of structured training in data science.\nIntro to Reproducible Data Analysis Using R is a hands-on course that will introduce the R statistical software including data structures, wrangling data, plotting data, basic statistics, data modeling, and literate coding practices. There is no textbook for the course. All course materials will be provided on Canvas or this website. While no formal background in statistics or programming is necessary, a general knowledge of basic statistics, experimental design, and computer file storage systems will be helpful. All classes will involve active learning/coding activities so a laptop with power cord is required for all sessions. Students will be expected to complete readings prior to class, attend lectures to dive deeper into those topics in class, participate in classroom activities, complete projects practicing and reinforcing the computing and programming skills. There will be a final project, which will include a class presentation."
+  },
+  {
+    "objectID": "index.html#course-information",
+    "href": "index.html#course-information",
+    "title": "Welcome",
+    "section": "Course Information",
+    "text": "Course Information\n\nCourse Staff: Prof. Lindsay Hayes\nCourse Staff: IRCF Bioinformatics Core Eleana Cabello\nLectures: 9:00-10:30am Tuesday and Thursday\nLocation: BMSB324\nOffice Hours: Mondays 1-2pm"
+  },
+  {
+    "objectID": "index.html#course-details",
+    "href": "index.html#course-details",
+    "title": "Welcome",
+    "section": "Course Details",
+    "text": "Course Details\nAll course details are available on the Course page. The syllabus is available here and on Canvas."
+  },
+  {
+    "objectID": "activities/classwork01/palmerpenguins_intro.html",
+    "href": "activities/classwork01/palmerpenguins_intro.html",
+    "title": "Introduction to the Palmer Penguins",
+    "section": "",
+    "text": "This is a Quarto document that you can download from the github repository for the course, and as you see below there is a combination of narrative text, code chunks, code outputs, citations/references, embedded links, and even embedded static images. Quarto documents are highly customizable and the purpose is to generate a story-telling narrative of data by incorporating all these components into a single document.\nIn order to jump into data analysis we first need data! R has several datasets readily available to start explore including:\n\nAnderson’s Iris dataset (see datasets::iris). The iris data gives the measurements in centimeters of the variables sepal length and width and petal length and width, respectively, for 50 flowers from each of 3 species of iris. The species are Iris setosa, versicolor, and virginica.\n1974 Motor Trend Cars dataset (see datasets::mtcars). The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models).\nand many more (see tab complete options for datasets::).\n\n\n\n\nThe palmerpenguins R package contains two datasets. In this introductory vignette, we’ll highlight some of the properties of these datasets that make them useful for statistics and data science education."
+  },
+  {
+    "objectID": "activities/classwork01/palmerpenguins_intro.html#about-the-activity",
+    "href": "activities/classwork01/palmerpenguins_intro.html#about-the-activity",
+    "title": "Introduction to the Palmer Penguins",
+    "section": "",
+    "text": "This is a Quarto document that you can download from the github repository for the course, and as you see below there is a combination of narrative text, code chunks, code outputs, citations/references, embedded links, and even embedded static images. Quarto documents are highly customizable and the purpose is to generate a story-telling narrative of data by incorporating all these components into a single document.\nIn order to jump into data analysis we first need data! R has several datasets readily available to start explore including:\n\nAnderson’s Iris dataset (see datasets::iris). The iris data gives the measurements in centimeters of the variables sepal length and width and petal length and width, respectively, for 50 flowers from each of 3 species of iris. The species are Iris setosa, versicolor, and virginica.\n1974 Motor Trend Cars dataset (see datasets::mtcars). The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models).\nand many more (see tab complete options for datasets::).\n\n\n\n\nThe palmerpenguins R package contains two datasets. In this introductory vignette, we’ll highlight some of the properties of these datasets that make them useful for statistics and data science education."
+  },
+  {
+    "objectID": "activities/classwork01/palmerpenguins_intro.html#meet-the-penguins",
+    "href": "activities/classwork01/palmerpenguins_intro.html#meet-the-penguins",
+    "title": "Introduction to the Palmer Penguins",
+    "section": "Meet the penguins",
+    "text": "Meet the penguins\nThe palmerpenguins data contains size measurements for three penguin species observed on three islands in the Palmer Archipelago, Antarctica.\n\n\nThe Palmer Archipelago penguins. Artwork by @allison_horst.\n\nThese data were collected from 2007 - 2009 by Dr. Kristen Gorman with the Palmer Station Long Term Ecological Research Program, part of the US Long Term Ecological Research Network. The data were imported directly from the Environmental Data Initiative (EDI) Data Portal, and are available for use by CC0 license (“No Rights Reserved”) in accordance with the Palmer Station Data Policy."
+  },
+  {
+    "objectID": "activities/classwork01/palmerpenguins_intro.html#installation",
+    "href": "activities/classwork01/palmerpenguins_intro.html#installation",
+    "title": "Introduction to the Palmer Penguins",
+    "section": "Installation",
+    "text": "Installation\nYou can install the released version of palmerpenguins from CRAN with:\n\ninstall.packages(\"palmerpenguins\")"
+  },
+  {
+    "objectID": "activities/classwork01/palmerpenguins_intro.html#the-palmerpenguins-package",
+    "href": "activities/classwork01/palmerpenguins_intro.html#the-palmerpenguins-package",
+    "title": "Introduction to the Palmer Penguins",
+    "section": "The palmerpenguins package",
+    "text": "The palmerpenguins package\nThe curated palmerpenguins::penguins dataset contains 8 variables (n = 344 penguins). You can read more about the variables by typing ?penguins.\n\ndata &lt;- penguins\nglimpse(penguins)\n\nRows: 344\nColumns: 8\n$ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adel…\n$ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgerse…\n$ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, …\n$ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, …\n$ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186…\n$ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, …\n$ sex               &lt;fct&gt; male, female, female, NA, female, male, female, male…\n$ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…\n\nhead(penguins)\n\n# A tibble: 6 × 8\n  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Adelie  Torgersen           39.1          18.7               181        3750\n2 Adelie  Torgersen           39.5          17.4               186        3800\n3 Adelie  Torgersen           40.3          18                 195        3250\n4 Adelie  Torgersen           NA            NA                  NA          NA\n5 Adelie  Torgersen           36.7          19.3               193        3450\n6 Adelie  Torgersen           39.3          20.6               190        3650\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n\nThe palmerpenguins::penguins data contains 333 complete cases, with 19 missing values."
+  },
+  {
+    "objectID": "activities/classwork01/palmerpenguins_intro.html#lets-explore",
+    "href": "activities/classwork01/palmerpenguins_intro.html#lets-explore",
+    "title": "Introduction to the Palmer Penguins",
+    "section": "Let’s Explore",
+    "text": "Let’s Explore\nLets explore, visualization, and analyses some of the penguin data. Below are just a few examples to get you quickly waddling along with the penguins. You can check out more in vignette(\"examples\").\n\nExploring factors\nThe penguins data has three factor variables:\n\npenguins |&gt;\n  dplyr::select(where(is.factor)) |&gt;\n  glimpse()\n\nRows: 344\nColumns: 3\n$ species &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie…\n$ island  &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgers…\n$ sex     &lt;fct&gt; male, female, female, NA, female, male, female, male, NA, NA, …\n\n\n\n# Count penguins for each species / island\npenguins %&gt;%\n  count(species, island, .drop = FALSE)\n\n# A tibble: 9 × 3\n  species   island        n\n  &lt;fct&gt;     &lt;fct&gt;     &lt;int&gt;\n1 Adelie    Biscoe       44\n2 Adelie    Dream        56\n3 Adelie    Torgersen    52\n4 Chinstrap Biscoe        0\n5 Chinstrap Dream        68\n6 Chinstrap Torgersen     0\n7 Gentoo    Biscoe      124\n8 Gentoo    Dream         0\n9 Gentoo    Torgersen     0\n\ntable(penguins$species, penguins$island)\n\n           \n            Biscoe Dream Torgersen\n  Adelie        44    56        52\n  Chinstrap      0    68         0\n  Gentoo       124     0         0\n\n\nPlots are the easiest way to explore and understand your data.\n1. Lets first plot the number of penguins of each species across the 3 Palmer Archipelago islands.\n\nggplot(penguins, aes(x = island, fill = species)) +\n  geom_bar(alpha = 0.8) +\n  scale_fill_manual(values = c(\"darkorange\",\"purple\",\"cyan4\")) +\n  theme_minimal() +\n  facet_wrap(~species, ncol = 1) +\n  coord_flip()\n\n\n\n\n\n\n\n\n2. Next lets look at how many males and females we have of each species of penguins.\n\n# Count penguins for each species / sex\npenguins |&gt;\n  count(species, sex, .drop = FALSE)\n\n# A tibble: 8 × 3\n  species   sex        n\n  &lt;fct&gt;     &lt;fct&gt;  &lt;int&gt;\n1 Adelie    female    73\n2 Adelie    male      73\n3 Adelie    &lt;NA&gt;       6\n4 Chinstrap female    34\n5 Chinstrap male      34\n6 Gentoo    female    58\n7 Gentoo    male      61\n8 Gentoo    &lt;NA&gt;       5\n\n\n\nggplot(penguins, aes(x = sex, fill = species)) +\n  geom_bar(alpha = 0.8) +\n  scale_fill_manual(values = c(\"darkorange\",\"purple\",\"cyan4\"), \n                    guide = FALSE) +\n  theme_minimal() +\n  facet_wrap(~species, ncol = 1) +\n  coord_flip()\n\n\n\n\n\n\n\n\n\n\nExploring scatterplots\nThe penguins data also has four numeric variables. Lets plot those variables too!\n\npenguins |&gt;\n  dplyr::select(where(is.numeric)) |&gt;\n  glimpse()\n\nRows: 344\nColumns: 5\n$ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, …\n$ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, …\n$ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186…\n$ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, …\n$ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…\n\n\n\n# Count how many penguins they evaluated each year\npenguins |&gt;\n  count(year, species, .drop = FALSE)\n\n# A tibble: 9 × 3\n   year species       n\n  &lt;int&gt; &lt;fct&gt;     &lt;int&gt;\n1  2007 Adelie       50\n2  2007 Chinstrap    26\n3  2007 Gentoo       34\n4  2008 Adelie       50\n5  2008 Chinstrap    18\n6  2008 Gentoo       46\n7  2009 Adelie       52\n8  2009 Chinstrap    24\n9  2009 Gentoo       44\n\ntable(penguins$year, penguins$species)\n\n      \n       Adelie Chinstrap Gentoo\n  2007     50        26     34\n  2008     50        18     46\n  2009     52        24     44\n\n\nScatterplot example 1: penguin flipper length versus body mass\n\nggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  geom_point()\n\n\n\n\n\n\n\n\nYou can add color and/or shape aesthetics in ggplot2 to layer in factor levels. With three factor variables to work with, you can add another factor layer with facets.\n\n# Scatterplot example 1: penguin flipper length versus body mass\nggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  geom_point(aes(color = species, \n                 shape = species),\n             size = 2) +\n  scale_color_manual(values = c(\"darkorange\",\"darkorchid\",\"cyan4\")) \n\n\n\n\n\n\n\n# Scatterplot example 2: penguin bill length versus bill depth\nggplot(data = penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +\n  geom_point(aes(color = species, \n                 shape = species),\n                 size = 2)  +\n  scale_color_manual(values = c(\"darkorange\",\"darkorchid\",\"cyan4\"))\n\n\n\n\n\n\n\n# Scatterplot example 3: penguin flipper length versus body mass separated by species and sex\nggplot(penguins, aes(x = flipper_length_mm,\n                     y = body_mass_g)) +\n  geom_point(aes(color = sex)) +\n  scale_color_manual(values = c(\"deeppink2\",\"cornflowerblue\"), \n                     na.translate = FALSE) + # removes the \"NA\" values\n  facet_wrap(~species)\n\n\n\n\n\n\n\n# Scatterplot example 4: penguin flipper length versus body mass separated by all 3 factor variables\nggplot(penguins, aes(x = flipper_length_mm,\n                     y = body_mass_g)) +\n  geom_point(aes(color = sex, shape = island)) +\n  scale_color_manual(values = c(\"deeppink2\",\"cornflowerblue\"), \n                     na.translate = FALSE) + # removes the \"NA\" values\n  facet_wrap(~species)\n\n\n\n\n\n\n\n\n\n\nExploring correlations\n\npenguins |&gt;\n  select(species, body_mass_g, ends_with(\"_mm\")) |&gt;\n  GGally::ggpairs(aes(color = species)) +\n  scale_colour_manual(values = c(\"darkorange\",\"purple\",\"cyan4\")) +\n  scale_fill_manual(values = c(\"darkorange\",\"purple\",\"cyan4\"))\n\n\n\n\n\n\n\n\n\n\nStatistically evaluating distributions\n\n# Jitter plot example: bill length by species\nggplot(data = penguins, aes(x = species, y = bill_length_mm)) +\n  geom_jitter(aes(color = species),\n              width = 0.1, \n              alpha = 0.7,\n              show.legend = FALSE) +\n  scale_color_manual(values = c(\"darkorange\",\"darkorchid\",\"cyan4\"))\n\n\n\n\n\n\n\n# Boxplot examples: bill length by species\nggplot(data = penguins, aes(x = species, y = bill_length_mm)) + geom_boxplot(aes(fill = species)) +\n  scale_fill_manual(values = c(\"orange\",\"orchid\",\"cyan3\"))\n\n\n\n\n\n\n\nggplot(data = penguins, aes(x = species, y = bill_length_mm)) + \n  geom_boxplot(aes(fill = species), outlier.shape = NA, na.rm = TRUE) +\n  geom_jitter(aes(color = species),\n              width = 0.1, \n              alpha = 0.7, na.rm = TRUE,\n              show.legend = FALSE) +\n  scale_color_manual(values = c(\"darkorange2\",\"darkorchid\",\"cyan4\")) +\n  scale_fill_manual(values = c(\"orange\",\"orchid\",\"cyan3\"))\n\n\n\n\n\n\n\n# Histogram example: flipper length by species\nggplot(data = penguins, aes(x = flipper_length_mm)) +\n  geom_histogram(aes(fill = species), alpha = 0.5, position = \"identity\", na.rm = TRUE) +\n  scale_fill_manual(values = c(\"darkorange\",\"darkorchid\",\"cyan4\"))"
+  },
+  {
+    "objectID": "activities/classwork01/palmerpenguins_intro.html#acknowlegements",
+    "href": "activities/classwork01/palmerpenguins_intro.html#acknowlegements",
+    "title": "Introduction to the Palmer Penguins",
+    "section": "Acknowlegements",
+    "text": "Acknowlegements\nThis vignette was originally written by Allison Horst, Alison Hill, and Kristen Gorman. You can find info about the palmerpenguins package here!"
+  },
+  {
+    "objectID": "activities/classwork01/palmerpenguins_intro.html#package-citation",
+    "href": "activities/classwork01/palmerpenguins_intro.html#package-citation",
+    "title": "Introduction to the Palmer Penguins",
+    "section": "Package citation",
+    "text": "Package citation\nPlease cite the palmerpenguins R package using:\n\ncitation(\"palmerpenguins\")\n\nTo cite palmerpenguins in publications use:\n\n  Horst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer\n  Archipelago (Antarctica) penguin data. R package version 0.1.0.\n  https://allisonhorst.github.io/palmerpenguins/. doi:\n  10.5281/zenodo.3960218.\n\nA BibTeX entry for LaTeX users is\n\n  @Manual{,\n    title = {palmerpenguins: Palmer Archipelago (Antarctica) penguin data},\n    author = {Allison Marie Horst and Alison Presmanes Hill and Kristen B Gorman},\n    year = {2020},\n    note = {R package version 0.1.0},\n    doi = {10.5281/zenodo.3960218},\n    url = {https://allisonhorst.github.io/palmerpenguins/},\n  }"
+  },
+  {
+    "objectID": "activities/classwork01/palmerpenguins_intro.html#references",
+    "href": "activities/classwork01/palmerpenguins_intro.html#references",
+    "title": "Introduction to the Palmer Penguins",
+    "section": "References",
+    "text": "References\nData originally published in:\n\nGorman KB, Williams TD, Fraser WR (2014). Ecological sexual dimorphism and environmental variability within a community of Antarctic penguins (genus Pygoscelis). PLoS ONE 9(3):e90081. https://doi.org/10.1371/journal.pone.0090081\n\nIndividual datasets:\nIndividual data can be accessed directly via the Environmental Data Initiative:\n\nPalmer Station Antarctica LTER and K. Gorman, 2020. Structural size measurements and isotopic signatures of foraging among adult male and female Adélie penguins (Pygoscelis adeliae) nesting along the Palmer Archipelago near Palmer Station, 2007-2009 ver 5. Environmental Data Initiative. https://doi.org/10.6073/pasta/98b16d7d563f265cb52372c8ca99e60f (Accessed 2020-06-08).\nPalmer Station Antarctica LTER and K. Gorman, 2020. Structural size measurements and isotopic signatures of foraging among adult male and female Gentoo penguin (Pygoscelis papua) nesting along the Palmer Archipelago near Palmer Station, 2007-2009 ver 5. Environmental Data Initiative. https://doi.org/10.6073/pasta/7fca67fb28d56ee2ffa3d9370ebda689 (Accessed 2020-06-08).\nPalmer Station Antarctica LTER and K. Gorman, 2020. Structural size measurements and isotopic signatures of foraging among adult male and female Chinstrap penguin (Pygoscelis antarcticus) nesting along the Palmer Archipelago near Palmer Station, 2007-2009 ver 6. Environmental Data Initiative. https://doi.org/10.6073/pasta/c14dfcfada8ea13a17536e73eb6fbe9e (Accessed 2020-06-08).\n\nHave fun with the Palmer Archipelago penguins!"
+  },
+  {
+    "objectID": "activities.html",
+    "href": "activities.html",
+    "title": "In-Class Activities",
+    "section": "",
+    "text": "In-class activities are listed below:\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\n2025-07-01\n\n\nIntroduction to the Palmer Penguins\n\n\n \n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "lectures.html",
+    "href": "lectures.html",
+    "title": "Course Content",
+    "section": "",
+    "text": "Course content for each lecture is below:\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\n2025-07-01\n\n\nWelcome to the Course!\n\n\nLindsay Hayes\n\n\n\n\n2025-07-03\n\n\nNavigating Data Types in R\n\n\nLindsay Hayes\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "lectures/index_L02.html",
+    "href": "lectures/index_L02.html",
+    "title": "Navigating Data Types in R",
+    "section": "",
+    "text": "Before class, review the pre-reading materials."
+  },
+  {
+    "objectID": "lectures/index_L02.html#learning-objectives",
+    "href": "lectures/index_L02.html#learning-objectives",
+    "title": "Navigating Data Types in R",
+    "section": "Learning objectives",
+    "text": "Learning objectives\n\n\n\n\n\n\nLearning objectives\n\n\n\nAt the end of class you will be able to:\n\nGenerate and navigate a quarto document\nUnderstand what packages are and how to use them\nGet data in and out of R\nRecognize and create various data types in R"
+  },
+  {
+    "objectID": "lectures/index_L02.html#slides",
+    "href": "lectures/index_L02.html#slides",
+    "title": "Navigating Data Types in R",
+    "section": "Slides",
+    "text": "Slides\n\nLecture 02: Data Types"
+  },
+  {
+    "objectID": "projects/01-project/index.html",
+    "href": "projects/01-project/index.html",
+    "title": "Project 1",
+    "section": "",
+    "text": "Due date: November 8 at 11:59pm\nThe goal of this assignment is to practice some of the skills we have been learning about in class around quarto, command-line, and version control by building and deploying a website. You also are asked to practice with some command-line skills more formally.\n\n\nPlease use this Quarto file (.qmd) and fill in the requested components by adding the URLs pointing to the GitHub repositories and deployed websites. Render this file to a HTML file.\nYou will push the .qmd file and rendered HTML file to a private GitHub repostory on GitHub classroom. The link to create a private GitHub repository for yourself to complete Project 1 will be posted in CoursePlus (Note: this creates an empty repository. You will need to clone the reopository locally, add your code, and push your code from your local repo to the remote repository on GitHub Classroom when ready). Please show all your code, if relevant to a section.\nThe TAs will grade the contents in the GitHub repo by cloning the repo and checking for all the things described below."
+  },
+  {
+    "objectID": "projects/01-project/index.html#create-a-github-repo-for-your-website",
+    "href": "projects/01-project/index.html#create-a-github-repo-for-your-website",
+    "title": "Project 1",
+    "section": "1. Create a GitHub repo for your website",
+    "text": "1. Create a GitHub repo for your website\nCreate a new public GitHub repository titled biostat777-intro-&lt;firstname&gt;-&lt;lastname&gt; (where you replace &lt;firstname&gt; with your first name and &lt;lastname&gt; with your last name) in your own personal GitHub account (e.g. https://github.com/&lt;yourgithubusername&gt;/biostat777-intro-&lt;firstname&gt;-&lt;lastname&gt;)."
+  },
+  {
+    "objectID": "projects/01-project/index.html#build-a-website-using-quarto",
+    "href": "projects/01-project/index.html#build-a-website-using-quarto",
+    "title": "Project 1",
+    "section": "2. Build a website using Quarto",
+    "text": "2. Build a website using Quarto\nCreate a new project locally within RStudio or VSCode and build a website for yourself. Your website should include the following:\n\nA home/landing page. This is home page that someone will land on your website. At minimum it should include your name, a short summary about yourself (max 2-3 sentences), and a picture of something you enjoy to do for fun (or a picture of yourself if you are comfortable sharing one).\nA page titled ‘About’. This page should describe who you are in greater detail. It could include your professional interests and your educational and/or professional background and/or experience. It could also include any personal information you feel conformable sharing on the website.\nA data analysis page called ‘Example analysis’. You can pick any dataset you wish you analyze. In this webpage, you will analyze a dataset and summarize the results. The requirements for this webpage are the following:\n\nYou must describe what is the question you aim to answer with the data and data analysis.\nYou must describe who is the intended audience for the data analysis.\nYou must describe and link to where the original data come from that you chose.\nYou must include a link to a data dictionary for the data or create one inside the webpage.\nYour analysis must include some minimal form of data wrangling with you using at least five different functions from dplyr or tidyr.\nYour analysis should include at least three plots with you using at least three different geom_*() functions from ggplot2 (or another package with geom_*() functions).\nPlots should have titles, subtitles, captions, and human-understandable axis labels.\nAt least one plot should using a type of faceting (facet_grid() or facet_wrap()).\nYour analysis must include one image or table (not one you created yourself, but one you have saved locally or one from the web).\nYour analysis must include at least two different callout blocks.\nYour analysis must include a .bib file, which you use to reference at least three unique citations. For example, it could be to a website or paper from where the original data came from or it could be to a paper describing a method you are using to analyze the data.\nYour analysis must include the use of at least 1 margin content.\nYou must summarize your analysis and/or results with a paragraph (4-6 sentences).\nAt the end of the data analysis, list out each of the functions you used from each of the packages (dplyr, tidyr, and ggplot2) to help the TA with respect to making sure you met all the requirements described above."
+  },
+  {
+    "objectID": "projects/01-project/index.html#include-a-readme.md-file",
+    "href": "projects/01-project/index.html#include-a-readme.md-file",
+    "title": "Project 1",
+    "section": "3. Include a README.md file",
+    "text": "3. Include a README.md file\nYour local repository should include a README.md file describing who is the author of the website and a link to the website after it has been deployed. Other things you might include are the technical details for how the website was created and/or deployed."
+  },
+  {
+    "objectID": "projects/01-project/index.html#deploy-your-website",
+    "href": "projects/01-project/index.html#deploy-your-website",
+    "title": "Project 1",
+    "section": "4. Deploy your website",
+    "text": "4. Deploy your website\nDeploy your website e.g. using Quarto Pub, GitHub pages, or Netlify, etc. (Note: Deploying your website to RPubs will not be accepted)."
+  },
+  {
+    "objectID": "projects/01-project/index.html#share-your-website",
+    "href": "projects/01-project/index.html#share-your-website",
+    "title": "Project 1",
+    "section": "5. Share your website",
+    "text": "5. Share your website\nGo to the Discussion Board in CoursePlus and write a short post with a link (URL) to your website (and URL to the corresponding GitHub repository) that you created. Also, list the URLs below for the purposes of grading.\nAs you read the introductions from other folks in the class, feel free to comment/reply using Discussion board.\n\nLink to your GitHub repository: [Delete this text and replace the text with the link to the public GitHub repo you created above for your website]\nLink to your deployed website: [Delete this and replace the text with the link to the public deployed website you created above]"
+  },
+  {
     "objectID": "readings/index_R01.html",
     "href": "readings/index_R01.html",
     "title": "R & RStudio",
@@ -271,278 +523,5 @@
     "title": "R & RStudio",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nAs opposed to using R directly from the command line console.↩︎"
-  },
-  {
-    "objectID": "projects/01-project/index.html",
-    "href": "projects/01-project/index.html",
-    "title": "Project 1",
-    "section": "",
-    "text": "Due date: November 8 at 11:59pm\nThe goal of this assignment is to practice some of the skills we have been learning about in class around quarto, command-line, and version control by building and deploying a website. You also are asked to practice with some command-line skills more formally.\n\n\nPlease use this Quarto file (.qmd) and fill in the requested components by adding the URLs pointing to the GitHub repositories and deployed websites. Render this file to a HTML file.\nYou will push the .qmd file and rendered HTML file to a private GitHub repostory on GitHub classroom. The link to create a private GitHub repository for yourself to complete Project 1 will be posted in CoursePlus (Note: this creates an empty repository. You will need to clone the reopository locally, add your code, and push your code from your local repo to the remote repository on GitHub Classroom when ready). Please show all your code, if relevant to a section.\nThe TAs will grade the contents in the GitHub repo by cloning the repo and checking for all the things described below."
-  },
-  {
-    "objectID": "projects/01-project/index.html#create-a-github-repo-for-your-website",
-    "href": "projects/01-project/index.html#create-a-github-repo-for-your-website",
-    "title": "Project 1",
-    "section": "1. Create a GitHub repo for your website",
-    "text": "1. Create a GitHub repo for your website\nCreate a new public GitHub repository titled biostat777-intro-&lt;firstname&gt;-&lt;lastname&gt; (where you replace &lt;firstname&gt; with your first name and &lt;lastname&gt; with your last name) in your own personal GitHub account (e.g. https://github.com/&lt;yourgithubusername&gt;/biostat777-intro-&lt;firstname&gt;-&lt;lastname&gt;)."
-  },
-  {
-    "objectID": "projects/01-project/index.html#build-a-website-using-quarto",
-    "href": "projects/01-project/index.html#build-a-website-using-quarto",
-    "title": "Project 1",
-    "section": "2. Build a website using Quarto",
-    "text": "2. Build a website using Quarto\nCreate a new project locally within RStudio or VSCode and build a website for yourself. Your website should include the following:\n\nA home/landing page. This is home page that someone will land on your website. At minimum it should include your name, a short summary about yourself (max 2-3 sentences), and a picture of something you enjoy to do for fun (or a picture of yourself if you are comfortable sharing one).\nA page titled ‘About’. This page should describe who you are in greater detail. It could include your professional interests and your educational and/or professional background and/or experience. It could also include any personal information you feel conformable sharing on the website.\nA data analysis page called ‘Example analysis’. You can pick any dataset you wish you analyze. In this webpage, you will analyze a dataset and summarize the results. The requirements for this webpage are the following:\n\nYou must describe what is the question you aim to answer with the data and data analysis.\nYou must describe who is the intended audience for the data analysis.\nYou must describe and link to where the original data come from that you chose.\nYou must include a link to a data dictionary for the data or create one inside the webpage.\nYour analysis must include some minimal form of data wrangling with you using at least five different functions from dplyr or tidyr.\nYour analysis should include at least three plots with you using at least three different geom_*() functions from ggplot2 (or another package with geom_*() functions).\nPlots should have titles, subtitles, captions, and human-understandable axis labels.\nAt least one plot should using a type of faceting (facet_grid() or facet_wrap()).\nYour analysis must include one image or table (not one you created yourself, but one you have saved locally or one from the web).\nYour analysis must include at least two different callout blocks.\nYour analysis must include a .bib file, which you use to reference at least three unique citations. For example, it could be to a website or paper from where the original data came from or it could be to a paper describing a method you are using to analyze the data.\nYour analysis must include the use of at least 1 margin content.\nYou must summarize your analysis and/or results with a paragraph (4-6 sentences).\nAt the end of the data analysis, list out each of the functions you used from each of the packages (dplyr, tidyr, and ggplot2) to help the TA with respect to making sure you met all the requirements described above."
-  },
-  {
-    "objectID": "projects/01-project/index.html#include-a-readme.md-file",
-    "href": "projects/01-project/index.html#include-a-readme.md-file",
-    "title": "Project 1",
-    "section": "3. Include a README.md file",
-    "text": "3. Include a README.md file\nYour local repository should include a README.md file describing who is the author of the website and a link to the website after it has been deployed. Other things you might include are the technical details for how the website was created and/or deployed."
-  },
-  {
-    "objectID": "projects/01-project/index.html#deploy-your-website",
-    "href": "projects/01-project/index.html#deploy-your-website",
-    "title": "Project 1",
-    "section": "4. Deploy your website",
-    "text": "4. Deploy your website\nDeploy your website e.g. using Quarto Pub, GitHub pages, or Netlify, etc. (Note: Deploying your website to RPubs will not be accepted)."
-  },
-  {
-    "objectID": "projects/01-project/index.html#share-your-website",
-    "href": "projects/01-project/index.html#share-your-website",
-    "title": "Project 1",
-    "section": "5. Share your website",
-    "text": "5. Share your website\nGo to the Discussion Board in CoursePlus and write a short post with a link (URL) to your website (and URL to the corresponding GitHub repository) that you created. Also, list the URLs below for the purposes of grading.\nAs you read the introductions from other folks in the class, feel free to comment/reply using Discussion board.\n\nLink to your GitHub repository: [Delete this text and replace the text with the link to the public GitHub repo you created above for your website]\nLink to your deployed website: [Delete this and replace the text with the link to the public deployed website you created above]"
-  },
-  {
-    "objectID": "lectures/index_L02.html",
-    "href": "lectures/index_L02.html",
-    "title": "Data Wrangling with R",
-    "section": "",
-    "text": "The course will exclusively use R in the integrated development environment (IDE) called R Studio. Since the summer semester is only 1 month (10 classes), it is critical to have your computer set up and ready to go before the first day of class.\nThroughout the course, there will be a set of pre-lecture activities and/or readings for you to complete. These activities prepare you for the in-class activities. Failure to complete them will put you behind in an already compressed course.\nTo prepare for the first class:\n\nInstall R and R Studio\n\ninstallation video tutorial\nDetailed instructions on installing R and R Studio are available on swirl.\n\nComplete step 1 and step 2\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nSwirl is a great tool to learn R interactively that we will use in the course. Feel free to explore more.\n\n\n\nIn the first class, we will begin to get familiar with R. Complete the Pre-reading material about R. Pre-reading materials for each class are located under Resources. Sometimes, pre-reading materials are direct links to external resources for you to read in advance of the lecture."
-  },
-  {
-    "objectID": "lectures/index_L02.html#learning-objectives",
-    "href": "lectures/index_L02.html#learning-objectives",
-    "title": "Data Wrangling with R",
-    "section": "Learning objectives",
-    "text": "Learning objectives\n\n\n\n\n\n\nLearning objectives\n\n\n\nAt the end of this lesson you will:\n\nGet an overview of the course (including staff, format, grading, etc)\nBe able to recognize and operate an Integrated Developer Environment (IDE).\nBe able to recognize a Quarto document and describe reasons why to use a unified authoring framework.\nBe able to create a R project & Quarto document."
-  },
-  {
-    "objectID": "lectures/index_L02.html#slides",
-    "href": "lectures/index_L02.html#slides",
-    "title": "Data Wrangling with R",
-    "section": "Slides",
-    "text": "Slides\n\nLecture 01: Welcome and Introductions"
-  },
-  {
-    "objectID": "lectures/index_L02.html#acknowledgements",
-    "href": "lectures/index_L02.html#acknowledgements",
-    "title": "Data Wrangling with R",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements\nMaterial for this lecture was borrowed and adopted from\n\nsw carpentry: https://carpentries-incubator.github.io/bioc-intro/20-r-rstudio.html\ndata carpentry: https://datacarpentry.github.io/genomics-r-intro/00-introduction.html"
-  },
-  {
-    "objectID": "lectures/index_L02.html#summary",
-    "href": "lectures/index_L02.html#summary",
-    "title": "Data Wrangling with R",
-    "section": "Summary",
-    "text": "Summary\n\nAccess all course material on the course website (https://lindsaynhayes.github.io/introR2025/).\nRStudio makes you a more efficient programmer and gives you easy access to all the components of data analysis.\nQuarto is an open-source scientific and technical publishing system to create reproducible, production quality data analysis reports and much more. During the course we will primarily use the HTML output format."
-  },
-  {
-    "objectID": "lectures/index_L02.html#additional-practice",
-    "href": "lectures/index_L02.html#additional-practice",
-    "title": "Data Wrangling with R",
-    "section": "Additional practice",
-    "text": "Additional practice\nHere are some additional practice questions to help you think about the material discussed.\nCheck out this article on the 10 Best Practices for Data Science here\n\n\n\n\n\n\nPractice Tasks\n\n\n\n\nIn RStudio, create a new R project and then create a new Quarto document in that R project. Read the instructions. Practice running the chunks individually using the “play” button and the keyboard short cut.\nChange the settings of the Quarto document to display the output “inline” or in the “console”.\nRender the document and view the HTML output. Verify that you can modify the code, re-run it, and see modified output."
-  },
-  {
-    "objectID": "lectures.html",
-    "href": "lectures.html",
-    "title": "Course Content",
-    "section": "",
-    "text": "Course content for each lecture is below:\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\n2025-07-01\n\n\nWelcome to the Course!\n\n\nLindsay Hayes\n\n\n\n\n2025-07-03\n\n\nData Wrangling with R\n\n\nLindsay Hayes\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "activities.html",
-    "href": "activities.html",
-    "title": "In-Class Activities",
-    "section": "",
-    "text": "In-class activities are listed below:\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\n2025-07-01\n\n\nIntroduction to the Palmer Penguins\n\n\n \n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "activities/classwork01/palmerpenguins_intro.html",
-    "href": "activities/classwork01/palmerpenguins_intro.html",
-    "title": "Introduction to the Palmer Penguins",
-    "section": "",
-    "text": "This is a Quarto document that you can download from the github repository for the course, and as you see below there is a combination of narrative text, code chunks, code outputs, citations/references, embedded links, and even embedded static images. Quarto documents are highly customizable and the purpose is to generate a story-telling narrative of data by incorporating all these components into a single document.\nIn order to jump into data analysis we first need data! R has several datasets readily available to start explore including:\n\nAnderson’s Iris dataset (see datasets::iris). The iris data gives the measurements in centimeters of the variables sepal length and width and petal length and width, respectively, for 50 flowers from each of 3 species of iris. The species are Iris setosa, versicolor, and virginica.\n1974 Motor Trend Cars dataset (see datasets::mtcars). The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models).\nand many more (see tab complete options for datasets::).\n\n\n\n\nThe palmerpenguins R package contains two datasets. In this introductory vignette, we’ll highlight some of the properties of these datasets that make them useful for statistics and data science education."
-  },
-  {
-    "objectID": "activities/classwork01/palmerpenguins_intro.html#about-the-activity",
-    "href": "activities/classwork01/palmerpenguins_intro.html#about-the-activity",
-    "title": "Introduction to the Palmer Penguins",
-    "section": "",
-    "text": "This is a Quarto document that you can download from the github repository for the course, and as you see below there is a combination of narrative text, code chunks, code outputs, citations/references, embedded links, and even embedded static images. Quarto documents are highly customizable and the purpose is to generate a story-telling narrative of data by incorporating all these components into a single document.\nIn order to jump into data analysis we first need data! R has several datasets readily available to start explore including:\n\nAnderson’s Iris dataset (see datasets::iris). The iris data gives the measurements in centimeters of the variables sepal length and width and petal length and width, respectively, for 50 flowers from each of 3 species of iris. The species are Iris setosa, versicolor, and virginica.\n1974 Motor Trend Cars dataset (see datasets::mtcars). The data was extracted from the 1974 Motor Trend US magazine, and comprises fuel consumption and 10 aspects of automobile design and performance for 32 automobiles (1973–74 models).\nand many more (see tab complete options for datasets::).\n\n\n\n\nThe palmerpenguins R package contains two datasets. In this introductory vignette, we’ll highlight some of the properties of these datasets that make them useful for statistics and data science education."
-  },
-  {
-    "objectID": "activities/classwork01/palmerpenguins_intro.html#meet-the-penguins",
-    "href": "activities/classwork01/palmerpenguins_intro.html#meet-the-penguins",
-    "title": "Introduction to the Palmer Penguins",
-    "section": "Meet the penguins",
-    "text": "Meet the penguins\nThe palmerpenguins data contains size measurements for three penguin species observed on three islands in the Palmer Archipelago, Antarctica.\n\n\nThe Palmer Archipelago penguins. Artwork by @allison_horst.\n\nThese data were collected from 2007 - 2009 by Dr. Kristen Gorman with the Palmer Station Long Term Ecological Research Program, part of the US Long Term Ecological Research Network. The data were imported directly from the Environmental Data Initiative (EDI) Data Portal, and are available for use by CC0 license (“No Rights Reserved”) in accordance with the Palmer Station Data Policy."
-  },
-  {
-    "objectID": "activities/classwork01/palmerpenguins_intro.html#installation",
-    "href": "activities/classwork01/palmerpenguins_intro.html#installation",
-    "title": "Introduction to the Palmer Penguins",
-    "section": "Installation",
-    "text": "Installation\nYou can install the released version of palmerpenguins from CRAN with:\n\ninstall.packages(\"palmerpenguins\")"
-  },
-  {
-    "objectID": "activities/classwork01/palmerpenguins_intro.html#the-palmerpenguins-package",
-    "href": "activities/classwork01/palmerpenguins_intro.html#the-palmerpenguins-package",
-    "title": "Introduction to the Palmer Penguins",
-    "section": "The palmerpenguins package",
-    "text": "The palmerpenguins package\nThe curated palmerpenguins::penguins dataset contains 8 variables (n = 344 penguins). You can read more about the variables by typing ?penguins.\n\ndata &lt;- penguins\nglimpse(penguins)\n\nRows: 344\nColumns: 8\n$ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adel…\n$ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgerse…\n$ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, …\n$ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, …\n$ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186…\n$ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, …\n$ sex               &lt;fct&gt; male, female, female, NA, female, male, female, male…\n$ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…\n\nhead(penguins)\n\n# A tibble: 6 × 8\n  species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g\n  &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;\n1 Adelie  Torgersen           39.1          18.7               181        3750\n2 Adelie  Torgersen           39.5          17.4               186        3800\n3 Adelie  Torgersen           40.3          18                 195        3250\n4 Adelie  Torgersen           NA            NA                  NA          NA\n5 Adelie  Torgersen           36.7          19.3               193        3450\n6 Adelie  Torgersen           39.3          20.6               190        3650\n# ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;\n\n\nThe palmerpenguins::penguins data contains 333 complete cases, with 19 missing values."
-  },
-  {
-    "objectID": "activities/classwork01/palmerpenguins_intro.html#lets-explore",
-    "href": "activities/classwork01/palmerpenguins_intro.html#lets-explore",
-    "title": "Introduction to the Palmer Penguins",
-    "section": "Let’s Explore",
-    "text": "Let’s Explore\nLets explore, visualization, and analyses some of the penguin data. Below are just a few examples to get you quickly waddling along with the penguins. You can check out more in vignette(\"examples\").\n\nExploring factors\nThe penguins data has three factor variables:\n\npenguins |&gt;\n  dplyr::select(where(is.factor)) |&gt;\n  glimpse()\n\nRows: 344\nColumns: 3\n$ species &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adelie…\n$ island  &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgersen, Torgers…\n$ sex     &lt;fct&gt; male, female, female, NA, female, male, female, male, NA, NA, …\n\n\n\n# Count penguins for each species / island\npenguins %&gt;%\n  count(species, island, .drop = FALSE)\n\n# A tibble: 9 × 3\n  species   island        n\n  &lt;fct&gt;     &lt;fct&gt;     &lt;int&gt;\n1 Adelie    Biscoe       44\n2 Adelie    Dream        56\n3 Adelie    Torgersen    52\n4 Chinstrap Biscoe        0\n5 Chinstrap Dream        68\n6 Chinstrap Torgersen     0\n7 Gentoo    Biscoe      124\n8 Gentoo    Dream         0\n9 Gentoo    Torgersen     0\n\ntable(penguins$species, penguins$island)\n\n           \n            Biscoe Dream Torgersen\n  Adelie        44    56        52\n  Chinstrap      0    68         0\n  Gentoo       124     0         0\n\n\nPlots are the easiest way to explore and understand your data.\n1. Lets first plot the number of penguins of each species across the 3 Palmer Archipelago islands.\n\nggplot(penguins, aes(x = island, fill = species)) +\n  geom_bar(alpha = 0.8) +\n  scale_fill_manual(values = c(\"darkorange\",\"purple\",\"cyan4\")) +\n  theme_minimal() +\n  facet_wrap(~species, ncol = 1) +\n  coord_flip()\n\n\n\n\n\n\n\n\n2. Next lets look at how many males and females we have of each species of penguins.\n\n# Count penguins for each species / sex\npenguins |&gt;\n  count(species, sex, .drop = FALSE)\n\n# A tibble: 8 × 3\n  species   sex        n\n  &lt;fct&gt;     &lt;fct&gt;  &lt;int&gt;\n1 Adelie    female    73\n2 Adelie    male      73\n3 Adelie    &lt;NA&gt;       6\n4 Chinstrap female    34\n5 Chinstrap male      34\n6 Gentoo    female    58\n7 Gentoo    male      61\n8 Gentoo    &lt;NA&gt;       5\n\n\n\nggplot(penguins, aes(x = sex, fill = species)) +\n  geom_bar(alpha = 0.8) +\n  scale_fill_manual(values = c(\"darkorange\",\"purple\",\"cyan4\"), \n                    guide = FALSE) +\n  theme_minimal() +\n  facet_wrap(~species, ncol = 1) +\n  coord_flip()\n\n\n\n\n\n\n\n\n\n\nExploring scatterplots\nThe penguins data also has four numeric variables. Lets plot those variables too!\n\npenguins |&gt;\n  dplyr::select(where(is.numeric)) |&gt;\n  glimpse()\n\nRows: 344\nColumns: 5\n$ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, …\n$ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, …\n$ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186…\n$ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, …\n$ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…\n\n\n\n# Count how many penguins they evaluated each year\npenguins |&gt;\n  count(year, species, .drop = FALSE)\n\n# A tibble: 9 × 3\n   year species       n\n  &lt;int&gt; &lt;fct&gt;     &lt;int&gt;\n1  2007 Adelie       50\n2  2007 Chinstrap    26\n3  2007 Gentoo       34\n4  2008 Adelie       50\n5  2008 Chinstrap    18\n6  2008 Gentoo       46\n7  2009 Adelie       52\n8  2009 Chinstrap    24\n9  2009 Gentoo       44\n\ntable(penguins$year, penguins$species)\n\n      \n       Adelie Chinstrap Gentoo\n  2007     50        26     34\n  2008     50        18     46\n  2009     52        24     44\n\n\nScatterplot example 1: penguin flipper length versus body mass\n\nggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  geom_point()\n\n\n\n\n\n\n\n\nYou can add color and/or shape aesthetics in ggplot2 to layer in factor levels. With three factor variables to work with, you can add another factor layer with facets.\n\n# Scatterplot example 1: penguin flipper length versus body mass\nggplot(data = penguins, aes(x = flipper_length_mm, y = body_mass_g)) +\n  geom_point(aes(color = species, \n                 shape = species),\n             size = 2) +\n  scale_color_manual(values = c(\"darkorange\",\"darkorchid\",\"cyan4\")) \n\n\n\n\n\n\n\n# Scatterplot example 2: penguin bill length versus bill depth\nggplot(data = penguins, aes(x = bill_length_mm, y = bill_depth_mm)) +\n  geom_point(aes(color = species, \n                 shape = species),\n                 size = 2)  +\n  scale_color_manual(values = c(\"darkorange\",\"darkorchid\",\"cyan4\"))\n\n\n\n\n\n\n\n# Scatterplot example 3: penguin flipper length versus body mass separated by species and sex\nggplot(penguins, aes(x = flipper_length_mm,\n                     y = body_mass_g)) +\n  geom_point(aes(color = sex)) +\n  scale_color_manual(values = c(\"deeppink2\",\"cornflowerblue\"), \n                     na.translate = FALSE) + # removes the \"NA\" values\n  facet_wrap(~species)\n\n\n\n\n\n\n\n# Scatterplot example 4: penguin flipper length versus body mass separated by all 3 factor variables\nggplot(penguins, aes(x = flipper_length_mm,\n                     y = body_mass_g)) +\n  geom_point(aes(color = sex, shape = island)) +\n  scale_color_manual(values = c(\"deeppink2\",\"cornflowerblue\"), \n                     na.translate = FALSE) + # removes the \"NA\" values\n  facet_wrap(~species)\n\n\n\n\n\n\n\n\n\n\nExploring correlations\n\npenguins |&gt;\n  select(species, body_mass_g, ends_with(\"_mm\")) %&gt;% \n  GGally::ggpairs(aes(color = species)) +\n  scale_colour_manual(values = c(\"darkorange\",\"purple\",\"cyan4\")) +\n  scale_fill_manual(values = c(\"darkorange\",\"purple\",\"cyan4\"))\n\n\n\n\n\n\n\n\n\n\nStatistically evaluating distributions\n\n# Jitter plot example: bill length by species\nggplot(data = penguins, aes(x = species, y = bill_length_mm)) +\n  geom_jitter(aes(color = species),\n              width = 0.1, \n              alpha = 0.7,\n              show.legend = FALSE) +\n  scale_color_manual(values = c(\"darkorange\",\"darkorchid\",\"cyan4\"))\n\n\n\n\n\n\n\n# Boxplot examples: bill length by species\nggplot(data = penguins, aes(x = species, y = bill_length_mm)) + geom_boxplot(aes(fill = species)) +\n  scale_fill_manual(values = c(\"orange\",\"orchid\",\"cyan3\"))\n\n\n\n\n\n\n\nggplot(data = penguins, aes(x = species, y = bill_length_mm)) + \n  geom_boxplot(aes(fill = species), outlier.shape = NA, na.rm = TRUE) +\n  geom_jitter(aes(color = species),\n              width = 0.1, \n              alpha = 0.7, na.rm = TRUE,\n              show.legend = FALSE) +\n  scale_color_manual(values = c(\"darkorange2\",\"darkorchid\",\"cyan4\")) +\n  scale_fill_manual(values = c(\"orange\",\"orchid\",\"cyan3\"))\n\n\n\n\n\n\n\n# Histogram example: flipper length by species\nggplot(data = penguins, aes(x = flipper_length_mm)) +\n  geom_histogram(aes(fill = species), alpha = 0.5, position = \"identity\", na.rm = TRUE) +\n  scale_fill_manual(values = c(\"darkorange\",\"darkorchid\",\"cyan4\"))"
-  },
-  {
-    "objectID": "activities/classwork01/palmerpenguins_intro.html#acknowlegements",
-    "href": "activities/classwork01/palmerpenguins_intro.html#acknowlegements",
-    "title": "Introduction to the Palmer Penguins",
-    "section": "Acknowlegements",
-    "text": "Acknowlegements\nThis vignette was originally written by Allison Horst, Alison Hill, and Kristen Gorman. You can find info about the palmerpenguins package here!"
-  },
-  {
-    "objectID": "activities/classwork01/palmerpenguins_intro.html#package-citation",
-    "href": "activities/classwork01/palmerpenguins_intro.html#package-citation",
-    "title": "Introduction to the Palmer Penguins",
-    "section": "Package citation",
-    "text": "Package citation\nPlease cite the palmerpenguins R package using:\n\ncitation(\"palmerpenguins\")\n\nTo cite palmerpenguins in publications use:\n\n  Horst AM, Hill AP, Gorman KB (2020). palmerpenguins: Palmer\n  Archipelago (Antarctica) penguin data. R package version 0.1.0.\n  https://allisonhorst.github.io/palmerpenguins/. doi:\n  10.5281/zenodo.3960218.\n\nA BibTeX entry for LaTeX users is\n\n  @Manual{,\n    title = {palmerpenguins: Palmer Archipelago (Antarctica) penguin data},\n    author = {Allison Marie Horst and Alison Presmanes Hill and Kristen B Gorman},\n    year = {2020},\n    note = {R package version 0.1.0},\n    doi = {10.5281/zenodo.3960218},\n    url = {https://allisonhorst.github.io/palmerpenguins/},\n  }"
-  },
-  {
-    "objectID": "activities/classwork01/palmerpenguins_intro.html#references",
-    "href": "activities/classwork01/palmerpenguins_intro.html#references",
-    "title": "Introduction to the Palmer Penguins",
-    "section": "References",
-    "text": "References\nData originally published in:\n\nGorman KB, Williams TD, Fraser WR (2014). Ecological sexual dimorphism and environmental variability within a community of Antarctic penguins (genus Pygoscelis). PLoS ONE 9(3):e90081. https://doi.org/10.1371/journal.pone.0090081\n\nIndividual datasets:\nIndividual data can be accessed directly via the Environmental Data Initiative:\n\nPalmer Station Antarctica LTER and K. Gorman, 2020. Structural size measurements and isotopic signatures of foraging among adult male and female Adélie penguins (Pygoscelis adeliae) nesting along the Palmer Archipelago near Palmer Station, 2007-2009 ver 5. Environmental Data Initiative. https://doi.org/10.6073/pasta/98b16d7d563f265cb52372c8ca99e60f (Accessed 2020-06-08).\nPalmer Station Antarctica LTER and K. Gorman, 2020. Structural size measurements and isotopic signatures of foraging among adult male and female Gentoo penguin (Pygoscelis papua) nesting along the Palmer Archipelago near Palmer Station, 2007-2009 ver 5. Environmental Data Initiative. https://doi.org/10.6073/pasta/7fca67fb28d56ee2ffa3d9370ebda689 (Accessed 2020-06-08).\nPalmer Station Antarctica LTER and K. Gorman, 2020. Structural size measurements and isotopic signatures of foraging among adult male and female Chinstrap penguin (Pygoscelis antarcticus) nesting along the Palmer Archipelago near Palmer Station, 2007-2009 ver 6. Environmental Data Initiative. https://doi.org/10.6073/pasta/c14dfcfada8ea13a17536e73eb6fbe9e (Accessed 2020-06-08).\n\nHave fun with the Palmer Archipelago penguins!"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome",
-    "section": "",
-    "text": "Welcome to the Course Website for Cell 6351 Intro to Reproducible Data Analysis Using R!"
-  },
-  {
-    "objectID": "index.html#overview",
-    "href": "index.html#overview",
-    "title": "Welcome",
-    "section": "Overview",
-    "text": "Overview\nCurrent biomedical research regularly generates large datasets that require increasing computational skills to process and analyze including in genomics, behavior, imaging, and molecular biology. As a result, scientists today require fundamental computational and programming skill-sets to efficiently perform data analyses, generate complex models for testing, develop reproducible data analyses, and effectively communicate results through clear and meaningful graphics. However, these skills are often challenging due to a lack of structured training in data science.\nIntro to Reproducible Data Analysis Using R is a hands-on course that will introduce the R statistical software including data structures, wrangling data, plotting data, basic statistics, data modeling, and literate coding practices. There is no textbook for the course. All course materials will be provided on Canvas or this website. While no formal background in statistics or programming is necessary, a general knowledge of basic statistics, experimental design, and computer file storage systems will be helpful. All classes will involve active learning/coding activities so a laptop with power cord is required for all sessions. Students will be expected to complete readings prior to class, attend lectures to dive deeper into those topics in class, participate in classroom activities, complete projects practicing and reinforcing the computing and programming skills. There will be a final project, which will include a class presentation."
-  },
-  {
-    "objectID": "index.html#course-information",
-    "href": "index.html#course-information",
-    "title": "Welcome",
-    "section": "Course Information",
-    "text": "Course Information\n\nCourse Staff: Prof. Lindsay Hayes\nCourse Staff: IRCF Bioinformatics Core Eleana Cabello\nLectures: 9:00-10:30am Tuesday and Thursday\nLocation: BMSB324\nOffice Hours: Mondays 1-2pm"
-  },
-  {
-    "objectID": "index.html#course-details",
-    "href": "index.html#course-details",
-    "title": "Welcome",
-    "section": "Course Details",
-    "text": "Course Details\nAll course details are available on the Course page. The syllabus is available here and on Canvas."
-  },
-  {
-    "objectID": "lectures/index_L01.html",
-    "href": "lectures/index_L01.html",
-    "title": "Welcome to the Course!",
-    "section": "",
-    "text": "The course will exclusively use R in the integrated development environment (IDE) called R Studio. Since the summer semester is only 1 month (10 classes), it is critical to have your computer set up and ready to go before the first day of class.\nThroughout the course, there will be a set of pre-lecture activities and/or readings for you to complete. These activities prepare you for the in-class activities. Failure to complete them will put you behind in an already compressed course.\nTo prepare for the first class:\n\nInstall R and R Studio\n\ninstallation video tutorial\nDetailed instructions on installing R and R Studio are available on swirl.\n\nComplete step 1 and step 2\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nSwirl is a great tool to learn R interactively that we will use in the course. Feel free to explore more.\n\n\n\nIn the first class, we will begin to get familiar with R. Complete the Pre-reading material about R. Pre-reading materials for each class are located under Resources. Sometimes, pre-reading materials are direct links to external resources for you to read in advance of the lecture."
-  },
-  {
-    "objectID": "lectures/index_L01.html#learning-objectives",
-    "href": "lectures/index_L01.html#learning-objectives",
-    "title": "Welcome to the Course!",
-    "section": "Learning objectives",
-    "text": "Learning objectives\n\n\n\n\n\n\nLearning objectives\n\n\n\nAt the end of this lesson you will:\n\nGet an overview of the course (including staff, format, grading, etc)\nBe able to recognize and operate an Integrated Developer Environment (IDE).\nBe able to recognize a Quarto document and describe reasons why to use a unified authoring framework.\nBe able to create a R project & Quarto document."
-  },
-  {
-    "objectID": "lectures/index_L01.html#slides",
-    "href": "lectures/index_L01.html#slides",
-    "title": "Welcome to the Course!",
-    "section": "Slides",
-    "text": "Slides\n\nLecture 01: Welcome and Introductions"
-  },
-  {
-    "objectID": "lectures/index_L01.html#acknowledgements",
-    "href": "lectures/index_L01.html#acknowledgements",
-    "title": "Welcome to the Course!",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements\nMaterial for this lecture was borrowed and adopted from\n\nsw carpentry: https://carpentries-incubator.github.io/bioc-intro/20-r-rstudio.html\ndata carpentry: https://datacarpentry.github.io/genomics-r-intro/00-introduction.html"
-  },
-  {
-    "objectID": "lectures/index_L01.html#summary",
-    "href": "lectures/index_L01.html#summary",
-    "title": "Welcome to the Course!",
-    "section": "Summary",
-    "text": "Summary\n\nAccess all course material on the course website (https://lindsaynhayes.github.io/introR2025/).\nRStudio makes you a more efficient programmer and gives you easy access to all the components of data analysis.\nQuarto is an open-source scientific and technical publishing system to create reproducible, production quality data analysis reports and much more. During the course we will primarily use the HTML output format."
-  },
-  {
-    "objectID": "lectures/index_L01.html#additional-practice",
-    "href": "lectures/index_L01.html#additional-practice",
-    "title": "Welcome to the Course!",
-    "section": "Additional practice",
-    "text": "Additional practice\nHere are some additional practice questions to help you think about the material discussed.\nCheck out this article on the 10 Best Practices for Data Science here\n\n\n\n\n\n\nPractice Tasks\n\n\n\n\nIn RStudio, create a new R project and then create a new Quarto document in that R project. Read the instructions. Practice running the chunks individually using the “play” button and the keyboard short cut.\nChange the settings of the Quarto document to display the output “inline” or in the “console”.\nRender the document and view the HTML output. Verify that you can modify the code, re-run it, and see modified output."
-  },
-  {
-    "objectID": "projects.html",
-    "href": "projects.html",
-    "title": "Projects",
-    "section": "",
-    "text": "Date\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\n2024-10-24\n\n\nProject 1\n\n\nStephanie Hicks\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "readings.html",
-    "href": "readings.html",
-    "title": "Important reading materials",
-    "section": "",
-    "text": "The following contains relevant reading materials you should read prior to each class:\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\n2025-07-01\n\n\nR & RStudio\n\n\nLindsay Hayes\n\n\n\n\n2025-07-03\n\n\nData Wrangling\n\n\nLindsay Hayes\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "readings/index_R02.html",
-    "href": "readings/index_R02.html",
-    "title": "Data Wrangling",
-    "section": "",
-    "text": "Spreadsheets are good for data entry. As a scientists, we have a lot of data in spreadsheets. However, data exploration, manipulation, and visualization tools in spreadsheets are extremely limited and cumbersome when performed manually. Much of your time as a researcher will be spent data wrangling to generate the analyses you desire.\nR makes this process easy and most importantly reproducible. This less will teach you how to think about data organization and some practices for effective data wrangling."
-  },
-  {
-    "objectID": "readings/index_R02.html#welcome-to-quarto",
-    "href": "readings/index_R02.html#welcome-to-quarto",
-    "title": "Data Wrangling",
-    "section": "Welcome to Quarto",
-    "text": "Welcome to Quarto\nIn the first class, we looked at the PalmerPenguins data in a very tidy and curated quarto document to see how you can incorporate narrative text, code, outputs, and more in a single document. I hope you can now appreciate the utility of using Quarto to tell the story of the data analysis. The beautiful html outputs can easily be shared with others and helps build the logic of a data analysis pipeline from beginning to end.\nRead the Quarto welcome tutorial to learn about some of the cool tools, such as code-folding, echo=false, and more.\n\nRead through Part 1: “Hello, Quarto”\nRead through Part 2: “Computations”.\nPart 3 is more advanced for generating diverse outputs such as pdf documents feel free to explore, but we won’t use this feature."
-  },
-  {
-    "objectID": "readings/index_R02.html#the-tidyverse",
-    "href": "readings/index_R02.html#the-tidyverse",
-    "title": "Data Wrangling",
-    "section": "The Tidyverse",
-    "text": "The Tidyverse\n\nWhat is a package?\nIn R, the fundamental unit of shareable code is the package. A package bundles together code, data, documentation, and tests, and is easy to share with others. There are tens of thousands of R packages that exist. Two main repository of R packages exist. CRAN or the Comprehensive R Archive Network is the public clearing house for R packages and where you went to install R. Bioconductor is an open source project that develops and shares open source software for precise and repeatable analysis of biological data. It is this huge variety of packages that R is so successful because the chances are high that someone has already solved a problem that you’re working on.\n\n\nHow to get a package?\nTo install packages from CRAN use the install.packages() function. Once the package is installed you can load the pack using the library() function. Installing packages from Bioconductor take a few more steps which we won’t cover just yet.\n\n\n\nTidyverse package\nThe Tidyverse which is a collection of R packages that share an underlying design, syntax, and grammer to streamline many main functions used in data science. You can install the complete tidyverse with install.packages(\"tidyverse\"), once the package is installed you can load it using library(tidyverse).\nThe packages installed in tidyverse include:\n\nggplot2 is a graphic package to plot your data.\ndplyr and tidyr are packages for data manipulation to subset, re-arrange, and format your dataset.\nreadr is a tidy way to input or read in data into R.\npurrr is a functional programming toolkit to handle looping functions.\ntibble is a tidy way of displaying data frames that are easier to view.\nstringr is a way of handling text and character strings.\nforcats is a package providing tools to handle categorical variables and discrete (non-continuous) variables.\nlubridate is a package for working with times and dates.\n\n\n\n\n\n\n\nImportant\n\n\n\nThere are nice cheatsheets for each of the packages to demonstrate what they do in detail!"
-  },
-  {
-    "objectID": "readings/index_R02.html#tidy-syntax",
-    "href": "readings/index_R02.html#tidy-syntax",
-    "title": "Data Wrangling",
-    "section": "Tidy Syntax",
-    "text": "Tidy Syntax\nThe BIG picture of what we do in data science.\n\n\nFigure 1: In our model of the data science process, you start with data import and tidying. Next, you understand your data with an iterative cycle of transforming, visualizing, and modeling. You finish the process by communicating your results to other humans.\n\nIn this next class we will focus on the Import, Tidy, and Transform parts of the data science pipeline.\n\nImport\nFirst we need to import data into R. I prefer to import .csv files because I think its a good way to indicate a data file and it eliminates any weird formatting that may exist in excel. I am showing 2 ways to import the data one using base R function read.csv() and the other using the readr function read_csv.\nIn base R, the header field determines if the first row of the data had column header titles or not. The stringsAsFactors determines if the character variables in your data set should be set as a factor variable (set as TRUE) or as character (set to FALSE). The row.names field will allow you to specify if the first column is data or the names of the rows.\nIn tidyverse, the col_names field specifies if the first row is a header. If you want to specify the type of data for each field you have to specify it using the col_types field. I specified that for you here. There are a lot more options you can look at in the Help section.\n\nlibrary(readr)\n\n# BASE R\n# read.csv() is for importing comma-separated files\ndata_base &lt;- read.csv(file = \"data/taylorswift.csv\", \n                 header = TRUE, \n                 sep = \",\", \n                 stringsAsFactors = TRUE)\n\n\n# Tidyverse\ndata_tidy &lt;- read_csv(file = \"data/taylorswift.csv\",\n                 col_names = TRUE)\n\nUsing readr you can also import data directly from excel spreadsheets using read_excel or read_xls and even google sheets using read_sheet. However, we won’t use these function in the course. But you are free to explore them on your own from the readr package.\n\n\nExport\nYou can also save files using the write functions for both csv or tsv files.\n\nwrite_csv(data, file = \"data/taylorswift.csv\")\n\n\n\nTidy & Transform\nThe next step it to tidy and transform the data into the format that R can use to perform visualization and analysis. We will use some of the tools in dplyr and tidyr.\n\n\n\n\n\n\nA note on pipes!\n\n\n\n“Piping” is a process of directly sending the output of one funtion into the input of the next function. Piping can be performed in a long line of commands as a way of streamling the code writing to make it easier to read. We will use this a lot in this course.\n%&gt;% is the pipe command to connect 2 functions\n|&gt; is the same pipe command, but in a different syntax\nThe code in the course will mostly use |&gt; because this is the tidyverse way of writing code, but across the internet you will also see %&gt;%\n\n\n\nAssigning Data Types\n\nlibrary(tidyr)\nlibrary(dplyr)\n\n\n\n\n\n\n\nWant More?\n\n\n\nThere are so many great tools to learn R and data science!\n\nTo explore the tidyverse and data science in more detail check out the R for Data Science textbook written by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund.\nWant more stats and data science conversations?! Check out the not so standard deviations podcast by Roger Peng and Hilary Parker."
   }
 ]
