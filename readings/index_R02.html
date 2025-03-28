@@ -178,17 +178,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#welcome-to-quarto" id="toc-welcome-to-quarto" class="nav-link active" data-scroll-target="#welcome-to-quarto">Welcome to Quarto</a></li>
-  <li><a href="#the-tidyverse" id="toc-the-tidyverse" class="nav-link" data-scroll-target="#the-tidyverse">The Tidyverse</a>
+  <li><a href="#packages" id="toc-packages" class="nav-link" data-scroll-target="#packages">Packages</a>
   <ul class="collapse">
   <li><a href="#what-is-a-package" id="toc-what-is-a-package" class="nav-link" data-scroll-target="#what-is-a-package">What is a package?</a></li>
   <li><a href="#how-to-get-a-package" id="toc-how-to-get-a-package" class="nav-link" data-scroll-target="#how-to-get-a-package">How to get a package?</a></li>
   <li><a href="#tidyverse-package" id="toc-tidyverse-package" class="nav-link" data-scroll-target="#tidyverse-package">Tidyverse package</a></li>
+  <li><a href="#taylor-package" id="toc-taylor-package" class="nav-link" data-scroll-target="#taylor-package">Taylor package</a></li>
   </ul></li>
   <li><a href="#tidy-syntax" id="toc-tidy-syntax" class="nav-link" data-scroll-target="#tidy-syntax">Tidy Syntax</a>
   <ul class="collapse">
   <li><a href="#import" id="toc-import" class="nav-link" data-scroll-target="#import">Import</a></li>
   <li><a href="#export" id="toc-export" class="nav-link" data-scroll-target="#export">Export</a></li>
-  <li><a href="#manipulating-data-types" id="toc-manipulating-data-types" class="nav-link" data-scroll-target="#manipulating-data-types">Manipulating Data Types</a></li>
+  <li><a href="#explore" id="toc-explore" class="nav-link" data-scroll-target="#explore">Explore</a></li>
+  <li><a href="#convert-between-data-types" id="toc-convert-between-data-types" class="nav-link" data-scroll-target="#convert-between-data-types">Convert between data types</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -239,8 +241,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>The last class introduced important concepts in data science such as directory structure, working directories, projects, and quarto. This lesson will dig deeper into working in R. We will cover importing and exporting, data objects, and operations.</p>
-<p>Spreadsheets are good for data entry. As a scientists, we have a lot of data in spreadsheets. However, data exploration, manipulation, and visualization tools in spreadsheets are extremely limited and cumbersome when performed manually. Much of your time as a researcher will be spent <strong>data wrangling</strong> to generate the analyses you desire. R makes this process easy and most importantly reproducible.</p>
+<p>The last class introduced important concepts in data science such as directory structure, working directories, projects, and quarto documents. This lesson will dig deeper into working with data in R. We will cover importing and exporting, data types, and data objects</p>
+<p>Spreadsheets are good for data entry. As a scientists, we have a lot of data in spreadsheets. However, data exploration, manipulation, and visualization tools in spreadsheets are extremely limited and cumbersome when performed manually. Much of your time as a researcher will be spent data wrangling to generate the analyses you desire. R makes this process easy and most importantly reproducible.</p>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -267,59 +269,40 @@ Learning objectives
 <ul>
 <li>Read through Part 1: “Hello, Quarto”</li>
 <li>Read through Part 2: “Computations”.</li>
-<li>Part 3 is more advanced for generating diverse outputs such as pdf documents feel free to explore, but we won’t use this feature.</li>
+<li>Part 3 is more advanced for generating diverse outputs such as pdf documents feel free to explore, but we won’t use these features.</li>
 </ul>
 </section>
-<section id="the-tidyverse" class="level2">
-<h2 class="anchored" data-anchor-id="the-tidyverse">The Tidyverse</h2>
+<section id="packages" class="level2">
+<h2 class="anchored" data-anchor-id="packages">Packages</h2>
 <section id="what-is-a-package" class="level3">
 <h3 class="anchored" data-anchor-id="what-is-a-package">What is a package?</h3>
 <p>In R, the fundamental unit of shareable code is the <strong>package.</strong> A package bundles together <em>code</em>, <em>data</em>, <em>documentation</em>, and <em>tests</em>, and is easy to share with others. There are tens of thousands of R packages that exist. Two main repository of R packages exist. <strong>CRAN</strong> or the Comprehensive R Archive Network is the public clearing house for R packages and where you went to install R. <strong>Bioconductor</strong> is an open source project that develops and shares open source software for precise and repeatable analysis of biological data. It is this huge variety of packages that R is so successful because the chances are high that someone has already solved a problem that you’re working on.</p>
 </section>
 <section id="how-to-get-a-package" class="level3">
 <h3 class="anchored" data-anchor-id="how-to-get-a-package">How to get a package?</h3>
-<p>To install packages from CRAN use the <code>install.packages()</code> function. Once the package is installed you can load the pack using the <code>library()</code> function. Installing packages from Bioconductor take a few more steps which we won’t cover just yet.</p>
+<p>To install packages from CRAN use the <code>install.packages()</code> function. Once the package is installed you can load the package using the <code>library()</code> function. Installing packages from Bioconductor take a few more steps which we won’t cover just yet.</p>
+<p>In Lecture 2 we will use data from the <code>tidyverse</code> and <code>taylor</code> packages.</p>
 <p><img src="figs/tidy_hex.png" width="50%" style="float:right"></p>
 </section>
 <section id="tidyverse-package" class="level3">
 <h3 class="anchored" data-anchor-id="tidyverse-package">Tidyverse package</h3>
-<p>The <a href="https://www.tidyverse.org">Tidyverse</a> which is a collection of R packages that share an underlying design, syntax, and grammer to streamline many main functions used in data science. You can install the complete tidyverse with <code>install.packages("tidyverse")</code>, once the package is installed you can load it using <code>library(tidyverse)</code>.</p>
-<p>The packages installed in tidyverse include:</p>
-<ul>
-<li><code>ggplot2</code> is a graphic package to plot your data.</li>
-<li><code>dplyr</code> and <code>tidyr</code> are packages for data manipulation to subset, re-arrange, and format your dataset.</li>
-<li><code>readr</code> is a tidy way to input or read in data into R.</li>
-<li><code>purrr</code> is a functional programming toolkit to handle looping functions.</li>
-<li><code>tibble</code> is a tidy way of displaying data frames that are easier to view.</li>
-<li><code>stringr</code> is a way of handling text and character strings.</li>
-<li><code>forcats</code> is a package providing tools to handle categorical variables and discrete (non-continuous) variables.</li>
-<li><code>lubridate</code> is a package for working with times and dates.</li>
-</ul>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>There are nice <a href="https://posit.co/resources/cheatsheets/">cheatsheets</a> for each of the packages to demonstrate what they do in detail!</p>
-</div>
-</div>
+<p>The <a href="https://www.tidyverse.org">Tidyverse</a> which is a collection of R packages that share an underlying design, syntax, and grammer to streamline many main functions used in data science. You can install the complete tidyverse with <code>install.packages("tidyverse")</code>, once the package is installed you can load it using <code>library(tidyverse)</code>. We will go over more details about all the functions of the tidyverse package next class!</p>
+</section>
+<section id="taylor-package" class="level3">
+<h3 class="anchored" data-anchor-id="taylor-package">Taylor package</h3>
+<p>The <a href="https://taylor.wjakethompson.com">taylor</a> package is for accessing and exploring data related to Taylor Swift’s discography, including lyrics and audio characteristics. The data comes Genius and the Spotify.</p>
 </section>
 </section>
 <section id="tidy-syntax" class="level2">
 <h2 class="anchored" data-anchor-id="tidy-syntax">Tidy Syntax</h2>
 <p>The BIG picture of what we do in data science.</p>
-<img src="figs/base.png" width="90%" style="display:block; margin-left: auto; margin-right: auto">
+<p><img src="figs/base.png" width="90%" style="display:block; margin-left: auto; margin-right: auto"></p>
 <figcaption>
 Figure 1: In our model of the data science process, you start with data import and tidying. Next, you understand your data with an iterative cycle of transforming, visualizing, and modeling. You finish the process by communicating your results to other humans.
 </figcaption>
 <section id="import" class="level3">
 <h3 class="anchored" data-anchor-id="import">Import</h3>
-<p>First we need to import data into R. I prefer to import .csv files because I think its a good way to indicate a data file and it eliminates any weird formatting that may exist in excel. I am showing 2 ways to import the data one using base R function <code>read.csv()</code> and the other using the <code>readr</code> function <code>read_csv</code>.</p>
+<p>First we need to import data into R. I prefer to import <em>.csv</em> files because I think its a good way to indicate a data file and it eliminates any weird formatting that may exist in excel. I am showing 2 ways to import the data one using base R function <code>read.csv()</code> and the other using the <code>readr</code> function <code>read_csv()</code>.</p>
 <p>In base R, the <code>header</code> field determines if the first row of the data had column header titles or not. The <code>stringsAsFactors</code> determines if the character variables in your data set should be set as a factor variable (set as TRUE) or as character (set to FALSE). The <code>row.names</code> field will allow you to specify if the first column is data or the names of the rows.</p>
 <p>In tidyverse, the <code>col_names</code> field specifies if the first row is a header. If you want to specify the type of data for each field you have to specify it using the <code>col_types</code> field. I specified that for you here. There are a lot more options you can look at in the <em>Help</em> section.</p>
 <div class="cell">
@@ -351,9 +334,15 @@ Figure 1: In our model of the data science process, you start with data import a
 <span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">write_csv</span>(data, <span class="at">file =</span> <span class="st">"data/taylorswift.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="manipulating-data-types" class="level3">
-<h3 class="anchored" data-anchor-id="manipulating-data-types">Manipulating Data Types</h3>
-<p>R requires data to be in specific formats in order to perform <strong>operations</strong> on the data. Recall from last class the major types of data!</p>
+<section id="explore" class="level3">
+<h3 class="anchored" data-anchor-id="explore">Explore</h3>
+<p>Anytime you get a data set the first thing you have to do is look at it! Some basic things to look at:</p>
+<ul>
+<li>Use the <code>dim()</code> function to check the size of the data set or <code>nrow</code> to count the rows and <code>ncol</code> to count the columns.</li>
+<li>Use the <code>class()</code> function to determine if an R object is a vector, matrix, or dataframe. And if the data type is in character, numeric, factor, or logic, for example.</li>
+<li>Use the<code>table()</code> or <code>count()</code> functions to tally the data to see how many types of any variable</li>
+<li><code>glimpse()</code> is a quick way to view a snapshot of top of the data.</li>
+</ul>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -377,16 +366,14 @@ DATA TYPES
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># first load the packages we are going to need</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># next import some data, as an example we are using the taylorswift data</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">"data/taylorswift.csv"</span>,</span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>                 <span class="at">col_names =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Its good to start any data analysis with basic data exploration.</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="co"># how many columns of data are there?</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="fu">ncol</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># next import some data, as an example we are using the taylorswift data</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">"data/taylorswift.csv"</span>,</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>                 <span class="at">col_names =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Its good to start any data analysis with basic data exploration.</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co"># how many columns of data are there?</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="fu">ncol</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 21</code></pre>
 </div>
@@ -448,70 +435,74 @@ $ mode_name        &lt;chr&gt; "major", "major", "major", "major", "major", "maj
 $ key_mode         &lt;chr&gt; "C major", "G major", "A# major", "A major", "F major…</code></pre>
 </div>
 </div>
-<p>The most common data type conversions are between: 1) characters -&gt; factors 2) numeric –&gt; factors</p>
-<p>For example, if we wanted to see how the loudness differs across Taylor Swift albums we need to convert the <code>album_name</code> vector into a factor variable</p>
+</section>
+<section id="convert-between-data-types" class="level3">
+<h3 class="anchored" data-anchor-id="convert-between-data-types">Convert between data types</h3>
+<p>Oftentimes text is imported as a character variable. However, you may want that to be a factor to indicate there are 4 groups, or a numeric variable should actually be a factor. The most common data type conversions are between: 1) characters -&gt; factors 2) numeric -&gt; factors.</p>
+<p>For example, if you measured something across time at day 1, 5, 15, 30, 60, 120. Plotting the data across the expansive axis will make each groups not evenly divided so it can be useful to make the numeric variable a factor so all the data groups plot next to each other.</p>
+<p>We can look at this in the <code>tyalorswift</code> data. If we plot the album release date as a date we can see the time represented in the distance and sometimes we may want that but other times we may not.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># note alphabetical order</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x=</span>album_release, <span class="at">y=</span>duration_ms, <span class="at">color =</span> album_name)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x=</span>track_number, <span class="at">y=</span>duration_ms, <span class="at">color =</span> album_name)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(duration_ms <span class="sc">~</span> album_name, <span class="at">data =</span> data) </span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(mod)</span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="co"># change the album name from character to factor</span></span>
-<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>album_name <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(data<span class="sc">$</span>album_name) <span class="co"># order = alphabetical</span></span>
-<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>album_name <span class="ot">&lt;-</span> <span class="fu">as_factor</span>(data<span class="sc">$</span>album_name) <span class="co"># order = as unique()</span></span>
-<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a>mod <span class="ot">&lt;-</span> <span class="fu">lm</span>(tempo <span class="sc">~</span> album_name, <span class="at">data =</span> data) </span>
-<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a><span class="fu">anova</span>(mod)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># sometimes we want numeric variables as numbers and sometimes we want them to be factors. In this case the x axis is spaced based on the time between album releases.</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x=</span>album_release, <span class="at">y =</span> track_number, <span class="at">color =</span> album_name)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_R02_files/figure-html/convert2fac-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># However, if we look at the data in a different way having all the data scrunched at one end is hard to visualize when the time variable isn't needed to be viewed over time.</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x=</span>album_release, <span class="at">y =</span> loudness, <span class="at">fill =</span> album_name)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_R02_files/figure-html/convert2fac-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># It would look better to see the data more evenly distrubuted. To do that we can convert the date variable to a factor variable</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>album_release <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(data<span class="sc">$</span>album_release)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x=</span>album_release, <span class="at">y =</span> loudness, <span class="at">fill =</span> album_name)) <span class="sc">+</span> </span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">guide =</span> <span class="fu">guide_axis</span>(<span class="at">angle =</span> <span class="dv">90</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_R02_files/figure-html/convert2fac-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># sometimes we want numeric variables as numbers and sometimes we want them to be factors. In this case the x axis is spaced based on the time between album releases.</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x=</span>album_release, <span class="at">y =</span> track_number)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># In another example, as you can see in the plots above the "album_name" is plotted alphabetically.</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x=</span>album_name, <span class="at">y =</span> loudness)) <span class="sc">+</span></span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span> </span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">guide =</span> <span class="fu">guide_axis</span>(<span class="at">angle =</span> <span class="dv">45</span>)) <span class="sc">+</span> <span class="fu">theme_cowplot</span>() </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_R02_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># If we convert the year to a factor variable the time between won't matter and it will be equally distributed.</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>album_release <span class="ot">&lt;-</span> <span class="fu">as.factor</span>(data<span class="sc">$</span>album_release)</span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x=</span>album_release, <span class="at">y =</span> track_number)) <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span> </span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_text</span>(<span class="at">angle =</span> <span class="dv">90</span>, <span class="at">vjust =</span> <span class="fl">0.5</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_R02_files/figure-html/unnamed-chunk-2-2.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># This makes a big difference not only for the plotting, but will also impact how statistical analyses are performed. So be careful and make sure the data type is correctly specified (continuous versus categorical versus factored versus ordered)</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x=</span>time_signature, <span class="at">y =</span> key)) <span class="sc">+</span> <span class="fu">geom_point</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>Warning: Removed 3 rows containing missing values or values outside the scale range
-(`geom_point()`).</code></pre>
-</div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="index_R02_files/figure-html/unnamed-chunk-2-3.png" class="img-fluid figure-img" width="672"></p>
+<p><img src="index_R02_files/figure-html/ex2-1.png" class="img-fluid figure-img" width="768"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>Examples I want to include: character to factor and ordered how that makes a difference in plotting and statistics</p>
-<p>numeric to factor and ordered how that makes a difference in plotting and statistics</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># However, if we want them to be plotted in a specific order that isn't alphabetical, but by release date, we must convert the character vector of "album_name" into a factor variable and specify the levels of the characters. </span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>data<span class="sc">$</span>album_name <span class="ot">&lt;-</span> <span class="fu">factor</span>(data<span class="sc">$</span>album_name, <span class="at">levels =</span> <span class="fu">unique</span>(data<span class="sc">$</span>album_name[<span class="fu">order</span>(data<span class="sc">$</span>album_release)]))</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x=</span>album_name, <span class="at">y =</span> loudness, <span class="at">fill=</span>album_name)) <span class="sc">+</span></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span> <span class="fu">scale_fill_manual</span>(<span class="at">values=</span>album_compare) <span class="sc">+</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_x_discrete</span>(<span class="at">guide =</span> <span class="fu">guide_axis</span>(<span class="at">angle =</span> <span class="dv">45</span>)) <span class="sc">+</span> <span class="fu">theme_cowplot</span>() <span class="sc">+</span> <span class="fu">theme</span>(<span class="at">legend.position=</span><span class="st">"none"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="index_R02_files/figure-html/ex2.2-1.png" class="img-fluid figure-img" width="768"></p>
+</figure>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
