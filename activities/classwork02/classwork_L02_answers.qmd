@@ -68,20 +68,24 @@ table(over100)
 ```{r}
 
 # create vector called "homeworlds" and assign it the value "homeworld" from the starwars data set
-
+homeworlds <- starwars$homeworld
 
 # how many worlds are there? hint: use the unique function
-
+unique(homeworlds)
 
 # is there a world called "Ohio"? how would you test this with code?
-
+table(homeworlds == "Ohio")
 
 # How many characters live on Naboo?
+table(homeworlds == "Naboo")
 
-
+starwars |>
+  count(homeworld, .drop = FALSE)
 
 # Who lives on Naboo? (hint use the "names" variable in the starwars data and the "which" function)
-
+starwars$name[homeworlds == "Naboo"]
+which(homeworlds == "Naboo")
+starwars$name[which(homeworlds == "Naboo")]
 ```
 
 ### B. Import and explore the dataframe called "taylor" from the csv "taylorswift.csv"
@@ -96,36 +100,35 @@ table(over100)
 taylor <- read_csv(file = "taylorswift.csv")
 
 # what is the "class" of the object taylor?
-
+class(taylor)
 
 # what types of data are in the object taylor?
-
+glimpse(taylor)
 
 # change the "album_name" from class "character" to class "factor"
-
+taylor$album_name <- factor(taylor$album_name)
 
 # How many albums are in the data set & how many songs on each album?
-
+taylor |> count(album_name)
 ```
 
 ### C. Which numeric song features are correlated with one another? Hint create a correlation matrix.
 
 ```{r}
-
+library(taylor)
 # pick what features of the data you want to explore
-
+colnames(taylor)
 
 # create a matrix of those features
-
+mat <- taylor[,c(5,6,8,10,11,12,13,14,15)]
 
 # evaluate the correlation matrix
+mat |> GGally::ggpairs()
 
-# which values show a positive correlation? Which values show a negative correlation?
+# Which values show a positive correlation? Which values show a negative correlation?
 ggplot(taylor, aes(x=loudness, y=energy)) + geom_point(size=3)
 ggplot(taylor, aes(x=acousticness, y=energy)) + geom_point(size=3)
 
-
-library(taylor)
 ggplot(taylor, aes(x=loudness, y=energy, color = album_name)) + geom_point(size=3) + scale_color_albums() + facet_wrap(~album_name)
 
 ggplot(taylor, aes(x=acousticness, y=energy, color = album_name)) + geom_point(size=3) + scale_color_albums() + facet_wrap(~album_name)

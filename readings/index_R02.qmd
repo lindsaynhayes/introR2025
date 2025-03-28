@@ -17,9 +17,9 @@ editor_options:
 library(here)
 ```
 
-The last class introduced important concepts in data science such as directory structure, working directories, projects, and quarto. This lesson will dig deeper into working in R. We will cover importing and exporting, data objects, and operations. 
+The last class introduced important concepts in data science such as directory structure, working directories, projects, and quarto documents. This lesson will dig deeper into working with data in R. We will cover importing and exporting, data types, and data objects
 
-Spreadsheets are good for data entry. As a scientists, we have a lot of data in spreadsheets. However, data exploration, manipulation, and visualization tools in spreadsheets are extremely limited and cumbersome when performed manually. Much of your time as a researcher will be spent **data wrangling** to generate the analyses you desire. R makes this process easy and most importantly reproducible.
+Spreadsheets are good for data entry. As a scientists, we have a lot of data in spreadsheets. However, data exploration, manipulation, and visualization tools in spreadsheets are extremely limited and cumbersome when performed manually. Much of your time as a researcher will be spent data wrangling to generate the analyses you desire. R makes this process easy and most importantly reproducible.
 
 ::: callout-note
 ### Learning objectives
@@ -40,9 +40,9 @@ Read the [Quarto welcome tutorial](https://quarto.org/docs/get-started/hello/rst
 
 -   Read through Part 1: "Hello, Quarto"
 -   Read through Part 2: "Computations".
--   Part 3 is more advanced for generating diverse outputs such as pdf documents feel free to explore, but we won't use this feature.
+-   Part 3 is more advanced for generating diverse outputs such as pdf documents feel free to explore, but we won't use these features.
 
-## The Tidyverse
+## Packages
 
 ### What is a package?
 
@@ -50,40 +50,33 @@ In R, the fundamental unit of shareable code is the **package.** A package bundl
 
 ### How to get a package?
 
-To install packages from CRAN use the `install.packages()` function. Once the package is installed you can load the pack using the `library()` function. Installing packages from Bioconductor take a few more steps which we won't cover just yet.
+To install packages from CRAN use the `install.packages()` function. Once the package is installed you can load the package using the `library()` function. Installing packages from Bioconductor take a few more steps which we won't cover just yet.
+
+In Lecture 2 we will use data from the `tidyverse` and `taylor` packages.
 
 <img src="figs/tidy_hex.png" width="50%" style="float:right"/>
 
 ### Tidyverse package
 
-The [Tidyverse](https://www.tidyverse.org) which is a collection of R packages that share an underlying design, syntax, and grammer to streamline many main functions used in data science. You can install the complete tidyverse with `install.packages("tidyverse")`, once the package is installed you can load it using `library(tidyverse)`.
+The [Tidyverse](https://www.tidyverse.org) which is a collection of R packages that share an underlying design, syntax, and grammer to streamline many main functions used in data science. You can install the complete tidyverse with `install.packages("tidyverse")`, once the package is installed you can load it using `library(tidyverse)`. We will go over more details about all the functions of the tidyverse package next class!
 
-The packages installed in tidyverse include:
+### Taylor package
 
--   `ggplot2` is a graphic package to plot your data.
--   `dplyr` and `tidyr` are packages for data manipulation to subset, re-arrange, and format your dataset.
--   `readr` is a tidy way to input or read in data into R.
--   `purrr` is a functional programming toolkit to handle looping functions.
--   `tibble` is a tidy way of displaying data frames that are easier to view.
--   `stringr` is a way of handling text and character strings.
--   `forcats` is a package providing tools to handle categorical variables and discrete (non-continuous) variables.
--   `lubridate` is a package for working with times and dates.
-
-::: callout-important
-There are nice [cheatsheets](https://posit.co/resources/cheatsheets/) for each of the packages to demonstrate what they do in detail!
-:::
+The [taylor](https://taylor.wjakethompson.com) package is for accessing and exploring data related to Taylor Swift’s discography, including lyrics and audio characteristics. The data comes Genius and the Spotify.
 
 ## Tidy Syntax
 
-The BIG picture of what we do in data science. 
+The BIG picture of what we do in data science.
 
 <img src="figs/base.png" width="90%" style="display:block; margin-left: auto; margin-right: auto"/>
+
 <figcaption>Figure 1: In our model of the data science process, you start with data import and tidying. Next, you understand your data with an iterative cycle of transforming, visualizing, and modeling. You finish the process by communicating your results to other humans.</figcaption>
 
 ### Import
-First we need to import data into R. I prefer to import .csv files because I think its a good way to indicate a data file and it eliminates any weird formatting that may exist in excel. I am showing 2 ways to import the data one using base R function `read.csv()` and the other using the `readr` function `read_csv`. 
 
-In base R, the `header` field determines if the first row of the data had column header titles or not. The `stringsAsFactors` determines if the character variables in your data set should be set as a factor variable (set as TRUE) or as character (set to FALSE). The `row.names` field will allow you to specify if the first column is data or the names of the rows. 
+First we need to import data into R. I prefer to import *.csv* files because I think its a good way to indicate a data file and it eliminates any weird formatting that may exist in excel. I am showing 2 ways to import the data one using base R function `read.csv()` and the other using the `readr` function `read_csv()`.
+
+In base R, the `header` field determines if the first row of the data had column header titles or not. The `stringsAsFactors` determines if the character variables in your data set should be set as a factor variable (set as TRUE) or as character (set to FALSE). The `row.names` field will allow you to specify if the first column is data or the names of the rows.
 
 In tidyverse, the `col_names` field specifies if the first row is a header. If you want to specify the type of data for each field you have to specify it using the `col_types` field. I specified that for you here. There are a lot more options you can look at in the *Help* section.
 
@@ -127,7 +120,9 @@ data_tidy <- read_csv(file = "data/taylorswift.csv",
 Using `readr` you can also import data directly from excel spreadsheets using `read_excel` or `read_xls` and even google sheets using `read_sheet`. However, we won't use these function in the course. But you are free to explore them on your own from the [readr package](https://readr.tidyverse.org).
 
 ### Export
-You can also save files using the `write` functions for both csv or tsv files. 
+
+You can also save files using the `write` functions for both csv or tsv files.
+
 ```{r}
 #| label: exporting.data
 #| message: false
@@ -140,11 +135,16 @@ write.csv(data, file = "data/taylorswift.csv")
 write_csv(data, file = "data/taylorswift.csv")
 ```
 
+### Explore
 
-### Manipulating Data Types
-R requires data to be in specific formats in order to perform **operations** on the data. Recall from last class the major types of data!
+Anytime you get a data set the first thing you have to do is look at it! Some basic things to look at:
 
-::: {.callout-important}
+-   Use the `dim()` function to check the size of the data set or `nrow` to count the rows and `ncol` to count the columns.
+-   Use the `class()` function to determine if an R object is a vector, matrix, or dataframe. And if the data type is in character, numeric, factor, or logic, for example.
+-   Use the`table()` or `count()` functions to tally the data to see how many types of any variable
+-   `glimpse()` is a quick way to view a snapshot of top of the data.
+
+::: callout-important
 ## DATA TYPES
 
 -   character
@@ -163,8 +163,6 @@ Lets look at data types in the `taylorswift` data in R
 
 # first load the packages we are going to need
 library(tidyverse)
-library(readr)
-library(ggplot2)
 
 # next import some data, as an example we are using the taylorswift data
 data <- read_csv(file = "data/taylorswift.csv",
@@ -183,11 +181,11 @@ glimpse(data)
 
 ```
 
-The most common data type conversions are between:
-1) characters -> factors
-2) numeric --> factors
+### Convert between data types
+Oftentimes text is imported as a character variable. However, you may want that to be a factor to indicate there are 4 groups,  or a numeric variable should actually be a factor. The most common data type conversions are between: 1) characters -\> factors 2) numeric -\> factors. 
 
-For example, if we wanted to see how the loudness differs across Taylor Swift albums we need to convert the `album_name` vector into a factor variable
+For example, if you measured something across time at day 1, 5, 15, 30, 60, 120. Plotting the data across the expansive axis will make each groups not evenly divided so it can be useful to make the numeric variable a factor so all the data groups plot next to each other. 
+
 ```{r}
 #| label: chr2fac
 #| message: false
@@ -217,9 +215,6 @@ anova(mod)
 
 ```
 
-
-
-
 ```{r}
 # sometimes we want numeric variables as numbers and sometimes we want them to be factors. In this case the x axis is spaced based on the time between album releases.
 ggplot(data, aes(x=album_release, y = track_number)) + geom_point()
@@ -238,19 +233,9 @@ ggplot(data, aes(x=time_signature, y = key)) + geom_point()
 
 ```
 
+Examples I want to include: character to factor and ordered how that makes a difference in plotting and statistics
 
-
-
-Examples I want to include:
-character to factor and ordered
-how that makes a difference in plotting and statistics
-
-numeric to factor and ordered
-how that makes a difference in plotting and statistics
-
-
-
-
+numeric to factor and ordered how that makes a difference in plotting and statistics
 
 ::: callout-tip
 ### Want More?

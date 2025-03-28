@@ -12,7 +12,7 @@ editor_options:
 
 # Pre-lecture activities
 
-Before class, review the [pre-reading materials](https://lindsaynhayes.github.io/introR2025/readings/index_R02.html).
+Before class, read the [pre-reading materials](https://lindsaynhayes.github.io/introR2025/readings/index_R02.html).
 
 # Lecture
 
@@ -31,18 +31,24 @@ Before class, review the [pre-reading materials](https://lindsaynhayes.github.io
 
 ## Slides
 
--   [Lecture 02: Data Types](link)
+-   [Lecture 02: Data Types](https://docs.google.com/presentation/d/1RLm558R177W1YsYA_WG4J-fTfvFmnejrT4Ccf02t3l0/edit?usp=sharing)
 
 # Post-lecture Practice
 
-To get more practice working with data in R complete the following homework. You will be asked to upload your activities for course grading.
+To get more practice working with data in R complete the following homework. You will be asked to **upload your activities for a course grade**.
 
 ::: callout-important
 ### Homework
 
 1.  In RStudio, install and load the swirl package
 
+    `install.packages("swirl")`
+
 2.  Complete lessons 1 to 15
+
+    `library("swirl")`
+
+    `swirl()`
 
 3.  Upload your activities for a grade
 :::

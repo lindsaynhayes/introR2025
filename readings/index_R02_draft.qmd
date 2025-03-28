@@ -1,6 +1,6 @@
 ---
 title: "Data Wrangling"
-description: "Reading for Class 02"
+description: "Reading for Class 03"
 author: 
   - name: Lindsay Hayes
     url: https://lindsaynhayes.github.io
