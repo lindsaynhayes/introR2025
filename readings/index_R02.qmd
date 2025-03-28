@@ -84,9 +84,9 @@ In tidyverse, the `col_names` field specifies if the first row is a header. If y
 #| label: setup
 #| include: false
 #| eval: false
-
-library(readr)
 library(taylor)
+library(readr)
+
 
 data <- taylor_all_songs
 final <- data[1:314,c(1,3,4,5,12:28)]
@@ -186,56 +186,67 @@ Oftentimes text is imported as a character variable. However, you may want that 
 
 For example, if you measured something across time at day 1, 5, 15, 30, 60, 120. Plotting the data across the expansive axis will make each groups not evenly divided so it can be useful to make the numeric variable a factor so all the data groups plot next to each other. 
 
+We can look at this in the `tyalorswift` data. If we plot the album release date as a date we can see the time represented in the distance and sometimes we may want that but other times we may not. 
+
 ```{r}
-#| label: chr2fac
+#| label: convert2fac
 #| message: false
-#| eval: false
+#| warning: false
+#| eval: true
 
-# note alphabetical order
-ggplot(data, aes(x=album_release, y=duration_ms, color = album_name)) + geom_point()
+# sometimes we want numeric variables as numbers and sometimes we want them to be factors. In this case the x axis is spaced based on the time between album releases.
+ggplot(data, aes(x=album_release, y = track_number, color = album_name)) + geom_point()
 
+# However, if we look at the data in a different way having all the data scrunched at one end is hard to visualize when the time variable isn't needed to be viewed over time.
+ggplot(data, aes(x=album_release, y = loudness, fill = album_name)) + geom_boxplot()
 
-ggplot(data, aes(x=track_number, y=duration_ms, color = album_name)) + geom_point()
+# It would look better to see the data more evenly distrubuted. To do that we can convert the date variable to a factor variable
+data$album_release <- as.factor(data$album_release)
 
-
-mod <- lm(duration_ms ~ album_name, data = data) 
-anova(mod)
-
-
-
-
-
-# change the album name from character to factor
-data$album_name <- as.factor(data$album_name) # order = alphabetical
-data$album_name <- as_factor(data$album_name) # order = as unique()
-
-mod <- lm(tempo ~ album_name, data = data) 
-anova(mod)
-
-
+ggplot(data, aes(x=album_release, y = loudness, fill = album_name)) + 
+  geom_boxplot() + 
+  scale_x_discrete(guide = guide_axis(angle = 90))
 ```
 
 ```{r}
-# sometimes we want numeric variables as numbers and sometimes we want them to be factors. In this case the x axis is spaced based on the time between album releases.
-ggplot(data, aes(x=album_release, y = track_number)) + geom_point()
-
-# If we convert the year to a factor variable the time between won't matter and it will be equally distributed.
-
-data$album_release <- as.factor(data$album_release)
-ggplot(data, aes(x=album_release, y = track_number)) + geom_point() + 
-  theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust = 1))
-
-# This makes a big difference not only for the plotting, but will also impact how statistical analyses are performed. So be careful and make sure the data type is correctly specified (continuous versus categorical versus factored versus ordered)
-
-
-ggplot(data, aes(x=time_signature, y = key)) + geom_point()
-
-
+#| label: fixcols
+#| include: false
+#| eval: true
+library(taylor)
+library(cowplot)
+names(album_compare) <- unique(data$album_name)
 ```
 
-Examples I want to include: character to factor and ordered how that makes a difference in plotting and statistics
+```{r}
+#| label: ex2
+#| message: false
+#| warning: false
+#| eval: true
+#| fig-width: 8
+#| fig-height: 6
 
-numeric to factor and ordered how that makes a difference in plotting and statistics
+
+# In another example, as you can see in the plots above the "album_name" is plotted alphabetically.
+ggplot(data, aes(x=album_name, y = loudness)) +
+  geom_boxplot() + 
+  scale_x_discrete(guide = guide_axis(angle = 45)) + theme_cowplot() 
+```
+```{r}
+#| label: ex2.2
+#| message: false
+#| warning: false
+#| eval: true
+#| fig-width: 8
+#| fig-height: 6
+# However, if we want them to be plotted in a specific order that isn't alphabetical, but by release date, we must convert the character vector of "album_name" into a factor variable and specify the levels of the characters. 
+
+data$album_name <- factor(data$album_name, levels = unique(data$album_name[order(data$album_release)]))
+
+ggplot(data, aes(x=album_name, y = loudness, fill=album_name)) +
+  geom_boxplot() + scale_fill_manual(values=album_compare) +
+  scale_x_discrete(guide = guide_axis(angle = 45)) + theme_cowplot() + theme(legend.position="none")
+```
+
 
 ::: callout-tip
 ### Want More?
