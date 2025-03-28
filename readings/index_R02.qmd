@@ -58,7 +58,9 @@ In Lecture 2 we will use data from the `tidyverse` and `taylor` packages.
 
 ### Tidyverse package
 
-The [Tidyverse](https://www.tidyverse.org) which is a collection of R packages that share an underlying design, syntax, and grammer to streamline many main functions used in data science. You can install the complete tidyverse with `install.packages("tidyverse")`, once the package is installed you can load it using `library(tidyverse)`. We will go over more details about all the functions of the tidyverse package next class!
+The [Tidyverse](https://www.tidyverse.org) which is a collection of R packages that share an underlying design, syntax, and grammer to streamline many main functions used in data science. You can install the complete tidyverse with `install.packages("tidyverse")`, once the package is installed you can load it using `library(tidyverse)`. 
+
+We will go over more details about all the functions of the tidyverse package next class!
 
 ### Taylor package
 

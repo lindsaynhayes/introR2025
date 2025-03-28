@@ -2,7 +2,7 @@
 title: "Navigating Data Types in R"
 author: "Lindsay N. Hayes"
 date: 2025-07-03
-draft: true
+draft: false
 editor_options: 
   chunk_output_type: console
 ---
