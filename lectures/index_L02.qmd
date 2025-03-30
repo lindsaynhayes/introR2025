@@ -44,11 +44,13 @@ To get more practice working with data in R complete the following homework. You
 
     `install.packages("swirl")`
 
-2.  Complete lessons 1 to 15
-
     `library("swirl")`
+
+2.  Complete lessons 1 to 15
 
     `swirl()`
 
 3.  Upload your activities for a grade
+
+<Elena add instruction>
 :::

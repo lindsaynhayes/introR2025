@@ -15,6 +15,7 @@ editor_options:
 #| echo: false
 #| message: false
 library(here)
+library(cowplot)
 ```
 
 The last class introduced important concepts in data science such as directory structure, working directories, projects, and quarto documents. This lesson will dig deeper into working with data in R. We will cover importing and exporting, data types, and data objects
@@ -32,7 +33,7 @@ Spreadsheets are good for data entry. As a scientists, we have a lot of data in 
 -   Recognize and create various data types in R
 :::
 
-## Welcome to Quarto
+# Welcome to Quarto
 
 In the first class, we looked at the `PalmerPenguins` data in a very tidy and curated quarto document to see how you can incorporate narrative text, code, outputs, and more in a single document. I hope you can now appreciate the utility of using Quarto to tell the story of the data analysis. The beautiful html outputs can easily be shared with others and helps build the logic of a data analysis pipeline from beginning to end.
 
@@ -42,31 +43,31 @@ Read the [Quarto welcome tutorial](https://quarto.org/docs/get-started/hello/rst
 -   Read through Part 2: "Computations".
 -   Part 3 is more advanced for generating diverse outputs such as pdf documents feel free to explore, but we won't use these features.
 
-## Packages
+# Packages
 
-### What is a package?
+## What is a package?
 
-In R, the fundamental unit of shareable code is the **package.** A package bundles together *code*, *data*, *documentation*, and *tests*, and is easy to share with others. There are tens of thousands of R packages that exist. Two main repository of R packages exist. **CRAN** or the Comprehensive R Archive Network is the public clearing house for R packages and where you went to install R. **Bioconductor** is an open source project that develops and shares open source software for precise and repeatable analysis of biological data. It is this huge variety of packages that R is so successful because the chances are high that someone has already solved a problem that you’re working on.
+In R, the fundamental unit of shareable code is the **package.** A package bundles together *code*, *data*, *documentation*, and *tests*, and is easy to share with others. There are tens of thousands of R packages that exist. Two main repositories of R packages exist. **CRAN** or the Comprehensive R Archive Network is the public clearing house for R packages and where you went to install R. **Bioconductor** is an open source project that develops and shares open source software for precise and repeatable analysis of biological data. It is this huge variety of packages that R is so successful because the chances are high that someone has already solved a problem that you’re working on.
 
-### How to get a package?
+## How to get a package?
 
 To install packages from CRAN use the `install.packages()` function. Once the package is installed you can load the package using the `library()` function. Installing packages from Bioconductor take a few more steps which we won't cover just yet.
 
-In Lecture 2 we will use data from the `tidyverse` and `taylor` packages.
+In Lecture 2, we will use data from the `tidyverse` and `taylor` packages.
 
 <img src="figs/tidy_hex.png" width="50%" style="float:right"/>
 
-### Tidyverse package
+## Tidyverse package
 
 The [Tidyverse](https://www.tidyverse.org) which is a collection of R packages that share an underlying design, syntax, and grammer to streamline many main functions used in data science. You can install the complete tidyverse with `install.packages("tidyverse")`, once the package is installed you can load it using `library(tidyverse)`. 
 
 We will go over more details about all the functions of the tidyverse package next class!
 
-### Taylor package
+## Taylor package
 
-The [taylor](https://taylor.wjakethompson.com) package is for accessing and exploring data related to Taylor Swift’s discography, including lyrics and audio characteristics. The data comes Genius and the Spotify.
+The [taylor](https://taylor.wjakethompson.com) package is for accessing and exploring data related to Taylor Swift’s discography, including lyrics and audio characteristics. The data comes from Genius and the Spotify.
 
-## Tidy Syntax
+# Tidy Syntax
 
 The BIG picture of what we do in data science.
 
@@ -74,13 +75,15 @@ The BIG picture of what we do in data science.
 
 <figcaption>Figure 1: In our model of the data science process, you start with data import and tidying. Next, you understand your data with an iterative cycle of transforming, visualizing, and modeling. You finish the process by communicating your results to other humans.</figcaption>
 
-### Import
+## Import
 
-First we need to import data into R. I prefer to import *.csv* files because I think its a good way to indicate a data file and it eliminates any weird formatting that may exist in excel. I am showing 2 ways to import the data one using base R function `read.csv()` and the other using the `readr` function `read_csv()`.
+First we need to import data into R. I prefer to import *.csv* files because it is a good way to indicate a data file and it eliminates any weird formatting that may exist in excel. **Think of your *.csv* files as immutable**, the data stays the same and the code is the reproducible record of data manipulation. If you go and change the raw *.csv* there is no record of that modification, with code you can always know exactly how the data was treated. 
 
-In base R, the `header` field determines if the first row of the data had column header titles or not. The `stringsAsFactors` determines if the character variables in your data set should be set as a factor variable (set as TRUE) or as character (set to FALSE). The `row.names` field will allow you to specify if the first column is data or the names of the rows.
+I am showing 2 ways to import data one using the base R function `read.csv()` and the other using the `readr` function `read_csv()`.
 
-In tidyverse, the `col_names` field specifies if the first row is a header. If you want to specify the type of data for each field you have to specify it using the `col_types` field. I specified that for you here. There are a lot more options you can look at in the *Help* section.
+In base R, the `header` field determines if the first row of the data had column header titles or not. The `stringsAsFactors` determines if the character variables in your data set should be set as a factor variable (set as TRUE) or as character (set to FALSE). The `row.names` field specifies if the first column is data or the names of the rows.
+
+In tidyverse, the `col_names` field specifies if the first row is a header. If you want to specify the type of data for each field you have to specify it using the `col_types` field. *I'll show you a cool trick here in class.* There are a lot more options you can look at in the *Help* section. Try typing `read_csv` in the Help query box. 
 
 ```{r}
 #| label: setup
@@ -121,7 +124,7 @@ data_tidy <- read_csv(file = "data/taylorswift.csv",
 
 Using `readr` you can also import data directly from excel spreadsheets using `read_excel` or `read_xls` and even google sheets using `read_sheet`. However, we won't use these function in the course. But you are free to explore them on your own from the [readr package](https://readr.tidyverse.org).
 
-### Export
+## Export
 
 You can also save files using the `write` functions for both csv or tsv files.
 
@@ -137,9 +140,9 @@ write.csv(data, file = "data/taylorswift.csv")
 write_csv(data, file = "data/taylorswift.csv")
 ```
 
-### Explore
+## Explore
 
-Anytime you get a data set the first thing you have to do is look at it! Some basic things to look at:
+Anytime you get a data set the first thing you have to do is look at it! Some basic things to look at are:
 
 -   Use the `dim()` function to check the size of the data set or `nrow` to count the rows and `ncol` to count the columns.
 -   Use the `class()` function to determine if an R object is a vector, matrix, or dataframe. And if the data type is in character, numeric, factor, or logic, for example.
@@ -149,6 +152,8 @@ Anytime you get a data set the first thing you have to do is look at it! Some ba
 ::: callout-important
 ## DATA TYPES
 
+Remember these are the main types of data in R:
+
 -   character
 -   numeric
 -   integer
@@ -156,6 +161,7 @@ Anytime you get a data set the first thing you have to do is look at it! Some ba
 -   logical
 :::
 
+### data size and types
 Lets look at data types in the `taylorswift` data in R
 
 ```{r}
@@ -170,45 +176,128 @@ library(tidyverse)
 data <- read_csv(file = "data/taylorswift.csv",
                  col_names = TRUE)
 
+# What kind of data is it? Its a dataframe, in tidyverse a tidy table is called a tibble.
+class(data)
+
 # Its good to start any data analysis with basic data exploration.
-# how many columns of data are there?
+# how many columns or measurements are there in the data frame?
 ncol(data)
 
-# how many rows of observations are there?
+# how many rows or observations are there in the data frame?
 nrow(data)
 
-# when we imported the data, what is the type of data in each column?
+# when we imported the data, what is the type of each measurement in the data columns?
+# one way to look at this is to use the map function which is actually a loop that runs the function class on each column of data.
 as.data.frame(map_chr(data, class))
+
+# another way to to use glimpse to preview each column of data in a tidy way and it also gives an abbreviation of the data class. 
 glimpse(data)
 
 ```
 
-### Convert between data types
-Oftentimes text is imported as a character variable. However, you may want that to be a factor to indicate there are 4 groups,  or a numeric variable should actually be a factor. The most common data type conversions are between: 1) characters -\> factors 2) numeric -\> factors. 
+### table() & count()
+Lets look at the distribution of some of the data using `table()` and `count()` functions. These functions counts the number of times each variable appears in the data. `table()` and `count()` work great for factor and character variables, but poorly for continuous and numeric variables unless there are only a few options.
 
-For example, if you measured something across time at day 1, 5, 15, 30, 60, 120. Plotting the data across the expansive axis will make each groups not evenly divided so it can be useful to make the numeric variable a factor so all the data groups plot next to each other. 
+The differences between `table()` and `count()` is the package they are part of and the format of the output. `count()` is part of the tidyvse and uses tidyverse syntax and outputs the results as a tibble. `table()` is part of base R and the output is a table.  The `count()` function uses the tidyverse pipe syntax, "|>". The `table()` function uses the data subsetting synatx "$". Both of these syntaxes are very common.
 
-We can look at this in the `tyalorswift` data. If we plot the album release date as a date we can see the time represented in the distance and sometimes we may want that but other times we may not. 
+::: {.callout-note}
+Remember: Piping syntax
+
+`|>` is the same as `%>%`
+:::
+
+Lets look at some examples.
+```{r}
+#| label: table.count
+#| 
+
+# Here is an example using a character vector.
+table(data$key_name)
+data |> count(key_name)
+
+# Here is an example using a numeric vector. 
+table(data$time_signature)
+data |> count(time_signature)
+
+# Here is an example using a logical vector.
+table(data$explicit)
+data |> count(explicit)
+```
+
+As you can see the `NA` values are excluded in the `table()` function and the output is shaped differently. The output form changes how you use it for downstream analyses.
 
 ```{r}
-#| label: convert2fac
+#| error: true
+#| fig-width: 4
+#| fig-height: 3
+
+
+# For example, we can the base R plot() or barplot() functions to look at the table output, but not the count output. 
+barplot(table(data$key_name))
+data |> count(key_name) |> plot()
+
+# For the count() output we use the tidyverse plotting package called ggplot2(). This gives tons more flexibility in how the plot is rendered than the plot() function. 
+
+data |> count(key_name) |> ggplot(aes(x = key_name, y = n)) + geom_col() + theme_cowplot() + ylab("Number of songs") + xlab("key")
+```
+
+If we want to look at the distribution numeric vectors `table()` and `count()` won't work that well instead we can use the `summary()` function. 
+
+
+### summarise and distributions
+
+```{r}
+#| warning: false
+
+# Base R
+summary(data$tempo)
+boxplot(data$tempo, horizontal=TRUE)
+hist(data$tempo, breaks = 20)
+
+# ggplot
+a <- ggplot(data, aes(y = tempo)) + geom_boxplot(fill = "deepskyblue") + theme_cowplot() + scale_x_discrete( )
+b <- ggplot(data, aes(x = tempo)) + geom_histogram(fill = "deepskyblue") + theme_cowplot()
+plot_grid(a,b, nrow = 1, labels = c("A", "B"))
+```
+
+Note: We'll go over the details of ggplot in a future lecture. For not just go along with the magic. 
+
+
+### convert
+Oftentimes text is imported as a **character** variable. However, you may want that to be a **factor** to indicate there are 4 groups,  or a numeric variable should actually be a factor. The most common data type conversions are between: 
+
+1) characters --> factors 
+
+2) numeric --> factors
+
+For example, if you measured something across time: 1, 5, 15, 30, 60, 120, then plotting the data across the expansive axis will make each groups not evenly divided so it can be useful to make the numeric variable a factor so all the data groups plot next to each other. 
+
+We can look at this in the `taylorswift` data. If we plot the album release date as a date we can see the time represented in the distance and sometimes we may want that but other times we may not. 
+
+```{r}
+#| label: ex1
 #| message: false
 #| warning: false
 #| eval: true
 
 # sometimes we want numeric variables as numbers and sometimes we want them to be factors. In this case the x axis is spaced based on the time between album releases.
+
 ggplot(data, aes(x=album_release, y = track_number, color = album_name)) + geom_point()
 
 # However, if we look at the data in a different way having all the data scrunched at one end is hard to visualize when the time variable isn't needed to be viewed over time.
+
 ggplot(data, aes(x=album_release, y = loudness, fill = album_name)) + geom_boxplot()
 
 # It would look better to see the data more evenly distrubuted. To do that we can convert the date variable to a factor variable
+
 data$album_release <- as.factor(data$album_release)
 
 ggplot(data, aes(x=album_release, y = loudness, fill = album_name)) + 
   geom_boxplot() + 
   scale_x_discrete(guide = guide_axis(angle = 90))
 ```
+
+Its now easier to see the relationship of loudness over time and the variance in each album. 
 
 ```{r}
 #| label: fixcols
@@ -219,6 +308,12 @@ library(cowplot)
 names(album_compare) <- unique(data$album_name)
 ```
 
+#### Another example
+
+In another example, can see in the plots above the "album_name" is colored alphabetically, and with so many groups its hard to tell which bar is which album. 
+
+We can instead plot the album_name on the x-axis, but the album_names are plotted alphabetically so you loose the sense of the loudness change over time. 
+
 ```{r}
 #| label: ex2
 #| message: false
@@ -227,12 +322,14 @@ names(album_compare) <- unique(data$album_name)
 #| fig-width: 8
 #| fig-height: 6
 
-
-# In another example, as you can see in the plots above the "album_name" is plotted alphabetically.
 ggplot(data, aes(x=album_name, y = loudness)) +
   geom_boxplot() + 
   scale_x_discrete(guide = guide_axis(angle = 45)) + theme_cowplot() 
 ```
+
+Solution: Convert the album name to a factor with a specified order of release date!
+
+
 ```{r}
 #| label: ex2.2
 #| message: false
@@ -240,7 +337,8 @@ ggplot(data, aes(x=album_name, y = loudness)) +
 #| eval: true
 #| fig-width: 8
 #| fig-height: 6
-# However, if we want them to be plotted in a specific order that isn't alphabetical, but by release date, we must convert the character vector of "album_name" into a factor variable and specify the levels of the characters. 
+
+# Convert the character vector of "album_name" into a factor variable and specify the levels by the album release date.  
 
 data$album_name <- factor(data$album_name, levels = unique(data$album_name[order(data$album_release)]))
 
@@ -249,6 +347,7 @@ ggplot(data, aes(x=album_name, y = loudness, fill=album_name)) +
   scale_x_discrete(guide = guide_axis(angle = 45)) + theme_cowplot() + theme(legend.position="none")
 ```
 
+In sum, you've learned about importing and exporting data into/out of R. About how to look at the distribution of different types of data such as categorical and numerical. We looked at a few different plotting strategies to visualize the data distrubution. And finally how to convert to a factor variable to better handle the data. Having numeric variables formated at **numeric** or **factor** can also make a huge difference in how they are treated in certain statistical tests. Keep this in mind during data analysis. 
 
 ::: callout-tip
 ### Want More?
