@@ -13,7 +13,7 @@ editor_options:
 
 2)  Access the Quarto document [here](https://github.com/lindsaynhayes/introR2025/blob/main/activities/classwork02/classwork_L02.qmd) from the [github repository for the course](https://github.com/lindsaynhayes/introR2025).
 
-3)  Copy and paste the content into your new Quarto Document. Make sure the code chunks copied too.
+3)  Copy and paste the content into your new Quarto Document. Make sure the code chunks copied correctly.
 
 We will work our way through this quarto document together during class. The activity will cover using R as a calculator, creating R objects, and exploring the features of a data set.
 
@@ -70,7 +70,7 @@ table(over100)
 # create vector called "homeworlds" and assign it the value "homeworld" from the starwars data set
 homeworlds <- starwars$homeworld
 
-# how many worlds are there? hint: use the unique function
+# how many worlds are there? hint: use the unique() function
 unique(homeworlds)
 
 # is there a world called "Ohio"? how would you test this with code?
@@ -79,20 +79,21 @@ table(homeworlds == "Ohio")
 # How many characters live on Naboo?
 table(homeworlds == "Naboo")
 
-starwars |>
-  count(homeworld, .drop = FALSE)
+starwars |> filter(homeworld == "Naboo") |> count(homeworld, .drop = FALSE)
 
-# Who lives on Naboo? (hint use the "names" variable in the starwars data and the "which" function)
-starwars$name[homeworlds == "Naboo"]
+# Who lives on Naboo? (hint use the "name" variable in the starwars data and the "which" function)
+unique(starwars$name[homeworlds == "Naboo"])
 which(homeworlds == "Naboo")
 starwars$name[which(homeworlds == "Naboo")]
 ```
 
 ### B. Import and explore the dataframe called "taylor" from the csv "taylorswift.csv"
 
+download the taylorswift.csv [here](https://github.com/lindsaynhayes/introR2025/blob/main/activities/classwork02/taylorswift.csv)
+
 ```{r}
 
-# import data frame. What do you need to know? 
+# import data frame into R. What do you need to know? 
 # 1) Where are you? What is your working directory
 # 2) Where is the file you're wanting to import?
 # 3) What is the path between the file and your working directory?
@@ -104,9 +105,10 @@ class(taylor)
 
 # what types of data are in the object taylor?
 glimpse(taylor)
+as.data.frame(map_chr(taylor, class))
 
-# change the "album_name" from class "character" to class "factor"
-taylor$album_name <- factor(taylor$album_name)
+# change the "key_mode" from class "character" to class "factor"
+taylor$key_mode <- factor(taylor$key_mode)
 
 # How many albums are in the data set & how many songs on each album?
 taylor |> count(album_name)
