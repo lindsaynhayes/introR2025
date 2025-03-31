@@ -1,0 +1,39 @@
+---
+title: "L02"
+author: "Lindsay N Hayes"
+format: revealjs
+---
+
+# Export
+```{r}
+
+# base R
+write.csv(data, file = "data/taylorswift.csv")
+
+# Tidyverse
+write_csv(data, file = "data/taylorswift.csv")
+
+
+# Other types of ways to save data/objects in R
+
+# Use saveRDS() to save one single R object as an .rds format
+saveRDS(data, file = "data/taylorswift.rds")
+
+# when you read it in you need to define the object
+taylor <- readRDS(file = "data/taylorswift.rds")
+
+
+# You can also save multiple objects altogether as one .rda format
+save(data, types, plot1, file = "data/taylor_analysis.rda")
+
+# when you read it back into R you just have to load the data and all the objects names are restored
+load(file = "data/taylor_analysis.rda")
+
+# Lastly, you can save your entire workspace all the objects, plots, data, values you've generated using save.image()
+save.image(file = "taylor_workspacerda")
+
+# then to restore the workspace you use load again
+load(file = "taylor_workspace.rda")
+
+```
+

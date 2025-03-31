@@ -92,13 +92,11 @@ In tidyverse, the `col_names` field specifies if the first row is a header. If y
 library(taylor)
 library(readr)
 
-
 data <- taylor_all_songs
 final <- data[1:314,c(1,3,4,5,12:28)]
 types <- as.character(as.col_spec(final))
 types <- "fDicddididdddddiilfff"
 write_csv(final, file = "data/taylorswift.csv")
-
 ```
 
 ```{r}

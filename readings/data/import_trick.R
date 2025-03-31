@@ -16,6 +16,9 @@ types <- "fDicddididdddddiilfff"
 write_csv(data, file = "data/taylorswift.csv")
 saveRDS(types, file = "data/taylorswift_col_spec.rds")
 
+# alternatively save both as one rda object
+save(data, types, types, file = "readings/data/taylor.rda")
+
 # read in the data and specify the col_types
 data_tidy <- read_csv(file = "data/taylorswift.csv",
                       col_names = TRUE,
