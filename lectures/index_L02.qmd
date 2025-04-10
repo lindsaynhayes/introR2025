@@ -46,11 +46,21 @@ To get more practice working with data in R complete the following homework. You
 
     `library("swirl")`
 
-2.  Complete lessons 1 to 15
+2. Start Swirl by typing the following command
 
     `swirl()`
 
-3.  Upload your activities for a grade
+3. Please enter your full name together when asked what you want to be called by e.g. JaneDoe
 
-<Elena add instruction>
+4. Complete lessons 1 to 15
+
+    ![](../images/L02/index_L02/list_of_swirl_lessons.png){width=300}
+
+5. At the end of each lesson the following question will appear, enter the selection 2 for Yes to be redirected to your autofilled Google Form submission
+
+    ![](../images/L02/index_L02/google_form_redirect.png){width=500}
+    
+6. Once you've been redirected, your Swirl activity will be autofilled into the submission box, just hit the Submit button
+
+    ![](../images/L02/index_L02/google_form_submission.png){width=500}
 :::
