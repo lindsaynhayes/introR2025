@@ -4,15 +4,23 @@ author: "Lindsay N Hayes"
 format: revealjs
 ---
 
+```{r}
+library(taylor)
+library(tidyverse)
+
+data = taylor_all_songs[!(taylor_all_songs$album_name %in% c("The Taylor Swift Holiday Collection", "Beautiful Eyes", NA)), c("album_name", "album_release", "track_number", "track_name", "danceability", "energy", "key", "loudness", "mode", "speechiness", "acousticness", "instrumentalness", "liveness", "valence", "tempo", "time_signature", "duration_ms", "explicit", "key_name", "mode_name", "key_mode")]
+
+ifelse(!dir.exists(file.path("data")), dir.create(file.path("data")), FALSE)
+```
+
+
 # Export
 ```{r}
-
 # base R
 write.csv(data, file = "data/taylorswift.csv")
 
 # Tidyverse
 write_csv(data, file = "data/taylorswift.csv")
-
 
 # Other types of ways to save data/objects in R
 
@@ -22,18 +30,17 @@ saveRDS(data, file = "data/taylorswift.rds")
 # when you read it in you need to define the object
 taylor <- readRDS(file = "data/taylorswift.rds")
 
-
 # You can also save multiple objects altogether as one .rda format
-save(data, types, plot1, file = "data/taylor_analysis.rda")
+#save(data, types, plot1, file = "data/taylor_analysis.rda")
 
 # when you read it back into R you just have to load the data and all the objects names are restored
-load(file = "data/taylor_analysis.rda")
+#load(file = "data/taylor_analysis.rda")
 
 # Lastly, you can save your entire workspace all the objects, plots, data, values you've generated using save.image()
-save.image(file = "taylor_workspacerda")
+save.image(file = "data/taylor_workspace.rda")
 
 # then to restore the workspace you use load again
-load(file = "taylor_workspace.rda")
+load(file = "data/taylor_workspace.rda")
 
 ```
 

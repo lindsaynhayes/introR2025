@@ -1,8 +1,8 @@
 {
-  "hash": "2c2876c090c4fe0d0adc38af25a63310",
+  "hash": "f1bf15652efc2e5745440e4e59ee59e0",
   "result": {
     "engine": "knitr",
-    "markdown": "---\ntitle: \"L02\"\nauthor: \"Lindsay N Hayes\"\nformat: revealjs\n---\n\n\n\n# Export\n\n\n::: {.cell}\n\n:::\n",
+    "markdown": "---\ntitle: \"L02\"\nauthor: \"Lindsay N Hayes\"\nformat: revealjs\n---\n\n::: {.cell}\n\n:::\n\n\n\n\n# Export\n\n\n::: {.cell}\n\n:::\n",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"
