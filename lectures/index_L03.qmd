@@ -1,0 +1,43 @@
+---
+title: "Data Wrangling with tidyverse"
+author: 
+  - name: Lindsay Hayes
+    url: https://lindsaynhayes.github.io
+    affiliation: Department of Cell Biology, OUHSC
+date: 2025-07-08
+draft: true
+editor_options: 
+  chunk_output_type: console
+---
+
+# Pre-lecture activities
+
+Before class, read the [pre-reading materials](https://lindsaynhayes.github.io/introR2025/readings/index_R03.html).
+
+# Lecture
+
+## Learning objectives
+
+::: callout-note
+### Learning objectives
+
+**At the end of class you will be able to:**
+
+-   one
+-   two
+-   three
+-   four
+:::
+
+## Slides
+
+-   [Lecture 03: Data Wrangling](https://docs.google.com/presentation/d/1CvrEcEF3C8ONxAdxeeFEl-AS_QRERKnlYdNjv6HGkm4/edit?slide=id.g34006f07791_0_0#slide=id.g34006f07791_0_0)
+
+# Post-lecture Practice
+
+
+::: callout-important
+### Homework
+
+
+:::

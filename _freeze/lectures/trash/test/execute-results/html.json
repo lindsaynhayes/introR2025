@@ -1,0 +1,15 @@
+{
+  "hash": "aa6aadaed97d6bff2787598d4c6674f3",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"L02\"\nauthor: \"Lindsay N Hayes\"\nformat: revealjs\n---\n\n\n\n# Export\n\n\n::: {.cell}\n\n```{.r .cell-code}\n# base R\nwrite.csv(data, file = \"data/taylorswift.csv\")\n\n# Tidyverse\nwrite_csv(data, file = \"data/taylorswift.csv\")\n\n\n# Other types of ways to save data/objects in R\n\n# Use saveRDS() to save one single R object as an .rds format\nsaveRDS(data, file = \"data/taylorswift.rds\")\n\n# when you read it in you need to define the object\ntaylor <- readRDS(file = \"data/taylorswift.rds\")\n\n\n# You can also save multiple objects altogether as one .rda format\nsave(data, types, plot1, file = \"data/taylor_analysis.rda\")\n\n# when you read it back into R you just have to load the data and all the objects names are restored\nload(file = \"data/taylor_analysis.rda\")\n\n# Lastly, you can save your entire workspace all the objects, plots, data, values you've generated using save.image()\nsave.image(file = \"taylor_workspacerda\")\n\n# then to restore the workspace you use load again\nload(file = \"taylor_workspace.rda\")\n```\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

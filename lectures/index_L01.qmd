@@ -49,6 +49,8 @@ Swirl is a great tool to learn R interactively that we will use in the course. F
 
 - [Lecture 01: Welcome and Introductions](https://docs.google.com/presentation/d/12EGF_lMFltLHzngleEi6jxZ3phncEhTl5vm05-y_cLI/edit?usp=sharing)
 
+- [In-Class Activity](https://lindsaynhayes.github.io/introR2025/activities/classwork01/palmerpenguins_intro.html)
+
 ## Acknowledgements
 
 Material for this lecture was borrowed and adopted from

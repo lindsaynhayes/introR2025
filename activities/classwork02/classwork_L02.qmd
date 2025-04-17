@@ -88,12 +88,9 @@ table(over100)
 
 ```{r}
 #| error: true
-# import data frame. What do you need to know? 
-# 1) Where are you? What is your working directory
-# 2) Where is the file you're wanting to import?
-# 3) What is the path between the file and your working directory?
 
-taylor <- read_csv(file = "taylorswift.csv")
+library(taylor)
+taylor <- taylor_all_songs
 
 # what is the "class" of the object taylor?
 

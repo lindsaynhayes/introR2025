@@ -33,6 +33,8 @@ Before class, read the [pre-reading materials](https://lindsaynhayes.github.io/i
 
 -   [Lecture 02: Data Types](https://docs.google.com/presentation/d/1RLm558R177W1YsYA_WG4J-fTfvFmnejrT4Ccf02t3l0/edit?usp=sharing)
 
+-   [In-Class Activity](https://lindsaynhayes.github.io/introR2025/activities/classwork02/classwork_L02.html) 
+
 # Post-lecture Practice
 
 To get more practice working with data in R complete the following homework. You will be asked to **upload your activities for a course grade**.
