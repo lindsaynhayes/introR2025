@@ -6,7 +6,7 @@ author:
     url: https://lindsaynhayes.github.io
     affiliation: Department of Cell Biology, OUHSC
 date: 2025-07-08
-draft: true
+draft: false
 editor_options: 
   chunk_output_type: console
 ---
@@ -17,151 +17,188 @@ editor_options:
 library(here)
 ```
 
-Spreadsheets are good for data entry. As a scientists, we have a lot of data in spreadsheets. However, data exploration, manipulation, and visualization tools in spreadsheets are extremely limited and cumbersome when performed manually. Much of your time as a researcher will be spent **data wrangling** to generate the analyses you desire.
+## The problem with messy data
+Most scientists are **not** trained to collect and organize data using `tidydata` principles. The results are data sets which are hard to follow, difficult to repeat, and challenging to report to journals. Understanding how to collect, organize, and store your data and analyses will make your life easier! Moreover, many journals request raw data submissions along with your manuscript. If you've analyzed and organized all your data in `R` using `tidydata` principles this process becomes a super simple, rather than tracking all the data across messy spreadsheets.
 
-R makes this process easy and most importantly reproducible. This less will teach you how to think about data organization and some practices for effective data wrangling.
+> "Tidy datasets are all alike, but every messy dataset is messy in its own way."\
+> --- Hadley Wickham
+
+## The principles of `tidydata` are:
+
+1.  Treat your raw data as immutable.
+
+*Try to manipulate the original form of the data as little as possible. The reason is to make the whole data analysis pipeline reproducible and transparent. If you start changing fields on the data spreadsheet you can't track where those values came from. Manipulating data with code also decreases the chances for errors being introduced to the raw data.*
+
+--- 
+
+2.  Each variable is a column; each column is a variable.
+
+3.  Each observation is a row; each row is an observation.
+
+4.  Each value is a cell; each cell is a single value.
+
+For example, don't have a column called group with values "Con_male", "CON_female", "Exp_M", Exp F". Why might this be a problem? First, it is combining 2 observations into one field (group and sex). Second, it is changing the notation styles making the entries inconsistent.
+
+The second step after getting your data into R will be **data wrangling** in order to modify the data so that you can perform an analysis. Luckily R has a whole suite of tools to makes this process easy and most importantly reproducible. This less will teach you practices for effective data wrangling.
+
+---
 
 ::: callout-note
 ### Learning objectives
 
 **At the end of this lesson you will be able to:**
 
--   Generate and navigate a quarto document
--   Import Data into R
 -   Recognize data format as long or wide format
 -   Understand when to use both formats and how to convert between long and wide
+-   Pipe commands together to perform multiple commands in sequence
 :::
-
-## Welcome to Quarto
-
-In the first class, we looked at the `PalmerPenguins` data in a very tidy and curated quarto document to see how you can incorporate narrative text, code, outputs, and more in a single document. I hope you can now appreciate the utility of using Quarto to tell the story of the data analysis. The beautiful html outputs can easily be shared with others and helps build the logic of a data analysis pipeline from beginning to end.
-
-Read the [Quarto welcome tutorial](https://quarto.org/docs/get-started/hello/rstudio.html) to learn about some of the cool tools, such as `code-folding`, `echo=false`, and more.
-
--   Read through Part 1: "Hello, Quarto"
--   Read through Part 2: "Computations".
--   Part 3 is more advanced for generating diverse outputs such as pdf documents feel free to explore, but we won't use this feature.
 
 ## The Tidyverse
 
-### What is a package?
-
-In R, the fundamental unit of shareable code is the **package.** A package bundles together *code*, *data*, *documentation*, and *tests*, and is easy to share with others. There are tens of thousands of R packages that exist. Two main repository of R packages exist. **CRAN** or the Comprehensive R Archive Network is the public clearing house for R packages and where you went to install R. **Bioconductor** is an open source project that develops and shares open source software for precise and repeatable analysis of biological data. It is this huge variety of packages that R is so successful because the chances are high that someone has already solved a problem that you’re working on.
-
-### How to get a package?
-
-To install packages from CRAN use the `install.packages()` function. Once the package is installed you can load the pack using the `library()` function. Installing packages from Bioconductor take a few more steps which we won't cover just yet.
-
 <img src="figs/tidy_hex.png" width="50%" style="float:right"/>
 
-### Tidyverse package
 
 The [Tidyverse](https://www.tidyverse.org) which is a collection of R packages that share an underlying design, syntax, and grammer to streamline many main functions used in data science. You can install the complete tidyverse with `install.packages("tidyverse")`, once the package is installed you can load it using `library(tidyverse)`.
 
 The packages installed in tidyverse include:
 
--   `ggplot2` is a graphic package to plot your data.
 -   `dplyr` and `tidyr` are packages for data manipulation to subset, re-arrange, and format your dataset.
+-   `tibble` is a tidy way of displaying data frames that are easier to view.
 -   `readr` is a tidy way to input or read in data into R.
 -   `purrr` is a functional programming toolkit to handle looping functions.
--   `tibble` is a tidy way of displaying data frames that are easier to view.
 -   `stringr` is a way of handling text and character strings.
 -   `forcats` is a package providing tools to handle categorical variables and discrete (non-continuous) variables.
 -   `lubridate` is a package for working with times and dates.
+-   `ggplot2` is a graphic package to plot your data.
 
 ::: callout-important
 There are nice [cheatsheets](https://posit.co/resources/cheatsheets/) for each of the packages to demonstrate what they do in detail!
+
+Don't forget to check out the *Help* section too!
 :::
 
-## Tidy Syntax
+## The BIG picture
 
-The BIG picture of what we do in data science. 
+We have now progressed to the Tidy part of the data analysis pipeline!
 
-<img src="figs/base.png" width="90%" style="display:block; margin-left: auto; margin-right: auto"/>
+<img src="figs/tidy.png" width="90%" style="display:block; margin-left: auto; margin-right: auto"/>
+
 <figcaption>Figure 1: In our model of the data science process, you start with data import and tidying. Next, you understand your data with an iterative cycle of transforming, visualizing, and modeling. You finish the process by communicating your results to other humans.</figcaption>
 
+## Some not so tidy data
 
-In this next class we will focus on the **Import**, **Tidy**, and **Transform** parts of the data science pipeline. 
+Have you seen or even generated data that looks like this?
 
-### Import
-First we need to import data into R. I prefer to import .csv files because I think its a good way to indicate a data file and it eliminates any weird formatting that may exist in excel. I am showing 2 ways to import the data one using base R function `read.csv()` and the other using the `readr` function `read_csv`. 
+#### example 1
+::: {.img-float}
+<img src="figs/untidy1.png" width="90%" style="float:center"/>
+:::
 
-In base R, the `header` field determines if the first row of the data had column header titles or not. The `stringsAsFactors` determines if the character variables in your data set should be set as a factor variable (set as TRUE) or as character (set to FALSE). The `row.names` field will allow you to specify if the first column is data or the names of the rows. 
+#### example 2
+::: {.img-float}
+<img src="figs/untidy2.png" width="90%" style="float:center"/>
+:::
 
-In tidyverse, the `col_names` field specifies if the first row is a header. If you want to specify the type of data for each field you have to specify it using the `col_types` field. I specified that for you here. There are a lot more options you can look at in the *Help* section.
+#### example 3
+::: {.img-float}
+<img src="figs/untidy3.png" width="90%" style="float:center"/>
+:::
 
-```{r}
-#| label: setup
-#| include: false
-#| eval: false
+## Tidy data with `tidyr`
 
-library(readr)
-library(taylor)
-
-data <- taylor_all_songs
-final <- data[1:314,c(1,3,4,5,12:28)]
-types <- as.character(as.col_spec(final))
-types <- "fDicddididdddddiilfff"
-write_csv(final, file = "data/taylorswift.csv")
-
-```
-
-```{r}
-#| label: importing.data
-#| message: false
-
-library(readr)
-
-# BASE R
-# read.csv() is for importing comma-separated files
-data_base <- read.csv(file = "data/taylorswift.csv", 
-                 header = TRUE, 
-                 sep = ",", 
-                 stringsAsFactors = TRUE)
-
-
-# Tidyverse
-data_tidy <- read_csv(file = "data/taylorswift.csv",
-                 col_names = TRUE)
-
-```
-
-Using `readr` you can also import data directly from excel spreadsheets using `read_excel` or `read_xls` and even google sheets using `read_sheet`. However, we won't use these function in the course. But you are free to explore them on your own from the [readr package](https://readr.tidyverse.org).
-
-### Export
-You can also save files using the `write` functions for both csv or tsv files. 
-```{r}
-#| label: exporting.data
-#| message: false
-#| eval: false
-
-write_csv(data, file = "data/taylorswift.csv")
-```
-
-### Tidy & Transform
-The next step it to tidy and transform the data into the format that R can use to perform visualization and analysis. We will use some of the tools in `dplyr` and `tidyr`.
+The next step it to tidy and transform the data into a format that R can use to perform visualization and analysis.
 
 ::: callout-important
-### A note on pipes!
-
-"Piping" is a process of directly sending the output of one funtion into the input of the next function. Piping can be performed in a long line of commands as a way of streamling the code writing to make it easier to read. We will use this a lot in this course.
-
-`%>%` is the pipe command to connect 2 functions
-
-`|>` is the same pipe command, but in a different syntax
-
-The code in the course will mostly use `|>` because this is the tidyverse way of writing code, but across the internet you will also see `%>%`
-
+### Remember your pipes!
+`%>%` & `|>` 
 :::
+
+### Wide vs Long data
+```{r}
+#| label: wide.long
+#| message: false
+
+library(tidyr)
+library(palmerpenguins)
+
+
+# pivot_longer
+# pivot_wider
+
+
+```
+https://www.youtube.com/watch?v=MKwyauo8nSI
+
+https://posit.co/resources/videos/data-wrangling-with-r-and-rstudio/
+
+
+
+### unite vs separate
+```{r}
+#| label: unite.separate
+#| message: false
+
+library(tidyr)
+library(palmerpenguins)
+
+
+# unite
+# separate_wider_delim
+# separate_longer_delim
+# unnest_longer(films)
+
+```
+
+
+### dealing with missing values
+```{r}
+#| label: missing
+#| message: false
+
+library(tidyr)
+library(palmerpenguins)
+
+# drop_na
+# replace_na
+
+```
+
+
+
+
+
+
+
+
 
 #### Assigning Data Types
 
 ```{r}
-#| label: tidy.data
+#| label: transform.data
 #| message: false
+#| 
 
-library(tidyr)
 library(dplyr)
+
+# summarize
+# count
+# group_by
+# filter
+# distinct same as unique
+# slice
+# arrange
+# select
+# mutate
+### n()
+### sum()
+### mean(), median(), min(), max()
+### IQR(), sd(), var(),
+
+# rename
+
+# bind_cols
+# bind_rows
+
 
 
 
@@ -170,18 +207,6 @@ library(dplyr)
 ```
 
 
-
-
-
-::: callout-tip
-### Want More?
-
-There are so many great tools to learn R and data science!
-
--   To explore the tidyverse and data science in more detail check out the *R for Data Science* [textbook](https://r4ds.hadley.nz) written by Hadley Wickham, Mine Çetinkaya-Rundel, and Garrett Grolemund.
-
--   Want more stats and data science conversations?! Check out the **not so standard deviations** [podcast](https://nssdeviations.com) by Roger Peng and Hilary Parker.
-:::
-
+## Transform data with `dplyr`
 
 

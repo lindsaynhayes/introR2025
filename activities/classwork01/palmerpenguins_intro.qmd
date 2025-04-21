@@ -1,7 +1,6 @@
 ---
 title: "Introduction to the Palmer Penguins"
 date: 2025-07-01
-format: html
 editor: source
 editor_options: 
   chunk_output_type: console
