@@ -284,7 +284,7 @@
     "href": "readings.html",
     "title": "Important reading materials",
     "section": "",
-    "text": "The following contains relevant reading materials you should read prior to each class:\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\n2025-07-01\n\n\nR & RStudio\n\n\nLindsay Hayes\n\n\n\n\n2025-07-03\n\n\nNavigating Data Types in R\n\n\nLindsay Hayes\n\n\n\n\n\nNo matching items"
+    "text": "The following contains relevant reading materials you should read prior to each class:\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\n2025-07-01\n\n\nR & RStudio\n\n\nLindsay Hayes\n\n\n\n\n2025-07-03\n\n\nNavigating Data Types in R\n\n\nLindsay Hayes\n\n\n\n\n2025-07-08\n\n\nData Wrangling with tidyverse\n\n\nLindsay Hayes\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "projects.html",
@@ -294,109 +294,32 @@
     "text": "Date\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\n2024-10-24\n\n\nProject 1\n\n\nStephanie Hicks\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "lectures/index_L01.html",
-    "href": "lectures/index_L01.html",
-    "title": "Welcome to the Course!",
+    "objectID": "lectures/index_L02.html",
+    "href": "lectures/index_L02.html",
+    "title": "Navigating Data Types in R",
     "section": "",
-    "text": "The course will exclusively use R in the integrated development environment (IDE) called R Studio. Since the summer semester is only 1 month (10 classes), it is critical to have your computer set up and ready to go before the first day of class.\nThroughout the course, there will be a set of pre-lecture activities and/or readings for you to complete. These activities prepare you for the in-class activities. Failure to complete them will put you behind in an already compressed course.\nTo prepare for the first class:\n\nInstall R and R Studio\n\ninstallation video tutorial\nDetailed instructions on installing R and R Studio are available on swirl.\n\nComplete step 1 and step 2\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nSwirl is a great tool to learn R interactively that we will use in the course. Feel free to explore more.\n\n\n\nIn the first class, we will begin to get familiar with R. Complete the Pre-reading material about R. Pre-reading materials for each class are located under Resources. Sometimes, pre-reading materials are direct links to external resources for you to read in advance of the lecture."
+    "text": "Before class, read the pre-reading materials."
   },
   {
-    "objectID": "lectures/index_L01.html#learning-objectives",
-    "href": "lectures/index_L01.html#learning-objectives",
-    "title": "Welcome to the Course!",
+    "objectID": "lectures/index_L02.html#learning-objectives",
+    "href": "lectures/index_L02.html#learning-objectives",
+    "title": "Navigating Data Types in R",
     "section": "Learning objectives",
-    "text": "Learning objectives\n\n\n\n\n\n\nLearning objectives\n\n\n\nAt the end of this lesson you will:\n\nGet an overview of the course (including staff, format, grading, etc)\nBe able to recognize and operate an Integrated Developer Environment (IDE).\nBe able to recognize a Quarto document and describe reasons why to use a unified authoring framework.\nBe able to create a R project & Quarto document."
+    "text": "Learning objectives\n\n\n\n\n\n\nLearning objectives\n\n\n\nAt the end of class you will be able to:\n\nGenerate and navigate a quarto document\nUnderstand what packages are and how to use them\nGet data in and out of R\nRecognize and create various data types in R"
   },
   {
-    "objectID": "lectures/index_L01.html#slides",
-    "href": "lectures/index_L01.html#slides",
-    "title": "Welcome to the Course!",
+    "objectID": "lectures/index_L02.html#slides",
+    "href": "lectures/index_L02.html#slides",
+    "title": "Navigating Data Types in R",
     "section": "Slides",
-    "text": "Slides\n\nLecture 01: Welcome and Introductions\nIn-Class Activity"
+    "text": "Slides\n\nLecture 02: Data Types\nIn-Class Activity"
   },
   {
-    "objectID": "lectures/index_L01.html#acknowledgements",
-    "href": "lectures/index_L01.html#acknowledgements",
-    "title": "Welcome to the Course!",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements\nMaterial for this lecture was borrowed and adopted from\n\nsw carpentry: https://carpentries-incubator.github.io/bioc-intro/20-r-rstudio.html\ndata carpentry: https://datacarpentry.github.io/genomics-r-intro/00-introduction.html"
-  },
-  {
-    "objectID": "lectures/index_L01.html#summary",
-    "href": "lectures/index_L01.html#summary",
-    "title": "Welcome to the Course!",
-    "section": "Summary",
-    "text": "Summary\n\nAccess all course material on the course website (https://lindsaynhayes.github.io/introR2025/).\nRStudio makes you a more efficient programmer and gives you easy access to all the components of data analysis.\nQuarto is an open-source scientific and technical publishing system to create reproducible, production quality data analysis reports and much more. During the course we will primarily use the HTML output format."
-  },
-  {
-    "objectID": "lectures/index_L01.html#additional-practice",
-    "href": "lectures/index_L01.html#additional-practice",
-    "title": "Welcome to the Course!",
-    "section": "Additional practice",
-    "text": "Additional practice\nHere are some additional practice questions to help you think about the material discussed.\nCheck out this article on the 10 Best Practices for Data Science here\n\n\n\n\n\n\nPractice Tasks\n\n\n\n\nIn RStudio, create a new R project and then create a new Quarto document in that R project. Read the instructions. Practice running the chunks individually using the “play” button and the keyboard short cut.\nChange the settings of the Quarto document to display the output “inline” or in the “console”.\nRender the document and view the HTML output. Verify that you can modify the code, re-run it, and see modified output."
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome",
+    "objectID": "lectures.html",
+    "href": "lectures.html",
+    "title": "Course Content",
     "section": "",
-    "text": "Welcome to the Course Website for Cell 6351 Intro to Reproducible Data Analysis Using R!"
-  },
-  {
-    "objectID": "index.html#overview",
-    "href": "index.html#overview",
-    "title": "Welcome",
-    "section": "Overview",
-    "text": "Overview\nCurrent biomedical research regularly generates large datasets that require increasing computational skills to process and analyze including in genomics, behavior, imaging, and molecular biology. As a result, scientists today require fundamental computational and programming skill-sets to efficiently perform data analyses, generate complex models for testing, develop reproducible data analyses, and effectively communicate results through clear and meaningful graphics. However, these skills are often challenging due to a lack of structured training in data science.\nIntro to Reproducible Data Analysis Using R is a hands-on course that will introduce the R statistical software including data structures, wrangling data, plotting data, basic statistics, data modeling, and literate coding practices. There is no textbook for the course. All course materials will be provided on Canvas or this website. While no formal background in statistics or programming is necessary, a general knowledge of basic statistics, experimental design, and computer file storage systems will be helpful. All classes will involve active learning/coding activities so a laptop with power cord is required for all sessions. Students will be expected to complete readings prior to class, attend lectures to dive deeper into those topics in class, participate in classroom activities, complete projects practicing and reinforcing the computing and programming skills. There will be a final project, which will include a class presentation."
-  },
-  {
-    "objectID": "index.html#course-information",
-    "href": "index.html#course-information",
-    "title": "Welcome",
-    "section": "Course Information",
-    "text": "Course Information\n\nCourse Staff: Prof. Lindsay Hayes\nCourse Staff: OK-INBRE Eleana Cabello\nLectures: 9:00-10:30am Tuesday and Thursday\nLocation: BMSB324\nOffice Hours: Mondays 1-2pm"
-  },
-  {
-    "objectID": "index.html#course-details",
-    "href": "index.html#course-details",
-    "title": "Welcome",
-    "section": "Course Details",
-    "text": "Course Details\nAll course details are available on the Course page. The syllabus is available here and on Canvas."
-  },
-  {
-    "objectID": "activities/classwork02/classwork_L02.html",
-    "href": "activities/classwork02/classwork_L02.html",
-    "title": "Navigating Data Types in R",
-    "section": "",
-    "text": "Create a new Quarto document and erase the base text. You can keep the YAML header and rename it for yourself.\nAccess the Quarto document here from the github repository for the course.\nCopy and paste the content into your new Quarto Document. Make sure the code chunks copied too.\n\nWe will work our way through this quarto document together during class. The activity will cover using R as a calculator, creating R objects, and exploring the features of a data set."
-  },
-  {
-    "objectID": "activities/classwork02/classwork_L02.html#about-the-activity",
-    "href": "activities/classwork02/classwork_L02.html#about-the-activity",
-    "title": "Navigating Data Types in R",
-    "section": "",
-    "text": "Create a new Quarto document and erase the base text. You can keep the YAML header and rename it for yourself.\nAccess the Quarto document here from the github repository for the course.\nCopy and paste the content into your new Quarto Document. Make sure the code chunks copied too.\n\nWe will work our way through this quarto document together during class. The activity will cover using R as a calculator, creating R objects, and exploring the features of a data set."
-  },
-  {
-    "objectID": "activities/classwork02/classwork_L02.html#first-load-the-tidyverse-package",
-    "href": "activities/classwork02/classwork_L02.html#first-load-the-tidyverse-package",
-    "title": "Navigating Data Types in R",
-    "section": "First Load the Tidyverse Package",
-    "text": "First Load the Tidyverse Package\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors"
-  },
-  {
-    "objectID": "activities/classwork02/classwork_L02.html#ways-to-use-r",
-    "href": "activities/classwork02/classwork_L02.html#ways-to-use-r",
-    "title": "Navigating Data Types in R",
-    "section": "Ways to Use R",
-    "text": "Ways to Use R\n\n1. Arithmetic\n\n# example: addition/subtraction/multiplication/division\n\n193 + 45\n\n[1] 238\n\n2050 - 2025\n\n[1] 25\n\n50/250 * 100\n\n[1] 20\n\n# activity: assign the variable my_age as the current year minus your year of birth. \n\n\n\n2. Create R objects\n\n# vector\n# c(..., recursive = FALSE, use.names = TRUE)\nx &lt;- c(1:225)\nclass(x)\n\n[1] \"integer\"\n\n# matrix\n# matrix(data, nrow, ncol, byrow, dimnames)\ny &lt;- matrix(1:225, nrow=15, ncol=15, byrow = FALSE)\nclass(y)\n\n[1] \"matrix\" \"array\" \n\n# logical\n# testing each variable in the vector and outputting TRUE or FALSE\nover100 &lt;- x&gt;100\ntable(over100)\n\nover100\nFALSE  TRUE \n  100   125 \n\n\n\n\nYour Turn\n\n\nA. Create a vector of all the homeworlds in starwars using the starwars data.\n\n# create vector called \"homeworlds\" and assign it the value \"homeworld\" from the starwars data set\n\n\n# how many worlds are there? hint: use the unique function\n\n\n# is there a world called \"Ohio\"? how would you test this with code?\n\n\n# How many characters live on Naboo?\n\n\n\n# Who lives on Naboo? (hint use the \"names\" variable in the starwars data and the \"which\" function)\n\n\n\nB. Import and explore the dataframe called “taylor” from the csv “taylorswift.csv”\n\nlibrary(taylor)\ntaylor &lt;- taylor_all_songs\n\n# what is the \"class\" of the object taylor?\n\n\n# what types of data are in the object taylor?\n\n\n# change the \"album_name\" from class \"character\" to class \"factor\"\n\n\n# How many albums are in the data set & how many songs on each album?\n\n\n\nC. Which numeric song features are correlated with one another? Hint create a correlation matrix.\n\n# pick what features of the data you want to explore\n\n\n# create a matrix of those features\n\n\n# evaluate the correlation matrix\nmat |&gt; GGally::ggpairs()\n\nRegistered S3 method overwritten by 'GGally':\n  method from   \n  +.gg   ggplot2\n\n\nError: object 'mat' not found\n\n# which values show a positive correlation? Which values show a negative correlation?\n\n#var1 &lt;- \n#var2 &lt;- \n#var3 &lt;- \n#var4 &lt;- \n\n#ggplot(taylor, aes(x=var1, y=var2)) + geom_point(size=3)\n#ggplot(taylor, aes(x=var3, y=var4)) + geom_point(size=3)\n\n#library(taylor)\n#ggplot(taylor, aes(x=loudness, y=energy, color = album_name)) + geom_point(size=3) + scale_color_albums() + facet_wrap(~album_name)\n\n#ggplot(taylor, aes(x=acousticness, y=energy, color = album_name)) + geom_point(size=3) + scale_color_albums() + facet_wrap(~album_name)"
-  },
-  {
-    "objectID": "activities.html",
-    "href": "activities.html",
-    "title": "In-Class Activities",
-    "section": "",
-    "text": "In-class activities are listed below:\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\n2025-07-01\n\n\nIntroduction to the Palmer Penguins\n\n\n \n\n\n\n\n2025-07-03\n\n\nNavigating Data Types in R\n\n\nLindsay N. Hayes\n\n\n\n\n\nNo matching items"
+    "text": "Course content for each lecture is below:\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\n2025-07-01\n\n\nWelcome to the Course!\n\n\nLindsay Hayes\n\n\n\n\n2025-07-03\n\n\nNavigating Data Types in R\n\n\nLindsay Hayes\n\n\n\n\n2025-07-08\n\n\nData Wrangling with tidyverse\n\n\nLindsay Hayes\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "activities/classwork01/palmerpenguins_intro.html",
@@ -462,32 +385,130 @@
     "text": "References\nData originally published in:\n\nGorman KB, Williams TD, Fraser WR (2014). Ecological sexual dimorphism and environmental variability within a community of Antarctic penguins (genus Pygoscelis). PLoS ONE 9(3):e90081. https://doi.org/10.1371/journal.pone.0090081\n\nIndividual datasets:\nIndividual data can be accessed directly via the Environmental Data Initiative:\n\nPalmer Station Antarctica LTER and K. Gorman, 2020. Structural size measurements and isotopic signatures of foraging among adult male and female Adélie penguins (Pygoscelis adeliae) nesting along the Palmer Archipelago near Palmer Station, 2007-2009 ver 5. Environmental Data Initiative. https://doi.org/10.6073/pasta/98b16d7d563f265cb52372c8ca99e60f (Accessed 2020-06-08).\nPalmer Station Antarctica LTER and K. Gorman, 2020. Structural size measurements and isotopic signatures of foraging among adult male and female Gentoo penguin (Pygoscelis papua) nesting along the Palmer Archipelago near Palmer Station, 2007-2009 ver 5. Environmental Data Initiative. https://doi.org/10.6073/pasta/7fca67fb28d56ee2ffa3d9370ebda689 (Accessed 2020-06-08).\nPalmer Station Antarctica LTER and K. Gorman, 2020. Structural size measurements and isotopic signatures of foraging among adult male and female Chinstrap penguin (Pygoscelis antarcticus) nesting along the Palmer Archipelago near Palmer Station, 2007-2009 ver 6. Environmental Data Initiative. https://doi.org/10.6073/pasta/c14dfcfada8ea13a17536e73eb6fbe9e (Accessed 2020-06-08).\n\nHave fun with the Palmer Archipelago penguins!"
   },
   {
-    "objectID": "lectures.html",
-    "href": "lectures.html",
-    "title": "Course Content",
+    "objectID": "activities.html",
+    "href": "activities.html",
+    "title": "In-Class Activities",
     "section": "",
-    "text": "Course content for each lecture is below:\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\n2025-07-01\n\n\nWelcome to the Course!\n\n\nLindsay Hayes\n\n\n\n\n2025-07-03\n\n\nNavigating Data Types in R\n\n\nLindsay Hayes\n\n\n\n\n \n\n\nL02\n\n\nLindsay N Hayes\n\n\n\n\n\nNo matching items"
+    "text": "In-class activities are listed below:\n\n\n\n\n\nDate\n\n\nTitle\n\n\nAuthor\n\n\n\n\n\n\n2025-07-01\n\n\nIntroduction to the Palmer Penguins\n\n\n \n\n\n\n\n2025-07-03\n\n\nNavigating Data Types in R\n\n\nLindsay N. Hayes\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "lectures/index_L02.html",
-    "href": "lectures/index_L02.html",
+    "objectID": "activities/classwork02/classwork_L02.html",
+    "href": "activities/classwork02/classwork_L02.html",
     "title": "Navigating Data Types in R",
+    "section": "",
+    "text": "Create a new Quarto document and erase the base text. You can keep the YAML header and rename it for yourself.\nAccess the Quarto document here from the github repository for the course.\nCopy and paste the content into your new Quarto Document. Make sure the code chunks copied too.\n\nWe will work our way through this quarto document together during class. The activity will cover using R as a calculator, creating R objects, and exploring the features of a data set."
+  },
+  {
+    "objectID": "activities/classwork02/classwork_L02.html#about-the-activity",
+    "href": "activities/classwork02/classwork_L02.html#about-the-activity",
+    "title": "Navigating Data Types in R",
+    "section": "",
+    "text": "Create a new Quarto document and erase the base text. You can keep the YAML header and rename it for yourself.\nAccess the Quarto document here from the github repository for the course.\nCopy and paste the content into your new Quarto Document. Make sure the code chunks copied too.\n\nWe will work our way through this quarto document together during class. The activity will cover using R as a calculator, creating R objects, and exploring the features of a data set."
+  },
+  {
+    "objectID": "activities/classwork02/classwork_L02.html#first-load-the-tidyverse-package",
+    "href": "activities/classwork02/classwork_L02.html#first-load-the-tidyverse-package",
+    "title": "Navigating Data Types in R",
+    "section": "First Load the Tidyverse Package",
+    "text": "First Load the Tidyverse Package\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.1     ✔ tibble    3.2.1\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors"
+  },
+  {
+    "objectID": "activities/classwork02/classwork_L02.html#ways-to-use-r",
+    "href": "activities/classwork02/classwork_L02.html#ways-to-use-r",
+    "title": "Navigating Data Types in R",
+    "section": "Ways to Use R",
+    "text": "Ways to Use R\n\n1. Arithmetic\n\n# example: addition/subtraction/multiplication/division\n\n193 + 45\n\n[1] 238\n\n2050 - 2025\n\n[1] 25\n\n50/250 * 100\n\n[1] 20\n\n# activity: assign the variable my_age as the current year minus your year of birth. \n\n\n\n2. Create R objects\n\n# vector\n# c(..., recursive = FALSE, use.names = TRUE)\nx &lt;- c(1:225)\nclass(x)\n\n[1] \"integer\"\n\n# matrix\n# matrix(data, nrow, ncol, byrow, dimnames)\ny &lt;- matrix(1:225, nrow=15, ncol=15, byrow = FALSE)\nclass(y)\n\n[1] \"matrix\" \"array\" \n\n# logical\n# testing each variable in the vector and outputting TRUE or FALSE\nover100 &lt;- x&gt;100\ntable(over100)\n\nover100\nFALSE  TRUE \n  100   125 \n\n\n\n\nYour Turn\n\n\nA. Create a vector of all the homeworlds in starwars using the starwars data.\n\n# create vector called \"homeworlds\" and assign it the value \"homeworld\" from the starwars data set\n\n\n# how many worlds are there? hint: use the unique function\n\n\n# is there a world called \"Ohio\"? how would you test this with code?\n\n\n# How many characters live on Naboo?\n\n\n\n# Who lives on Naboo? (hint use the \"names\" variable in the starwars data and the \"which\" function)\n\n\n\nB. Import and explore the dataframe called “taylor” from the csv “taylorswift.csv”\n\nlibrary(taylor)\ntaylor &lt;- taylor_all_songs\n\n# what is the \"class\" of the object taylor?\n\n\n# what types of data are in the object taylor?\n\n\n# change the \"album_name\" from class \"character\" to class \"factor\"\n\n\n# How many albums are in the data set & how many songs on each album?\n\n\n\nC. Which numeric song features are correlated with one another? Hint create a correlation matrix.\n\n# pick what features of the data you want to explore\n\n\n# create a matrix of those features\n\n\n# evaluate the correlation matrix\nmat |&gt; GGally::ggpairs()\n\nRegistered S3 method overwritten by 'GGally':\n  method from   \n  +.gg   ggplot2\n\n\nError: object 'mat' not found\n\n# which values show a positive correlation? Which values show a negative correlation?\n\n#var1 &lt;- \n#var2 &lt;- \n#var3 &lt;- \n#var4 &lt;- \n\n#ggplot(taylor, aes(x=var1, y=var2)) + geom_point(size=3)\n#ggplot(taylor, aes(x=var3, y=var4)) + geom_point(size=3)\n\n#library(taylor)\n#ggplot(taylor, aes(x=loudness, y=energy, color = album_name)) + geom_point(size=3) + scale_color_albums() + facet_wrap(~album_name)\n\n#ggplot(taylor, aes(x=acousticness, y=energy, color = album_name)) + geom_point(size=3) + scale_color_albums() + facet_wrap(~album_name)"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome",
+    "section": "",
+    "text": "Welcome to the Course Website for Cell 6351 Intro to Reproducible Data Analysis Using R!"
+  },
+  {
+    "objectID": "index.html#overview",
+    "href": "index.html#overview",
+    "title": "Welcome",
+    "section": "Overview",
+    "text": "Overview\nCurrent biomedical research regularly generates large datasets that require increasing computational skills to process and analyze including in genomics, behavior, imaging, and molecular biology. As a result, scientists today require fundamental computational and programming skill-sets to efficiently perform data analyses, generate complex models for testing, develop reproducible data analyses, and effectively communicate results through clear and meaningful graphics. However, these skills are often challenging due to a lack of structured training in data science.\nIntro to Reproducible Data Analysis Using R is a hands-on course that will introduce the R statistical software including data structures, wrangling data, plotting data, basic statistics, data modeling, and literate coding practices. There is no textbook for the course. All course materials will be provided on Canvas or this website. While no formal background in statistics or programming is necessary, a general knowledge of basic statistics, experimental design, and computer file storage systems will be helpful. All classes will involve active learning/coding activities so a laptop with power cord is required for all sessions. Students will be expected to complete readings prior to class, attend lectures to dive deeper into those topics in class, participate in classroom activities, complete projects practicing and reinforcing the computing and programming skills. There will be a final project, which will include a class presentation."
+  },
+  {
+    "objectID": "index.html#course-information",
+    "href": "index.html#course-information",
+    "title": "Welcome",
+    "section": "Course Information",
+    "text": "Course Information\n\nCourse Staff: Prof. Lindsay Hayes\nCourse Staff: OK-INBRE Eleana Cabello\nLectures: 9:00-10:30am Tuesday and Thursday\nLocation: BMSB324\nOffice Hours: Mondays 1-2pm"
+  },
+  {
+    "objectID": "index.html#course-details",
+    "href": "index.html#course-details",
+    "title": "Welcome",
+    "section": "Course Details",
+    "text": "Course Details\nAll course details are available on the Course page. The syllabus is available here and on Canvas."
+  },
+  {
+    "objectID": "lectures/index_L01.html",
+    "href": "lectures/index_L01.html",
+    "title": "Welcome to the Course!",
+    "section": "",
+    "text": "The course will exclusively use R in the integrated development environment (IDE) called R Studio. Since the summer semester is only 1 month (10 classes), it is critical to have your computer set up and ready to go before the first day of class.\nThroughout the course, there will be a set of pre-lecture activities and/or readings for you to complete. These activities prepare you for the in-class activities. Failure to complete them will put you behind in an already compressed course.\nTo prepare for the first class:\n\nInstall R and R Studio\n\ninstallation video tutorial\nDetailed instructions on installing R and R Studio are available on swirl.\n\nComplete step 1 and step 2\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nSwirl is a great tool to learn R interactively that we will use in the course. Feel free to explore more.\n\n\n\nIn the first class, we will begin to get familiar with R. Complete the Pre-reading material about R. Pre-reading materials for each class are located under Resources. Sometimes, pre-reading materials are direct links to external resources for you to read in advance of the lecture."
+  },
+  {
+    "objectID": "lectures/index_L01.html#learning-objectives",
+    "href": "lectures/index_L01.html#learning-objectives",
+    "title": "Welcome to the Course!",
+    "section": "Learning objectives",
+    "text": "Learning objectives\n\n\n\n\n\n\nLearning objectives\n\n\n\nAt the end of this lesson you will:\n\nGet an overview of the course (including staff, format, grading, etc)\nBe able to recognize and operate an Integrated Developer Environment (IDE).\nBe able to recognize a Quarto document and describe reasons why to use a unified authoring framework.\nBe able to create a R project & Quarto document."
+  },
+  {
+    "objectID": "lectures/index_L01.html#slides",
+    "href": "lectures/index_L01.html#slides",
+    "title": "Welcome to the Course!",
+    "section": "Slides",
+    "text": "Slides\n\nLecture 01: Welcome and Introductions\nIn-Class Activity"
+  },
+  {
+    "objectID": "lectures/index_L01.html#acknowledgements",
+    "href": "lectures/index_L01.html#acknowledgements",
+    "title": "Welcome to the Course!",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nMaterial for this lecture was borrowed and adopted from\n\nsw carpentry: https://carpentries-incubator.github.io/bioc-intro/20-r-rstudio.html\ndata carpentry: https://datacarpentry.github.io/genomics-r-intro/00-introduction.html"
+  },
+  {
+    "objectID": "lectures/index_L01.html#summary",
+    "href": "lectures/index_L01.html#summary",
+    "title": "Welcome to the Course!",
+    "section": "Summary",
+    "text": "Summary\n\nAccess all course material on the course website (https://lindsaynhayes.github.io/introR2025/).\nRStudio makes you a more efficient programmer and gives you easy access to all the components of data analysis.\nQuarto is an open-source scientific and technical publishing system to create reproducible, production quality data analysis reports and much more. During the course we will primarily use the HTML output format."
+  },
+  {
+    "objectID": "lectures/index_L01.html#additional-practice",
+    "href": "lectures/index_L01.html#additional-practice",
+    "title": "Welcome to the Course!",
+    "section": "Additional practice",
+    "text": "Additional practice\nHere are some additional practice questions to help you think about the material discussed.\nCheck out this article on the 10 Best Practices for Data Science here\n\n\n\n\n\n\nPractice Tasks\n\n\n\n\nIn RStudio, create a new R project and then create a new Quarto document in that R project. Read the instructions. Practice running the chunks individually using the “play” button and the keyboard short cut.\nChange the settings of the Quarto document to display the output “inline” or in the “console”.\nRender the document and view the HTML output. Verify that you can modify the code, re-run it, and see modified output."
+  },
+  {
+    "objectID": "lectures/index_L03.html",
+    "href": "lectures/index_L03.html",
+    "title": "Data Wrangling with tidyverse",
     "section": "",
     "text": "Before class, read the pre-reading materials."
   },
   {
-    "objectID": "lectures/index_L02.html#learning-objectives",
-    "href": "lectures/index_L02.html#learning-objectives",
-    "title": "Navigating Data Types in R",
+    "objectID": "lectures/index_L03.html#learning-objectives",
+    "href": "lectures/index_L03.html#learning-objectives",
+    "title": "Data Wrangling with tidyverse",
     "section": "Learning objectives",
-    "text": "Learning objectives\n\n\n\n\n\n\nLearning objectives\n\n\n\nAt the end of class you will be able to:\n\nGenerate and navigate a quarto document\nUnderstand what packages are and how to use them\nGet data in and out of R\nRecognize and create various data types in R"
+    "text": "Learning objectives\n\n\n\n\n\n\nLearning objectives\n\n\n\nAt the end of class you will be able to:\n\none\ntwo\nthree\nfour"
   },
   {
-    "objectID": "lectures/index_L02.html#slides",
-    "href": "lectures/index_L02.html#slides",
-    "title": "Navigating Data Types in R",
+    "objectID": "lectures/index_L03.html#slides",
+    "href": "lectures/index_L03.html#slides",
+    "title": "Data Wrangling with tidyverse",
     "section": "Slides",
-    "text": "Slides\n\nLecture 02: Data Types\nIn-Class Activity"
+    "text": "Slides\n\nLecture 03: Data Wrangling\nIn-Class Activity"
   },
   {
     "objectID": "projects/01-project/index.html",
@@ -579,5 +600,61 @@
     "title": "R & RStudio",
     "section": "Footnotes",
     "text": "Footnotes\n\n\nAs opposed to using R directly from the command line console.↩︎"
+  },
+  {
+    "objectID": "readings/index_R03.html",
+    "href": "readings/index_R03.html",
+    "title": "Data Wrangling with tidyverse",
+    "section": "",
+    "text": "Most scientists are not trained to collect and organize data using tidydata principles. The results are data sets which are hard to follow, difficult to repeat, and challenging to report to journals. Understanding how to collect, organize, and store your data and analyses will make your life easier! Moreover, many journals request raw data submissions along with your manuscript. If you’ve analyzed and organized all your data in R using tidydata principles this process becomes a super simple, rather than tracking all the data across messy spreadsheets.\n\n“Tidy datasets are all alike, but every messy dataset is messy in its own way.”\n— Hadley Wickham"
+  },
+  {
+    "objectID": "readings/index_R03.html#the-problem-with-messy-data",
+    "href": "readings/index_R03.html#the-problem-with-messy-data",
+    "title": "Data Wrangling with tidyverse",
+    "section": "",
+    "text": "Most scientists are not trained to collect and organize data using tidydata principles. The results are data sets which are hard to follow, difficult to repeat, and challenging to report to journals. Understanding how to collect, organize, and store your data and analyses will make your life easier! Moreover, many journals request raw data submissions along with your manuscript. If you’ve analyzed and organized all your data in R using tidydata principles this process becomes a super simple, rather than tracking all the data across messy spreadsheets.\n\n“Tidy datasets are all alike, but every messy dataset is messy in its own way.”\n— Hadley Wickham"
+  },
+  {
+    "objectID": "readings/index_R03.html#the-principles-of-tidydata-are",
+    "href": "readings/index_R03.html#the-principles-of-tidydata-are",
+    "title": "Data Wrangling with tidyverse",
+    "section": "The principles of tidydata are:",
+    "text": "The principles of tidydata are:\n\nTreat your raw data as immutable.\n\nTry to manipulate the original form of the data as little as possible. The reason is to make the whole data analysis pipeline reproducible and transparent. If you start changing fields on the data spreadsheet you can’t track where those values came from. Manipulating data with code also decreases the chances for errors being introduced to the raw data.\n\n\nEach variable is a column; each column is a variable.\nEach observation is a row; each row is an observation.\nEach value is a cell; each cell is a single value.\n\nFor example, don’t have a column called group with values “Con_male”, “CON_female”, “Exp_M”, Exp F”. Why might this be a problem? First, it is combining 2 observations into one field (group and sex). Second, it is changing the notation styles making the entries inconsistent.\nThe second step after getting your data into R will be data wrangling in order to modify the data so that you can perform an analysis. Luckily R has a whole suite of tools to makes this process easy and most importantly reproducible. This less will teach you practices for effective data wrangling.\n\n\n\n\n\n\n\nLearning objectives\n\n\n\nAt the end of this lesson you will be able to:\n\nRecognize data format as long or wide format\nUnderstand when to use both formats and how to convert between long and wide\nPipe commands together to perform multiple commands in sequence"
+  },
+  {
+    "objectID": "readings/index_R03.html#the-tidyverse",
+    "href": "readings/index_R03.html#the-tidyverse",
+    "title": "Data Wrangling with tidyverse",
+    "section": "The Tidyverse",
+    "text": "The Tidyverse\n\nThe Tidyverse which is a collection of R packages that share an underlying design, syntax, and grammer to streamline many main functions used in data science. You can install the complete tidyverse with install.packages(\"tidyverse\"), once the package is installed you can load it using library(tidyverse).\nThe packages installed in tidyverse include:\n\ndplyr and tidyr are packages for data manipulation to subset, re-arrange, and format your dataset.\ntibble is a tidy way of displaying data frames that are easier to view.\nreadr is a tidy way to input or read in data into R.\npurrr is a functional programming toolkit to handle looping functions.\nstringr is a way of handling text and character strings.\nforcats is a package providing tools to handle categorical variables and discrete (non-continuous) variables.\nlubridate is a package for working with times and dates.\nggplot2 is a graphic package to plot your data.\n\n\n\n\n\n\n\nImportant\n\n\n\nThere are nice cheatsheets for each of the packages to demonstrate what they do in detail!\nDon’t forget to check out the Help section too!"
+  },
+  {
+    "objectID": "readings/index_R03.html#the-big-picture",
+    "href": "readings/index_R03.html#the-big-picture",
+    "title": "Data Wrangling with tidyverse",
+    "section": "The BIG picture",
+    "text": "The BIG picture\nWe have now progressed to the Tidy part of the data analysis pipeline!\n\n\nFigure 1: In our model of the data science process, you start with data import and tidying. Next, you understand your data with an iterative cycle of transforming, visualizing, and modeling. You finish the process by communicating your results to other humans."
+  },
+  {
+    "objectID": "readings/index_R03.html#some-not-so-tidy-data",
+    "href": "readings/index_R03.html#some-not-so-tidy-data",
+    "title": "Data Wrangling with tidyverse",
+    "section": "Some not so tidy data",
+    "text": "Some not so tidy data\nHave you seen or even generated data that looks like this?\n\nexample 1\n\n\n\n\n\nexample 2\n\n\n\n\n\nexample 3"
+  },
+  {
+    "objectID": "readings/index_R03.html#tidy-data-with-tidyr",
+    "href": "readings/index_R03.html#tidy-data-with-tidyr",
+    "title": "Data Wrangling with tidyverse",
+    "section": "Tidy data with tidyr",
+    "text": "Tidy data with tidyr\nThe next step it to tidy and transform the data into a format that R can use to perform visualization and analysis.\n\n\n\n\n\n\nRemember your pipes!\n\n\n\n%&gt;% & |&gt;\n\n\n\nWide vs Long data\n\nlibrary(tidyr)\nlibrary(palmerpenguins)\n\n\n# pivot_longer\n# pivot_wider\n\nhttps://www.youtube.com/watch?v=MKwyauo8nSI\nhttps://posit.co/resources/videos/data-wrangling-with-r-and-rstudio/\n\n\nunite vs separate\n\nlibrary(tidyr)\nlibrary(palmerpenguins)\n\n\n# unite\n# separate_wider_delim\n# separate_longer_delim\n# unnest_longer(films)\n\n\n\ndealing with missing values\n\nlibrary(tidyr)\nlibrary(palmerpenguins)\n\n# drop_na\n# replace_na\n\n\nAssigning Data Types\n\nlibrary(dplyr)\n\n# summarize\n# count\n# group_by\n# filter\n# distinct same as unique\n# slice\n# arrange\n# select\n# mutate\n### n()\n### sum()\n### mean(), median(), min(), max()\n### IQR(), sd(), var(),\n\n# rename\n\n# bind_cols\n# bind_rows"
+  },
+  {
+    "objectID": "readings/index_R03.html#transform-data-with-dplyr",
+    "href": "readings/index_R03.html#transform-data-with-dplyr",
+    "title": "Data Wrangling with tidyverse",
+    "section": "Transform data with dplyr",
+    "text": "Transform data with dplyr"
   }
 ]

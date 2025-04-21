@@ -3,7 +3,8 @@
     "listing": "/readings.html",
     "items": [
       "/readings/index_R01.html",
-      "/readings/index_R02.html"
+      "/readings/index_R02.html",
+      "/readings/index_R03.html"
     ]
   },
   {
@@ -13,18 +14,18 @@
     ]
   },
   {
-    "listing": "/activities.html",
-    "items": [
-      "/activities/classwork01/palmerpenguins_intro.html",
-      "/activities/classwork02/classwork_L02.html"
-    ]
-  },
-  {
     "listing": "/lectures.html",
     "items": [
       "/lectures/index_L01.html",
       "/lectures/index_L02.html",
-      "/lectures/test.html"
+      "/lectures/index_L03.html"
+    ]
+  },
+  {
+    "listing": "/activities.html",
+    "items": [
+      "/activities/classwork01/palmerpenguins_intro.html",
+      "/activities/classwork02/classwork_L02.html"
     ]
   }
 ]
