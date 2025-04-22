@@ -23,10 +23,10 @@ Before class, read the [pre-reading materials](https://lindsaynhayes.github.io/i
 
 **At the end of class you will be able to:**
 
--   one
--   two
--   three
--   four
+-   Recognize and define an untidy dataset
+-   Recognize and convert between long and wide data formats
+-   Understand when to use both formats
+-   Pipe functions together to perform multiple commands in sequence
 :::
 
 ## Slides

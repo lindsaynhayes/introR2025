@@ -166,12 +166,21 @@ Lets look at an example in code!
 library(tidyverse)
 
 data <- read_csv("data/wide_data.csv")
-glimpse(data)
-## You can see the weight each week but its spread across columns lets convert to long format
+glimpse(data) # first look at the data
+```
+You can see the weight each week but its spread across columns lets convert to long format
 
-long.data <- data |> pivot_longer(cols = c(3:11), names_to = "week", values_to = "grams")
-glimpse(long.data)
-# now the data is separated into weeks and weight. Now we could plot it across time.
+Using the `pivot_longer()` function we tell it to take columns 3 through 11 and put the column names into a new column called week and the weights into a new column called grams using this code
+```{r}
+long.data <- data |> 
+  pivot_longer(cols = c(3:11), names_to = "week", values_to = "grams")
+
+glimpse(long.data) # this is what the new data looks like. 
+```
+The data is separated into weeks and weight. Now we could plot it across time.
+
+```{r}
+#| echo: false
 
 ggplot(long.data, aes(x=week, y=grams, group = Dam, color = Group)) + geom_line() + 
   theme_classic() +
@@ -179,21 +188,33 @@ ggplot(long.data, aes(x=week, y=grams, group = Dam, color = Group)) + geom_line(
   theme(axis.text.x=element_text(angle=45, hjust = 1))
 ```
 
-However, other times we need the data to be **wide** format if we want to do computations on the data. For example, maybe we want to determine the percent weight change from baseline and plot that instead of the absolute weight. In that case we need to calculate `Wk8 Weight`/`Baseline Weight` * 100 to determine the percent of weight gain. This computation is done more easily if the data is in wide format.
+Other times we need the data to be **wide** format if we want to do computations on the data. For example, maybe we want to determine the percent weight change from baseline and plot that instead of the absolute weight. Lets convert it back to wide format using `pivot_wider()`.
 
-Lets look at an example
+We tell `pivot_wider()` it to take the "week" column and make a new columnn for each unique value and put the value of grams in the cells as the values for each unique week column.
 ```{r}
 #| label: long2wide
 #| message: false
-#| fig-width: 4
-#| fig-height: 4
 
 wide.data <- pivot_wider(long.data, names_from = week, values_from = grams)
-glimpse(wide.data)
-# now we're back where we started!
+glimpse(wide.data) # look at the data again
+```
 
+Next, we want to calculate the percent weight gain by performing this calculation for each row `Wk8 Weight`/`Baseline Weight` * 100 to determine the percent of weight gain. This computation is done more easily if the data is in wide format.
+
+```{r}
+#| message: false
+#| fig-width: 4
+#| fig-height: 4
 wide.data <- wide.data |> mutate(perc.gain = `Wk8 Weight`/`Baseline Weight`*100)
+glimpse(wide.data) # check it out
+```
+now you can see the new column of data called perc.gain as a new column at the end. We'll talk more about the `mutate()` function below. 
 
+```{r}
+#| message: false
+#| echo: false
+#| fig-width: 4
+#| fig-height: 4
 ggplot(wide.data, aes(x=Group, y=perc.gain, fill = Group)) + geom_boxplot(outlier.shape = NA) + 
   theme_classic() + geom_point() +
   scale_fill_manual(values = c("grey", "springgreen")) + 
@@ -201,7 +222,7 @@ ggplot(wide.data, aes(x=Group, y=perc.gain, fill = Group)) + geom_boxplot(outlie
 ```
 
 ### Unite vs Separate
-As we saw in countries data above sometimes we get data that has multiple pieces of data in one field. We can fix this problem with `separate_wider_delim()` function that will split a cell into 2 columns based on a specified delimiter.
+As we saw in countries data above sometimes we get data that has multiple pieces of data in one field. We can fix this problem with `separate_wider_delim()` function that will split a cell into 2 columns based on a specified delimiter. If you've ever used the "text to columns" feature in excel its essentially the same thing.
 
 ```{r}
 #| echo: false
@@ -217,14 +238,17 @@ data <- unite(data, col = "obstype_year", 4:3, remove = TRUE)
 #| label: unite.separate
 #| message: false
 
-glimpse(data)
-# as you can see the obstype_year has too many pieces of information in it. Before we could pivot_wider, we need to split out the observation type and the year.
+glimpse(data) # lets look at the countries data.
+```
+As you can see the "obstype_year" has too many pieces of information in it. Before we can `pivot_wider()`, we need to split out the observation by type and the year using the `separate_wider_delim()` function. We tell the function which column to split, what the names of the splits will be, and how the fields are deliminated. 
 
 
+```{r}
 dat <- separate_wider_delim(data, cols = obstype_year, names = c("obstype", "year"), delim = "_")
 glimpse(dat)
-# now the data is in a format that can be put into pivot_wider() to get out each of the observation types.
 ```
+Now the data is in a format that can be put into pivot_wider() to get out each of the observation types.
+
 
 ### Nesting and Unnesting
 Another cool function related to spliting data is a function called `unnest_longer`. We talked a little in the first class about a class of data called list which is very flexible on what can be put there, but you need special functions to access that data. Unnest is a way to unnest the listed items that are embedded into a dataframe. Lets look at the taylor swift data as an example.
@@ -236,16 +260,16 @@ Another cool function related to spliting data is a function called `unnest_long
 library(taylor)
 
 taylor <- taylor_album_songs
-glimpse(taylor)
-# if you look at the last line the lyrics is a list which is a tibble (or table) that is the all the lines of lyrics for each song. Since each line is a song and the lyrics can be many lines long its a nice way to be able to store a table inside a data frame. cool huh! If you wanted to access the lyrics you need to unnest the lyric data in the table. The function unnest_longer() does that.
-
-
-lyr <- taylor |> select(album_name, track_name, lyrics) |> unnest_longer(lyrics)
-dim(lyr)
-head(lyr)
-# now you can see the data frame is much longer as each row is a lyric. If you wanted to see how many times specific words were used this is how you could do it.
-
+glimpse(taylor) # look at some data
 ```
+If you look at the last line the lyrics is a list which is a tibble (or table) that is the all the lines of lyrics for each song. Since each line is a song and the lyrics can be many lines long its a nice way to be able to store a table inside a data frame. cool huh! If you wanted to access the lyrics you need to unnest the lyric data in the table. The function unnest_longer() does that.
+
+```{r}
+lyr <- taylor |> select(album_name, track_name, lyrics) |> unnest_longer(lyrics)
+dim(lyr) # the dimensions of the data number of rows and number of columns
+head(lyr)
+```
+You can see the dataframe is much longer (12,151 rows) as each row is a lyric. If you wanted to see how many times specific words were used this is how you could do it.
 
 ## Transform data with `dplyr`
 
@@ -255,13 +279,13 @@ Once the data is tidy we can do transformation and calculations for downstream a
 
 The functions we'll use *in combinations* include: 
 
-- `summarize()`
-- `count()`
-- `group_by()`
-- `filter()`
-- `distinct()`
-- `arrange()`
 - `select()`
+- `filter()`
+- `arrange()`
+- `distinct()`
+- `count()`
+- `summarize()`
+- `group_by()`
 - `mutate()`
 
 ::: callout-important
@@ -275,57 +299,83 @@ The functions we'll use *in combinations* include:
 When using pipes it is tidy style to put everything after a pipe on a new line so each line of code is noting one operation so its easier to understand. This may seem silly when you're only doing one operation, but the standard style is for it to be on a new line. 
 :::
 
-### summaries
+### Summary functions
 
+#### select()
 ```{r}
 #| label: transform.data
 #| message: false
-#| 
 
 library(palmerpenguins)
-glimpse(penguins)
+glimpse(penguins) # lets look at the penguins data
+```
+If we only want to look at the penguin body mass we can use the `select()` function to pull out only the data we want to see.
 
-# select (one line line)
-penguins |> select(species, island, body_mass_g)
+```{r}
+penguins |> select(species, island, body_mass_g) #(example, on one line of code)
+```
 
-# filter (on multiple lines)
+#### filter()
+Next, if we want to select only certain rows that meet a specific criteria we use the `filter()` function to filter out only the data we want. We can combine this with `select()` too.
+```{r}
 penguins |> 
   select(species, island, body_mass_g) |> 
   filter(body_mass_g > 4000)
+```
 
-# arrange
+#### arrange()
+arrange will re-order the data based on a specific column or columns. It we want to quickly see the lightest or heaviest penguins, for example.
+```{r}
+# lighest
 penguins |> 
   select(species, island, body_mass_g) |> 
   arrange(body_mass_g)
 
+# heaviest using the `desc()` descending function.
 penguins |> 
   select(species, island, body_mass_g) |> 
   arrange(desc(body_mass_g))
+```
 
-# distinct 
+#### distinct()
+distinct is a function similar to unique. It identifies the distinct or unique features across one or multiple columns
+```{r}
+# what are the distinct islands in the data? Note it is not counting the occurances (thats a different function)
 penguins |> 
   distinct(island)
 
+# what are the distinct islands and species?
 penguins |> 
   distinct(island, species)
+```
 
-# count
+#### count()
+count is similar to the `table()` function in base R. It will tally the number of times that unique variable is listed. So its similar to distinct, but it includes the count of the number of occurances.
+
+```{r}
 penguins |> 
   count(island, species)
+```
 
+#### summarize
+summarize is a powerful tool that summarizes many variables across the data. It can calculate mean, median, standard deviation, variance, sum, and many more features. It outputs a new table that includes just the summary data.
 
-# summarize
+```{r}
+# lets look at the average mass of all the penguins
 penguins |> 
   summarize(avg_mass = mean(body_mass_g))
-# this doesn't work... why? because there are missing values!
+# this doesn't work... why? because there are missing values! We have to add a special note to remove the NA values using the na.rm = TRUE setting. We can also look at more than one summary data at a time!
 
 penguins |> 
-  summarize(avg_mass = mean(body_mass_g, na.rm = TRUE))
-# but what if we want to see the average mass not of all the penguins but rather by specific groups
+  summarize(avg_mass = mean(body_mass_g, na.rm = TRUE),
+            sd = sd(body_mass_g, na.rm=TRUE))
+```
 
-# group_by & summarize
-# We can use the function group_by you won't see any difference by just running group_by, but under the hood its sorting the observations.
+#### group_by
+If we wanted to summarize the data across categorical variables in the data we use the `group_by()` function that will first group the data and then perform a summary function on each grouping.
+```{r}
 
+# just running group_by() you won't see any difference, but under the hood it is sorting the observations.
 penguins |> 
   group_by(island, species)
 
@@ -339,25 +389,22 @@ penguins |>
   summarize(n=n(), 
             mean_mass = mean(body_mass_g, na.rm = TRUE), 
             sd = sd(body_mass_g, na.rm = TRUE))
-
-# here are some of the calculations you can do in summarize: n(), sum(),mean(), median(), min(), max(), IQR(), sd(), var()
 ```
+Example calculations you can run in summarize: n(), sum(),mean(), median(), min(), max(), IQR(), sd(), var()
 
-The commands above output a new table or a single value but did not modify the original data. However, sometimes you need to add a new calculation or mutate how the data is presented you can do that with the mutate function. If you paid attention above when we looked at the percent weight gain on high fat diet we used the mutate function to add the new variable to the data. 
-
+These commands output a new table and did not modify the original data. However, sometimes you need to add a new calculation or mutate how the data is presented you can do that with the mutate function. If you paid attention above when we looked at the percent weight gain on high fat diet we used the `mutate()` function to add the new variable to the data. 
 
 ### mutate()
-
 `mutate()` takes all the same functions that summarize did above. The big difference is that instead of returning a new table or a single value it returns the whole dataset with a new column.
 
 ```{r}
 # if we run the same command as above but with mutate instead of summarize look at how the results differ
 penguins |> 
   group_by(island, species) |> 
-  mutate(mean_mass = mean(body_mass_g, na.rm = TRUE))
+  mutate(mean_mass = mean(body_mass_g, na.rm = TRUE)) |> glimpse()
 ```
 
-Note the mean_mass column that has now put the mean value in every row. Be aware of the type of output you will get out of the functions you implement!!
+**Note the mean_mass column that has now put the mean value in every row. Be aware of the type of output you will get out of the functions you implement!!**
 
 #### Lets look at another example
 remember our wide.data that was weight measurements of animals on a high fat diet
@@ -365,6 +412,7 @@ remember our wide.data that was weight measurements of animals on a high fat die
 wide.data <- read.csv("data/wide_data.csv")
 glimpse(wide.data)
 
+# mutate is doing the calculation of percent gain for each row so the output is a unique value in each row instead of repeating the mean of a column of data. 
 wide.data |> 
   mutate(perc.gain = Wk8.Weight/Baseline.Weight*100)
 ```
@@ -389,7 +437,7 @@ wide.data |> rename(baseline = Baseline.Weight,
 
 ## stringr, lubridate, forcats, purrr
 
-The packages contain function to handle other tricky data or processes in R that we won't cover as heavily here. I wanted to just give a few notes. 
+These packages contain function to handle other tricky data or processes in R that we won't cover as heavily here. I wanted to just give a few notes. 
 
 #### stringr
 stringr is for handing text and character strings to perform operations such as
@@ -409,10 +457,11 @@ purrr is a powerful set of functions for performing for loops or iterations of o
 
 
 
+::: {.callout-note}
+Do you learn better by hearing? Check out these videos covering some of this material.
 
-Learn More
+[Intro to Tidyverse](https://www.youtube.com/watch?v=MKwyauo8nSI)
 
-https://www.youtube.com/watch?v=MKwyauo8nSI
-
-https://posit.co/resources/videos/data-wrangling-with-r-and-rstudio/
-
+[Data Wrangling](https://posit.co/resources/videos/data-wrangling-with-r-and-rstudio/)
+this video is a little older and has some different syntax on the functions, but its all the same logic given by Garrett Grolemund himself (co-author of R for Data Science book)
+:::
