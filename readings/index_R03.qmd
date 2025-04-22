@@ -22,14 +22,15 @@ library(here)
 
 **At the end of this lesson you will be able to:**
 
--   Reconize and define an untidy dataset
--   Recognize and convert between long and wide data set formats
+-   Recognize and define an untidy dataset
+-   Recognize and convert between long and wide data formats
 -   Understand when to use both formats
 -   Pipe functions together to perform multiple commands in sequence
 :::
 
 ## The problem with messy data
-Most scientists are **not** trained to collect and organize data using `tidydata` principles. The results are data sets which are hard to follow, difficult to repeat, and challenging to report to journals. Understanding how to collect, organize, and store your data and analyses will make your life easier! Moreover, many journals request raw data submissions along with your manuscript. If you've analyzed and organized all your data in `R` using `tidydata` principles this process becomes a super simple, rather than tracking all the data across messy spreadsheets.
+
+Most scientists are not trained to collect and organize data using `tidydata` principles. The results are data sets which are hard to follow, difficult to repeat, and challenging to report to journals. Understanding how to organize and store your data and analyses will make your life easier! Moreover, many journals request raw data submissions along with your manuscript. If you've analyzed and organized all your data in `R` using `tidydata` principles this process becomes a super simple, rather than tracking all the data across messy spreadsheets.
 
 > "Tidy datasets are all alike, but every messy dataset is messy in its own way."\
 > --- Hadley Wickham
@@ -47,6 +48,7 @@ Most scientists are **not** trained to collect and organize data using `tidydata
 4.  **Each value is a cell; each cell is a single value.**
 
 For example, take the following data
+
 ```{r}
 #| echo: false
 
@@ -56,12 +58,13 @@ df <- as.data.frame(cbind(groups, val))
 df
 ```
 
-**Why might this data be a problem?** 
+**Why might this data be a problem?**
 
-- combining 2 observations into one field (group and sex). 
-- changing the notation styles
+-   combining 2 observations into one field (group and sex).
+-   changing the notation styles
 
 Here's another example
+
 ```{r}
 #| echo: false
 
@@ -72,17 +75,15 @@ df <- as.data.frame(cbind(groups, val2))
 df
 ```
 
-**Why might this data be a problem? **
+**Why might this data be a problem?**
 
-- the data field contains 2 values the numeric value and the units
+-   the data field contains 2 values the numeric value and the units
 
-The second step after getting your data into R will be **data wrangling** in order to modify the data so that you can perform an analysis. Luckily R has a whole suite of tools to makes this process easy and most importantly reproducible. This less will teach you practices for effective data wrangling.
-
+The second step after getting your data into R is **data wrangling** in order to modify the data so that you can perform an analysis. Luckily R has a whole suite of tools to makes this process easy and most importantly reproducible. This less will teach you practices for effective data wrangling.
 
 ## The Tidyverse
 
 <img src="figs/tidy_hex.png" width="50%" style="float:right"/>
-
 
 The [Tidyverse](https://www.tidyverse.org) which is a collection of R packages that share an underlying design, syntax, and grammer to streamline many main functions used in data science. You can install the complete tidyverse with `install.packages("tidyverse")`, once the package is installed you can load it using `library(tidyverse)`.
 
@@ -90,17 +91,17 @@ The packages installed in tidyverse include:
 
 -   `dplyr` and `tidyr` are packages for data manipulation to subset, re-arrange, and format your dataset.
 -   `tibble` is a tidy way of displaying data frames that are easier to view.
--   `readr` is a tidy way to input or read in data into R.
+-   `readr` is a tidy way to input or read in data into R that we covered last class.
 -   `purrr` is a functional programming toolkit to handle looping functions.
 -   `stringr` is a way of handling text and character strings.
 -   `forcats` is a package providing tools to handle categorical variables and discrete (non-continuous) variables.
 -   `lubridate` is a package for working with times and dates.
--   `ggplot2` is a graphic package to plot your data.
+-   `ggplot2` is a graphic package to plot your data. We will cover this package in the next class!
 
 ::: callout-important
 There are nice [cheatsheets](https://posit.co/resources/cheatsheets/) for each of the packages to demonstrate what they do in detail!
 
-Don't forget to check out the *Help* section too!
+Don't forget to check out the *Help* section in RStudio for any function you come across.
 :::
 
 ## The BIG picture
@@ -111,128 +112,307 @@ We have now progressed to the Tidy part of the data analysis pipeline!
 
 <figcaption>Figure 1: In our model of the data science process, you start with data import and tidying. Next, you understand your data with an iterative cycle of transforming, visualizing, and modeling. You finish the process by communicating your results to other humans.</figcaption>
 
-## Some not so tidy data
+## Examples of some not so tidy data
 
 Have you seen or even generated data that looks like this?
 
 #### example 1
-::: {.img-float}
+
+::: img-float
 <img src="figs/untidy1.png" width="90%" style="float:center"/>
 :::
 
 #### example 2
-::: {.img-float}
+
+::: img-float
 <img src="figs/untidy2.png" width="90%" style="float:center"/>
 :::
 
 #### example 3
-::: {.img-float}
-<img src="figs/untidy3.png" width="90%" style="float:center"/>
+some of my data! 
+
+::: {.img-float} 
+<img src="figs/untidy3.png" width="90%" style="float:center"/> 
 :::
 
 ## Tidy data with `tidyr`
 
-The next step it to tidy and transform the data into a format that R can use to perform visualization and analysis.
+`tidyr` is a package with tools that help you create **tidy data**. `tidyr` functions reform the data so that other R functions can perform manipulation or analysis on it.
 
-::: callout-important
-### Remember your pipes!
-`%>%` & `|>` 
-:::
+### Wide vs Long
 
-### Wide vs Long data
+Wide data puts many variables for each observation in the same row. An example is a time series, where each time point for an observation is in a different column. Data in this format can be easier to data enter when the data is collected. However, it is difficult for R to then plot or evaluate across time, but we need to convert it in R.
+
+Here is an example of wide data, you can see different metrics across time are represented across the columns for each country.
+
+![](figs/tidyr-wide.png)
+
+This is an example of long data. Now each value is in a single column. The next step would be to split the observation type and the year into 2 separate columns that we'll cover below.
+
+![](figs/tidyr-long.png){fig-align="center" width="341"}
+
+To convert between wide to longer we use the function `pivot_longer()` and to convert between long to wide we use the function `pivot_wider()`. The `pivot_longer()` function takes the main arguments `data`, `cols`, `names_to`, and `values_to`. `data` is the input data (the wide data frame). `cols` is the columns of the data you want to convert, you don't have to use the whole data set you can only select a few columns if you want. `names_to` is what you want to name the header of the new variable you are creating this is often called the "key" or for example the observation type in the above example. `values_to` is what you want to call the actual data "value" this could be the concentration or the units of the measurement.
+
+![](figs/tidyr-wide_long2.png)
+
+Lets look at an example in code!
+
 ```{r}
-#| label: wide.long
+#| label: wide2long
 #| message: false
+#| fig-width: 5
+#| fig-height: 4
 
-library(tidyr)
-library(palmerpenguins)
+library(tidyverse)
 
+data <- read_csv("data/wide_data.csv")
+glimpse(data)
+## You can see the weight each week but its spread across columns lets convert to long format
 
-# pivot_longer
-# pivot_wider
+long.data <- data |> pivot_longer(cols = c(3:11), names_to = "week", values_to = "grams")
+glimpse(long.data)
+# now the data is separated into weeks and weight. Now we could plot it across time.
 
-
+ggplot(long.data, aes(x=week, y=grams, group = Dam, color = Group)) + geom_line() + 
+  theme_classic() +
+  scale_color_manual(values = c("black", "springgreen")) +
+  theme(axis.text.x=element_text(angle=45, hjust = 1))
 ```
-https://www.youtube.com/watch?v=MKwyauo8nSI
 
-https://posit.co/resources/videos/data-wrangling-with-r-and-rstudio/
+However, other times we need the data to be **wide** format if we want to do computations on the data. For example, maybe we want to determine the percent weight change from baseline and plot that instead of the absolute weight. In that case we need to calculate `Wk8 Weight`/`Baseline Weight` * 100 to determine the percent of weight gain. This computation is done more easily if the data is in wide format.
+
+Lets look at an example
+```{r}
+#| label: long2wide
+#| message: false
+#| fig-width: 4
+#| fig-height: 4
+
+wide.data <- pivot_wider(long.data, names_from = week, values_from = grams)
+glimpse(wide.data)
+# now we're back where we started!
+
+wide.data <- wide.data |> mutate(perc.gain = `Wk8 Weight`/`Baseline Weight`*100)
+
+ggplot(wide.data, aes(x=Group, y=perc.gain, fill = Group)) + geom_boxplot(outlier.shape = NA) + 
+  theme_classic() + geom_point() +
+  scale_fill_manual(values = c("grey", "springgreen")) + 
+  ylab("% Weight Gain") + ylim(90,180)
+```
+
+### Unite vs Separate
+As we saw in countries data above sometimes we get data that has multiple pieces of data in one field. We can fix this problem with `separate_wider_delim()` function that will split a cell into 2 columns based on a specified delimiter.
+
+```{r}
+#| echo: false
+
+library(gapminder)
+data <- gapminder
+data <- pivot_longer(data, cols = c(pop, lifeExp, gdpPercap), names_to = "obstype", values_to = "obs_value")
+data <- unite(data, col = "obstype_year", 4:3, remove = TRUE)
+```
 
 
-
-### unite vs separate
 ```{r}
 #| label: unite.separate
 #| message: false
 
-library(tidyr)
-library(palmerpenguins)
+glimpse(data)
+# as you can see the obstype_year has too many pieces of information in it. Before we could pivot_wider, we need to split out the observation type and the year.
 
 
-# unite
-# separate_wider_delim
-# separate_longer_delim
-# unnest_longer(films)
-
+dat <- separate_wider_delim(data, cols = obstype_year, names = c("obstype", "year"), delim = "_")
+glimpse(dat)
+# now the data is in a format that can be put into pivot_wider() to get out each of the observation types.
 ```
 
+### Nesting and Unnesting
+Another cool function related to spliting data is a function called `unnest_longer`. We talked a little in the first class about a class of data called list which is very flexible on what can be put there, but you need special functions to access that data. Unnest is a way to unnest the listed items that are embedded into a dataframe. Lets look at the taylor swift data as an example.
 
-### dealing with missing values
 ```{r}
-#| label: missing
+#| label: unnest
 #| message: false
 
-library(tidyr)
-library(palmerpenguins)
+library(taylor)
 
-# drop_na
-# replace_na
+taylor <- taylor_album_songs
+glimpse(taylor)
+# if you look at the last line the lyrics is a list which is a tibble (or table) that is the all the lines of lyrics for each song. Since each line is a song and the lyrics can be many lines long its a nice way to be able to store a table inside a data frame. cool huh! If you wanted to access the lyrics you need to unnest the lyric data in the table. The function unnest_longer() does that.
+
+
+lyr <- taylor |> select(album_name, track_name, lyrics) |> unnest_longer(lyrics)
+dim(lyr)
+head(lyr)
+# now you can see the data frame is much longer as each row is a lyric. If you wanted to see how many times specific words were used this is how you could do it.
 
 ```
 
-
-
-
-
-
 ## Transform data with `dplyr`
-<img src="figs/tidy2.png" width="90%" style="display:block; margin-left: auto; margin-right: auto"/>
 
-### Summarize
+<img src="figs/transform.png" width="90%" style="display:block; margin-left: auto; margin-right: auto"/>
+
+Once the data is tidy we can do transformation and calculations for downstream analysis. You've already seen some of these tools in action throughout the course. We'll formally go over them now so you'll recognize it when you see it!
+
+The functions we'll use *in combinations* include: 
+
+- `summarize()`
+- `count()`
+- `group_by()`
+- `filter()`
+- `distinct()`
+- `arrange()`
+- `select()`
+- `mutate()`
+
+::: callout-important
+### Remember your pipes!
+
+`%>%` & `|>` These allow you to link functions together
+:::
+
+::: callout-note
+### A note on style
+When using pipes it is tidy style to put everything after a pipe on a new line so each line of code is noting one operation so its easier to understand. This may seem silly when you're only doing one operation, but the standard style is for it to be on a new line. 
+:::
+
+### summaries
 
 ```{r}
 #| label: transform.data
 #| message: false
 #| 
 
-library(dplyr)
+library(palmerpenguins)
+glimpse(penguins)
+
+# select (one line line)
+penguins |> select(species, island, body_mass_g)
+
+# filter (on multiple lines)
+penguins |> 
+  select(species, island, body_mass_g) |> 
+  filter(body_mass_g > 4000)
+
+# arrange
+penguins |> 
+  select(species, island, body_mass_g) |> 
+  arrange(body_mass_g)
+
+penguins |> 
+  select(species, island, body_mass_g) |> 
+  arrange(desc(body_mass_g))
+
+# distinct 
+penguins |> 
+  distinct(island)
+
+penguins |> 
+  distinct(island, species)
+
+# count
+penguins |> 
+  count(island, species)
+
 
 # summarize
-# count
-# group_by
-# filter
-# distinct same as unique
-# slice
-# arrange
-# select
-# mutate
-### n()
-### sum()
-### mean(), median(), min(), max()
-### IQR(), sd(), var(),
+penguins |> 
+  summarize(avg_mass = mean(body_mass_g))
+# this doesn't work... why? because there are missing values!
 
-# rename
+penguins |> 
+  summarize(avg_mass = mean(body_mass_g, na.rm = TRUE))
+# but what if we want to see the average mass not of all the penguins but rather by specific groups
 
-# bind_cols
-# bind_rows
+# group_by & summarize
+# We can use the function group_by you won't see any difference by just running group_by, but under the hood its sorting the observations.
 
+penguins |> 
+  group_by(island, species)
 
+penguins |> 
+  group_by(island, species) |> 
+  summarize(mean_mass = mean(body_mass_g, na.rm = TRUE))
 
+# we can also add in multiple variables for spread or count
+penguins |> 
+  group_by(island, species) |> 
+  summarize(n=n(), 
+            mean_mass = mean(body_mass_g, na.rm = TRUE), 
+            sd = sd(body_mass_g, na.rm = TRUE))
 
-
-
+# here are some of the calculations you can do in summarize: n(), sum(),mean(), median(), min(), max(), IQR(), sd(), var()
 ```
 
+The commands above output a new table or a single value but did not modify the original data. However, sometimes you need to add a new calculation or mutate how the data is presented you can do that with the mutate function. If you paid attention above when we looked at the percent weight gain on high fat diet we used the mutate function to add the new variable to the data. 
+
+
+### mutate()
+
+`mutate()` takes all the same functions that summarize did above. The big difference is that instead of returning a new table or a single value it returns the whole dataset with a new column.
+
+```{r}
+# if we run the same command as above but with mutate instead of summarize look at how the results differ
+penguins |> 
+  group_by(island, species) |> 
+  mutate(mean_mass = mean(body_mass_g, na.rm = TRUE))
+```
+
+Note the mean_mass column that has now put the mean value in every row. Be aware of the type of output you will get out of the functions you implement!!
+
+#### Lets look at another example
+remember our wide.data that was weight measurements of animals on a high fat diet
+```{r}
+wide.data <- read.csv("data/wide_data.csv")
+glimpse(wide.data)
+
+wide.data |> 
+  mutate(perc.gain = Wk8.Weight/Baseline.Weight*100)
+```
+This is what we wanted a unique variable for every row rather than a summary data such as mean.
+
+
+### rename()
+
+Another cool function is `rename()`. There are many ways to rename columns in R, but `rename()` is in the convenient tidy style. In the weight data the word "weight" is repeated over and over and in the graph it can clutter the axis. We can rename it for brevity. For `rename()` the function takes the format new_name = old_name. Alternatively, you can use the column number too
+
+```{r}
+wide.data |> rename(baseline = Baseline.Weight,
+                    Wk1 = 4,
+                    Wk2 = 5,
+                    Wk3 = 6,
+                    Wk4 = 7,
+                    Wk5 = 8,
+                    Wk6 = 9,
+                    Wk7 = 10,
+                    Wk8 = 11)
+```
+
+## stringr, lubridate, forcats, purrr
+
+The packages contain function to handle other tricky data or processes in R that we won't cover as heavily here. I wanted to just give a few notes. 
+
+#### stringr
+stringr is for handing text and character strings to perform operations such as
+
+- find character strings (ie, find the work "love" in song lyrics)
+- subset strings of characters (ie, extract the first or last 5 characters of a string)
+- join or split charcter strings (ie, extract the year, month, and day from a date string
+
+#### lubridate
+lubridate is used to more easily handle dates and times. It can handle am/pm/24-h time notations, and change dates from yymmdd to mmddyy and more formats.
+
+#### forcats
+forcats is for working with factors and categorical data in R. Some of the functions are factoring or converting a character vector to a factor vector. Setting the levels of the factors, such as which group is the reference group. It can combine 2 sets of factors or reorder how the factors are plotted.
+
+#### purrr
+purrr is a powerful set of functions for performing for loops or iterations of operations across your data either row-wise or column-wise. This is commonly done in data science, but is a slighly more advanced topic. I encourage you to read about purrr and for loops in R. If we have time at the end of the course we can cover this topic.
 
 
 
+
+Learn More
+
+https://www.youtube.com/watch?v=MKwyauo8nSI
+
+https://posit.co/resources/videos/data-wrangling-with-r-and-rstudio/
 
