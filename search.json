@@ -606,21 +606,21 @@
     "href": "readings/index_R03.html",
     "title": "Data Wrangling with tidyverse",
     "section": "",
-    "text": "Most scientists are not trained to collect and organize data using tidydata principles. The results are data sets which are hard to follow, difficult to repeat, and challenging to report to journals. Understanding how to collect, organize, and store your data and analyses will make your life easier! Moreover, many journals request raw data submissions along with your manuscript. If you’ve analyzed and organized all your data in R using tidydata principles this process becomes a super simple, rather than tracking all the data across messy spreadsheets.\n\n“Tidy datasets are all alike, but every messy dataset is messy in its own way.”\n— Hadley Wickham"
+    "text": "Learning objectives\n\n\n\nAt the end of this lesson you will be able to:\n\nReconize and define an untidy dataset\nRecognize and convert between long and wide data set formats\nUnderstand when to use both formats\nPipe functions together to perform multiple commands in sequence"
   },
   {
     "objectID": "readings/index_R03.html#the-problem-with-messy-data",
     "href": "readings/index_R03.html#the-problem-with-messy-data",
     "title": "Data Wrangling with tidyverse",
-    "section": "",
-    "text": "Most scientists are not trained to collect and organize data using tidydata principles. The results are data sets which are hard to follow, difficult to repeat, and challenging to report to journals. Understanding how to collect, organize, and store your data and analyses will make your life easier! Moreover, many journals request raw data submissions along with your manuscript. If you’ve analyzed and organized all your data in R using tidydata principles this process becomes a super simple, rather than tracking all the data across messy spreadsheets.\n\n“Tidy datasets are all alike, but every messy dataset is messy in its own way.”\n— Hadley Wickham"
+    "section": "The problem with messy data",
+    "text": "The problem with messy data\nMost scientists are not trained to collect and organize data using tidydata principles. The results are data sets which are hard to follow, difficult to repeat, and challenging to report to journals. Understanding how to collect, organize, and store your data and analyses will make your life easier! Moreover, many journals request raw data submissions along with your manuscript. If you’ve analyzed and organized all your data in R using tidydata principles this process becomes a super simple, rather than tracking all the data across messy spreadsheets.\n\n“Tidy datasets are all alike, but every messy dataset is messy in its own way.”\n— Hadley Wickham"
   },
   {
-    "objectID": "readings/index_R03.html#the-principles-of-tidydata-are",
-    "href": "readings/index_R03.html#the-principles-of-tidydata-are",
+    "objectID": "readings/index_R03.html#the-principles-of-tidydata",
+    "href": "readings/index_R03.html#the-principles-of-tidydata",
     "title": "Data Wrangling with tidyverse",
-    "section": "The principles of tidydata are:",
-    "text": "The principles of tidydata are:\n\nTreat your raw data as immutable.\n\nTry to manipulate the original form of the data as little as possible. The reason is to make the whole data analysis pipeline reproducible and transparent. If you start changing fields on the data spreadsheet you can’t track where those values came from. Manipulating data with code also decreases the chances for errors being introduced to the raw data.\n\n\nEach variable is a column; each column is a variable.\nEach observation is a row; each row is an observation.\nEach value is a cell; each cell is a single value.\n\nFor example, don’t have a column called group with values “Con_male”, “CON_female”, “Exp_M”, Exp F”. Why might this be a problem? First, it is combining 2 observations into one field (group and sex). Second, it is changing the notation styles making the entries inconsistent.\nThe second step after getting your data into R will be data wrangling in order to modify the data so that you can perform an analysis. Luckily R has a whole suite of tools to makes this process easy and most importantly reproducible. This less will teach you practices for effective data wrangling.\n\n\n\n\n\n\n\nLearning objectives\n\n\n\nAt the end of this lesson you will be able to:\n\nRecognize data format as long or wide format\nUnderstand when to use both formats and how to convert between long and wide\nPipe commands together to perform multiple commands in sequence"
+    "section": "The principles of tidydata",
+    "text": "The principles of tidydata\n\nTreat your raw data as immutable.\n\nTry to manipulate the original form of the data as little as possible. The reason is to make the whole data analysis pipeline reproducible and transparent. If you start changing fields on the data spreadsheet you can’t track where those values came from. Manipulating data with code also decreases the chances for errors being introduced to the raw data.\n\nEach variable is a column; each column is a variable.\nEach observation is a row; each row is an observation.\nEach value is a cell; each cell is a single value.\n\nFor example, take the following data\n\n\n      groups val\n1   Con_male  56\n2 CON_female  61\n3      Exp_m  75\n4      Exp_F  86\n\n\nWhy might this data be a problem?\n\ncombining 2 observations into one field (group and sex).\nchanging the notation styles\n\nHere’s another example\n\n\n  groups      val2\n1    CON 144_ug/ul\n2    CON  63_ug/ul\n3    EXP  96_ug/ul\n4    EXP  84_ug/ul\n\n\nWhy might this data be a problem? \n\nthe data field contains 2 values the numeric value and the units\n\nThe second step after getting your data into R will be data wrangling in order to modify the data so that you can perform an analysis. Luckily R has a whole suite of tools to makes this process easy and most importantly reproducible. This less will teach you practices for effective data wrangling."
   },
   {
     "objectID": "readings/index_R03.html#the-tidyverse",
@@ -648,13 +648,13 @@
     "href": "readings/index_R03.html#tidy-data-with-tidyr",
     "title": "Data Wrangling with tidyverse",
     "section": "Tidy data with tidyr",
-    "text": "Tidy data with tidyr\nThe next step it to tidy and transform the data into a format that R can use to perform visualization and analysis.\n\n\n\n\n\n\nRemember your pipes!\n\n\n\n%&gt;% & |&gt;\n\n\n\nWide vs Long data\n\nlibrary(tidyr)\nlibrary(palmerpenguins)\n\n\n# pivot_longer\n# pivot_wider\n\nhttps://www.youtube.com/watch?v=MKwyauo8nSI\nhttps://posit.co/resources/videos/data-wrangling-with-r-and-rstudio/\n\n\nunite vs separate\n\nlibrary(tidyr)\nlibrary(palmerpenguins)\n\n\n# unite\n# separate_wider_delim\n# separate_longer_delim\n# unnest_longer(films)\n\n\n\ndealing with missing values\n\nlibrary(tidyr)\nlibrary(palmerpenguins)\n\n# drop_na\n# replace_na\n\n\nAssigning Data Types\n\nlibrary(dplyr)\n\n# summarize\n# count\n# group_by\n# filter\n# distinct same as unique\n# slice\n# arrange\n# select\n# mutate\n### n()\n### sum()\n### mean(), median(), min(), max()\n### IQR(), sd(), var(),\n\n# rename\n\n# bind_cols\n# bind_rows"
+    "text": "Tidy data with tidyr\nThe next step it to tidy and transform the data into a format that R can use to perform visualization and analysis.\n\n\n\n\n\n\nRemember your pipes!\n\n\n\n%&gt;% & |&gt;\n\n\n\nWide vs Long data\n\nlibrary(tidyr)\nlibrary(palmerpenguins)\n\n\n# pivot_longer\n# pivot_wider\n\nhttps://www.youtube.com/watch?v=MKwyauo8nSI\nhttps://posit.co/resources/videos/data-wrangling-with-r-and-rstudio/\n\n\nunite vs separate\n\nlibrary(tidyr)\nlibrary(palmerpenguins)\n\n\n# unite\n# separate_wider_delim\n# separate_longer_delim\n# unnest_longer(films)\n\n\n\ndealing with missing values\n\nlibrary(tidyr)\nlibrary(palmerpenguins)\n\n# drop_na\n# replace_na"
   },
   {
     "objectID": "readings/index_R03.html#transform-data-with-dplyr",
     "href": "readings/index_R03.html#transform-data-with-dplyr",
     "title": "Data Wrangling with tidyverse",
     "section": "Transform data with dplyr",
-    "text": "Transform data with dplyr"
+    "text": "Transform data with dplyr\n\n\nSummarize\n\nlibrary(dplyr)\n\n# summarize\n# count\n# group_by\n# filter\n# distinct same as unique\n# slice\n# arrange\n# select\n# mutate\n### n()\n### sum()\n### mean(), median(), min(), max()\n### IQR(), sd(), var(),\n\n# rename\n\n# bind_cols\n# bind_rows"
   }
 ]

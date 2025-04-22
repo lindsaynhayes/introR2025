@@ -178,7 +178,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
    
   <ul>
   <li><a href="#the-problem-with-messy-data" id="toc-the-problem-with-messy-data" class="nav-link active" data-scroll-target="#the-problem-with-messy-data">The problem with messy data</a></li>
-  <li><a href="#the-principles-of-tidydata-are" id="toc-the-principles-of-tidydata-are" class="nav-link" data-scroll-target="#the-principles-of-tidydata-are">The principles of <code>tidydata</code> are:</a></li>
+  <li><a href="#the-principles-of-tidydata" id="toc-the-principles-of-tidydata" class="nav-link" data-scroll-target="#the-principles-of-tidydata">The principles of <code>tidydata</code></a></li>
   <li><a href="#the-tidyverse" id="toc-the-tidyverse" class="nav-link" data-scroll-target="#the-tidyverse">The Tidyverse</a></li>
   <li><a href="#the-big-picture" id="toc-the-big-picture" class="nav-link" data-scroll-target="#the-big-picture">The BIG picture</a></li>
   <li><a href="#some-not-so-tidy-data" id="toc-some-not-so-tidy-data" class="nav-link" data-scroll-target="#some-not-so-tidy-data">Some not so tidy data</a></li>
@@ -188,7 +188,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#unite-vs-separate" id="toc-unite-vs-separate" class="nav-link" data-scroll-target="#unite-vs-separate">unite vs separate</a></li>
   <li><a href="#dealing-with-missing-values" id="toc-dealing-with-missing-values" class="nav-link" data-scroll-target="#dealing-with-missing-values">dealing with missing values</a></li>
   </ul></li>
-  <li><a href="#transform-data-with-dplyr" id="toc-transform-data-with-dplyr" class="nav-link" data-scroll-target="#transform-data-with-dplyr">Transform data with <code>dplyr</code></a></li>
+  <li><a href="#transform-data-with-dplyr" id="toc-transform-data-with-dplyr" class="nav-link" data-scroll-target="#transform-data-with-dplyr">Transform data with <code>dplyr</code></a>
+  <ul class="collapse">
+  <li><a href="#summarize" id="toc-summarize" class="nav-link" data-scroll-target="#summarize">Summarize</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -238,29 +241,6 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="the-problem-with-messy-data" class="level2">
-<h2 class="anchored" data-anchor-id="the-problem-with-messy-data">The problem with messy data</h2>
-<p>Most scientists are <strong>not</strong> trained to collect and organize data using <code>tidydata</code> principles. The results are data sets which are hard to follow, difficult to repeat, and challenging to report to journals. Understanding how to collect, organize, and store your data and analyses will make your life easier! Moreover, many journals request raw data submissions along with your manuscript. If you’ve analyzed and organized all your data in <code>R</code> using <code>tidydata</code> principles this process becomes a super simple, rather than tracking all the data across messy spreadsheets.</p>
-<blockquote class="blockquote">
-<p>“Tidy datasets are all alike, but every messy dataset is messy in its own way.”<br>
-— Hadley Wickham</p>
-</blockquote>
-</section>
-<section id="the-principles-of-tidydata-are" class="level2">
-<h2 class="anchored" data-anchor-id="the-principles-of-tidydata-are">The principles of <code>tidydata</code> are:</h2>
-<ol type="1">
-<li>Treat your raw data as immutable.</li>
-</ol>
-<p><em>Try to manipulate the original form of the data as little as possible. The reason is to make the whole data analysis pipeline reproducible and transparent. If you start changing fields on the data spreadsheet you can’t track where those values came from. Manipulating data with code also decreases the chances for errors being introduced to the raw data.</em></p>
-<hr>
-<ol start="2" type="1">
-<li><p>Each variable is a column; each column is a variable.</p></li>
-<li><p>Each observation is a row; each row is an observation.</p></li>
-<li><p>Each value is a cell; each cell is a single value.</p></li>
-</ol>
-<p>For example, don’t have a column called group with values “Con_male”, “CON_female”, “Exp_M”, Exp F”. Why might this be a problem? First, it is combining 2 observations into one field (group and sex). Second, it is changing the notation styles making the entries inconsistent.</p>
-<p>The second step after getting your data into R will be <strong>data wrangling</strong> in order to modify the data so that you can perform an analysis. Luckily R has a whole suite of tools to makes this process easy and most importantly reproducible. This less will teach you practices for effective data wrangling.</p>
-<hr>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -273,12 +253,62 @@ Learning objectives
 <div class="callout-body-container callout-body">
 <p><strong>At the end of this lesson you will be able to:</strong></p>
 <ul>
-<li>Recognize data format as long or wide format</li>
-<li>Understand when to use both formats and how to convert between long and wide</li>
-<li>Pipe commands together to perform multiple commands in sequence</li>
+<li>Reconize and define an untidy dataset</li>
+<li>Recognize and convert between long and wide data set formats</li>
+<li>Understand when to use both formats</li>
+<li>Pipe functions together to perform multiple commands in sequence</li>
 </ul>
 </div>
 </div>
+<section id="the-problem-with-messy-data" class="level2">
+<h2 class="anchored" data-anchor-id="the-problem-with-messy-data">The problem with messy data</h2>
+<p>Most scientists are <strong>not</strong> trained to collect and organize data using <code>tidydata</code> principles. The results are data sets which are hard to follow, difficult to repeat, and challenging to report to journals. Understanding how to collect, organize, and store your data and analyses will make your life easier! Moreover, many journals request raw data submissions along with your manuscript. If you’ve analyzed and organized all your data in <code>R</code> using <code>tidydata</code> principles this process becomes a super simple, rather than tracking all the data across messy spreadsheets.</p>
+<blockquote class="blockquote">
+<p>“Tidy datasets are all alike, but every messy dataset is messy in its own way.”<br>
+— Hadley Wickham</p>
+</blockquote>
+</section>
+<section id="the-principles-of-tidydata" class="level2">
+<h2 class="anchored" data-anchor-id="the-principles-of-tidydata">The principles of <code>tidydata</code></h2>
+<ol type="1">
+<li><strong>Treat your raw data as immutable.</strong></li>
+</ol>
+<p><em>Try to manipulate the original form of the data as little as possible. The reason is to make the whole data analysis pipeline reproducible and transparent. If you start changing fields on the data spreadsheet you can’t track where those values came from. Manipulating data with code also decreases the chances for errors being introduced to the raw data.</em></p>
+<ol start="2" type="1">
+<li><p><strong>Each variable is a column; each column is a variable.</strong></p></li>
+<li><p><strong>Each observation is a row; each row is an observation.</strong></p></li>
+<li><p><strong>Each value is a cell; each cell is a single value.</strong></p></li>
+</ol>
+<p>For example, take the following data</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>      groups val
+1   Con_male  56
+2 CON_female  61
+3      Exp_m  75
+4      Exp_F  86</code></pre>
+</div>
+</div>
+<p><strong>Why might this data be a problem?</strong></p>
+<ul>
+<li>combining 2 observations into one field (group and sex).</li>
+<li>changing the notation styles</li>
+</ul>
+<p>Here’s another example</p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code>  groups      val2
+1    CON 144_ug/ul
+2    CON  63_ug/ul
+3    EXP  96_ug/ul
+4    EXP  84_ug/ul</code></pre>
+</div>
+</div>
+<p><strong>Why might this data be a problem? </strong></p>
+<ul>
+<li>the data field contains 2 values the numeric value and the units</li>
+</ul>
+<p>The second step after getting your data into R will be <strong>data wrangling</strong> in order to modify the data so that you can perform an analysis. Luckily R has a whole suite of tools to makes this process easy and most importantly reproducible. This less will teach you practices for effective data wrangling.</p>
 </section>
 <section id="the-tidyverse" class="level2">
 <h2 class="anchored" data-anchor-id="the-tidyverse">The Tidyverse</h2>
@@ -359,12 +389,12 @@ Remember your pipes!
 <section id="wide-vs-long-data" class="level3">
 <h3 class="anchored" data-anchor-id="wide-vs-long-data">Wide vs Long data</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># pivot_longer</span></span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="co"># pivot_wider</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># pivot_longer</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># pivot_wider</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p>https://www.youtube.com/watch?v=MKwyauo8nSI</p>
 <p>https://posit.co/resources/videos/data-wrangling-with-r-and-rstudio/</p>
@@ -372,56 +402,57 @@ Remember your pipes!
 <section id="unite-vs-separate" class="level3">
 <h3 class="anchored" data-anchor-id="unite-vs-separate">unite vs separate</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="co"># unite</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="co"># separate_wider_delim</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># separate_longer_delim</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co"># unnest_longer(films)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># unite</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># separate_wider_delim</span></span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># separate_longer_delim</span></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># unnest_longer(films)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="dealing-with-missing-values" class="level3">
 <h3 class="anchored" data-anchor-id="dealing-with-missing-values">dealing with missing values</h3>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># drop_na</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># replace_na</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyr)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># drop_na</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># replace_na</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="assigning-data-types" class="level4">
-<h4 class="anchored" data-anchor-id="assigning-data-types">Assigning Data Types</h4>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># summarize</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># count</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># group_by</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># filter</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a><span class="co"># distinct same as unique</span></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># slice</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="co"># arrange</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a><span class="co"># select</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a><span class="co"># mutate</span></span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a><span class="do">### n()</span></span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a><span class="do">### sum()</span></span>
-<span id="cb4-14"><a href="#cb4-14" aria-hidden="true" tabindex="-1"></a><span class="do">### mean(), median(), min(), max()</span></span>
-<span id="cb4-15"><a href="#cb4-15" aria-hidden="true" tabindex="-1"></a><span class="do">### IQR(), sd(), var(),</span></span>
-<span id="cb4-16"><a href="#cb4-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-17"><a href="#cb4-17" aria-hidden="true" tabindex="-1"></a><span class="co"># rename</span></span>
-<span id="cb4-18"><a href="#cb4-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-19"><a href="#cb4-19" aria-hidden="true" tabindex="-1"></a><span class="co"># bind_cols</span></span>
-<span id="cb4-20"><a href="#cb4-20" aria-hidden="true" tabindex="-1"></a><span class="co"># bind_rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div>
-</section>
 </section>
 </section>
 <section id="transform-data-with-dplyr" class="level2">
 <h2 class="anchored" data-anchor-id="transform-data-with-dplyr">Transform data with <code>dplyr</code></h2>
+<p><img src="figs/tidy2.png" width="90%" style="display:block; margin-left: auto; margin-right: auto"></p>
+<section id="summarize" class="level3">
+<h3 class="anchored" data-anchor-id="summarize">Summarize</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="co"># summarize</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a><span class="co"># count</span></span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a><span class="co"># group_by</span></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a><span class="co"># filter</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a><span class="co"># distinct same as unique</span></span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a><span class="co"># slice</span></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># arrange</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a><span class="co"># select</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a><span class="co"># mutate</span></span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a><span class="do">### n()</span></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="do">### sum()</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="do">### mean(), median(), min(), max()</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="do">### IQR(), sd(), var(),</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a><span class="co"># rename</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-19"><a href="#cb6-19" aria-hidden="true" tabindex="-1"></a><span class="co"># bind_cols</span></span>
+<span id="cb6-20"><a href="#cb6-20" aria-hidden="true" tabindex="-1"></a><span class="co"># bind_rows</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
