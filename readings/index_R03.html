@@ -190,7 +190,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#transform-data-with-dplyr" id="toc-transform-data-with-dplyr" class="nav-link" data-scroll-target="#transform-data-with-dplyr">Transform data with <code>dplyr</code></a>
   <ul class="collapse">
-  <li><a href="#summaries" id="toc-summaries" class="nav-link" data-scroll-target="#summaries">summaries</a></li>
+  <li><a href="#summary-functions" id="toc-summary-functions" class="nav-link" data-scroll-target="#summary-functions">Summary functions</a></li>
   <li><a href="#mutate" id="toc-mutate" class="nav-link" data-scroll-target="#mutate">mutate()</a></li>
   <li><a href="#rename" id="toc-rename" class="nav-link" data-scroll-target="#rename">rename()</a></li>
   </ul></li>
@@ -286,10 +286,10 @@ Learning objectives
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>      groups val
-1   Con_male 103
-2 CON_female  95
-3      Exp_m 104
-4      Exp_F  79</code></pre>
+1   Con_male  47
+2 CON_female 116
+3      Exp_m  90
+4      Exp_F  75</code></pre>
 </div>
 </div>
 <p><strong>Why might this data be a problem?</strong></p>
@@ -301,10 +301,10 @@ Learning objectives
 <div class="cell">
 <div class="cell-output cell-output-stdout">
 <pre><code>  groups      val2
-1    CON 123_ug/ul
-2    CON 111_ug/ul
-3    EXP 123_ug/ul
-4    EXP  99_ug/ul</code></pre>
+1    CON  77_ug/ul
+2    CON 120_ug/ul
+3    EXP 127_ug/ul
+4    EXP 104_ug/ul</code></pre>
 </div>
 </div>
 <p><strong>Why might this data be a problem?</strong></p>
@@ -395,7 +395,7 @@ Figure 1: In our model of the data science process, you start with data import a
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"data/wide_data.csv"</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(data) <span class="co"># first look at the data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 10
 Columns: 11
@@ -411,10 +411,14 @@ $ `Wk6 Weight`      &lt;dbl&gt; 21.4, 22.7, 23.4, 23.1, 23.4, 31.6, 34.8, 25.5, 
 $ `Wk7 Weight`      &lt;dbl&gt; 21.1, 22.0, 23.2, 24.1, 23.0, 32.0, 36.7, 28.5, 30.8…
 $ `Wk8 Weight`      &lt;dbl&gt; 21.1, 21.0, 22.0, 23.2, 22.8, 32.8, 38.2, 25.3, 33.3…</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="do">## You can see the weight each week but its spread across columns lets convert to long format</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>long.data <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span> <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">11</span>), <span class="at">names_to =</span> <span class="st">"week"</span>, <span class="at">values_to =</span> <span class="st">"grams"</span>)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(long.data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>You can see the weight each week but its spread across columns lets convert to long format</p>
+<p>Using the <code>pivot_longer()</code> function we tell it to take columns 3 through 11 and put the column names into a new column called week and the weights into a new column called grams using this code</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>long.data <span class="ot">&lt;-</span> data <span class="sc">|&gt;</span> </span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">pivot_longer</span>(<span class="at">cols =</span> <span class="fu">c</span>(<span class="dv">3</span><span class="sc">:</span><span class="dv">11</span>), <span class="at">names_to =</span> <span class="st">"week"</span>, <span class="at">values_to =</span> <span class="st">"grams"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(long.data) <span class="co"># this is what the new data looks like. </span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 90
 Columns: 4
@@ -423,25 +427,22 @@ $ Group &lt;chr&gt; "CON", "CON", "CON", "CON", "CON", "CON", "CON", "CON", "CON
 $ week  &lt;chr&gt; "Baseline Weight", "Wk1 Weight", "Wk2 Weight", "Wk3 Weight", "Wk…
 $ grams &lt;dbl&gt; 21.1, 20.0, 20.0, 19.9, 20.3, 20.7, 21.4, 21.1, 21.1, 22.4, 20.9…</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># now the data is separated into weeks and weight. Now we could plot it across time.</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(long.data, <span class="fu">aes</span>(<span class="at">x=</span>week, <span class="at">y=</span>grams, <span class="at">group =</span> Dam, <span class="at">color =</span> Group)) <span class="sc">+</span> <span class="fu">geom_line</span>() <span class="sc">+</span> </span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"black"</span>, <span class="st">"springgreen"</span>)) <span class="sc">+</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x=</span><span class="fu">element_text</span>(<span class="at">angle=</span><span class="dv">45</span>, <span class="at">hjust =</span> <span class="dv">1</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>The data is separated into weeks and weight. Now we could plot it across time.</p>
+<div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_R03_files/figure-html/wide2long-1.png" class="img-fluid figure-img" width="480"></p>
+<p><img src="index_R03_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
-<p>However, other times we need the data to be <strong>wide</strong> format if we want to do computations on the data. For example, maybe we want to determine the percent weight change from baseline and plot that instead of the absolute weight. In that case we need to calculate <code>Wk8 Weight</code>/<code>Baseline Weight</code> * 100 to determine the percent of weight gain. This computation is done more easily if the data is in wide format.</p>
-<p>Lets look at an example</p>
+<p>Other times we need the data to be <strong>wide</strong> format if we want to do computations on the data. For example, maybe we want to determine the percent weight change from baseline and plot that instead of the absolute weight. Lets convert it back to wide format using <code>pivot_wider()</code>.</p>
+<p>We tell <code>pivot_wider()</code> it to take the “week” column and make a new columnn for each unique value and put the value of grams in the cells as the values for each unique week column.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>wide.data <span class="ot">&lt;-</span> <span class="fu">pivot_wider</span>(long.data, <span class="at">names_from =</span> week, <span class="at">values_from =</span> grams)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(wide.data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>wide.data <span class="ot">&lt;-</span> <span class="fu">pivot_wider</span>(long.data, <span class="at">names_from =</span> week, <span class="at">values_from =</span> grams)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(wide.data) <span class="co"># look at the data again</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 10
 Columns: 11
@@ -457,18 +458,34 @@ $ `Wk6 Weight`      &lt;dbl&gt; 21.4, 22.7, 23.4, 23.1, 23.4, 31.6, 34.8, 25.5, 
 $ `Wk7 Weight`      &lt;dbl&gt; 21.1, 22.0, 23.2, 24.1, 23.0, 32.0, 36.7, 28.5, 30.8…
 $ `Wk8 Weight`      &lt;dbl&gt; 21.1, 21.0, 22.0, 23.2, 22.8, 32.8, 38.2, 25.3, 33.3…</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># now we're back where we started!</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>wide.data <span class="ot">&lt;-</span> wide.data <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">perc.gain =</span> <span class="st">`</span><span class="at">Wk8 Weight</span><span class="st">`</span><span class="sc">/</span><span class="st">`</span><span class="at">Baseline Weight</span><span class="st">`</span><span class="sc">*</span><span class="dv">100</span>)</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(wide.data, <span class="fu">aes</span>(<span class="at">x=</span>Group, <span class="at">y=</span>perc.gain, <span class="at">fill =</span> Group)) <span class="sc">+</span> <span class="fu">geom_boxplot</span>(<span class="at">outlier.shape =</span> <span class="cn">NA</span>) <span class="sc">+</span> </span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_classic</span>() <span class="sc">+</span> <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">"grey"</span>, <span class="st">"springgreen"</span>)) <span class="sc">+</span> </span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ylab</span>(<span class="st">"% Weight Gain"</span>) <span class="sc">+</span> <span class="fu">ylim</span>(<span class="dv">90</span>,<span class="dv">180</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Next, we want to calculate the percent weight gain by performing this calculation for each row <code>Wk8 Weight</code>/<code>Baseline Weight</code> * 100 to determine the percent of weight gain. This computation is done more easily if the data is in wide format.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>wide.data <span class="ot">&lt;-</span> wide.data <span class="sc">|&gt;</span> <span class="fu">mutate</span>(<span class="at">perc.gain =</span> <span class="st">`</span><span class="at">Wk8 Weight</span><span class="st">`</span><span class="sc">/</span><span class="st">`</span><span class="at">Baseline Weight</span><span class="st">`</span><span class="sc">*</span><span class="dv">100</span>)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(wide.data) <span class="co"># check it out</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 10
+Columns: 12
+$ Dam               &lt;chr&gt; "HFD-25-01", "HFD-25-02", "HFD-25-03", "HFD-25-04", …
+$ Group             &lt;chr&gt; "CON", "CON", "CON", "CON", "CON", "HFD", "HFD", "HF…
+$ `Baseline Weight` &lt;dbl&gt; 21.1, 22.4, 22.4, 22.8, 22.8, 21.8, 23.0, 23.6, 22.0…
+$ `Wk1 Weight`      &lt;dbl&gt; 20.0, 20.9, 22.2, 22.4, 21.8, 23.8, 25.8, 22.7, 23.2…
+$ `Wk2 Weight`      &lt;dbl&gt; 20.0, 21.2, 22.6, 23.1, 22.5, 23.6, 26.4, 21.8, 22.7…
+$ `Wk3 Weight`      &lt;dbl&gt; 19.9, 22.2, 22.3, 22.4, 22.0, 26.2, 29.4, 24.9, 25.4…
+$ `Wk4 Weight`      &lt;dbl&gt; 20.3, 21.7, 22.3, 24.1, 21.8, 28.1, 31.6, 22.9, 26.7…
+$ `Wk5 Weight`      &lt;dbl&gt; 20.7, 22.4, 22.6, 25.0, 21.9, 27.8, 35.8, 23.8, 31.5…
+$ `Wk6 Weight`      &lt;dbl&gt; 21.4, 22.7, 23.4, 23.1, 23.4, 31.6, 34.8, 25.5, 33.8…
+$ `Wk7 Weight`      &lt;dbl&gt; 21.1, 22.0, 23.2, 24.1, 23.0, 32.0, 36.7, 28.5, 30.8…
+$ `Wk8 Weight`      &lt;dbl&gt; 21.1, 21.0, 22.0, 23.2, 22.8, 32.8, 38.2, 25.3, 33.3…
+$ perc.gain         &lt;dbl&gt; 100.00000, 93.75000, 98.21429, 101.75439, 100.00000,…</code></pre>
+</div>
+</div>
+<p>now you can see the new column of data called perc.gain as a new column at the end. We’ll talk more about the <code>mutate()</code> function below.</p>
+<div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="index_R03_files/figure-html/long2wide-1.png" class="img-fluid figure-img" width="384"></p>
+<p><img src="index_R03_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="384"></p>
 </figure>
 </div>
 </div>
@@ -476,9 +493,9 @@ $ `Wk8 Weight`      &lt;dbl&gt; 21.1, 21.0, 22.0, 23.2, 22.8, 32.8, 38.2, 25.3, 
 </section>
 <section id="unite-vs-separate" class="level3">
 <h3 class="anchored" data-anchor-id="unite-vs-separate">Unite vs Separate</h3>
-<p>As we saw in countries data above sometimes we get data that has multiple pieces of data in one field. We can fix this problem with <code>separate_wider_delim()</code> function that will split a cell into 2 columns based on a specified delimiter.</p>
+<p>As we saw in countries data above sometimes we get data that has multiple pieces of data in one field. We can fix this problem with <code>separate_wider_delim()</code> function that will split a cell into 2 columns based on a specified delimiter. If you’ve ever used the “text to columns” feature in excel its essentially the same thing.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(data) <span class="co"># lets look at the countries data.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 5,112
 Columns: 4
@@ -487,11 +504,11 @@ $ continent    &lt;fct&gt; Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia, Asia,
 $ obstype_year &lt;chr&gt; "pop_1952", "lifeExp_1952", "gdpPercap_1952", "pop_1957",…
 $ obs_value    &lt;dbl&gt; 8.425333e+06, 2.880100e+01, 7.794453e+02, 9.240934e+06, 3…</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># as you can see the obstype_year has too many pieces of information in it. Before we could pivot_wider, we need to split out the observation type and the year.</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">separate_wider_delim</span>(data, <span class="at">cols =</span> obstype_year, <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"obstype"</span>, <span class="st">"year"</span>), <span class="at">delim =</span> <span class="st">"_"</span>)</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>As you can see the “obstype_year” has too many pieces of information in it. Before we can <code>pivot_wider()</code>, we need to split out the observation by type and the year using the <code>separate_wider_delim()</code> function. We tell the function which column to split, what the names of the splits will be, and how the fields are deliminated.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>dat <span class="ot">&lt;-</span> <span class="fu">separate_wider_delim</span>(data, <span class="at">cols =</span> obstype_year, <span class="at">names =</span> <span class="fu">c</span>(<span class="st">"obstype"</span>, <span class="st">"year"</span>), <span class="at">delim =</span> <span class="st">"_"</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 5,112
 Columns: 5
@@ -501,17 +518,17 @@ $ obstype   &lt;chr&gt; "pop", "lifeExp", "gdpPercap", "pop", "lifeExp", "gdpPer
 $ year      &lt;chr&gt; "1952", "1952", "1952", "1957", "1957", "1957", "1962", "196…
 $ obs_value &lt;dbl&gt; 8.425333e+06, 2.880100e+01, 7.794453e+02, 9.240934e+06, 3.03…</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="co"># now the data is in a format that can be put into pivot_wider() to get out each of the observation types.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>Now the data is in a format that can be put into pivot_wider() to get out each of the observation types.</p>
 </section>
 <section id="nesting-and-unnesting" class="level3">
 <h3 class="anchored" data-anchor-id="nesting-and-unnesting">Nesting and Unnesting</h3>
 <p>Another cool function related to spliting data is a function called <code>unnest_longer</code>. We talked a little in the first class about a class of data called list which is very flexible on what can be put there, but you need special functions to access that data. Unnest is a way to unnest the listed items that are embedded into a dataframe. Lets look at the taylor swift data as an example.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(taylor)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>taylor <span class="ot">&lt;-</span> taylor_album_songs</span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(taylor)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(taylor)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>taylor <span class="ot">&lt;-</span> taylor_album_songs</span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(taylor) <span class="co"># look at some data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 240
 Columns: 29
@@ -545,15 +562,15 @@ $ mode_name           &lt;chr&gt; "major", "major", "major", "major", "major", "
 $ key_mode            &lt;chr&gt; "C major", "G major", "A# major", "A major", "F ma…
 $ lyrics              &lt;list&gt; [&lt;tbl_df[55 x 4]&gt;], [&lt;tbl_df[33 x 4]&gt;], [&lt;tbl_df[…</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="co"># if you look at the last line the lyrics is a list which is a tibble (or table) that is the all the lines of lyrics for each song. Since each line is a song and the lyrics can be many lines long its a nice way to be able to store a table inside a data frame. cool huh! If you wanted to access the lyrics you need to unnest the lyric data in the table. The function unnest_longer() does that.</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>lyr <span class="ot">&lt;-</span> taylor <span class="sc">|&gt;</span> <span class="fu">select</span>(album_name, track_name, lyrics) <span class="sc">|&gt;</span> <span class="fu">unnest_longer</span>(lyrics)</span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(lyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If you look at the last line the lyrics is a list which is a tibble (or table) that is the all the lines of lyrics for each song. Since each line is a song and the lyrics can be many lines long its a nice way to be able to store a table inside a data frame. cool huh! If you wanted to access the lyrics you need to unnest the lyric data in the table. The function unnest_longer() does that.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>lyr <span class="ot">&lt;-</span> taylor <span class="sc">|&gt;</span> <span class="fu">select</span>(album_name, track_name, lyrics) <span class="sc">|&gt;</span> <span class="fu">unnest_longer</span>(lyrics)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(lyr) <span class="co"># the dimensions of the data number of rows and number of columns</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 12151     3</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(lyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(lyr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 3
   album_name   track_name lyrics$line $lyric            $element $element_artist
@@ -565,8 +582,8 @@ $ lyrics              &lt;list&gt; [&lt;tbl_df[55 x 4]&gt;], [&lt;tbl_df[33 x 4]
 5 Taylor Swift Tim McGraw           5 "That had a tend… Verse 1  Taylor Swift   
 6 Taylor Swift Tim McGraw           6 "On backroads at… Verse 1  Taylor Swift   </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="co"># now you can see the data frame is much longer as each row is a lyric. If you wanted to see how many times specific words were used this is how you could do it.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<p>You can see the dataframe is much longer (12,151 rows) as each row is a lyric. If you wanted to see how many times specific words were used this is how you could do it.</p>
 </section>
 </section>
 <section id="transform-data-with-dplyr" class="level2">
@@ -575,13 +592,13 @@ $ lyrics              &lt;list&gt; [&lt;tbl_df[55 x 4]&gt;], [&lt;tbl_df[33 x 4]
 <p>Once the data is tidy we can do transformation and calculations for downstream analysis. You’ve already seen some of these tools in action throughout the course. We’ll formally go over them now so you’ll recognize it when you see it!</p>
 <p>The functions we’ll use <em>in combinations</em> include:</p>
 <ul>
-<li><code>summarize()</code></li>
-<li><code>count()</code></li>
-<li><code>group_by()</code></li>
-<li><code>filter()</code></li>
-<li><code>distinct()</code></li>
-<li><code>arrange()</code></li>
 <li><code>select()</code></li>
+<li><code>filter()</code></li>
+<li><code>arrange()</code></li>
+<li><code>distinct()</code></li>
+<li><code>count()</code></li>
+<li><code>summarize()</code></li>
+<li><code>group_by()</code></li>
 <li><code>mutate()</code></li>
 </ul>
 <div class="callout callout-style-default callout-important callout-titled">
@@ -610,11 +627,13 @@ A note on style
 <p>When using pipes it is tidy style to put everything after a pipe on a new line so each line of code is noting one operation so its easier to understand. This may seem silly when you’re only doing one operation, but the standard style is for it to be on a new line.</p>
 </div>
 </div>
-<section id="summaries" class="level3">
-<h3 class="anchored" data-anchor-id="summaries">summaries</h3>
+<section id="summary-functions" class="level3">
+<h3 class="anchored" data-anchor-id="summary-functions">Summary functions</h3>
+<section id="select" class="level4">
+<h4 class="anchored" data-anchor-id="select">select()</h4>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(penguins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(penguins) <span class="co"># lets look at the penguins data</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 344
 Columns: 8
@@ -627,8 +646,10 @@ $ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 34
 $ sex               &lt;fct&gt; male, female, female, NA, female, male, female, male…
 $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="co"># select (one line line)</span></span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> <span class="fu">select</span>(species, island, body_mass_g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>If we only want to look at the penguin body mass we can use the <code>select()</code> function to pull out only the data we want to see.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> <span class="fu">select</span>(species, island, body_mass_g) <span class="co">#(example, on one line of code)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 344 × 3
    species island    body_mass_g
@@ -645,10 +666,15 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 10 Adelie  Torgersen        4250
 # ℹ 334 more rows</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># filter (on multiple lines)</span></span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(species, island, body_mass_g) <span class="sc">|&gt;</span> </span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(body_mass_g <span class="sc">&gt;</span> <span class="dv">4000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="filter" class="level4">
+<h4 class="anchored" data-anchor-id="filter">filter()</h4>
+<p>Next, if we want to select only certain rows that meet a specific criteria we use the <code>filter()</code> function to filter out only the data we want. We can combine this with <code>select()</code> too.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(species, island, body_mass_g) <span class="sc">|&gt;</span> </span>
+<span id="cb25-3"><a href="#cb25-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(body_mass_g <span class="sc">&gt;</span> <span class="dv">4000</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 172 × 3
    species island    body_mass_g
@@ -665,10 +691,16 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 10 Adelie  Dream            4150
 # ℹ 162 more rows</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># arrange</span></span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(species, island, body_mass_g) <span class="sc">|&gt;</span> </span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(body_mass_g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="arrange" class="level4">
+<h4 class="anchored" data-anchor-id="arrange">arrange()</h4>
+<p>arrange will re-order the data based on a specific column or columns. It we want to quickly see the lightest or heaviest penguins, for example.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># lighest</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(species, island, body_mass_g) <span class="sc">|&gt;</span> </span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(body_mass_g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 344 × 3
    species   island    body_mass_g
@@ -685,9 +717,10 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 10 Adelie    Dream            3000
 # ℹ 334 more rows</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(species, island, body_mass_g) <span class="sc">|&gt;</span> </span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(body_mass_g))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="co"># heaviest using the `desc()` descending function.</span></span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(species, island, body_mass_g) <span class="sc">|&gt;</span> </span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(body_mass_g))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 344 × 3
    species island body_mass_g
@@ -704,9 +737,15 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 10 Gentoo  Biscoe        5800
 # ℹ 334 more rows</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># distinct </span></span>
-<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(island)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="distinct" class="level4">
+<h4 class="anchored" data-anchor-id="distinct">distinct()</h4>
+<p>distinct is a function similar to unique. It identifies the distinct or unique features across one or multiple columns</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co"># what are the distinct islands in the data? Note it is not counting the occurances (thats a different function)</span></span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(island)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 3 × 1
   island   
@@ -715,8 +754,9 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 2 Biscoe   
 3 Dream    </code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(island, species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="co"># what are the distinct islands and species?</span></span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">distinct</span>(island, species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 2
   island    species  
@@ -727,9 +767,14 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 4 Biscoe    Gentoo   
 5 Dream     Chinstrap</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># count</span></span>
-<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(island, species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="count" class="level4">
+<h4 class="anchored" data-anchor-id="count">count()</h4>
+<p>count is similar to the <code>table()</code> function in base R. It will tally the number of times that unique variable is listed. So its similar to distinct, but it includes the count of the number of occurances.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">count</span>(island, species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 3
   island    species       n
@@ -740,32 +785,41 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 4 Dream     Chinstrap    68
 5 Torgersen Adelie       52</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># summarize</span></span>
-<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">avg_mass =</span> <span class="fu">mean</span>(body_mass_g))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="summarize" class="level4">
+<h4 class="anchored" data-anchor-id="summarize">summarize</h4>
+<p>summarize is a powerful tool that summarizes many variables across the data. It can calculate mean, median, standard deviation, variance, sum, and many more features. It outputs a new table that includes just the summary data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="co"># lets look at the average mass of all the penguins</span></span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">avg_mass =</span> <span class="fu">mean</span>(body_mass_g))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 1 × 1
   avg_mass
      &lt;dbl&gt;
 1       NA</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># this doesn't work... why? because there are missing values!</span></span>
-<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">avg_mass =</span> <span class="fu">mean</span>(body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="co"># this doesn't work... why? because there are missing values! We have to add a special note to remove the NA values using the na.rm = TRUE setting. We can also look at more than one summary data at a time!</span></span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">avg_mass =</span> <span class="fu">mean</span>(body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>),</span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd =</span> <span class="fu">sd</span>(body_mass_g, <span class="at">na.rm=</span><span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 1 × 1
-  avg_mass
-     &lt;dbl&gt;
-1    4202.</code></pre>
+<pre><code># A tibble: 1 × 2
+  avg_mass    sd
+     &lt;dbl&gt; &lt;dbl&gt;
+1    4202.  802.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="co"># but what if we want to see the average mass not of all the penguins but rather by specific groups</span></span>
-<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a><span class="co"># group_by &amp; summarize</span></span>
-<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a><span class="co"># We can use the function group_by you won't see any difference by just running group_by, but under the hood its sorting the observations.</span></span>
-<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(island, species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="group_by" class="level4">
+<h4 class="anchored" data-anchor-id="group_by">group_by</h4>
+<p>If we wanted to summarize the data across categorical variables in the data we use the <code>group_by()</code> function that will first group the data and then perform a summary function on each grouping.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># just running group_by() you won't see any difference, but under the hood it is sorting the observations.</span></span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(island, species)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 344 × 8
 # Groups:   island, species [5]
@@ -784,9 +838,13 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 # ℹ 334 more rows
 # ℹ 2 more variables: sex &lt;fct&gt;, year &lt;int&gt;</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(island, species) <span class="sc">|&gt;</span> </span>
-<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_mass =</span> <span class="fu">mean</span>(body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(island, species) <span class="sc">|&gt;</span> </span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">mean_mass =</span> <span class="fu">mean</span>(body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'island'. You can override using the
+`.groups` argument.</code></pre>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 3
 # Groups:   island [3]
@@ -798,12 +856,16 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 4 Dream     Chinstrap     3733.
 5 Torgersen Adelie        3706.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># we can also add in multiple variables for spread or count</span></span>
-<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(island, species) <span class="sc">|&gt;</span> </span>
-<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">n=</span><span class="fu">n</span>(), </span>
-<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_mass =</span> <span class="fu">mean</span>(body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), </span>
-<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd =</span> <span class="fu">sd</span>(body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb46"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="co"># we can also add in multiple variables for spread or count</span></span>
+<span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(island, species) <span class="sc">|&gt;</span> </span>
+<span id="cb46-4"><a href="#cb46-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarize</span>(<span class="at">n=</span><span class="fu">n</span>(), </span>
+<span id="cb46-5"><a href="#cb46-5" aria-hidden="true" tabindex="-1"></a>            <span class="at">mean_mass =</span> <span class="fu">mean</span>(body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>), </span>
+<span id="cb46-6"><a href="#cb46-6" aria-hidden="true" tabindex="-1"></a>            <span class="at">sd =</span> <span class="fu">sd</span>(body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`summarise()` has grouped output by 'island'. You can override using the
+`.groups` argument.</code></pre>
+</div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 5 × 5
 # Groups:   island [3]
@@ -815,44 +877,41 @@ $ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 
 4 Dream     Chinstrap    68     3733.  384.
 5 Torgersen Adelie       52     3706.  445.</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># here are some of the calculations you can do in summarize: n(), sum(),mean(), median(), min(), max(), IQR(), sd(), var()</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>The commands above output a new table or a single value but did not modify the original data. However, sometimes you need to add a new calculation or mutate how the data is presented you can do that with the mutate function. If you paid attention above when we looked at the percent weight gain on high fat diet we used the mutate function to add the new variable to the data.</p>
+<p>Example calculations you can run in summarize: n(), sum(),mean(), median(), min(), max(), IQR(), sd(), var()</p>
+<p>These commands output a new table and did not modify the original data. However, sometimes you need to add a new calculation or mutate how the data is presented you can do that with the mutate function. If you paid attention above when we looked at the percent weight gain on high fat diet we used the <code>mutate()</code> function to add the new variable to the data.</p>
+</section>
 </section>
 <section id="mutate" class="level3">
 <h3 class="anchored" data-anchor-id="mutate">mutate()</h3>
 <p><code>mutate()</code> takes all the same functions that summarize did above. The big difference is that instead of returning a new table or a single value it returns the whole dataset with a new column.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb50"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="co"># if we run the same command as above but with mutate instead of summarize look at how the results differ</span></span>
-<span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(island, species) <span class="sc">|&gt;</span> </span>
-<span id="cb50-4"><a href="#cb50-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mean_mass =</span> <span class="fu">mean</span>(body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="co"># if we run the same command as above but with mutate instead of summarize look at how the results differ</span></span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(island, species) <span class="sc">|&gt;</span> </span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">mean_mass =</span> <span class="fu">mean</span>(body_mass_g, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)) <span class="sc">|&gt;</span> <span class="fu">glimpse</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 344 × 9
-# Groups:   island, species [5]
-   species island    bill_length_mm bill_depth_mm flipper_length_mm body_mass_g
-   &lt;fct&gt;   &lt;fct&gt;              &lt;dbl&gt;         &lt;dbl&gt;             &lt;int&gt;       &lt;int&gt;
- 1 Adelie  Torgersen           39.1          18.7               181        3750
- 2 Adelie  Torgersen           39.5          17.4               186        3800
- 3 Adelie  Torgersen           40.3          18                 195        3250
- 4 Adelie  Torgersen           NA            NA                  NA          NA
- 5 Adelie  Torgersen           36.7          19.3               193        3450
- 6 Adelie  Torgersen           39.3          20.6               190        3650
- 7 Adelie  Torgersen           38.9          17.8               181        3625
- 8 Adelie  Torgersen           39.2          19.6               195        4675
- 9 Adelie  Torgersen           34.1          18.1               193        3475
-10 Adelie  Torgersen           42            20.2               190        4250
-# ℹ 334 more rows
-# ℹ 3 more variables: sex &lt;fct&gt;, year &lt;int&gt;, mean_mass &lt;dbl&gt;</code></pre>
+<pre><code>Rows: 344
+Columns: 9
+Groups: island, species [5]
+$ species           &lt;fct&gt; Adelie, Adelie, Adelie, Adelie, Adelie, Adelie, Adel…
+$ island            &lt;fct&gt; Torgersen, Torgersen, Torgersen, Torgersen, Torgerse…
+$ bill_length_mm    &lt;dbl&gt; 39.1, 39.5, 40.3, NA, 36.7, 39.3, 38.9, 39.2, 34.1, …
+$ bill_depth_mm     &lt;dbl&gt; 18.7, 17.4, 18.0, NA, 19.3, 20.6, 17.8, 19.6, 18.1, …
+$ flipper_length_mm &lt;int&gt; 181, 186, 195, NA, 193, 190, 181, 195, 193, 190, 186…
+$ body_mass_g       &lt;int&gt; 3750, 3800, 3250, NA, 3450, 3650, 3625, 4675, 3475, …
+$ sex               &lt;fct&gt; male, female, female, NA, female, male, female, male…
+$ year              &lt;int&gt; 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007, 2007…
+$ mean_mass         &lt;dbl&gt; 3706.373, 3706.373, 3706.373, 3706.373, 3706.373, 37…</code></pre>
 </div>
 </div>
-<p>Note the mean_mass column that has now put the mean value in every row. Be aware of the type of output you will get out of the functions you implement!!</p>
+<p><strong>Note the mean_mass column that has now put the mean value in every row. Be aware of the type of output you will get out of the functions you implement!!</strong></p>
 <section id="lets-look-at-another-example" class="level4">
 <h4 class="anchored" data-anchor-id="lets-look-at-another-example">Lets look at another example</h4>
 <p>remember our wide.data that was weight measurements of animals on a high fat diet</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a>wide.data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/wide_data.csv"</span>)</span>
-<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(wide.data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a>wide.data <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"data/wide_data.csv"</span>)</span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(wide.data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 10
 Columns: 11
@@ -868,8 +927,9 @@ $ Wk6.Weight      &lt;dbl&gt; 21.4, 22.7, 23.4, 23.1, 23.4, 31.6, 34.8, 25.5, 33
 $ Wk7.Weight      &lt;dbl&gt; 21.1, 22.0, 23.2, 24.1, 23.0, 32.0, 36.7, 28.5, 30.8, …
 $ Wk8.Weight      &lt;dbl&gt; 21.1, 21.0, 22.0, 23.2, 22.8, 32.8, 38.2, 25.3, 33.3, …</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a>wide.data <span class="sc">|&gt;</span> </span>
-<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">perc.gain =</span> Wk8.Weight<span class="sc">/</span>Baseline.Weight<span class="sc">*</span><span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb53"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># mutate is doing the calculation of percent gain for each row so the output is a unique value in each row instead of repeating the mean of a column of data. </span></span>
+<span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>wide.data <span class="sc">|&gt;</span> </span>
+<span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">perc.gain =</span> Wk8.Weight<span class="sc">/</span>Baseline.Weight<span class="sc">*</span><span class="dv">100</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>         Dam Group Baseline.Weight Wk1.Weight Wk2.Weight Wk3.Weight Wk4.Weight
 1  HFD-25-01   CON            21.1       20.0       20.0       19.9       20.3
@@ -902,15 +962,15 @@ $ Wk8.Weight      &lt;dbl&gt; 21.1, 21.0, 22.0, 23.2, 22.8, 32.8, 38.2, 25.3, 33
 <h3 class="anchored" data-anchor-id="rename">rename()</h3>
 <p>Another cool function is <code>rename()</code>. There are many ways to rename columns in R, but <code>rename()</code> is in the convenient tidy style. In the weight data the word “weight” is repeated over and over and in the graph it can clutter the axis. We can rename it for brevity. For <code>rename()</code> the function takes the format new_name = old_name. Alternatively, you can use the column number too</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>wide.data <span class="sc">|&gt;</span> <span class="fu">rename</span>(<span class="at">baseline =</span> Baseline.Weight,</span>
-<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">Wk1 =</span> <span class="dv">4</span>,</span>
-<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">Wk2 =</span> <span class="dv">5</span>,</span>
-<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">Wk3 =</span> <span class="dv">6</span>,</span>
-<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">Wk4 =</span> <span class="dv">7</span>,</span>
-<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">Wk5 =</span> <span class="dv">8</span>,</span>
-<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a>                    <span class="at">Wk6 =</span> <span class="dv">9</span>,</span>
-<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a>                    <span class="at">Wk7 =</span> <span class="dv">10</span>,</span>
-<span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a>                    <span class="at">Wk8 =</span> <span class="dv">11</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb55"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>wide.data <span class="sc">|&gt;</span> <span class="fu">rename</span>(<span class="at">baseline =</span> Baseline.Weight,</span>
+<span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a>                    <span class="at">Wk1 =</span> <span class="dv">4</span>,</span>
+<span id="cb55-3"><a href="#cb55-3" aria-hidden="true" tabindex="-1"></a>                    <span class="at">Wk2 =</span> <span class="dv">5</span>,</span>
+<span id="cb55-4"><a href="#cb55-4" aria-hidden="true" tabindex="-1"></a>                    <span class="at">Wk3 =</span> <span class="dv">6</span>,</span>
+<span id="cb55-5"><a href="#cb55-5" aria-hidden="true" tabindex="-1"></a>                    <span class="at">Wk4 =</span> <span class="dv">7</span>,</span>
+<span id="cb55-6"><a href="#cb55-6" aria-hidden="true" tabindex="-1"></a>                    <span class="at">Wk5 =</span> <span class="dv">8</span>,</span>
+<span id="cb55-7"><a href="#cb55-7" aria-hidden="true" tabindex="-1"></a>                    <span class="at">Wk6 =</span> <span class="dv">9</span>,</span>
+<span id="cb55-8"><a href="#cb55-8" aria-hidden="true" tabindex="-1"></a>                    <span class="at">Wk7 =</span> <span class="dv">10</span>,</span>
+<span id="cb55-9"><a href="#cb55-9" aria-hidden="true" tabindex="-1"></a>                    <span class="at">Wk8 =</span> <span class="dv">11</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>         Dam Group baseline  Wk1  Wk2  Wk3  Wk4  Wk5  Wk6  Wk7  Wk8
 1  HFD-25-01   CON     21.1 20.0 20.0 19.9 20.3 20.7 21.4 21.1 21.1
@@ -929,7 +989,7 @@ $ Wk8.Weight      &lt;dbl&gt; 21.1, 21.0, 22.0, 23.2, 22.8, 32.8, 38.2, 25.3, 33
 </section>
 <section id="stringr-lubridate-forcats-purrr" class="level2">
 <h2 class="anchored" data-anchor-id="stringr-lubridate-forcats-purrr">stringr, lubridate, forcats, purrr</h2>
-<p>The packages contain function to handle other tricky data or processes in R that we won’t cover as heavily here. I wanted to just give a few notes.</p>
+<p>These packages contain function to handle other tricky data or processes in R that we won’t cover as heavily here. I wanted to just give a few notes.</p>
 <section id="stringr" class="level4">
 <h4 class="anchored" data-anchor-id="stringr">stringr</h4>
 <p>stringr is for handing text and character strings to perform operations such as</p>
@@ -950,9 +1010,21 @@ $ Wk8.Weight      &lt;dbl&gt; 21.1, 21.0, 22.0, 23.2, 22.8, 32.8, 38.2, 25.3, 33
 <section id="purrr" class="level4">
 <h4 class="anchored" data-anchor-id="purrr">purrr</h4>
 <p>purrr is a powerful set of functions for performing for loops or iterations of operations across your data either row-wise or column-wise. This is commonly done in data science, but is a slighly more advanced topic. I encourage you to read about purrr and for loops in R. If we have time at the end of the course we can cover this topic.</p>
-<p>Learn More</p>
-<p>https://www.youtube.com/watch?v=MKwyauo8nSI</p>
-<p>https://posit.co/resources/videos/data-wrangling-with-r-and-rstudio/</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Do you learn better by hearing? Check out these videos covering some of this material.</p>
+<p><a href="https://www.youtube.com/watch?v=MKwyauo8nSI">Intro to Tidyverse</a></p>
+<p><a href="https://posit.co/resources/videos/data-wrangling-with-r-and-rstudio/">Data Wrangling</a> this video is a little older and has some different syntax on the functions, but its all the same logic given by Garrett Grolemund himself (co-author of R for Data Science book)</p>
+</div>
+</div>
 
 
 </section>
