@@ -17,41 +17,67 @@ editor_options:
 library(here)
 ```
 
+::: callout-note
+### Learning objectives
+
+**At the end of this lesson you will be able to:**
+
+-   Reconize and define an untidy dataset
+-   Recognize and convert between long and wide data set formats
+-   Understand when to use both formats
+-   Pipe functions together to perform multiple commands in sequence
+:::
+
 ## The problem with messy data
 Most scientists are **not** trained to collect and organize data using `tidydata` principles. The results are data sets which are hard to follow, difficult to repeat, and challenging to report to journals. Understanding how to collect, organize, and store your data and analyses will make your life easier! Moreover, many journals request raw data submissions along with your manuscript. If you've analyzed and organized all your data in `R` using `tidydata` principles this process becomes a super simple, rather than tracking all the data across messy spreadsheets.
 
 > "Tidy datasets are all alike, but every messy dataset is messy in its own way."\
 > --- Hadley Wickham
 
-## The principles of `tidydata` are:
+## The principles of `tidydata`
 
-1.  Treat your raw data as immutable.
+1.  **Treat your raw data as immutable.**
 
 *Try to manipulate the original form of the data as little as possible. The reason is to make the whole data analysis pipeline reproducible and transparent. If you start changing fields on the data spreadsheet you can't track where those values came from. Manipulating data with code also decreases the chances for errors being introduced to the raw data.*
 
---- 
+2.  **Each variable is a column; each column is a variable.**
 
-2.  Each variable is a column; each column is a variable.
+3.  **Each observation is a row; each row is an observation.**
 
-3.  Each observation is a row; each row is an observation.
+4.  **Each value is a cell; each cell is a single value.**
 
-4.  Each value is a cell; each cell is a single value.
+For example, take the following data
+```{r}
+#| echo: false
 
-For example, don't have a column called group with values "Con_male", "CON_female", "Exp_M", Exp F". Why might this be a problem? First, it is combining 2 observations into one field (group and sex). Second, it is changing the notation styles making the entries inconsistent.
+groups <- c("Con_male", "CON_female", "Exp_m", "Exp_F")
+val <- round(rnorm(4, mean = 100, sd = 25),0)
+df <- as.data.frame(cbind(groups, val))
+df
+```
+
+**Why might this data be a problem?** 
+
+- combining 2 observations into one field (group and sex). 
+- changing the notation styles
+
+Here's another example
+```{r}
+#| echo: false
+
+groups <- c("CON", "CON", "EXP", "EXP")
+val <- round(rnorm(4, mean = 100, sd = 25),0)
+val2 <- paste(val, "ug/ul", sep = "_")
+df <- as.data.frame(cbind(groups, val2))
+df
+```
+
+**Why might this data be a problem? **
+
+- the data field contains 2 values the numeric value and the units
 
 The second step after getting your data into R will be **data wrangling** in order to modify the data so that you can perform an analysis. Luckily R has a whole suite of tools to makes this process easy and most importantly reproducible. This less will teach you practices for effective data wrangling.
 
----
-
-::: callout-note
-### Learning objectives
-
-**At the end of this lesson you will be able to:**
-
--   Recognize data format as long or wide format
--   Understand when to use both formats and how to convert between long and wide
--   Pipe commands together to perform multiple commands in sequence
-:::
 
 ## The Tidyverse
 
@@ -168,10 +194,10 @@ library(palmerpenguins)
 
 
 
+## Transform data with `dplyr`
+<img src="figs/tidy2.png" width="90%" style="display:block; margin-left: auto; margin-right: auto"/>
 
-
-
-#### Assigning Data Types
+### Summarize
 
 ```{r}
 #| label: transform.data
@@ -207,6 +233,6 @@ library(dplyr)
 ```
 
 
-## Transform data with `dplyr`
+
 
 
