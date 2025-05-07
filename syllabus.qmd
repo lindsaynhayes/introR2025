@@ -8,7 +8,7 @@ knitr: true
 -   Location: In person, Summer 2025
 -   Dates: 7/1/2025 - 7/28/2025
 -   Course time: 10:30am - noon CST
--   Course location: BMSB324
+-   Course location: BMSB 324
 -   Office hours: Tuesdays from 12:00-1:00pm CST
 
 ## Instructor

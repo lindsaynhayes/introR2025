@@ -14,8 +14,8 @@ Intro to Reproducible Data Analysis Using R is a hands-on course that will intro
 
 - Course Staff: [Prof. Lindsay Hayes](https://lindsaynhayes.github.io)
 - Course Staff: OK-INBRE [Eleana Cabello](https://okinbre.ouhsc.edu)
-- Lectures: 10:30-noon
-- Location: BMSB324
+- Lectures: 10:30am-noon
+- Location: BMSB 324
 - Office Hours: Tuesdays 12-1pm
 
 ## Course Details
