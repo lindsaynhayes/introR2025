@@ -180,18 +180,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul>
   <li><a href="#about-the-activity" id="toc-about-the-activity" class="nav-link active" data-scroll-target="#about-the-activity">About the activity</a></li>
   <li><a href="#load-the-tidyverse-package" id="toc-load-the-tidyverse-package" class="nav-link" data-scroll-target="#load-the-tidyverse-package">Load the Tidyverse Package</a></li>
-  <li><a href="#reshaping-and-summarizing-data" id="toc-reshaping-and-summarizing-data" class="nav-link" data-scroll-target="#reshaping-and-summarizing-data">Reshaping and Summarizing Data</a></li>
+  <li><a href="#reshaping-and-summarizing-data" id="toc-reshaping-and-summarizing-data" class="nav-link" data-scroll-target="#reshaping-and-summarizing-data">Reshaping and Summarizing Data</a>
+  <ul class="collapse">
   <li><a href="#which-month-had-the-most-and-least-passengers-in-the-airpassengers-data" id="toc-which-month-had-the-most-and-least-passengers-in-the-airpassengers-data" class="nav-link" data-scroll-target="#which-month-had-the-most-and-least-passengers-in-the-airpassengers-data">1. Which month had the most and least passengers in the <code>AirPassengers</code> data?</a>
   <ul class="collapse">
   <li><a href="#a.-is-the-data-long-or-wide-what-form-does-it-need-to-be-in-how-can-you-convert-to-the-form-you-need" id="toc-a.-is-the-data-long-or-wide-what-form-does-it-need-to-be-in-how-can-you-convert-to-the-form-you-need" class="nav-link" data-scroll-target="#a.-is-the-data-long-or-wide-what-form-does-it-need-to-be-in-how-can-you-convert-to-the-form-you-need">A. Is the data long or wide? What form does it need to be in? How can you convert to the form you need?</a></li>
   <li><a href="#b.-how-can-we-extract-the-the-most-and-least-traveled-months-each-year" id="toc-b.-how-can-we-extract-the-the-most-and-least-traveled-months-each-year" class="nav-link" data-scroll-target="#b.-how-can-we-extract-the-the-most-and-least-traveled-months-each-year">B. How can we extract the the most and least traveled months each year?</a></li>
   </ul></li>
   <li><a href="#what-was-the-percent-increase-in-passengers-each-year-between-aug-and-nov" id="toc-what-was-the-percent-increase-in-passengers-each-year-between-aug-and-nov" class="nav-link" data-scroll-target="#what-was-the-percent-increase-in-passengers-each-year-between-aug-and-nov">2. What was the percent increase in passengers each year between Aug and Nov?</a></li>
-  <li><a href="#which-diet-caused-the-chicks-to-grow-more" id="toc-which-diet-caused-the-chicks-to-grow-more" class="nav-link" data-scroll-target="#which-diet-caused-the-chicks-to-grow-more">3. Which diet caused the chicks to grow more?</a>
+  <li><a href="#which-diet-lead-to-heavier-chicks" id="toc-which-diet-lead-to-heavier-chicks" class="nav-link" data-scroll-target="#which-diet-lead-to-heavier-chicks">3. Which diet lead to heavier chicks?</a>
   <ul class="collapse">
   <li><a href="#a.-count-how-many-timepoints-were-measured-and-how-many-chicks-were-on-each-diet." id="toc-a.-count-how-many-timepoints-were-measured-and-how-many-chicks-were-on-each-diet." class="nav-link" data-scroll-target="#a.-count-how-many-timepoints-were-measured-and-how-many-chicks-were-on-each-diet.">A. Count how many timepoints were measured and how many chicks were on each Diet.</a></li>
-  </ul></li>
   <li><a href="#b.-now-figure-out-which-diet-leads-to-the-heaviest-chicks." id="toc-b.-now-figure-out-which-diet-leads-to-the-heaviest-chicks." class="nav-link" data-scroll-target="#b.-now-figure-out-which-diet-leads-to-the-heaviest-chicks.">B. Now figure out which diet leads to the heaviest chicks.</a></li>
+  </ul></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -241,63 +243,29 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="load-the-tidyverse-package" class="level2">
 <h2 class="anchored" data-anchor-id="load-the-tidyverse-package">Load the Tidyverse Package</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
-✔ dplyr     1.1.4     ✔ readr     2.1.5
-✔ forcats   1.0.0     ✔ stringr   1.5.1
-✔ ggplot2   3.5.1     ✔ tibble    3.2.1
-✔ lubridate 1.9.4     ✔ tidyr     1.3.1
-✔ purrr     1.0.4     
-── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
-✖ dplyr::filter() masks stats::filter()
-✖ dplyr::lag()    masks stats::lag()
-ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cowplot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stderr">
-<pre><code>
-Attaching package: 'cowplot'
-
-The following object is masked from 'package:lubridate':
-
-    stamp</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cowplot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="reshaping-and-summarizing-data" class="level2">
-<h2 class="anchored" data-anchor-id="reshaping-and-summarizing-data">Reshaping and Summarizing Data</h2>
+<section id="reshaping-and-summarizing-data" class="level1">
+<h1>Reshaping and Summarizing Data</h1>
 <p>A common type of data that requires reshaping is time course data.</p>
 <p>Using tidyverse principles answer the questions below:</p>
-</section>
 <section id="which-month-had-the-most-and-least-passengers-in-the-airpassengers-data" class="level2">
 <h2 class="anchored" data-anchor-id="which-month-had-the-most-and-least-passengers-in-the-airpassengers-data">1. Which month had the most and least passengers in the <code>AirPassengers</code> data?</h2>
-<p>The <code>AirPassengers</code> data which is a time-series of data representing the monthly international airline passenger numbers from January 1949 to December 1960. Search for AirPassengers in the Help to learn more about the dataset.</p>
+<p>The <code>AirPassengers</code> data which is a time-series of data representing the monthly international airline passenger numbers from January 1949 to December 1960. Search for AirPassengers in the <code>Help</code> to learn more about the dataset.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load and inspect the data, a little reshaping to get in to an easy to read format for you.</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>AP_matrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(AirPassengers, <span class="at">nrow =</span> <span class="fu">length</span>(<span class="fu">unique</span>(<span class="fu">floor</span>(<span class="fu">time</span>(AirPassengers)))), <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(AP_matrix) <span class="ot">&lt;-</span> month.abb</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(AP_matrix) <span class="ot">&lt;-</span> <span class="fu">unique</span>(<span class="fu">floor</span>(<span class="fu">time</span>(AirPassengers)))</span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>AP_df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(AP_matrix)</span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>AP_df<span class="sc">$</span>Year <span class="ot">&lt;-</span> <span class="fu">rownames</span>(AP_matrix)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(AP_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 12 13</code></pre>
-</div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load and inspect the data, a little reshaping here to get in to an easy to read format for you.</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>AP_matrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(AirPassengers, <span class="at">nrow =</span> <span class="fu">length</span>(<span class="fu">unique</span>(<span class="fu">floor</span>(<span class="fu">time</span>(AirPassengers)))), <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(AP_matrix) <span class="ot">&lt;-</span> month.abb</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(AP_matrix) <span class="ot">&lt;-</span> <span class="fu">unique</span>(<span class="fu">floor</span>(<span class="fu">time</span>(AirPassengers)))</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>AP_df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(AP_matrix)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>AP_df<span class="sc">$</span>Year <span class="ot">&lt;-</span> <span class="fu">rownames</span>(AP_matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <section id="a.-is-the-data-long-or-wide-what-form-does-it-need-to-be-in-how-can-you-convert-to-the-form-you-need" class="level3">
 <h3 class="anchored" data-anchor-id="a.-is-the-data-long-or-wide-what-form-does-it-need-to-be-in-how-can-you-convert-to-the-form-you-need">A. Is the data long or wide? What form does it need to be in? How can you convert to the form you need?</h3>
-</section>
-<section id="b.-how-can-we-extract-the-the-most-and-least-traveled-months-each-year" class="level3">
-<h3 class="anchored" data-anchor-id="b.-how-can-we-extract-the-the-most-and-least-traveled-months-each-year">B. How can we extract the the most and least traveled months each year?</h3>
-</section>
-</section>
-<section id="what-was-the-percent-increase-in-passengers-each-year-between-aug-and-nov" class="level2">
-<h2 class="anchored" data-anchor-id="what-was-the-percent-increase-in-passengers-each-year-between-aug-and-nov">2. What was the percent increase in passengers each year between Aug and Nov?</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To answer this question we need to find the ratio of Aug and Nov travelers. We need the data in the wide format.</span></span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>AP_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>AP_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>     Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec Year
 1949 112 118 132 129 121 135 148 148 136 119 104 118 1949
@@ -313,15 +281,26 @@ The following object is masked from 'package:lubridate':
 1959 360 342 406 396 420 472 548 559 463 407 362 405 1959
 1960 417 391 419 461 472 535 622 606 508 461 390 432 1960</code></pre>
 </div>
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># how can we add the ratio to get the percent increase?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="which-diet-caused-the-chicks-to-grow-more" class="level2">
-<h2 class="anchored" data-anchor-id="which-diet-caused-the-chicks-to-grow-more">3. Which diet caused the chicks to grow more?</h2>
+<section id="b.-how-can-we-extract-the-the-most-and-least-traveled-months-each-year" class="level3">
+<h3 class="anchored" data-anchor-id="b.-how-can-we-extract-the-the-most-and-least-traveled-months-each-year">B. How can we extract the the most and least traveled months each year?</h3>
+</section>
+</section>
+<section id="what-was-the-percent-increase-in-passengers-each-year-between-aug-and-nov" class="level2">
+<h2 class="anchored" data-anchor-id="what-was-the-percent-increase-in-passengers-each-year-between-aug-and-nov">2. What was the percent increase in passengers each year between Aug and Nov?</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To answer this question we need to find the ratio of Aug and Nov travelers. We need the data in the wide format.</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># how can we add the ratio to get the percent increase?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="which-diet-lead-to-heavier-chicks" class="level2">
+<h2 class="anchored" data-anchor-id="which-diet-lead-to-heavier-chicks">3. Which diet lead to heavier chicks?</h2>
 <p>We will use the <code>ChickWeight</code> data. Use the help to read more about the data.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First look at the data.</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(ChickWeight)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First look at the data.</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(ChickWeight)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 578
 Columns: 4
@@ -333,16 +312,18 @@ $ Diet   &lt;fct&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 </div>
 <section id="a.-count-how-many-timepoints-were-measured-and-how-many-chicks-were-on-each-diet." class="level3">
 <h3 class="anchored" data-anchor-id="a.-count-how-many-timepoints-were-measured-and-how-many-chicks-were-on-each-diet.">A. Count how many timepoints were measured and how many chicks were on each Diet.</h3>
-</section>
-</section>
-<section id="b.-now-figure-out-which-diet-leads-to-the-heaviest-chicks." class="level2">
-<h2 class="anchored" data-anchor-id="b.-now-figure-out-which-diet-leads-to-the-heaviest-chicks.">B. Now figure out which diet leads to the heaviest chicks.</h2>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># we can plot it to get a first view</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>ChickWeight <span class="sc">|&gt;</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Time, <span class="at">y =</span> weight, <span class="at">group =</span> Chick, <span class="at">color =</span> Diet)) <span class="sc">+</span> </span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># How can you count the timeponits, chicks, and diets, and chicks nested in diets?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="b.-now-figure-out-which-diet-leads-to-the-heaviest-chicks." class="level3">
+<h3 class="anchored" data-anchor-id="b.-now-figure-out-which-diet-leads-to-the-heaviest-chicks.">B. Now figure out which diet leads to the heaviest chicks.</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># we can plot it to get a first view</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>ChickWeight <span class="sc">|&gt;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Time, <span class="at">y =</span> weight, <span class="at">group =</span> Chick, <span class="at">color =</span> Diet)) <span class="sc">+</span> </span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -353,6 +334,8 @@ $ Diet   &lt;fct&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
 </div>
 
 
+</section>
+</section>
 </section>
 
 </main> <!-- /main -->
