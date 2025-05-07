@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Lindsay N. Hayes">
+<meta name="dcterms.date" content="2025-07-08">
 
-<title>Important reading materials – Intro to Reproducible Data Analysis Using R</title>
+<title>Data Wrangling with tidyverse – Intro to Reproducible Data Analysis Using R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,28 +22,61 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js" type="module"></script>
-<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-0eaf58b7a7581e242fc4d9c271bb2a9f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script src="../../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../../">
+<script src="../../site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="../../site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="../../site_libs/quarto-html/popper.min.js"></script>
+<script src="../../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../../site_libs/quarto-html/quarto-syntax-highlighting-de070a7b0ab54f8780927367ac907214.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../../site_libs/bootstrap/bootstrap-0eaf58b7a7581e242fc4d9c271bb2a9f.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,67 +104,9 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-reading-listings .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
 
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-title-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-reading-listings'] = new List('listing-reading-listings', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
-
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="../../styles.css">
 </head>
 
 <body class="nav-fixed quarto-light">
@@ -139,7 +116,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../../index.html">
     <span class="navbar-title">Intro to Reproducible Data Analysis Using R</span>
     </a>
   </div>
@@ -150,12 +127,12 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> <i class="bi bi-home" role="img">
+    <a class="nav-link" href="../../index.html"> <i class="bi bi-home" role="img">
 </i> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./lectures.html"> <i class="bi bi-book-half" role="img">
+    <a class="nav-link" href="../../lectures.html"> <i class="bi bi-book-half" role="img">
 </i> 
 <span class="menu-text">Course</span></a>
   </li>  
@@ -167,15 +144,15 @@ window.Quarto = {
     </a>
     <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nav-menu-resources">    
         <li>
-    <a class="dropdown-item" href="./readings.html">
+    <a class="dropdown-item" href="../../readings.html">
  <span class="dropdown-text">Pre-reading</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./activities.html">
+    <a class="dropdown-item" href="../../activities.html">
  <span class="dropdown-text">In-Class Activities</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./projects.html">
+    <a class="dropdown-item" href="../../projects.html">
  <span class="dropdown-text">Assignments</span></a>
   </li>  
     </ul>
@@ -193,25 +170,56 @@ window.Quarto = {
     </nav>
 </header>
 <!-- content -->
-<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-full page-navbar">
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#about-the-activity" id="toc-about-the-activity" class="nav-link active" data-scroll-target="#about-the-activity">About the activity</a></li>
+  <li><a href="#load-the-tidyverse-package" id="toc-load-the-tidyverse-package" class="nav-link" data-scroll-target="#load-the-tidyverse-package">Load the Tidyverse Package</a></li>
+  <li><a href="#reshaping-and-summarizing-data" id="toc-reshaping-and-summarizing-data" class="nav-link" data-scroll-target="#reshaping-and-summarizing-data">Reshaping and Summarizing Data</a></li>
+  <li><a href="#which-month-had-the-most-and-least-passengers-in-the-airpassengers-data" id="toc-which-month-had-the-most-and-least-passengers-in-the-airpassengers-data" class="nav-link" data-scroll-target="#which-month-had-the-most-and-least-passengers-in-the-airpassengers-data">1. Which month had the most and least passengers in the <code>AirPassengers</code> data?</a>
+  <ul class="collapse">
+  <li><a href="#a.-is-the-data-long-or-wide-what-form-does-it-need-to-be-in-how-can-you-convert-to-the-form-you-need" id="toc-a.-is-the-data-long-or-wide-what-form-does-it-need-to-be-in-how-can-you-convert-to-the-form-you-need" class="nav-link" data-scroll-target="#a.-is-the-data-long-or-wide-what-form-does-it-need-to-be-in-how-can-you-convert-to-the-form-you-need">A. Is the data long or wide? What form does it need to be in? How can you convert to the form you need?</a></li>
+  <li><a href="#b.-how-can-we-extract-the-the-most-and-least-traveled-months-each-year" id="toc-b.-how-can-we-extract-the-the-most-and-least-traveled-months-each-year" class="nav-link" data-scroll-target="#b.-how-can-we-extract-the-the-most-and-least-traveled-months-each-year">B. How can we extract the the most and least traveled months each year?</a></li>
+  </ul></li>
+  <li><a href="#what-was-the-percent-increase-in-passengers-each-year-between-aug-and-nov" id="toc-what-was-the-percent-increase-in-passengers-each-year-between-aug-and-nov" class="nav-link" data-scroll-target="#what-was-the-percent-increase-in-passengers-each-year-between-aug-and-nov">2. What was the percent increase in passengers each year between Aug and Nov?</a></li>
+  <li><a href="#which-diet-caused-the-chicks-to-grow-more" id="toc-which-diet-caused-the-chicks-to-grow-more" class="nav-link" data-scroll-target="#which-diet-caused-the-chicks-to-grow-more">3. Which diet caused the chicks to grow more?</a>
+  <ul class="collapse">
+  <li><a href="#a.-count-how-many-timepoints-were-measured-and-how-many-chicks-were-on-each-diet." id="toc-a.-count-how-many-timepoints-were-measured-and-how-many-chicks-were-on-each-diet." class="nav-link" data-scroll-target="#a.-count-how-many-timepoints-were-measured-and-how-many-chicks-were-on-each-diet.">A. Count how many timepoints were measured and how many chicks were on each Diet.</a></li>
+  </ul></li>
+  <li><a href="#b.-now-figure-out-which-diet-leads-to-the-heaviest-chicks." id="toc-b.-now-figure-out-which-diet-leads-to-the-heaviest-chicks." class="nav-link" data-scroll-target="#b.-now-figure-out-which-diet-leads-to-the-heaviest-chicks.">B. Now figure out which diet leads to the heaviest chicks.</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content column-page" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Important reading materials</h1>
+<h1 class="title">Data Wrangling with tidyverse</h1>
 </div>
 
 
 
-<div class="quarto-title-meta column-page">
+<div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Lindsay N. Hayes </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 8, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -221,74 +229,131 @@ window.Quarto = {
 </header>
 
 
-<p>The following contains relevant reading materials you should read prior to each class:</p>
-<div id="listing-reading-listings" class="quarto-listing quarto-listing-container-table">
-<table class="quarto-listing-table table">
-<thead>
-<tr>
+<section id="about-the-activity" class="level2">
+<h2 class="anchored" data-anchor-id="about-the-activity">About the activity</h2>
+<ol type="1">
+<li><p>Access the Quarto document <a href="https://github.com/lindsaynhayes/introR2025/blob/main/activities/classwork03/classwork_L03.qmd">here</a>.</p></li>
+<li><p>Download the raw file.</p></li>
+<li><p>Open it in RStudio.</p></li>
+</ol>
+<p>We will work our way through this quarto document together during class. The activity will cover reshaping, filtering, and summarizing data using tidyverse principles.</p>
+</section>
+<section id="load-the-tidyverse-package" class="level2">
+<h2 class="anchored" data-anchor-id="load-the-tidyverse-package">Load the Tidyverse Package</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──
+✔ dplyr     1.1.4     ✔ readr     2.1.5
+✔ forcats   1.0.0     ✔ stringr   1.5.1
+✔ ggplot2   3.5.1     ✔ tibble    3.2.1
+✔ lubridate 1.9.4     ✔ tidyr     1.3.1
+✔ purrr     1.0.4     
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+ℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(cowplot)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>
+Attaching package: 'cowplot'
 
-<th>
-Date
-</th>
+The following object is masked from 'package:lubridate':
 
-<th>
-Title
-</th>
-
-<th>
-Author
-</th>
-
-</tr>
-</thead>
-<tbody class="list">
-
-<tr data-index="0" data-listing-date-sort="1751328000000" data-listing-file-modified-sort="1746656694960" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="8" data-listing-word-count-sort="1447" data-listing-title-sort="R &amp; RStudio" data-listing-filename-sort="index_R01.qmd">
-<td>
-<span class="listing-date">2025-07-01</span>
-</td>
-<td>
-<a href="./readings/index_R01.html" class="title listing-title">R &amp; RStudio</a>
-</td>
-<td>
-<span class="listing-author">Lindsay Hayes</span>
-</td>
-
-</tr>
-
-<tr data-index="1" data-listing-date-sort="1751500800000" data-listing-file-modified-sort="1746656694961" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="12" data-listing-word-count-sort="2355" data-listing-title-sort="Navigating Data Types in R" data-listing-filename-sort="index_R02.qmd">
-<td>
-<span class="listing-date">2025-07-03</span>
-</td>
-<td>
-<a href="./readings/index_R02.html" class="title listing-title">Navigating Data Types in R</a>
-</td>
-<td>
-<span class="listing-author">Lindsay Hayes</span>
-</td>
-
-</tr>
-
-<tr data-index="2" data-listing-date-sort="1751932800000" data-listing-file-modified-sort="1746656694961" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="16" data-listing-word-count-sort="3174" data-listing-title-sort="Data Wrangling with tidyverse" data-listing-filename-sort="index_R03.qmd">
-<td>
-<span class="listing-date">2025-07-08</span>
-</td>
-<td>
-<a href="./readings/index_R03.html" class="title listing-title">Data Wrangling with tidyverse</a>
-</td>
-<td>
-<span class="listing-author">Lindsay Hayes</span>
-</td>
-
-</tr>
-
-</tbody>
-</table>
-<div class="listing-no-matching d-none">No matching items</div>
+    stamp</code></pre>
+</div>
+</div>
+</section>
+<section id="reshaping-and-summarizing-data" class="level2">
+<h2 class="anchored" data-anchor-id="reshaping-and-summarizing-data">Reshaping and Summarizing Data</h2>
+<p>A common type of data that requires reshaping is time course data.</p>
+<p>Using tidyverse principles answer the questions below:</p>
+</section>
+<section id="which-month-had-the-most-and-least-passengers-in-the-airpassengers-data" class="level2">
+<h2 class="anchored" data-anchor-id="which-month-had-the-most-and-least-passengers-in-the-airpassengers-data">1. Which month had the most and least passengers in the <code>AirPassengers</code> data?</h2>
+<p>The <code>AirPassengers</code> data which is a time-series of data representing the monthly international airline passenger numbers from January 1949 to December 1960. Search for AirPassengers in the Help to learn more about the dataset.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Load and inspect the data, a little reshaping to get in to an easy to read format for you.</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>AP_matrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(AirPassengers, <span class="at">nrow =</span> <span class="fu">length</span>(<span class="fu">unique</span>(<span class="fu">floor</span>(<span class="fu">time</span>(AirPassengers)))), <span class="at">byrow =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(AP_matrix) <span class="ot">&lt;-</span> month.abb</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">rownames</span>(AP_matrix) <span class="ot">&lt;-</span> <span class="fu">unique</span>(<span class="fu">floor</span>(<span class="fu">time</span>(AirPassengers)))</span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>AP_df <span class="ot">&lt;-</span> <span class="fu">as.data.frame</span>(AP_matrix)</span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>AP_df<span class="sc">$</span>Year <span class="ot">&lt;-</span> <span class="fu">rownames</span>(AP_matrix)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a><span class="fu">dim</span>(AP_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 12 13</code></pre>
+</div>
+</div>
+<section id="a.-is-the-data-long-or-wide-what-form-does-it-need-to-be-in-how-can-you-convert-to-the-form-you-need" class="level3">
+<h3 class="anchored" data-anchor-id="a.-is-the-data-long-or-wide-what-form-does-it-need-to-be-in-how-can-you-convert-to-the-form-you-need">A. Is the data long or wide? What form does it need to be in? How can you convert to the form you need?</h3>
+</section>
+<section id="b.-how-can-we-extract-the-the-most-and-least-traveled-months-each-year" class="level3">
+<h3 class="anchored" data-anchor-id="b.-how-can-we-extract-the-the-most-and-least-traveled-months-each-year">B. How can we extract the the most and least traveled months each year?</h3>
+</section>
+</section>
+<section id="what-was-the-percent-increase-in-passengers-each-year-between-aug-and-nov" class="level2">
+<h2 class="anchored" data-anchor-id="what-was-the-percent-increase-in-passengers-each-year-between-aug-and-nov">2. What was the percent increase in passengers each year between Aug and Nov?</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># To answer this question we need to find the ratio of Aug and Nov travelers. We need the data in the wide format.</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>AP_df</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>     Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec Year
+1949 112 118 132 129 121 135 148 148 136 119 104 118 1949
+1950 115 126 141 135 125 149 170 170 158 133 114 140 1950
+1951 145 150 178 163 172 178 199 199 184 162 146 166 1951
+1952 171 180 193 181 183 218 230 242 209 191 172 194 1952
+1953 196 196 236 235 229 243 264 272 237 211 180 201 1953
+1954 204 188 235 227 234 264 302 293 259 229 203 229 1954
+1955 242 233 267 269 270 315 364 347 312 274 237 278 1955
+1956 284 277 317 313 318 374 413 405 355 306 271 306 1956
+1957 315 301 356 348 355 422 465 467 404 347 305 336 1957
+1958 340 318 362 348 363 435 491 505 404 359 310 337 1958
+1959 360 342 406 396 420 472 548 559 463 407 362 405 1959
+1960 417 391 419 461 472 535 622 606 508 461 390 432 1960</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># how can we add the ratio to get the percent increase?</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="which-diet-caused-the-chicks-to-grow-more" class="level2">
+<h2 class="anchored" data-anchor-id="which-diet-caused-the-chicks-to-grow-more">3. Which diet caused the chicks to grow more?</h2>
+<p>We will use the <code>ChickWeight</code> data. Use the help to read more about the data.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># First look at the data.</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(ChickWeight)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 578
+Columns: 4
+$ weight &lt;dbl&gt; 42, 51, 59, 64, 76, 93, 106, 125, 149, 171, 199, 205, 40, 49, 5…
+$ Time   &lt;dbl&gt; 0, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20, 21, 0, 2, 4, 6, 8, 10, 1…
+$ Chick  &lt;ord&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, …
+$ Diet   &lt;fct&gt; 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, …</code></pre>
+</div>
+</div>
+<section id="a.-count-how-many-timepoints-were-measured-and-how-many-chicks-were-on-each-diet." class="level3">
+<h3 class="anchored" data-anchor-id="a.-count-how-many-timepoints-were-measured-and-how-many-chicks-were-on-each-diet.">A. Count how many timepoints were measured and how many chicks were on each Diet.</h3>
+</section>
+</section>
+<section id="b.-now-figure-out-which-diet-leads-to-the-heaviest-chicks." class="level2">
+<h2 class="anchored" data-anchor-id="b.-now-figure-out-which-diet-leads-to-the-heaviest-chicks.">B. Now figure out which diet leads to the heaviest chicks.</h2>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># we can plot it to get a first view</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>ChickWeight <span class="sc">|&gt;</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Time, <span class="at">y =</span> weight, <span class="at">group =</span> Chick, <span class="at">color =</span> Diet)) <span class="sc">+</span> </span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_cowplot</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="classwork_L03_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
 </div>
 
 
-
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
