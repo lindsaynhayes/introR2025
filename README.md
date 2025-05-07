@@ -1,6 +1,6 @@
 # Introduction to Reproducible Data Analysis Using R 
 
-This repo is for the University of Oklahoma Health Sciences Center (OUHSC) course titled 'Introduction to Reproducible Data Analysis Using R' (Cell 6351) in the summer 2025 session. The course number is for 'Directed Readings in Cell Biology' as a place holder until a dedicated course number is created.
+This repo is for the University of Oklahoma Health Sciences Center (OUHSC) course titled 'Introduction to Reproducible Data Analysis Using R' (Cell 11594) in the summer 2025 session. The course number is for 'Directed Readings in Cell Biology' as a place holder until a dedicated course number is created.
 
 - <https://lindsaynhayes.github.io/introR2025>
 

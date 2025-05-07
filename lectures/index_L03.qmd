@@ -38,8 +38,4 @@ Before class, read the [pre-reading materials](https://lindsaynhayes.github.io/i
 # Post-lecture Practice
 
 
-::: callout-important
-### Homework
 
-
-:::

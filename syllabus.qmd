@@ -6,10 +6,10 @@ knitr: true
 # Course Information
 
 -   Location: In person, Summer 2025
--   Dates: 7/1/2025 - 7/31/2025
--   Course time: Tuesdays and Thursdays from 9:00-10:20am CST
+-   Dates: 7/1/2025 - 7/28/2025
+-   Course time: 10:30am - noon CST
 -   Course location: BMSB324
--   Office hours: Mondays from 1:00-2:00pm CST
+-   Office hours: Tuesdays from 12:00-1:00pm CST
 
 ## Instructor
 
@@ -159,6 +159,21 @@ For *homework* & *final project*:
 ### Course evaluation
 
 We will allocate 15 minutes in the last course session for students to perform the standard course evaluation, along with comments for the instructor.
+
+## Course Schedule
+
+| Date | Class | Topic                           | Homework                    |
+|:----:|:-----:|---------------------------------|-----------------------------|
+| 7/1  |   1   | Intro to R/RStudio              |                             |
+| 7/3  |   2   | Navigating Data Types in R      | Homework 1 (due 7/8)        |
+| 7/8  |   3   | Data Wrangling with tidyverse   |                             |
+| 7/10 |   4   | Data Visualization with ggplot2 | Homework 2 (due 7/14)       |
+| 7/14 |   5   |                                 |                             |
+| 7/16 |   6   |                                 | Homework 3 (due 7/22)       |
+| 7/18 |   7   |                                 | Final project proposal due  |
+| 7/22 |   8   | Building a Portfolio            |                             |
+| 7/24 |   9   | Final Project Presentations     | presentation                |
+| 7/28 |  10   | Final Project Presentations     | presentation and evaluation |
 
 # Policies
 
