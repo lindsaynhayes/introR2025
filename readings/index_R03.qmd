@@ -458,7 +458,7 @@ purrr is a powerful set of functions for performing for loops or iterations of o
 
 
 ::: {.callout-note}
-Do you learn better by hearing? Check out these videos covering some of this material.
+Do you learn better by listening? Check out these videos covering some of this material.
 
 [Intro to Tidyverse](https://www.youtube.com/watch?v=MKwyauo8nSI)
 

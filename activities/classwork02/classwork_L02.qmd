@@ -9,11 +9,11 @@ editor_options:
 
 ## About the activity
 
-1)  Create a new Quarto document and erase the base text. You can keep the YAML header and rename it for yourself.
+1)  Access the Quarto document [here](https://github.com/lindsaynhayes/introR2025/blob/main/activities/classwork02/classwork_L02.qmd).
 
-2)  Access the Quarto document [here](https://github.com/lindsaynhayes/introR2025/blob/main/activities/classwork02/classwork_L02.qmd) from the [github repository for the course](https://github.com/lindsaynhayes/introR2025).
+2)  Download the raw file.
 
-3)  Copy and paste the content into your new Quarto Document. Make sure the code chunks copied too.
+3) Open it in RStudio.
 
 We will work our way through this quarto document together during class. The activity will cover using R as a calculator, creating R objects, and exploring the features of a data set.
 

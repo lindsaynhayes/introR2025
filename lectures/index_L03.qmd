@@ -33,9 +33,8 @@ Before class, read the [pre-reading materials](https://lindsaynhayes.github.io/i
 
 -   [Lecture 03: Data Wrangling](https://docs.google.com/presentation/d/1CvrEcEF3C8ONxAdxeeFEl-AS_QRERKnlYdNjv6HGkm4/edit?slide=id.g34006f07791_0_0#slide=id.g34006f07791_0_0)
 
--   [In-Class Activity](https://lindsaynhayes.github.io/introR2025/activities/classwork03/classwork_L03.html) 
+-   [In-Class Activity](https://lindsaynhayes.github.io/introR2025/activities/classwork03/classwork_L03.html)
 
 # Post-lecture Practice
 
-
-
+Want to learn by listening? David Robinson a Data Scientist has a free lecture on [DataCamp](https://app.datacamp.com/learn/courses/exploratory-data-analysis-in-r-case-study). The first lecture on Data cleaning and summarizing with dplyr is free. You do need to sign up for a free datacamp account.
