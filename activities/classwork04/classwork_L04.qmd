@@ -1,0 +1,30 @@
+---
+title: "Data Visualization with ggplot2"
+author: "Lindsay N. Hayes"
+date: 2025-07-08
+draft: false
+editor_options: 
+  chunk_output_type: console
+---
+
+## About the activity
+
+1)  Access the Quarto document [here](https://github.com/lindsaynhayes/introR2025/blob/main/activities/classwork04/classwork_L04.qmd).
+
+2)  Download the raw file.
+
+3) Open it in RStudio.
+
+We will work our way through this quarto document together during class. The activity will cover plotting data with ggplot2 in detail!
+
+## Load the Tidyverse Package
+```{r}
+#| label: packages
+#| message: false
+
+library(tidyverse)
+library(cowplot)
+```
+
+
+
