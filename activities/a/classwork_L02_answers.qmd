@@ -2,7 +2,7 @@
 title: "Navigating Data Types in R"
 author: "Lindsay N. Hayes"
 date: 2025-07-03
-draft: true
+draft: false
 editor_options: 
   chunk_output_type: console
 ---
@@ -98,7 +98,7 @@ download the taylorswift.csv [here](https://github.com/lindsaynhayes/introR2025/
 # 2) Where is the file you're wanting to import?
 # 3) What is the path between the file and your working directory?
 
-taylor <- read_csv(file = "taylorswift.csv")
+taylor <- read_csv(file = "../classwork02/taylorswift.csv")
 
 # what is the "class" of the object taylor?
 class(taylor)
@@ -117,7 +117,7 @@ taylor |> count(album_name)
 ### C. Which numeric song features are correlated with one another? Hint create a correlation matrix.
 
 ```{r}
-library(taylor)
+library(taylor) # needed for scale_color_albums
 # pick what features of the data you want to explore
 colnames(taylor)
 

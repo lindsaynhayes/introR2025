@@ -13,8 +13,6 @@ date: 2025-7-08
 
 The goal of this assignment is to start practicing the basics of R programming that we have covere so far in class. 
 
-- 
-
 ## Swirl Course Setup
 
 1. Navigate to this [link](https://github.com/lindsaynhayes/introR2025/tree/main/swirl) to download the Swirl lesson file 1_R_Programming_Mod.swc
@@ -40,15 +38,15 @@ The goal of this assignment is to start practicing the basics of R programming t
 
 2. Complete lessons 1-8
 
-    ![](../../images/L02/index_L02/list_of_swirl_lessons.png){width=300}
+    ![](../images/L02/index_L02/list_of_swirl_lessons.png){width=300}
 
 ## Submission
 
 1. At the end of each lesson the following question will appear, enter the selection 2 for Yes to be redirected to your autofilled Google Form submission
 
-    ![](../../images/L02/index_L02/google_form_redirect.png){width=500}
+    ![](../images/L02/index_L02/google_form_redirect.png){width=500}
     
 2. Once you've been redirected, your Swirl activity will be autofilled into the submission box, just hit the Submit button
 
-    ![](../../images/L02/index_L02/google_form_submission.png){width=500}
+    ![](../images/L02/index_L02/google_form_submission.png){width=500}
 
