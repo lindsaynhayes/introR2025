@@ -5,8 +5,6 @@ author:
     affiliation: Department of Microbiology and Immunology, OUHS
 description: "Introduction to R Programming"
 date: 2025-7-08
-knitr: true
-draft: false
 ---
 
 # Background

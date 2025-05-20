@@ -1,0 +1,15 @@
+{
+  "hash": "56c540208c64307df04f5a026d74b04d",
+  "result": {
+    "engine": "knitr",
+    "markdown": "---\ntitle: \"Assignment 1\"\nauthor: \n  - name: Eleana Cabello\n    affiliation: Department of Microbiology and Immunology, OUHS\ndescription: \"Introduction to R Programming\"\ndate: 2025-7-08\nknitr: true\ndraft: false\n---\n\n\n\n\n# Background\n\n**Due date: ADD DATE**\n\nThe goal of this assignment is to start practicing the basics of R programming that we have covere so far in class. \n\n- \n\n## Swirl Course Setup\n\n1. Navigate to this [link](https://github.com/lindsaynhayes/introR2025/tree/main/swirl) to download the Swirl lesson file 1_R_Programming_Mod.swc\n\n2.  In RStudio, install and load the swirl package\n\n    `install.packages(\"swirl\")`\n\n    `library(\"swirl\")`\n\n3. Start Swirl by typing the following command\n\n    `swirl()`\n\n\n4. Once you have downloaded the file, in the console of RStudio run the following command and interactively choose the 1_R_Programming_Mod.swc file you just downloaded\n\n    `install_course()`\n\n## Working through the Lessons \n\n1. Please enter your full name together when asked what you want to be called by e.g. JaneDoe\n\n2. Complete lessons 1-8\n\n    ![](../../images/L02/index_L02/list_of_swirl_lessons.png){width=300}\n\n## Submission\n\n1. At the end of each lesson the following question will appear, enter the selection 2 for Yes to be redirected to your autofilled Google Form submission\n\n    ![](../../images/L02/index_L02/google_form_redirect.png){width=500}\n    \n2. Once you've been redirected, your Swirl activity will be autofilled into the submission box, just hit the Submit button\n\n    ![](../../images/L02/index_L02/google_form_submission.png){width=500}\n\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
