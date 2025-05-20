@@ -186,7 +186,3 @@ ID,Name,Age,Gender,Grade,Subject
 # Add your solution here
 
 ```
-
-
-
-
