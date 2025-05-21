@@ -1,5 +1,5 @@
 ---
-title: "Navigating Data Types in R"
+title: "Navigating Data Types in R - Answers"
 author: "Lindsay N. Hayes"
 date: 2025-07-03
 draft: false
