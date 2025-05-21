@@ -389,7 +389,7 @@
     "href": "projects.html",
     "title": "Assignments and Project",
     "section": "",
-    "text": "Date\n\n\n\nTitle\n\n\n\nAuthor\n\n\n\n\n\n\n\n\n2024-10-24\n\n\nProject 1\n\n\nStephanie Hicks\n\n\n\n\n\n\n2025-07-08\n\n\nAssignment 1\n\n\nEleana Cabello\n\n\n\n\n\n\nNo matching items"
+    "text": "Date\n\n\n\nTitle\n\n\n\nAuthor\n\n\n\n\n\n\n\n\n2024-10-24\n\n\nProject 1\n\n\nStephanie Hicks\n\n\n\n\n\n\n2025-07-03\n\n\nAssignment 1\n\n\nEleana Cabello\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "lectures/index_L03.html",
@@ -753,28 +753,7 @@
     "href": "projects/index_A01.html",
     "title": "Assignment 1",
     "section": "",
-    "text": "Due date: ADD DATE\nThe goal of this assignment is to start practicing the basics of R programming that we have covere so far in class.\n\n\n\nNavigate to this link to download the Swirl lesson file 1_R_Programming_Mod.swc\nIn RStudio, install and load the swirl package\ninstall.packages(\"swirl\")\nlibrary(\"swirl\")\nStart Swirl by typing the following command\nswirl()\nOnce you have downloaded the file, in the console of RStudio run the following command and interactively choose the 1_R_Programming_Mod.swc file you just downloaded\ninstall_course()\n\n\n\n\n\nPlease enter your full name together when asked what you want to be called by e.g. JaneDoe\nComplete lessons 1-8\n\n\n\n\n\n\nAt the end of each lesson the following question will appear, enter the selection 2 for Yes to be redirected to your autofilled Google Form submission\n\nOnce you’ve been redirected, your Swirl activity will be autofilled into the submission box, just hit the Submit button"
-  },
-  {
-    "objectID": "projects/index_A01.html#swirl-course-setup",
-    "href": "projects/index_A01.html#swirl-course-setup",
-    "title": "Assignment 1",
-    "section": "",
-    "text": "Navigate to this link to download the Swirl lesson file 1_R_Programming_Mod.swc\nIn RStudio, install and load the swirl package\ninstall.packages(\"swirl\")\nlibrary(\"swirl\")\nStart Swirl by typing the following command\nswirl()\nOnce you have downloaded the file, in the console of RStudio run the following command and interactively choose the 1_R_Programming_Mod.swc file you just downloaded\ninstall_course()"
-  },
-  {
-    "objectID": "projects/index_A01.html#working-through-the-lessons",
-    "href": "projects/index_A01.html#working-through-the-lessons",
-    "title": "Assignment 1",
-    "section": "",
-    "text": "Please enter your full name together when asked what you want to be called by e.g. JaneDoe\nComplete lessons 1-8"
-  },
-  {
-    "objectID": "projects/index_A01.html#submission",
-    "href": "projects/index_A01.html#submission",
-    "title": "Assignment 1",
-    "section": "",
-    "text": "At the end of each lesson the following question will appear, enter the selection 2 for Yes to be redirected to your autofilled Google Form submission\n\nOnce you’ve been redirected, your Swirl activity will be autofilled into the submission box, just hit the Submit button"
+    "text": "Overview\nDue date: 07/08/25\nMost programming languages are similar in their underlying logic, but differ in execution, efficiency, and, more importantly, their syntax. R is one of the most popular languages used for data analysis in biomedical research. Its programming syntax is unique and differs from other popular languages in the same category as it like Python. Gaining a better understanding of R’s core features and becoming familiar with its syntax will help you perform analyses more effectively and efficiently.\nIn the Swirl lessons for this week, you will learn the following:\n\nNavigating files and directories\nAssigning and using variables\nCreating, modifying, and subsetting vectors\nCreating and modifying sequences\nHandling missing values\nSimple matrices and dataframes\nLogics (TRUE, FALSE, AND, OR, etc.) in R\nGain experience with base features in R\n\n\n\nSwirl Course Setup\n\nNavigate to this link to download the Swirl lesson file 1_R_Programming_Mod.swc\nIn RStudio, install and load the swirl package\ninstall.packages(\"swirl\")\nlibrary(\"swirl\")\nStart Swirl by typing the following command\nswirl()\nOnce you have downloaded the file, in the console of RStudio run the following command and interactively choose the 1_R_Programming_Mod.swc file you just downloaded\ninstall_course()\n\n\n\nWorking through the Lessons\n\nPlease enter your full name together when asked what you want to be called by e.g. JaneDoe\nComplete lessons all lessons\n\n\n\n\n\n\n\nImportant\n\n\n\n\nYou can take breaks between lessons (like shutting down Swirl and exiting RStudio), just use the same name when logging in for documenting purposes on the instructor’s end.\nIf you start a lesson, please complete it fully before taking a break. If you stop RStudio in the middle of a lesson, your progress for that lesson may still be saved in the history for that package locally, but will not be saved or sent to us on the instructor’s end.\nIf you do not get to the Google Form end of any lesson, please email one of the instructors as soon as possible.\n\n\n\n\n\nSubmission\n\n\n\n\n\n\nNote\n\n\n\n\nSwirl will navigate you to the submission Google Form of each lesson. However, review the instructions below before submitting to make sure you are able to submit correctly.\nWhen submitting please make sure the box is not empty, if it is please email one of the instructors.\n\n\n\n\nAt the end of each lesson the following question will appear, enter the selection 2 for Yes to be redirected to your autofilled Google Form submission\n\nOnce you’ve been redirected, your Swirl activity will be autofilled into the submission box, just hit the Submit button"
   },
   {
     "objectID": "readings.html",

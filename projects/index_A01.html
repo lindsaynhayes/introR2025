@@ -7,8 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Eleana Cabello">
-<meta name="dcterms.date" content="2025-07-08">
-<meta name="description" content="Introduction to R Programming">
+<meta name="dcterms.date" content="2025-07-03">
+<meta name="description" content="Week 1 Practice - Basics in R Programming">
 
 <title>Assignment 1 – Intro to Reproducible Data Analysis Using R</title>
 <style>
@@ -144,12 +144,10 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#background" id="toc-background" class="nav-link active" data-scroll-target="#background">Background</a>
-  <ul class="collapse">
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
   <li><a href="#swirl-course-setup" id="toc-swirl-course-setup" class="nav-link" data-scroll-target="#swirl-course-setup">Swirl Course Setup</a></li>
   <li><a href="#working-through-the-lessons" id="toc-working-through-the-lessons" class="nav-link" data-scroll-target="#working-through-the-lessons">Working through the Lessons</a></li>
   <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
@@ -163,7 +161,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div>
   <div class="description">
-    Introduction to R Programming
+    Week 1 Practice - Basics in R Programming
   </div>
 </div>
 
@@ -187,7 +185,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 8, 2025</p>
+      <p class="date">July 3, 2025</p>
     </div>
   </div>
   
@@ -199,12 +197,24 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="background" class="level1">
-<h1>Background</h1>
-<p><strong>Due date: ADD DATE</strong></p>
-<p>The goal of this assignment is to start practicing the basics of R programming that we have covere so far in class.</p>
-<section id="swirl-course-setup" class="level2">
-<h2 class="anchored" data-anchor-id="swirl-course-setup">Swirl Course Setup</h2>
+<section id="overview" class="level1">
+<h1>Overview</h1>
+<p><strong>Due date: 07/08/25</strong></p>
+<p>Most programming languages are similar in their underlying logic, but differ in execution, efficiency, and, more importantly, their syntax. R is one of the most popular languages used for data analysis in biomedical research. Its programming syntax is unique and differs from other popular languages in the same category as it like Python. Gaining a better understanding of R’s core features and becoming familiar with its syntax will help you perform analyses more effectively and efficiently.</p>
+<p>In the Swirl lessons for this week, you will learn the following:</p>
+<ul>
+<li>Navigating files and directories</li>
+<li>Assigning and using variables</li>
+<li>Creating, modifying, and subsetting vectors</li>
+<li>Creating and modifying sequences</li>
+<li>Handling missing values</li>
+<li>Simple matrices and dataframes</li>
+<li>Logics (TRUE, FALSE, AND, OR, etc.) in R</li>
+<li>Gain experience with base features in R</li>
+</ul>
+</section>
+<section id="swirl-course-setup" class="level1">
+<h1>Swirl Course Setup</h1>
 <ol type="1">
 <li><p>Navigate to this <a href="https://github.com/lindsaynhayes/introR2025/tree/main/swirl">link</a> to download the Swirl lesson file 1_R_Programming_Mod.swc</p></li>
 <li><p>In RStudio, install and load the swirl package</p>
@@ -216,16 +226,48 @@ ul.task-list li input[type="checkbox"] {
 <p><code>install_course()</code></p></li>
 </ol>
 </section>
-<section id="working-through-the-lessons" class="level2">
-<h2 class="anchored" data-anchor-id="working-through-the-lessons">Working through the Lessons</h2>
+<section id="working-through-the-lessons" class="level1">
+<h1>Working through the Lessons</h1>
 <ol type="1">
 <li><p>Please enter your full name together when asked what you want to be called by e.g.&nbsp;JaneDoe</p></li>
-<li><p>Complete lessons 1-8</p>
-<p><img src="../images/L02/index_L02/list_of_swirl_lessons.png" class="img-fluid" width="300"></p></li>
+<li><p>Complete lessons all lessons</p></li>
 </ol>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><p>You can take breaks between lessons (like shutting down Swirl and exiting RStudio), just use the same name when logging in for documenting purposes on the instructor’s end.</p></li>
+<li><p>If you start a lesson, please complete it fully before taking a break. If you stop RStudio in the middle of a lesson, your progress for that lesson may still be saved in the history for that package locally, but will not be saved or sent to us on the instructor’s end.</p></li>
+<li><p>If you do not get to the Google Form end of any lesson, please email one of the instructors as soon as possible.</p></li>
+</ul>
+</div>
+</div>
 </section>
-<section id="submission" class="level2">
-<h2 class="anchored" data-anchor-id="submission">Submission</h2>
+<section id="submission" class="level1">
+<h1>Submission</h1>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><p>Swirl will navigate you to the submission Google Form of each lesson. However, review the instructions below before submitting to make sure you are able to submit correctly.</p></li>
+<li><p>When submitting please make sure the box is not empty, if it is please email one of the instructors.</p></li>
+</ul>
+</div>
+</div>
 <ol type="1">
 <li><p>At the end of each lesson the following question will appear, enter the selection 2 for Yes to be redirected to your autofilled Google Form submission</p>
 <p><img src="../images/L02/index_L02/google_form_redirect.png" class="img-fluid" width="500"></p></li>
@@ -234,7 +276,6 @@ ul.task-list li input[type="checkbox"] {
 </ol>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
