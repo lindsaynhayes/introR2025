@@ -1,34 +1,24 @@
 ---
-title: "Assignment 1"
+title: "Assignment 3"
 author: 
   - name: Eleana Cabello
     affiliation: Department of Microbiology and Immunology, OUHS
-description: "Week 1 Practice - Basics in R Programming"
-date: 2025-7-03
+description: "Week 3 Practice - Exploratory Data Analysis Continued"
+date: 2025-7-18
 ---
 
 # Overview
 
-**Due date: 07/08/25 at 11:59pm**
+**Due date: 07/22/25 at 11:59pm**
 
-Most programming languages are similar in their underlying logic, but differ in execution, efficiency, and, more importantly, their syntax. R is one of the most popular languages used for data analysis in biomedical research. Its programming syntax is unique and differs from other popular languages in the same category as it like Python. Gaining a better understanding of R's core features and becoming familiar with its syntax will help you perform analyses more effectively and efficiently. 
+This week's Swirl lessons cover the following:
 
-In the Swirl lessons for this week, you will learn the following:
-
-- Navigating files and directories
-- Assigning and using variables 
-- Creating, modifying, and subsetting vectors
-- Creating and modifying sequences 
-- Handling missing values
-- Simple matrices and dataframes 
-- Logics (TRUE, FALSE, AND, OR, etc.) in R
-- Gain experience with base features in R
+- Dimension reduction techniques and examples
+- Simple clustering methods and examples
 
 # Swirl Course Setup
 
-1.  In RStudio, install and load the swirl package
-
-    `install.packages("swirl")`
+1.  In RStudio, load in the swirl package
 
     `library("swirl")`
 
@@ -36,9 +26,9 @@ In the Swirl lessons for this week, you will learn the following:
 
     `swirl()`
     
-3. Navigate to this [link](https://github.com/lindsaynhayes/introR2025/tree/main/swirl) to download the Swirl lesson file 1_R_Programming_Mod.swc
+3. Navigate to this [link](https://github.com/lindsaynhayes/introR2025/tree/main/swirl) to download the Swirl lesson file 3_Exploratory_Data_Analysis.swc
 
-4. Once you have downloaded the file, in the console of RStudio run the following command and interactively choose the 1_R_Programming_Mod.swc file you just downloaded
+4. Once you have downloaded the file, in the console of RStudio run the following command and interactively choose the 3_Exploratory_Data_Analysis.swc file you just downloaded
 
     `install_course()`
 

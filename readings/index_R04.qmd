@@ -1,5 +1,5 @@
 ---
-title: "Data Wrangling with tidyverse"
+title: "Data Visualization with ggplot2"
 description: "Reading for Class 04"
 author: 
   - name: Lindsay Hayes
