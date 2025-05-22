@@ -1,9 +1,11 @@
 [
   {
-    "listing": "/projects.html",
+    "listing": "/lectures.html",
     "items": [
-      "/projects/index_P01.html",
-      "/projects/index_A01.html"
+      "/lectures/index_L01.html",
+      "/lectures/index_L02.html",
+      "/lectures/index_L03.html",
+      "/lectures/index_L04.html"
     ]
   },
   {
@@ -16,12 +18,12 @@
     ]
   },
   {
-    "listing": "/lectures.html",
+    "listing": "/projects.html",
     "items": [
-      "/lectures/index_L01.html",
-      "/lectures/index_L02.html",
-      "/lectures/index_L03.html",
-      "/lectures/index_L04.html"
+      "/projects/index_A01.html",
+      "/projects/index_A02.html",
+      "/projects/index_A03.html",
+      "/projects/index_P01.html"
     ]
   },
   {
