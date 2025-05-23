@@ -37,7 +37,5 @@ Before class, read the [pre-reading materials](https://lindsaynhayes.github.io/i
 
 # Post-lecture Practice
 
-To get more practice working with data in R complete the following homework. You will be asked to **upload your activities for a course grade**.
-
--   [Post-lecture Practice](https://lindsaynhayes.github.io/introR2025/projects/assignment_1.qmd) 
+To get more practice working with data in R complete the following homework. You will be asked to **upload your activities for a course grade**: [Assignment 1](https://lindsaynhayes.github.io/introR2025/projects/index_A01.html){target="_blank"}
 
