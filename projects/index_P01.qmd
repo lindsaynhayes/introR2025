@@ -9,14 +9,13 @@ date: 2025-7-18
 
 The goal of the course project is to get you practicing with real life data you are encountering in research. Therefore, we are letting you decide what data you want to work with for this project.
 
-**Timeline and Deliverables:**
-
+### Timeline and Deliverables
 ```{=html}
 <table style="width:100%">
     <tr>
-    <th style="width:15%">07/15/25</th>
-    <th style="width:30%">Summary of Project</th>
-    <th style="width:55%">Brief paragraph on the data set you will be using for the project including goals of the analysis</th>
+    <th style="width:20%">07/15/25</th>
+    <th style="width:40%">Summary of Project</th>
+    <th style="width:40%">Brief paragraph on the data set you will be using for the project including goals of the analysis</th>
     </tr>
     <tr>
     <td>07/22/25</td>
@@ -38,22 +37,22 @@ The goal of the course project is to get you practicing with real life data you 
   </thead>
   <tbody>
     <tr>
-    <td></td>
-    <td>Did the final project have a clearly stated analysis goal?</td>
-    <td>Did the final project successfully achieve that goal?</td>
+    <th style="width:20%"></th>
+    <th style="width:40%">Did the final project have a clearly stated analysis goal?</th>
+    <th style="width:40%">Did the final project successfully achieve that goal?</th>
     </tr>
     <tr>
-    <td>5 pts (Good)</td>
+    <td>5pts (Good)</td>
     <td>Student understood the assignment, picked a task that could be completed by data science, and clearly communicated the problem and goals.</td>
     <td>The student was able to write a script to address their problem and present the problem, logic and organization of the script, and achieved the stated goals.</td>
     </tr>
     <tr>
-    <td>3 pts (Fair)</td>
+    <td>3pts (Fair)</td>
     <td>The student attempted the assignment, identified a problem, and was able to partially communicate the goals of the project.</td>
     <td>The student was able to communicate the problem, attempted a script to achieve the goal, but was only partially able to achieve the stated goals.</td>
     </tr>
     <tr>
-    <td>1 pt (Poor)</td>
+    <td>1pt (Poor)</td>
     <td>The student did not understand the assignment, was not able to communicate a problem or identify achievable goals.</td>
     <td>The student poorly communicated the problem, did not find a logical solution, and was not able to achieve the stated goals.</td>
     </tr>
