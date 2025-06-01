@@ -1,8 +1,9 @@
 ---
 title: "Project"
 listing:
+  id: project-listings
   contents: projects
-  sort: "date desc"
+  sort: "date asc"
   type: table
   categories: false
   sort-ui: false
@@ -11,3 +12,8 @@ page-layout: full
 title-block-banner: false
 date-format: iso
 ---
+
+Assignments: 
+
+::: {#lecture-listings}
+:::
