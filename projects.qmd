@@ -1,7 +1,7 @@
 ---
 title: "Assignments and Project"
 listing:
-  id: projects-listings
+  id: project-listings
   contents: projects
   sort: "date asc"
   type: table
@@ -15,5 +15,7 @@ title-block-banner: false
 date-format: iso
 ---
 
-::: {#projects-listings}
+Assignments: 
+
+::: {#lecture-listings}
 :::
