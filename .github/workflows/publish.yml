@@ -29,6 +29,7 @@ jobs:
             any::rmarkdown
             any::tidyverse
             any::taylor
+            any::GGally
             
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
