@@ -32,6 +32,7 @@ jobs:
             any::GGally
             any::ggstats
             any::cowplot
+            any::lme4
             
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
