@@ -31,6 +31,7 @@ jobs:
             any::taylor
             any::GGally
             any::ggstats
+            any::cowplot
             
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
