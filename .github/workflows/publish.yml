@@ -33,6 +33,8 @@ jobs:
             any::ggstats
             any::cowplot
             any::lme4
+            any::lmerTest
+            any::palmerpenguins
             
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
