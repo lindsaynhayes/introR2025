@@ -1,0 +1,127 @@
+---
+title: "Penguin_Predict"
+editor_options: 
+  chunk_output_type: console
+---
+
+## Load the Packages
+```{r}
+#| message: false
+#| error: false
+
+library(tidyverse)
+library(tidymodels)
+library(palmerpenguins)
+```
+
+## Explore the Data
+```{r}
+
+glimpse(penguins)
+penguins |> count(species)
+
+```
+
+## Build the model
+```{r}
+# set a seed
+set.seed(462)
+
+# split the data into training and testing sets
+
+split_data <- initial_split(penguins, prop=0.7, strata = species)
+data_training <- training(split_data)
+data_testing <- testing(split_data)
+
+# lets check it did the split correctly
+
+data_training |> 
+  group_by(species) |>
+  summarise( count = n(),
+             percent = n()/nrow(data_training) * 100)
+  
+data_testing |> 
+  group_by(species) |>
+  summarise( count = n(),
+             percent = n()/nrow(data_testing) * 100)
+
+penguin_recipe <-
+  recipe( species ~ bill_length_mm + bill_depth_mm + flipper_length_mm + body_mass_g, data = penguins) %>%
+  step_normalize(all_predictors())
+
+penguin_recipe
+
+
+data_prep <- prep(penguin_recipe, data_training)
+data_prep
+
+
+
+data_bake <- bake(data_prep, new_data = NULL)
+data_bake
+
+
+# MODEL 1 Random Forest
+
+rf_model <- 
+  # model type
+  rand_forest() %>%
+  # arguments
+  set_args(mtry = 4) %>%
+  # engine/package that underlies the model
+  set_engine("ranger", importance = "impurity") %>%
+  # mode
+  set_mode("classification") 
+
+
+# MODEL 2 Logistic Regression
+lr_model <- 
+  # specify that the model is a multinom_reg
+  multinom_reg() %>%
+  # select the engine/package that underlies the model
+  set_engine("nnet") %>%
+  # choose either the continuous regression or binary classification mode
+  set_mode("classification") 
+
+
+rf_wflow <- 
+  workflow() |>
+  add_recipe(penguin_recipe) |>
+  add_model(rf_model)
+
+lr_wflow <- 
+  workflow() |>
+  add_recipe(penguin_recipe) |>
+  add_model(lr_model)
+
+
+rf_fit <- fit(rf_wflow, data_training)
+lr_fit <- fit(lr_wflow, data_training)
+
+
+rf.predict <- predict(rf_fit, data_testing)
+lr.predict <- predict(lr_fit, data_testing)
+
+
+
+
+tmp <- rf.predict %>%
+  transmute(pred = .pred_class,
+            truth = data_testing$species)
+
+tmp |> accuracy(pred, truth)
+
+
+
+
+tmp2 <- lr.predict %>%
+  transmute(pred = .pred_class,
+            truth = data_testing$species)
+
+tmp2 |> accuracy(pred, truth)
+
+
+
+```
+
+

@@ -1,0 +1,118 @@
+---
+title: "Predictive Modeling using tidymodels"
+author: "Lindsay N. Hayes"
+date: 2025-07-14
+draft: true
+editor_options: 
+  chunk_output_type: console
+---
+
+## About the activity
+
+1)  Access the Quarto document [here](https://github.com/lindsaynhayes/introR2025/blob/main/activities/classwork05/PCA_Penguins.qmd).
+
+2)  Download the raw file.
+
+3) Open it in RStudio.
+
+We will work our way through this quarto document together during class. The activity will cover predictive modeling using tidymodels.
+
+
+## Load the Packages
+```{r}
+#| message: false
+#| error: false
+
+library(tidyverse)
+library(tidymodels)
+library(palmerpenguins)
+```
+
+## Explore the Data
+```{r}
+
+colnames(ad_data)
+ad_data |> count(Class)
+
+# We want to see if we can build a model to predict AD diagnosis based on these CSF biomarkers.
+
+
+```
+
+## Build the model
+```{r}
+# set a seed
+set.seed(462)
+
+# split the data into training and testing sets
+
+split_data <- initial_split(ad_data, prop=0.75, strata = Class)
+data_training <- training(split_data)
+data_testing <- testing(split_data)
+
+# lets check it did the split correctly
+
+data_training |> 
+  group_by(Class) |>
+  summarise( count = n(),
+             percent = n()/nrow(data_training) * 100)
+  
+data_testing |> 
+  group_by(Class) |>
+  summarise( count = n(),
+             percent = n()/nrow(data_testing) * 100)
+
+ad_recipe <-
+  recipe( Class ~ ., data = ad_data) %>% 
+  update_role(male, Genotype, new_role = "id") %>% 
+  step_normalize(all_predictors())
+
+ad_recipe
+
+
+data_prep <- prep(ad_recipe, data_training)
+data_prep
+
+
+
+data_bake <- bake(data_prep, new_data = NULL)
+data_bake
+
+lm_model <- 
+
+
+
+  
+lm_wflow <- 
+  workflow() |>
+  add_recipe(ad_recipe) |>
+  add_model(lm_model)
+
+
+
+lm_fit <- fit(lm_wflow, data_training)
+
+predict(lm_fit, data_testing)
+
+diabetes_test_pred_df <- diabetes_test_pred %>%
+  transmute(pred = .pred_class,
+            truth = diabetes_test$diabetes)
+head(diabetes_test_pred_df)
+
+diabetes_test_pred_df %>%
+  accuracy(pred, truth)
+
+diabetes_test_pred_df %>%
+  spec(pred, truth)
+
+```
+
+
+
+
+
+
+
+
+
+
