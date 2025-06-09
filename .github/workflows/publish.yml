@@ -36,6 +36,7 @@ jobs:
             any::lmerTest
             any::palmerpenguins
             any::tidymodels
+            any::psycModel 
             
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
