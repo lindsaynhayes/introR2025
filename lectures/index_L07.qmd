@@ -1,0 +1,92 @@
+---
+title: "Building a Quarto Website and Using GitHub"
+author: 
+  - name: Eleana Cabello
+description: "Sharing your science!"
+date: 2025-07-18
+---
+
+# Pre class tasks 
+- (Reminder for myself to add to prereading later)
+- Set up Github Account
+- Set up Github Desktop 
+
+# Why use Quarto and Github?
+- Used by many researchers already 
+- Allows for someone else to view your workflow easily 
+- Version control! Can go back and keep track of changes to your project or scripts
+- Free! Not behind a paywall or month subsciption
+- Easy for someone to download to their local computer and run the same scripts 
+
+# Setting A Quarto Website through Github Pages
+
+### 1. Setup Repository Online 
+### 2. Set Up Remote Repository Locally through Github Desktop 
+### 3. Open RStudio 
+### 4. Set Repository as Working Directory 
+### 5. Setting Up Quarto Website Project in Repository
+  - Type the following command in the terminal to create an RProject and setup a quarto website:
+  
+```{.bash}
+  quarto create project website
+```
+  
+  - On the new Rstudio window refresh and check out new files 
+
+### 6. Commiting and Pushing to Github Repository
+  - In Github desktop commit and publish quarto website set up
+
+### 7. Setting Up to Publish to Github Pages using a gh-pages branch
+  - In github website refresh and create a new repository called gh-pages 
+
+### 8. Setting Up Github Pages and Workflows Locally 
+  - Back in R studio do the following:
+    - create .nojekyll file 
+    - create .github folder, then workflows, then publish.yml 
+    - copy and paste below into the publish.yml 
+  
+```{.bash filename="publish.yml"}
+on:
+  workflow_dispatch:
+  push:
+    branches: main
+
+name: Quarto Publish
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Quarto
+        uses: quarto-dev/quarto-actions/setup@v2
+
+      - name: Render and Publish
+        uses: quarto-dev/quarto-actions/publish@v2
+        with:
+          target: gh-pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+```
+
+### 9. Commit and Push Changes to Host Website on Github Pages
+### 10. Check Settings and Website
+  - navigate to pages on the sidebar
+  - check something something
+
+### Creating Home Webpage
+- qmd file
+- markdown language
+- Previewing changes 
+
+### Customizing A Quarto Website 
+- Adding listing pages
+- Changing css or scss file 
+
+### Programming in R, Bash, and Python
+- Adding code blocks
+- Freeze function
