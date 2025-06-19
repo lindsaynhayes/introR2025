@@ -1,8 +1,8 @@
 ---
-title: "Predictions Analysis using tidymodels"
+title: "Predictions Modeling using tidymodels"
 author: "Lindsay N. Hayes"
 date: 2025-07-16
-draft: true
+draft: false
 editor_options: 
   chunk_output_type: console
 ---

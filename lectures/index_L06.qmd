@@ -5,7 +5,7 @@ author:
     url: https://lindsaynhayes.github.io
     affiliation: Department of Cell Biology, OUHSC
 date: 2025-07-16
-draft: true
+draft: false
 editor_options: 
   chunk_output_type: console
 ---
@@ -35,7 +35,7 @@ Before class, watch this [video](https://juliasilge.com/blog/best-hip-hop/) from
 
 ## Slides
 
--   [Lecture 05: Dimension Reduction in tidymodels](https://docs.google.com/presentation/d/1qXvqQSIotCCkQNO3O-3AIlM9QfIXIwzCjKL35xqYwPk/edit?usp=sharing)
+-   [Lecture 06: Predictive Modeling with tidymodels](https://docs.google.com/presentation/d/1PF5USoyCYBt0-duq5GpOYyXYueUf7LxiA23my4zJXsk/edit?slide=id.g3601b4bb65a_0_9#slide=id.g3601b4bb65a_0_9)
 
 -   [In-Class Activity](https://lindsaynhayes.github.io/introR2025/activities/classwork05/PCA_Penguins.html)
 
