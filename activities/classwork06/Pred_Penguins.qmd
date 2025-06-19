@@ -1,11 +1,21 @@
 ---
 title: "Predictions Analysis using tidymodels"
 author: "Lindsay N. Hayes"
-date: 2025-07-14
+date: 2025-07-16
 draft: true
 editor_options: 
   chunk_output_type: console
 ---
+
+## About the activity
+
+1)  Access the Quarto document [here](https://github.com/lindsaynhayes/introR2025/blob/main/activities/classwork05/PCA_Penguins.qmd).
+
+2)  Download the raw file.
+
+3) Open it in RStudio.
+
+We will work our way through this quarto document together during class. The activity will cover Principal Component Analysis (PCA) using tidymodels.
 
 
 https://www.stepbystepdatascience.com/ml-with-tidymodels
