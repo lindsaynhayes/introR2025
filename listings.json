@@ -1,5 +1,25 @@
 [
   {
+    "listing": "/readings.html",
+    "items": [
+      "/readings/index_R01.html",
+      "/readings/index_R02.html",
+      "/readings/index_R03.html",
+      "/readings/index_R04.html",
+      "/readings/index_R05.html",
+      "/readings/index_R07.html"
+    ]
+  },
+  {
+    "listing": "/projects.html",
+    "items": [
+      "/projects/index_A01.html",
+      "/projects/index_A02.html",
+      "/projects/index_A03.html",
+      "/projects/index_P01.html"
+    ]
+  },
+  {
     "listing": "/lectures.html",
     "items": [
       "/lectures/index_L01.html",
@@ -18,26 +38,6 @@
       "/activities/classwork03/classwork_L03.html",
       "/activities/classwork04/classwork_L04.html",
       "/activities/classwork05/PCA_Penguins.html"
-    ]
-  },
-  {
-    "listing": "/projects.html",
-    "items": [
-      "/projects/index_A01.html",
-      "/projects/index_A02.html",
-      "/projects/index_A03.html",
-      "/projects/index_P01.html"
-    ]
-  },
-  {
-    "listing": "/readings.html",
-    "items": [
-      "/readings/index_R01.html",
-      "/readings/index_R02.html",
-      "/readings/index_R03.html",
-      "/readings/index_R04.html",
-      "/readings/index_R05.html",
-      "/readings/index_R07.html"
     ]
   }
 ]
