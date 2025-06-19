@@ -30,6 +30,7 @@ https://www.stepbystepdatascience.com/ml-with-tidymodels
 library(tidyverse)
 library(tidymodels)
 library(palmerpenguins)
+
 ```
 
 ## Explore the Data
@@ -80,7 +81,7 @@ data_bake
 
 
 # MODEL 1 Random Forest
-
+library(ranger)
 rf_model <- 
   # model type
   rand_forest() %>%
