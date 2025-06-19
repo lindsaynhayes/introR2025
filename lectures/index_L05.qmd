@@ -37,5 +37,10 @@ Before class, watch this [video](https://juliasilge.com/blog/best-hip-hop/) from
 
 -   [Lecture 05: Dimension Reduction in tidymodels](https://docs.google.com/presentation/d/1qXvqQSIotCCkQNO3O-3AIlM9QfIXIwzCjKL35xqYwPk/edit?usp=sharing)
 
--   [In-Class Activity](https://github.com/lindsaynhayes/introR2025/blob/main/activities/classwork05/PCA_Penguins.qmd)
+-   [In-Class Activity](https://lindsaynhayes.github.io/introR2025/activities/classwork05/PCA_Penguins.html)
+
+
+# Post-lecture Practice
+
+- If that wasn't enough dimension reduction you can read more [here](https://www.tmwr.org/dimensionality), [here](https://juliasilge.com/blog/cocktail-recipes-umap/), or [here](https://www.alexcookson.com/post/2020-11-19-applying-pca-to-fictional-character-personalities/).
 

@@ -6,6 +6,12 @@ draft: true
 editor_options: 
   chunk_output_type: console
 ---
+
+
+https://www.stepbystepdatascience.com/ml-with-tidymodels
+
+
+
 ## Load the Packages
 ```{r}
 #| message: false
