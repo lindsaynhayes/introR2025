@@ -33,11 +33,6 @@ pca_bake %>%
   ggplot(aes(x = PC1, y = PC2, color = price)) + geom_point()
   
 
-
-pca_bake %>% plot_validation_results()
-  
-
-
 ```
 
 

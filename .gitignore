@@ -14,3 +14,5 @@ results/
 *.Rproj
 
 */trash/*
+
+/activities/classwork05/LinearRegression.qmd
