@@ -1,6 +1,6 @@
 ---
-title: "PCA with tidymodels"
-description: "Reading for Class 05"
+title: "Predictive Modeling with tidymodels"
+description: "Reading for Class 06"
 author: 
   - name: Lindsay Hayes
     url: https://lindsaynhayes.github.io
@@ -23,12 +23,7 @@ editor_options:
 :::
 
 
-Before class, watch this [video](https://juliasilge.com/blog/best-hip-hop/) from Data Scientists [Julie Silge](https://juliasilge.com) from RStudio. She does a real-time data analysis using Principal Component Analysis (PCA) of the **best hip hop songs of all time** according to critics ratings. This video is not a detailed explanation of what PCA is or how it works *(there is a lot of that maths on the internet if you want)*. In contrast, it is a live, real-time, analysis that asks the question what song features make a hip hop song the best. I want you to see that PCA is often a first line of inquiry when exploring a dataset.
-
--   For background, [TidyTuesday](https://github.com/rfordatascience/tidytuesday) is a weekly podcast and community activity that brings an interesting dataset to the data science community each week to do some cool plotting or analysis on. It provides interesting data to use for teaching purposes or code testing.
-
--   This video goes pretty fast but all the code she uses is below the video.
-
+Before class, 
 
 
 
