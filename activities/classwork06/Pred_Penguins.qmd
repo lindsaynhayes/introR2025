@@ -148,4 +148,7 @@ lr.outcome |> conf_mat(pred, truth)
 
 ```
 
+```{r}
+sessionInfo()
+```
 
