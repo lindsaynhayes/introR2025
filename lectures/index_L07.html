@@ -6,10 +6,11 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Lindsay Hayes">
-<meta name="dcterms.date" content="2025-07-03">
+<meta name="author" content="Eleana Cabello">
+<meta name="dcterms.date" content="2025-07-18">
+<meta name="description" content="Sharing your science!">
 
-<title>Navigating Data Types in R – Intro to Reproducible Data Analysis Using R</title>
+<title>Building a Quarto Website and Using GitHub – Intro to Reproducible Data Analysis Using R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -21,6 +22,41 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -143,13 +179,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#pre-lecture-activities" id="toc-pre-lecture-activities" class="nav-link active" data-scroll-target="#pre-lecture-activities">Pre-lecture activities</a></li>
-  <li><a href="#lecture" id="toc-lecture" class="nav-link" data-scroll-target="#lecture">Lecture</a>
+  <li><a href="#why-use-quarto-and-github" id="toc-why-use-quarto-and-github" class="nav-link active" data-scroll-target="#why-use-quarto-and-github">Why use Quarto and Github?</a></li>
+  <li><a href="#setting-a-quarto-website-through-github-pages" id="toc-setting-a-quarto-website-through-github-pages" class="nav-link" data-scroll-target="#setting-a-quarto-website-through-github-pages">Setting A Quarto Website through Github Pages</a>
   <ul class="collapse">
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
-  <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
+  <li><a href="#creating-home-webpage" id="toc-creating-home-webpage" class="nav-link" data-scroll-target="#creating-home-webpage">Creating Home Webpage</a></li>
+  <li><a href="#customizing-a-quarto-website" id="toc-customizing-a-quarto-website" class="nav-link" data-scroll-target="#customizing-a-quarto-website">Customizing A Quarto Website</a></li>
+  <li><a href="#programming-in-r-bash-and-python" id="toc-programming-in-r-bash-and-python" class="nav-link" data-scroll-target="#programming-in-r-bash-and-python">Programming in R, Bash, and Python</a></li>
   </ul></li>
-  <li><a href="#post-lecture-practice" id="toc-post-lecture-practice" class="nav-link" data-scroll-target="#post-lecture-practice">Post-lecture Practice</a></li>
   </ul>
 </nav>
     </div>
@@ -158,31 +194,29 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Navigating Data Types in R</h1>
+<h1 class="title">Building a Quarto Website and Using GitHub</h1>
+</div>
+
+<div>
+  <div class="description">
+    Sharing your science!
+  </div>
 </div>
 
 
-<div class="quarto-title-meta-author">
-  <div class="quarto-title-meta-heading">Author</div>
-  <div class="quarto-title-meta-heading">Affiliation</div>
-  
-    <div class="quarto-title-meta-contents">
-    <p class="author"><a href="https://lindsaynhayes.github.io">Lindsay Hayes</a> </p>
-  </div>
-  <div class="quarto-title-meta-contents">
-        <p class="affiliation">
-            Department of Cell Biology, OUHSC
-          </p>
-      </div>
-  </div>
-
 <div class="quarto-title-meta">
 
-      
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Eleana Cabello </p>
+          </div>
+  </div>
+    
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 3, 2025</p>
+      <p class="date">July 18, 2025</p>
     </div>
   </div>
   
@@ -194,47 +228,233 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="pre-lecture-activities" class="level1">
-<h1>Pre-lecture activities</h1>
-<p>Before class, read the <a href="https://lindsaynhayes.github.io/introR2025/readings/index_R02.html">pre-reading materials</a>.</p>
-</section>
-<section id="lecture" class="level1">
-<h1>Lecture</h1>
-<section id="learning-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Learning objectives
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>At the end of class you will be able to:</strong></p>
+<section id="why-use-quarto-and-github" class="level1">
+<h1>Why use Quarto and Github?</h1>
+<p>PROS 👍:</p>
 <ul>
-<li>Generate and navigate a quarto document</li>
-<li>Understand what packages are and how to use them</li>
-<li>Get data in and out of R</li>
-<li>Recognize and create various data types in R</li>
+<li>Used by many researchers already</li>
+<li>Allows for someone else to view your workflow easily</li>
+<li>Version control! Can go back and keep track of changes to your project or scripts</li>
+<li>Free! Not behind a paywall or monthly subsciption</li>
+<li>Easy for someone to download to their local computer and run the same scripts</li>
 </ul>
-</div>
-</div>
-</section>
-<section id="slides" class="level2">
-<h2 class="anchored" data-anchor-id="slides">Slides</h2>
+<p>CONS 👎:</p>
 <ul>
-<li><p><a href="https://docs.google.com/presentation/d/1RLm558R177W1YsYA_WG4J-fTfvFmnejrT4Ccf02t3l0/edit?usp=sharing">Lecture 02: Data Types</a></p></li>
-<li><p><a href="https://lindsaynhayes.github.io/introR2025/activities/classwork02/classwork_L02.html">In-Class Activity</a></p></li>
+<li>A little hard to understand how it works but after the learning curve it’s great!</li>
+<li>Can only have a static website</li>
 </ul>
 </section>
+<section id="setting-a-quarto-website-through-github-pages" class="level1">
+<h1>Setting A Quarto Website through Github Pages</h1>
+<section id="setup-repository-online" class="level4">
+<h4 class="anchored" data-anchor-id="setup-repository-online">1. Setup Repository Online</h4>
+<ul>
+<li>Click on the New Repo button.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/github_new_repo_button.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="500"></p>
+</figure>
+</div>
+<ul>
+<li>Name your Repo and click the Create Repository button.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/github_repo_create.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="500"></p>
+</figure>
+</div>
+<ul>
+<li>Once on the page below, click Set up in Desktop.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/github_repo_setup.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="500"></p>
+</figure>
+</div>
 </section>
-<section id="post-lecture-practice" class="level1">
-<h1>Post-lecture Practice</h1>
-<p>To get more practice working with data in R complete the following homework. You will be asked to <strong>upload your activities for a course grade</strong>: <a href="https://lindsaynhayes.github.io/introR2025/projects/index_A01.html" target="_blank">Assignment 1</a></p>
+<section id="set-up-remote-repository-locally-through-github-desktop" class="level4">
+<h4 class="anchored" data-anchor-id="set-up-remote-repository-locally-through-github-desktop">2. Set Up Remote Repository Locally through Github Desktop</h4>
+<ul>
+<li>Once in Github Desktop, pick what directory you would like to store the repository locally. This action will create a remote repository connecting it to the one you have online.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/github_desktop_setup.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="500"></p>
+</figure>
+</div>
+</section>
+<section id="open-rstudio-and-set-repository-as-working-directory" class="level4">
+<h4 class="anchored" data-anchor-id="open-rstudio-and-set-repository-as-working-directory">3. Open RStudio and Set Repository as Working Directory</h4>
+<ul>
+<li>Navigate to your remote repository through the files window.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/rstudio_files_window.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="500"></p>
+</figure>
+</div>
+<ul>
+<li>Once in the remote repository, click the gears icon and Set As Working Directory.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/rstudio_set_wd.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="500"></p>
+</figure>
+</div>
+</section>
+<section id="setting-up-quarto-website-project-in-repository" class="level4">
+<h4 class="anchored" data-anchor-id="setting-up-quarto-website-project-in-repository">4. Setting Up Quarto Website Project in Repository</h4>
+<ul>
+<li>Type the following command in the terminal to create an RProject and setup a quarto website, a new window of RStudio will appear:</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>  <span class="ex">quarto</span> create project website</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>On the new Rstudio window refresh and check out the new files by refreshing the files window.</li>
+</ul>
+</section>
+<section id="commiting-and-pushing-to-github-repository" class="level4">
+<h4 class="anchored" data-anchor-id="commiting-and-pushing-to-github-repository">5. Commiting and Pushing to Github Repository</h4>
+<ul>
+<li>In Github desktop type a commit message and commit to main.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/github_desktop_commit.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="500"></p>
+</figure>
+</div>
+<ul>
+<li>After commiting your changes and message, hit publish to origin.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/github_desktop_publish.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="500"></p>
+</figure>
+</div>
+</section>
+<section id="setting-up-to-publish-to-github-pages-using-a-gh-pages-branch" class="level4">
+<h4 class="anchored" data-anchor-id="setting-up-to-publish-to-github-pages-using-a-gh-pages-branch">6. Setting Up to Publish to Github Pages using a gh-pages branch</h4>
+<ul>
+<li>In Github website refresh and view all branches in the repository by following the steps below:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/branch_button.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="500"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/branch_new_button.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="500"></p>
+</figure>
+</div>
+<ul>
+<li>Make sure to name it gh-pages, it has to be named this in order for your website to work.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/branch_create_button.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="500"></p>
+</figure>
+</div>
+</section>
+<section id="setting-up-github-pages-and-workflows-locally" class="level4">
+<h4 class="anchored" data-anchor-id="setting-up-github-pages-and-workflows-locally">7. Setting Up Github Pages and Workflows Locally</h4>
+<ul>
+<li>Back in R studio do the following:
+<ul>
+<li>Create text file named “.nojekyll”, it does not need to contain anything.</li>
+<li>Create “.github” folder, then a folder named workflows inside .github, then a text file named “publish.yml”</li>
+<li>Copy and paste below into the publish.yml:</li>
+</ul></li>
+</ul>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>publish.yml</strong></pre>
+</div>
+<div class="sourceCode" id="cb2" data-filename="publish.yml"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">on:</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>  <span class="ex">workflow_dispatch:</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>  <span class="ex">push:</span></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>    <span class="ex">branches:</span> main</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="ex">name:</span> Quarto Publish</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="ex">jobs:</span></span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a>  <span class="ex">build-deploy:</span></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a>    <span class="ex">runs-on:</span> ubuntu-latest</span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a>    <span class="ex">permissions:</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a>      <span class="ex">contents:</span> write</span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>    <span class="ex">steps:</span></span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> name: Check out repository</span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>        <span class="ex">uses:</span> actions/checkout@v4</span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> name: Set up Quarto</span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>        <span class="ex">uses:</span> quarto-dev/quarto-actions/setup@v2</span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a>      <span class="ex">-</span> name: Render and Publish</span>
+<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a>        <span class="ex">uses:</span> quarto-dev/quarto-actions/publish@v2</span>
+<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a>        <span class="ex">with:</span></span>
+<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a>          <span class="ex">target:</span> gh-pages</span>
+<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a>        <span class="ex">env:</span></span>
+<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a>          <span class="ex">GITHUB_TOKEN:</span> <span class="va">${</span><span class="er">{ secrets.GITHUB_TOKEN </span><span class="va">}</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="commit-and-push-changes-to-host-website-on-github-pages" class="level4">
+<h4 class="anchored" data-anchor-id="commit-and-push-changes-to-host-website-on-github-pages">8. Commit and Push Changes to Host Website on Github Pages</h4>
+</section>
+<section id="check-settings-and-website" class="level4">
+<h4 class="anchored" data-anchor-id="check-settings-and-website">9. Check Settings and Website</h4>
+<ul>
+<li>Navigate to settings of your repository.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/repo_settings.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="500"></p>
+</figure>
+</div>
+<ul>
+<li>Then navigate to pages.</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/repo_pages.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="500"></p>
+</figure>
+</div>
+<ul>
+<li>In pages make sure that under Build and Deployment Source is Deploy from Branch. Also make sure that under Branch that gh-pages is selected from /(root) like below:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/repo_pages_setup.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="500"></p>
+</figure>
+</div>
+</section>
+<section id="visit-your-website" class="level4">
+<h4 class="anchored" data-anchor-id="visit-your-website">10. Visit Your Website!</h4>
+</section>
+<section id="creating-home-webpage" class="level3">
+<h3 class="anchored" data-anchor-id="creating-home-webpage">Creating Home Webpage</h3>
+<ul>
+<li>qmd file</li>
+<li>markdown language</li>
+<li>Previewing changes</li>
+</ul>
+</section>
+<section id="customizing-a-quarto-website" class="level3">
+<h3 class="anchored" data-anchor-id="customizing-a-quarto-website">Customizing A Quarto Website</h3>
+<ul>
+<li>Adding listing pages</li>
+<li>Adding tabs</li>
+<li>Changing css or scss file</li>
+</ul>
+</section>
+<section id="programming-in-r-bash-and-python" class="level3">
+<h3 class="anchored" data-anchor-id="programming-in-r-bash-and-python">Programming in R, Bash, and Python</h3>
+<ul>
+<li>Adding code blocks</li>
+<li>Freeze function</li>
+</ul>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

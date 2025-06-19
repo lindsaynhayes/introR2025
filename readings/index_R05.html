@@ -7,9 +7,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Lindsay Hayes">
-<meta name="dcterms.date" content="2025-07-03">
+<meta name="dcterms.date" content="2025-07-14">
+<meta name="description" content="Reading for Class 05">
 
-<title>Navigating Data Types in R – Intro to Reproducible Data Analysis Using R</title>
+<title>PCA with tidymodels – Intro to Reproducible Data Analysis Using R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -138,29 +139,22 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#pre-lecture-activities" id="toc-pre-lecture-activities" class="nav-link active" data-scroll-target="#pre-lecture-activities">Pre-lecture activities</a></li>
-  <li><a href="#lecture" id="toc-lecture" class="nav-link" data-scroll-target="#lecture">Lecture</a>
-  <ul class="collapse">
-  <li><a href="#learning-objectives" id="toc-learning-objectives" class="nav-link" data-scroll-target="#learning-objectives">Learning objectives</a></li>
-  <li><a href="#slides" id="toc-slides" class="nav-link" data-scroll-target="#slides">Slides</a></li>
-  </ul></li>
-  <li><a href="#post-lecture-practice" id="toc-post-lecture-practice" class="nav-link" data-scroll-target="#post-lecture-practice">Post-lecture Practice</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Navigating Data Types in R</h1>
+<h1 class="title">PCA with tidymodels</h1>
 </div>
 
+<div>
+  <div class="description">
+    Reading for Class 05
+  </div>
+</div>
 
 <div class="quarto-title-meta-author">
   <div class="quarto-title-meta-heading">Author</div>
@@ -182,7 +176,7 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">July 3, 2025</p>
+      <p class="date">July 14, 2025</p>
     </div>
   </div>
   
@@ -194,14 +188,6 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="pre-lecture-activities" class="level1">
-<h1>Pre-lecture activities</h1>
-<p>Before class, read the <a href="https://lindsaynhayes.github.io/introR2025/readings/index_R02.html">pre-reading materials</a>.</p>
-</section>
-<section id="lecture" class="level1">
-<h1>Lecture</h1>
-<section id="learning-objectives" class="level2">
-<h2 class="anchored" data-anchor-id="learning-objectives">Learning objectives</h2>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -212,30 +198,21 @@ Learning objectives
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>At the end of class you will be able to:</strong></p>
+<p><strong>At the end of this lesson you will be able to:</strong></p>
 <ul>
-<li>Generate and navigate a quarto document</li>
-<li>Understand what packages are and how to use them</li>
-<li>Get data in and out of R</li>
-<li>Recognize and create various data types in R</li>
+<li>Define dimension reduction</li>
+<li>Explain why dimension reduction is used</li>
+<li>Build a model to perform PCA on a dataset</li>
 </ul>
 </div>
 </div>
-</section>
-<section id="slides" class="level2">
-<h2 class="anchored" data-anchor-id="slides">Slides</h2>
+<p>Before class, watch this <a href="https://juliasilge.com/blog/best-hip-hop/">video</a> from Data Scientists <a href="https://juliasilge.com">Julie Silge</a> from RStudio. She does a real-time data analysis using Principal Component Analysis (PCA) of the <strong>best hip hop songs of all time</strong> according to critics ratings. This video is not a detailed explanation of what PCA is or how it works <em>(there is a lot of that maths on the internet if you want)</em>. In contrast, it is a live, real-time, analysis that asks the question what song features make a hip hop song the best. I want you to see that PCA is often a first line of inquiry when exploring a dataset.</p>
 <ul>
-<li><p><a href="https://docs.google.com/presentation/d/1RLm558R177W1YsYA_WG4J-fTfvFmnejrT4Ccf02t3l0/edit?usp=sharing">Lecture 02: Data Types</a></p></li>
-<li><p><a href="https://lindsaynhayes.github.io/introR2025/activities/classwork02/classwork_L02.html">In-Class Activity</a></p></li>
+<li><p>For background, <a href="https://github.com/rfordatascience/tidytuesday">TidyTuesday</a> is a weekly podcast and community activity that brings an interesting dataset to the data science community each week to do some cool plotting or analysis on. It provides interesting data to use for teaching purposes or code testing.</p></li>
+<li><p>This video goes pretty fast but all the code she uses is below the video.</p></li>
 </ul>
-</section>
-</section>
-<section id="post-lecture-practice" class="level1">
-<h1>Post-lecture Practice</h1>
-<p>To get more practice working with data in R complete the following homework. You will be asked to <strong>upload your activities for a course grade</strong>: <a href="https://lindsaynhayes.github.io/introR2025/projects/index_A01.html" target="_blank">Assignment 1</a></p>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
