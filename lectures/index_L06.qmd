@@ -12,7 +12,8 @@ editor_options:
 
 # Pre-lecture activities
 
-Before class, \
+Before class, read the [pre-reading materials](https://lindsaynhayes.github.io/introR2025/readings/index_R06.html).
+
 # Lecture
 
 ## Learning objectives
@@ -22,9 +23,8 @@ Before class, \
 
 **At the end of class you will be able to:**
 
--   one
--   two
--   three
+-   Understand the purpose of data modeling, specifically machine learning classification.
+-   Identify the packages and tools used to implement machine learning algorithms for data analysis.
 
 :::
 
@@ -32,7 +32,7 @@ Before class, \
 
 -   [Lecture 06: Predictive Modeling with tidymodels](https://docs.google.com/presentation/d/1PF5USoyCYBt0-duq5GpOYyXYueUf7LxiA23my4zJXsk/edit?slide=id.g3601b4bb65a_0_9#slide=id.g3601b4bb65a_0_9)
 
--   [In-Class Activity](https://lindsaynhayes.github.io/introR2025/activities/classwork05/PCA_Penguins.html)
+-   [In-Class Activity](https://lindsaynhayes.github.io/introR2025/activities/classwork06/Pred_Penguins.html)
 
 
 # Post-lecture Practice
