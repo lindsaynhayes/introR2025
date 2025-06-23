@@ -6,7 +6,7 @@ author:
     url: https://lindsaynhayes.github.io
     affiliation: Department of Cell Biology, OUHSC
 date: 2025-07-28
-draft: false
+draft: true
 ---
 
 ::: callout-note
@@ -22,7 +22,7 @@ draft: false
 
 ### Pre-class Tasks
 
-Github is a web-based resource that allows you to save files online, track changes to files, and share project files easily for better collaboration. It has gained popularity in the scientific community as an easy way to document project scripts as reaserchers work through them, documenting changes or mistakes that may have been encountered in the process. 
+GitHub is a web-based resource that allows you to save files online, track changes to files, and share project files easily for better collaboration. It has gained popularity in the scientific community as an easy way to document project scripts as researchers work through them, documenting changes or mistakes that may have been encountered. 
 
 Please create accounts with Github and Github Desktop before our next class time:
 
