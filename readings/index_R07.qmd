@@ -13,14 +13,12 @@ draft: true
 ### Learning objectives
 
 **At the end of this lesson you will be able to:**
-
--   Distinguish between good and bad plots
--   Match the type of plots with the type of data input
--   List the features of the grammer of graphics
--   Build complex graphics in ggplot2
+- Create a Github repository 
+- Setup a Quarto Website
+- Publish your Quarto website through Github Pages
+- Customize your Quarto Website
 :::
 
 # Pre class tasks 
-- (Reminder for myself to add to prereading later)
-- Set up Github Account
-- Set up Github Desktop 
+- [Set up Github Account] (https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github)
+- [Set up Github Desktop] (https://docs.github.com/en/desktop/installing-and-authenticating-to-github-desktop/installing-github-desktop)

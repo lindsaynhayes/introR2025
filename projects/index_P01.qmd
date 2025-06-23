@@ -7,7 +7,9 @@ date: 2025-7-18
 --- 
 # Background
 
-The goal of the course project is to get you practicing with real life data you are encountering in research. Therefore, we are letting you decide what data you want to work with for this project.
+The goal of the course project is to get you practicing with real life data you are encountering in your research. Therefore, we are letting you decide what data you want to work with for this project.
+
+Below is table of important dates and what is needed by those days:
 
 ### Timeline and Deliverables
 ```{=html}
@@ -29,6 +31,7 @@ The goal of the course project is to get you practicing with real life data you 
     </tr>
 </table>
 ```
+
 
 ### Rubric
 ```{=html}
