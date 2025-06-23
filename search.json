@@ -305,7 +305,7 @@
     "href": "readings.html",
     "title": "Important reading materials",
     "section": "",
-    "text": "The following contains relevant reading materials you should read prior to each class:\n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nAuthor\n\n\n\n\n\n\n\n\n2025-07-01\n\n\nR & RStudio\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-03\n\n\nNavigating Data Types in R\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-08\n\n\nData Wrangling with tidyverse\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-10\n\n\nData Visualization with ggplot2\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-14\n\n\nPCA with tidymodels\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-16\n\n\nPredictive Modeling with tidymodels\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-28\n\n\nBuilding a Quarto Website and Using GitHub\n\n\nLindsay Hayes\n\n\n\n\n\n\nNo matching items"
+    "text": "The following contains relevant reading materials you should read prior to each class:\n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nAuthor\n\n\n\n\n\n\n\n\n2025-07-01\n\n\nR & RStudio\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-03\n\n\nNavigating Data Types in R\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-08\n\n\nData Wrangling with tidyverse\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-10\n\n\nData Visualization with ggplot2\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-14\n\n\nPCA with tidymodels\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-16\n\n\nPredictive Modeling with tidymodels\n\n\nLindsay Hayes\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "projects/index_P01.html",
@@ -978,12 +978,5 @@
     "title": "PCA with tidymodels",
     "section": "",
     "text": "Learning objectives\n\n\n\nAt the end of this lesson you will be able to:\n\nDefine dimension reduction\nExplain why dimension reduction is used\nBuild a model to perform PCA on a dataset\n\n\n\nBefore class, watch this video from Data Scientists Julie Silge from RStudio. She does a real-time data analysis using Principal Component Analysis (PCA) of the best hip hop songs of all time according to critics ratings. This video is not a detailed explanation of what PCA is or how it works (there is a lot of that maths on the internet if you want). In contrast, it is a live, real-time, analysis that asks the question what song features make a hip hop song the best. I want you to see that PCA is often a first line of inquiry when exploring a dataset.\n\nFor background, TidyTuesday is a weekly podcast and community activity that brings an interesting dataset to the data science community each week to do some cool plotting or analysis on. It provides interesting data to use for teaching purposes or code testing.\nThis video goes pretty fast but all the code she uses is below the video."
-  },
-  {
-    "objectID": "readings/index_R07.html",
-    "href": "readings/index_R07.html",
-    "title": "Building a Quarto Website and Using GitHub",
-    "section": "",
-    "text": "Learning objectives\n\n\n\nAt the end of this lesson you will be able to:\n\nCreate a Github repository\nSetup a Quarto Website\nPublish your Quarto website through Github Pages\nCustomize your Quarto Website\n\n\n\n\nPre-class Tasks\nGithub is a web-based resource that allows you to save files online, track changes to files, and share project files easily for better collaboration. It has gained popularity in the scientific community as an easy way to document project scripts as reaserchers work through them, documenting changes or mistakes that may have been encountered in the process.\nPlease create accounts with Github and Github Desktop before our next class time:\n\nSet up a Github Account Online\nSet up Github Desktop Account on your computer"
   }
 ]
