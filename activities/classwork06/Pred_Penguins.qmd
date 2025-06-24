@@ -104,7 +104,7 @@ rf_model <-
   set_engine("ranger") |>
   
   # we only have 4 predictors so mtry can't be more than 4
-  set_args(mtry = 2, trees = 200)
+  set_args(mtry = 4, trees = 200)
   
 
 # Put everything together 
@@ -167,8 +167,19 @@ rf.outcome <- rf.predict %>%
 rf.outcome |> conf_mat(pred, truth)
 
 # accuracy
-rf.outcome |> accuracy(pred, truth)
+rf.outcome |> accuracy(pred, truth) -> rf.acc
 
+# specificity
+rf.outcome |> spec(pred, truth) -> rf.spec
+
+# sensitivity
+rf.outcome |> sens(pred, truth) -> rf.sens
+
+# precision
+rf.outcome |> precision(pred, truth) -> rf.prec
+
+rf.eval <- c(rf.acc$.estimate, rf.spec$.estimate, rf.sens$.estimate, rf.prec$.estimate)
+names(rf.eval) <- c("accuracy", "specificity", "sensitivity", "precision")
 
 # create a table comparing the predicted species from the true species
 lr.outcome <- lr.predict %>%
@@ -179,7 +190,22 @@ lr.outcome <- lr.predict %>%
 lr.outcome |> conf_mat(pred, truth)
 
 # accuracy
-lr.outcome |> accuracy(pred, truth)
+lr.outcome |> accuracy(pred, truth) -> lr.acc
+
+# specificity
+lr.outcome |> spec(pred, truth) -> lr.spec
+
+# sensitivity
+lr.outcome |> sens(pred, truth) -> lr.sens
+
+# precision
+lr.outcome |> precision(pred, truth) -> lr.prec
+
+lr.eval = c(lr.acc$.estimate, lr.spec$.estimate, lr.sens$.estimate, lr.prec$.estimate)
+names(lr.eval) <- c("accuracy", "specificity", "sensitivity", "precision")
+
+rbind(rf.eval, lr.eval)
+
 ```
 
 ```{r}
