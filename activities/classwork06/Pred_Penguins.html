@@ -402,7 +402,14 @@ predictor: 4</code></pre>
 </section>
 <section id="define-the-models" class="level2">
 <h2 class="anchored" data-anchor-id="define-the-models">Define the models</h2>
-<p><strong>Random Forest</strong> uses the command <code>rand_forest()</code> which takes the following arguments. We will use the defaults for some values. - <strong>mode</strong> options are “unknown”, “regression”, “classification”, or “censored regression” - <strong>engine</strong> options are “ranger”, “randomForest”, or “spark” - <strong>mtry</strong> the number of predictors that will be randomly sampled at each split when creating the tree model. - <strong>trees</strong> the number of trees to build. - <strong>min_n</strong> the minimum number of data points in a node to stop splitting</p>
+<p><strong>Random Forest</strong> uses the command <code>rand_forest()</code> which takes the following arguments. We will use the defaults for some values.</p>
+<ul>
+<li><strong>mode</strong> options are “unknown”, “regression”, “classification”, or “censored regression”</li>
+<li><strong>engine</strong> options are “ranger”, “randomForest”, or “spark”</li>
+<li><strong>mtry</strong> the number of predictors that will be randomly sampled at each split when creating the tree model.</li>
+<li><strong>trees</strong> the number of trees to build.</li>
+<li><strong>min_n</strong> the minimum number of data points in a node to stop splitting</li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># MODEL 1 Random Forest</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>rf_model <span class="ot">&lt;-</span> </span>
@@ -430,7 +437,13 @@ predictor: 4</code></pre>
 <span id="cb35-24"><a href="#cb35-24" aria-hidden="true" tabindex="-1"></a><span class="co"># train the model</span></span>
 <span id="cb35-25"><a href="#cb35-25" aria-hidden="true" tabindex="-1"></a>rf_fit <span class="ot">&lt;-</span> <span class="fu">fit</span>(rf_wflow, data_training)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p><strong>Logistic Regression</strong> uses the command <code>multinom_reg()</code> which takes the following arguments. We will use the defaults for some values. - <strong>mode</strong> only “classification” is available - <strong>engine</strong> options are “nnet”, “brulee”, “glmnet”, “h2o”, “keras”, “spark” - <strong>penalty</strong> only used in keras models - <strong>mixture</strong> only used in keras models</p>
+<p><strong>Logistic Regression</strong> uses the command <code>multinom_reg()</code> which takes the following arguments. We will use the defaults for some values.</p>
+<ul>
+<li><strong>mode</strong> only “classification” is available</li>
+<li><strong>engine</strong> options are “nnet”, “brulee”, “glmnet”, “h2o”, “keras”, “spark”</li>
+<li><strong>penalty</strong> only used in keras models</li>
+<li><strong>mixture</strong> only used in keras models</li>
+</ul>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="co"># MODEL 2 Logistic Regression</span></span>
 <span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>lr_model <span class="ot">&lt;-</span> </span>
