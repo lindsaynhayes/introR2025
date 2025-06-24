@@ -82,6 +82,7 @@ data_bake
 ## Define the models
 
 **Random Forest** uses the command `rand_forest()` which takes the following arguments. We will use the defaults for some values. 
+
 - **mode** options are "unknown", "regression", "classification", or "censored regression"
 - **engine** options are "ranger", "randomForest", or "spark"
 - **mtry** the number of predictors that will be randomly sampled at each split when creating the tree model. 
@@ -119,6 +120,7 @@ rf_fit <- fit(rf_wflow, data_training)
 
 
 **Logistic Regression** uses the command `multinom_reg()` which takes the following arguments. We will use the defaults for some values. 
+
 - **mode** only "classification" is available
 - **engine** options are "nnet", "brulee", "glmnet", "h2o", "keras", "spark"
 - **penalty** only used in keras models
