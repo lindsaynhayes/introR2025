@@ -1,5 +1,5 @@
 ---
-title: "Predictive Modeling with tidymodels"
+title: "Machine Learning with tidymodels"
 author: 
   - name: Lindsay Hayes
     url: https://lindsaynhayes.github.io
@@ -36,5 +36,6 @@ Before class, read the [pre-reading materials](https://lindsaynhayes.github.io/i
 
 
 # Post-lecture Practice
+If you want more info on data modeling using tidymodels check out their book!
 
-- Resource: The book on [tidymodels](https://www.tmwr.org)
+- The book on [tidymodels](https://www.tmwr.org)
