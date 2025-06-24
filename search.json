@@ -231,13 +231,6 @@
     "text": "Responsible Conduct of Research\nStudents, as members of the University community, have the responsibility to ensure the integrity and ethical standards of any research activity with which they are associated directly or of which they have sufficient knowledge to determine its appropriateness. Students are governed by the Policy on Ethics in Research Faculty Handbook Section 3.25.\n\nLicense and attribution\nThis Code of Conduct is distributed under a Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0) license. Portions of above text comprised of language from the Codes of Conduct adopted by rOpenSci and Django, which are licensed by CC BY-SA 4.0 and CC BY 3.0. This work was further inspired by Ada Initiative’s ‘’how to design a code of conduct for your community’’ and Geek Feminism’s Code of conduct evaluations and expanded by Ashley Johnson and Shannon Ellis in the Jeff Leek group, and Stephanie C. Hicks."
   },
   {
-    "objectID": "readings/index_R06.html",
-    "href": "readings/index_R06.html",
-    "title": "Predictive Modeling with tidymodels",
-    "section": "",
-    "text": "The last class introduced important concepts in data science such as directory structure, working directories, projects, and quarto documents. This lesson will dig deeper into working with data in R. We will cover importing and exporting, data types, and data objects\n\n\n\n\n\n\nLearning objectives\n\n\n\nAt the end of class you will be able to:\n\nUnderstand the purpose of data modeling, specifically machine learning classification\nIdentify the packages and tools used to implement machine learning algorithms for data analysis\n\n\n\nhttps://www.stepbystepdatascience.com/ml-with-tidymodels"
-  },
-  {
     "objectID": "readings/index_R04.html",
     "href": "readings/index_R04.html",
     "title": "Data Visualization with ggplot2",
@@ -305,7 +298,7 @@
     "href": "readings.html",
     "title": "Important reading materials",
     "section": "",
-    "text": "The following contains relevant reading materials you should read prior to each class:\n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nAuthor\n\n\n\n\n\n\n\n\n2025-07-01\n\n\nR & RStudio\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-03\n\n\nNavigating Data Types in R\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-08\n\n\nData Wrangling with tidyverse\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-10\n\n\nData Visualization with ggplot2\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-14\n\n\nPCA with tidymodels\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-16\n\n\nPredictive Modeling with tidymodels\n\n\nLindsay Hayes\n\n\n\n\n\n\nNo matching items"
+    "text": "The following contains relevant reading materials you should read prior to each class:\n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nAuthor\n\n\n\n\n\n\n\n\n2025-07-01\n\n\nR & RStudio\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-03\n\n\nNavigating Data Types in R\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-08\n\n\nData Wrangling with tidyverse\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-10\n\n\nData Visualization with ggplot2\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-14\n\n\nPCA with tidymodels\n\n\nLindsay Hayes\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "projects/index_P01.html",
