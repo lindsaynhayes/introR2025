@@ -31,16 +31,16 @@ In the Swirl lessons for this week, you will learn the following:
     `install.packages("swirl")`
 
     `library("swirl")`
-
-2. Start Swirl by typing the following command
-
-    `swirl()`
     
-3. Navigate to this [link](https://github.com/lindsaynhayes/introR2025/tree/main/swirl) to download the Swirl lesson file 1_R_Programming_Mod.swc
+2. Navigate to this [link](https://github.com/lindsaynhayes/introR2025/tree/main/swirl) to download the Swirl lesson file 1_R_Programming_Mod.swc
 
-4. Once you have downloaded the file, in the console of RStudio run the following command and interactively choose the 1_R_Programming_Mod.swc file you just downloaded
+3. Once you have downloaded the file, in the console of RStudio run the following command and interactively choose the 1_R_Programming_Mod.swc file you just downloaded
 
     `install_course()`
+    
+4. Start Swirl by typing the following command
+
+    `swirl()`
 
 # Working through the Lessons 
 
