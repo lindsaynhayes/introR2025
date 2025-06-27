@@ -204,86 +204,101 @@ Eleana Cabello
 </div>
 
 </section>
-<section class="slide level2">
-
-<h4 id="setup-repository-online">1. Setup Repository Online</h4>
+<section id="github" class="slide level2 scrollable">
+<h2>Github</h2>
 <ul>
-<li>Click on the New Repo button.</li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../figures/L07/slides/github_new_repo_button.png" class="quarto-figure quarto-figure-center" width="200"></p>
-</figure>
-</div>
-<ul>
-<li>Name your Repo and click the Create Repository button.</li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../figures/L07/slides/github_repo_create.png" class="quarto-figure quarto-figure-center" width="200"></p>
-</figure>
-</div>
-<ul>
-<li>Once on the page below, click Set up in Desktop.</li>
+<li><p>Online based platform that is used, along with git, for version control of software projects and makes collaboration easier between developers</p></li>
+<li><p>Version control means tracking modifications, creations, and deletions of files of a project</p></li>
+<li><p>Connects your local development enviroment, or local repository, to online/cloud based storage, remote reposiroty, to keep track of modifications and make it easier to share with others</p></li>
 </ul>
 </section>
+<section id="github-repositories-and-remotes" class="slide level2">
+<h2>Github Repositories and Remotes</h2>
+
+<img data-src="../figures/L07/slides/github_flow.jpg" class="quarto-figure quarto-figure-center r-stretch" width="500"></section>
+<section id="quarto" class="slide level2">
+<h2>Quarto</h2>
+<ul>
+<li><p>Open-source scientific and technical publishing system that allows for the use of narrative text with code</p></li>
+<li><p>However not just limited to a singular file, allows for easy setup of other types of project like websites, presentations, dashboards, books, etc.</p></li>
+<li><p>The ability to change formats easily and incoporate other languages than only R removes previous limitations and allows for better communication of projects and workflows</p></li>
+</ul>
+</section>
+<section id="project-benefits-of-using-github-and-quarto" class="slide level2">
+<h2>Project Benefits of using Github and Quarto</h2>
+<ul>
+<li><p>Easier Submission - Everything is together and well documented (hopefully🤞) to be submitted for publication</p></li>
+<li><p>Reproducibility - allows others to easily have access to how an analysis was done and be able to replicate it</p></li>
+<li><p>Branding - Having an online resume/cv of all your projects and those you have collaborated on with others</p></li>
+</ul>
+</section>
+<section id="setup-repository-online" class="slide level2 scrollable">
+<h2>1 - Setup Repository Online</h2>
+<p>Click on the New Repo button.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../figures/L07/slides/github_new_repo_button.png" class="quarto-figure quarto-figure-center" width="500"></p>
+</figure>
+</div>
+<p>Name your Repo and click the Create Repository button.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../figures/L07/slides/github_repo_create.png" class="quarto-figure quarto-figure-center" width="500"></p>
+</figure>
+</div>
+<p>Once on the page below, click Set up in Desktop.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="../figures/L07/slides/github_repo_setup.png" class="quarto-figure quarto-figure-center" width="500"></p>
+</figure>
+</div>
+</section>
+<section id="set-up-remote-repository-locally-through-github-desktop" class="slide level2 scrollable">
+<h2>2 - Set Up Remote Repository Locally through Github Desktop</h2>
+<p>Once in Github Desktop, pick what directory you would like to store the repository locally. This action will create a remote repository connecting it to the one you have online.</p>
+</section>
 <section id="section" class="slide level2">
-<h2><img data-src="../figures/L07/slides/github_repo_setup.png" class="quarto-figure quarto-figure-center" width="200"></h2>
-<h4 id="set-up-remote-repository-locally-through-github-desktop">2. Set Up Remote Repository Locally through Github Desktop</h4>
-<ul>
-<li>Once in Github Desktop, pick what directory you would like to store the repository locally. This action will create a remote repository connecting it to the one you have online.</li>
-</ul>
+<h2><img data-src="../figures/L07/slides/github_desktop_setup.png" class="quarto-figure quarto-figure-center" width="500"></h2>
+</section>
+<section id="open-rstudio-and-set-repository-as-working-directory" class="slide level2 scrollable">
+<h2>3 - Open RStudio and Set Repository as Working Directory</h2>
+<p>Navigate to your remote repository through the files window.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../figures/github_desktop_setup.png" class="quarto-figure quarto-figure-center" width="500"></p>
+<p><img data-src="../figures/L07/slides/rstudio_files_window.png" class="quarto-figure quarto-figure-center" width="500"></p>
 </figure>
 </div>
-<h4 id="open-rstudio-and-set-repository-as-working-directory">3. Open RStudio and Set Repository as Working Directory</h4>
-<ul>
-<li>Navigate to your remote repository through the files window.</li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../figures/rstudio_files_window.png" class="quarto-figure quarto-figure-center" width="500"></p>
-</figure>
-</div>
-<ul>
-<li>Once in the remote repository, click the gears icon and Set As Working Directory.</li>
-</ul>
+<p>Once in the remote repository, click the gears icon and Set As Working Directory.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="../figures/rstudio_set_wd.png" class="quarto-figure quarto-figure-center" width="500"></p>
 </figure>
 </div>
-<h4 id="setting-up-quarto-website-project-in-repository">4. Setting Up Quarto Website Project in Repository</h4>
-<ul>
-<li>Type the following command in the terminal to create an RProject and setup a quarto website, a new window of RStudio will appear:</li>
-</ul>
+</section>
+<section id="setting-up-quarto-website-project-in-repository" class="slide level2 scrollable">
+<h2>4 - Setting Up Quarto Website Project in Repository</h2>
+<p>Type the following command in the terminal to create an RProject and setup a quarto website, a new window of RStudio will appear:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a>  <span class="ex">quarto</span> create project website</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<ul>
-<li>On the new Rstudio window refresh and check out the new files by refreshing the files window.</li>
-</ul>
-<h4 id="commiting-and-pushing-to-github-repository">5. Commiting and Pushing to Github Repository</h4>
-<ul>
-<li>In Github desktop type a commit message and commit to main.</li>
-</ul>
+<p>On the new Rstudio window refresh and check out the new files by refreshing the files window.</p>
+</section>
+<section id="commiting-and-pushing-to-github-repository" class="slide level2 scrollable">
+<h2>5 - Commiting and Pushing to Github Repository</h2>
+<p>In Github desktop type a commit message and commit to main.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="../figures/github_desktop_commit.png" class="quarto-figure quarto-figure-center" width="500"></p>
 </figure>
 </div>
-<ul>
-<li>After commiting your changes and message, hit publish to origin.</li>
-</ul>
+<p>After commiting your changes and message, hit publish to origin.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="../figures/github_desktop_publish.png" class="quarto-figure quarto-figure-center" width="500"></p>
 </figure>
 </div>
-<h4 id="setting-up-to-publish-to-github-pages-using-a-gh-pages-branch">6. Setting Up to Publish to Github Pages using a gh-pages branch</h4>
-<ul>
-<li>In Github website refresh and view all branches in the repository by following the steps below:</li>
-</ul>
+</section>
+<section id="setting-up-to-publish-to-github-pages-using-a-gh-pages-branch" class="slide level2 scrollable">
+<h2>6 - Setting Up to Publish to Github Pages using a gh-pages branch</h2>
+<p>In Github website refresh and view all branches in the repository by following the steps below:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="../figures/branch_button.png" class="quarto-figure quarto-figure-center" width="500"></p>
@@ -294,22 +309,20 @@ Eleana Cabello
 <p><img data-src="../figures/branch_new_button.png" class="quarto-figure quarto-figure-center" width="500"></p>
 </figure>
 </div>
-<ul>
-<li>Make sure to name it gh-pages, it has to be named this in order for your website to work.</li>
-</ul>
+<p>Make sure to name it gh-pages, it has to be named this in order for your website to work.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="../figures/branch_create_button.png" class="quarto-figure quarto-figure-center" width="500"></p>
 </figure>
 </div>
-<h4 id="setting-up-github-pages-and-workflows-locally">7. Setting Up Github Pages and Workflows Locally</h4>
+</section>
+<section id="setting-up-github-pages-and-workflows-locally" class="slide level2 scrollable">
+<h2>7 - Setting Up Github Pages and Workflows Locally</h2>
+<p>Back in R studio do the following:</p>
 <ul>
-<li>Back in R studio do the following:
-<ul>
-<li>Create text file named “.nojekyll”, it does not need to contain anything.</li>
-<li>Create “.github” folder, then a folder named workflows inside .github, then a text file named “publish.yml”</li>
-<li>Copy and paste below into the publish.yml:</li>
-</ul></li>
+<li><p>Create text file named “.nojekyll”, it does not need to contain anything.</p></li>
+<li><p>Create “.github” folder, then a folder named workflows inside .github, then a text file named “publish.yml”</p></li>
+<li><p>Copy and paste below into the publish.yml:</p></li>
 </ul>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
@@ -341,33 +354,31 @@ Eleana Cabello
 <span id="cb2-24"><a></a>        <span class="ex">env:</span></span>
 <span id="cb2-25"><a></a>          <span class="ex">GITHUB_TOKEN:</span> <span class="va">${</span><span class="er">{ secrets.GITHUB_TOKEN </span><span class="va">}</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<h4 id="commit-and-push-changes-to-host-website-on-github-pages">8. Commit and Push Changes to Host Website on Github Pages</h4>
-<h4 id="check-settings-and-website">9. Check Settings and Website</h4>
-<ul>
-<li>Navigate to settings of your repository.</li>
-</ul>
+</section>
+<section id="commit-and-push-changes-to-host-website-on-github-pages" class="slide level2 center">
+<h2>8 - Commit and Push Changes to Host Website on Github Pages</h2>
+</section>
+<section id="check-settings-and-website" class="slide level2 scrollable">
+<h2>9 - Check Settings and Website</h2>
+<p>Navigate to settings of your repository.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="../figures/repo_settings.png" class="quarto-figure quarto-figure-center" width="500"></p>
 </figure>
 </div>
-<ul>
-<li>Then navigate to pages.</li>
-</ul>
+<p>Then navigate to pages.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="../figures/repo_pages.png" class="quarto-figure quarto-figure-center" width="500"></p>
 </figure>
 </div>
-<ul>
-<li>In pages make sure that under Build and Deployment Source is Deploy from Branch. Also make sure that under Branch that gh-pages is selected from /(root) like below:</li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="../figures/repo_pages_setup.png" class="quarto-figure quarto-figure-center" width="500"></p>
-</figure>
-</div>
-<h4 id="visit-your-website">10. Visit Your Website!</h4>
+<p>In pages make sure that under Build and Deployment Source is Deploy from Branch. Also make sure that under Branch that gh-pages is selected from /(root) like below:</p>
+</section>
+<section id="section-1" class="slide level2">
+<h2><img data-src="../figures/repo_pages_setup.png" class="quarto-figure quarto-figure-center" width="500"></h2>
+</section>
+<section id="visit-your-website" class="slide level2 center">
+<h2>10 - Visit Your Website!</h2>
 
 
 </section>
@@ -427,7 +438,7 @@ Eleana Cabello
         progress: true,
 
         // Display the page number of the current slide
-        slideNumber: false,
+        slideNumber: 'c/t',
 
         // 'all', 'print', or 'speaker'
         showSlideNumber: 'all',
