@@ -3,7 +3,7 @@ title: "Assignment 3"
 author: 
   - name: Eleana Cabello
     affiliation: Department of Microbiology and Immunology, OUHS
-description: "Week 3 Practice - Exploratory Data Analysis Continued"
+description: "Week 3 Practice - Dimension Reduction using Tidymodels"
 date: 2025-7-18
 ---
 
@@ -11,67 +11,39 @@ date: 2025-7-18
 
 **Due date: 07/25/25 at 11:59pm**
 
-This week's Swirl lessons cover the following:
+This week we will use a different package called `LearnR` to gain practice in dimension reduction using `tidymodels`.
 
--   Dimension reduction techniques and examples
--   Simple clustering methods and examples
+The lesson will cover using `tidymodels` for:
 
-# Swirl Course Setup
+-   PCA Dimension reduction
+-   UMAP Dimension reduction
 
-1.  In RStudio, load in the swirl package
+# Install the Tutorial Course Setup
 
-    `library("swirl")`
+1.  The course is available on [GitHub](https://github.com/tidymodels/learntidymodels).
 
-2.  *Navigate* to this [link](https://github.com/lindsaynhayes/introR2025/tree/main/swirl). *Download* the Swirl lesson file `3_Exploratory_Data_Analysis.swc`. **Move** it into your working directory for the class.
+2.  Open RStudio.
 
-3.  Once you have the file in your working directory, in the console of RStudio type the command below and after the `swc_path =` type `"` and then hit `tab` to interactively choose the `3_Exploratory_Data_Analysis.swc` file you just downloaded from your working directory. The command will look something like `install_course(swc_path = "3_Exploratory_Data_Analysis.swc")`. Run the command to install the course.
+3.  Install `devtools` using the command below on the R Console
 
-    `install_course(swc_path = )`
+    `install.packages("devtools")`
 
-4.  Start Swirl by typing the following command
+4.  Install the github lesson using the command below on the R Console
 
-    `swirl()`
+    `devtools::install_github("tidymodels/learntidymodels")`
 
-5.  Start the lesson by selecting `3 Exploratory Data Analysis`.
+# Run the Tutorial Course Setup
 
-# Working through the Lessons
+5.  Run the tutorial by running the command below on the R Console
 
-1.  Please enter your **full name** together when asked what you want to be called by e.g. JaneDoe
-
-2.  Complete all lessons:
-
--   1: Hierarchical Clustering
--   2: K Means Clustering
--   3: Dimension Reduction
--   4: Clustering Example
--   5: CaseStudy
+    `learnr::run_tutorial("pca_recipes", package = "learntidymodels")`
 
 ::: callout-important
--   You can take breaks **between** lessons (like shutting down Swirl and exiting RStudio), just use the same name when logging in for documenting purposes on the instructor's end.
+-   It is best to complete the tutorial in one setting because each step builds on the other.
 
--   If you start a lesson, please complete it fully before taking a break. If you stop RStudio in the middle of a lesson, your progress for that lesson may still be saved in the history for that package locally, but will not be saved or sent to us on the instructor's end.
-
--   If you do not get to the Google Form end of any lesson, please email one of the instructors as soon as possible.
+-   Since you submitting the final plot and not through google forms, you can comeback and do the tutorial across multiple settings.
 :::
 
 # Submission
 
-::: callout-note
--   FYI: You need a google account to submit the assignment.
-
--   Swirl will navigate you to the submission Google Form of each lesson. However, review the instructions below before submitting to make sure you are able to submit correctly.
-
--   When submitting please make sure the box is not empty, if it is please email one of the instructors.
-:::
-
-1.  At the end of each lesson the following question will appear, **enter the selection Yes** to be redirected to your autofilled Google Form submission
-
-    ![](../images/L02/index_L02/google_form_redirect.png){width="500"}
-
-2.  Once you've been redirected, your Swirl activity will be autofilled into the submission box, just hit the Submit button
-
-    ![](../images/L02/index_L02/google_form_submission.png){width="500"}
-
-::: callout-important
--   If you do not get to the Google Form at the end of any lesson, please email one of the instructors as soon as possible.
-:::
+6.  Submit a screenshot of the final UMAP plot to canvas for homework #3.
