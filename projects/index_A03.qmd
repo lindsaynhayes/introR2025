@@ -41,13 +41,9 @@ This week's Swirl lessons cover the following:
 2.  Complete all lessons:
 
 -   1: Hierarchical Clustering
-
 -   2: K Means Clustering
-
 -   3: Dimension Reduction
-
 -   4: Clustering Example
-
 -   5: CaseStudy
 
 ::: callout-important
