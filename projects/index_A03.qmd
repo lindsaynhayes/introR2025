@@ -47,3 +47,8 @@ The lesson will cover using `tidymodels` for:
 # Submission
 
 6.  Submit a screenshot of the final UMAP plot to canvas for homework #3.
+
+
+::: callout-note
+If you have problems installing or deploying the tutorial please contact your instructors as soon as possible. 
+:::
