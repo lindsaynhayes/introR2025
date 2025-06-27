@@ -42,6 +42,8 @@ slide-number: true
 
 ---
 
+## Setting Up Your First Quarto Website on GitHub {.center}
+
 ## 1 - Setup Repository Online {.scrollable}
 
 Click on the New Repo button.
@@ -85,6 +87,11 @@ Type the following command in the terminal to create an RProject and setup a qua
 ```
   
 On the new Rstudio window refresh and check out the new files by refreshing the files window.
+
+  - _quarto.yml
+  - index.qmd
+  - about.qmd
+  - styles.css
 
 ---
 

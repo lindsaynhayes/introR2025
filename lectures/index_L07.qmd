@@ -141,11 +141,13 @@ jobs:
 
 ### Programming in R, Bash, and Python
 - Adding code blocks
-- Freeze function
 
 ### Customizing A Quarto Website 
 - Adding listing pages
 - Adding tabs
 - Changing css or scss file 
 
-## adding packages
+## Adding packages
+
+## Listing Pages
+
