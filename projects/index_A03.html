@@ -8,7 +8,7 @@
 
 <meta name="author" content="Eleana Cabello">
 <meta name="dcterms.date" content="2025-07-18">
-<meta name="description" content="Week 3 Practice - Exploratory Data Analysis Continued">
+<meta name="description" content="Week 3 Practice - Dimension Reduction using Tidymodels">
 
 <title>Assignment 3 – Intro to Reproducible Data Analysis Using R</title>
 <style>
@@ -145,8 +145,8 @@ ul.task-list li input[type="checkbox"] {
    
   <ul>
   <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
-  <li><a href="#swirl-course-setup" id="toc-swirl-course-setup" class="nav-link" data-scroll-target="#swirl-course-setup">Swirl Course Setup</a></li>
-  <li><a href="#working-through-the-lessons" id="toc-working-through-the-lessons" class="nav-link" data-scroll-target="#working-through-the-lessons">Working through the Lessons</a></li>
+  <li><a href="#install-the-tutorial-course-setup" id="toc-install-the-tutorial-course-setup" class="nav-link" data-scroll-target="#install-the-tutorial-course-setup">Install the Tutorial Course Setup</a></li>
+  <li><a href="#run-the-tutorial-course-setup" id="toc-run-the-tutorial-course-setup" class="nav-link" data-scroll-target="#run-the-tutorial-course-setup">Run the Tutorial Course Setup</a></li>
   <li><a href="#submission" id="toc-submission" class="nav-link" data-scroll-target="#submission">Submission</a></li>
   </ul>
 </nav>
@@ -161,7 +161,7 @@ ul.task-list li input[type="checkbox"] {
 
 <div>
   <div class="description">
-    Week 3 Practice - Exploratory Data Analysis Continued
+    Week 3 Practice - Dimension Reduction using Tidymodels
   </div>
 </div>
 
@@ -200,38 +200,30 @@ ul.task-list li input[type="checkbox"] {
 <section id="overview" class="level1">
 <h1>Overview</h1>
 <p><strong>Due date: 07/25/25 at 11:59pm</strong></p>
-<p>This week’s Swirl lessons cover the following:</p>
+<p>This week we will use a different package called <code>LearnR</code> to gain practice in dimension reduction using <code>tidymodels</code>.</p>
+<p>The lesson will cover using <code>tidymodels</code> for:</p>
 <ul>
-<li>Dimension reduction techniques and examples</li>
-<li>Simple clustering methods and examples</li>
+<li>PCA Dimension reduction</li>
+<li>UMAP Dimension reduction</li>
 </ul>
 </section>
-<section id="swirl-course-setup" class="level1">
-<h1>Swirl Course Setup</h1>
+<section id="install-the-tutorial-course-setup" class="level1">
+<h1>Install the Tutorial Course Setup</h1>
 <ol type="1">
-<li><p>In RStudio, load in the swirl package</p>
-<p><code>library("swirl")</code></p></li>
-<li><p><em>Navigate</em> to this <a href="https://github.com/lindsaynhayes/introR2025/tree/main/swirl">link</a>. <em>Download</em> the Swirl lesson file <code>3_Exploratory_Data_Analysis.swc</code>. <strong>Move</strong> it into your working directory for the class.</p></li>
-<li><p>Once you have the file in your working directory, in the console of RStudio type the command below and after the <code>swc_path =</code> type <code>"</code> and then hit <code>tab</code> to interactively choose the <code>3_Exploratory_Data_Analysis.swc</code> file you just downloaded from your working directory. The command will look something like <code>install_course(swc_path = "3_Exploratory_Data_Analysis.swc")</code>. Run the command to install the course.</p>
-<p><code>install_course(swc_path = )</code></p></li>
-<li><p>Start Swirl by typing the following command</p>
-<p><code>swirl()</code></p></li>
-<li><p>Start the lesson by selecting <code>3 Exploratory Data Analysis</code>.</p></li>
+<li><p>The course is available on <a href="https://github.com/tidymodels/learntidymodels">GitHub</a>.</p></li>
+<li><p>Open RStudio.</p></li>
+<li><p>Install <code>devtools</code> using the command below on the R Console</p>
+<p><code>install.packages("devtools")</code></p></li>
+<li><p>Install the github lesson using the command below on the R Console</p>
+<p><code>devtools::install_github("tidymodels/learntidymodels")</code></p></li>
 </ol>
 </section>
-<section id="working-through-the-lessons" class="level1">
-<h1>Working through the Lessons</h1>
-<ol type="1">
-<li><p>Please enter your <strong>full name</strong> together when asked what you want to be called by e.g.&nbsp;JaneDoe</p></li>
-<li><p>Complete all lessons:</p></li>
+<section id="run-the-tutorial-course-setup" class="level1">
+<h1>Run the Tutorial Course Setup</h1>
+<ol start="5" type="1">
+<li><p>Run the tutorial by running the command below on the R Console</p>
+<p><code>learnr::run_tutorial("pca_recipes", package = "learntidymodels")</code></p></li>
 </ol>
-<ul>
-<li>1: Hierarchical Clustering</li>
-<li>2: K Means Clustering</li>
-<li>3: Dimension Reduction</li>
-<li>4: Clustering Example</li>
-<li>5: CaseStudy</li>
-</ul>
 <div class="callout callout-style-default callout-important callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -243,53 +235,17 @@ Important
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li><p>You can take breaks <strong>between</strong> lessons (like shutting down Swirl and exiting RStudio), just use the same name when logging in for documenting purposes on the instructor’s end.</p></li>
-<li><p>If you start a lesson, please complete it fully before taking a break. If you stop RStudio in the middle of a lesson, your progress for that lesson may still be saved in the history for that package locally, but will not be saved or sent to us on the instructor’s end.</p></li>
-<li><p>If you do not get to the Google Form end of any lesson, please email one of the instructors as soon as possible.</p></li>
+<li><p>It is best to complete the tutorial in one setting because each step builds on the other.</p></li>
+<li><p>Since you submitting the final plot and not through google forms, you can comeback and do the tutorial across multiple settings.</p></li>
 </ul>
 </div>
 </div>
 </section>
 <section id="submission" class="level1">
 <h1>Submission</h1>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li><p>FYI: You need a google account to submit the assignment.</p></li>
-<li><p>Swirl will navigate you to the submission Google Form of each lesson. However, review the instructions below before submitting to make sure you are able to submit correctly.</p></li>
-<li><p>When submitting please make sure the box is not empty, if it is please email one of the instructors.</p></li>
-</ul>
-</div>
-</div>
-<ol type="1">
-<li><p>At the end of each lesson the following question will appear, <strong>enter the selection Yes</strong> to be redirected to your autofilled Google Form submission</p>
-<p><img src="../images/L02/index_L02/google_form_redirect.png" class="img-fluid" width="500"></p></li>
-<li><p>Once you’ve been redirected, your Swirl activity will be autofilled into the submission box, just hit the Submit button</p>
-<p><img src="../images/L02/index_L02/google_form_submission.png" class="img-fluid" width="500"></p></li>
+<ol start="6" type="1">
+<li>Submit a screenshot of the final UMAP plot to canvas for homework #3.</li>
 </ol>
-<div class="callout callout-style-default callout-important callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Important
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>If you do not get to the Google Form at the end of any lesson, please email one of the instructors as soon as possible.</li>
-</ul>
-</div>
-</div>
 
 
 </section>
