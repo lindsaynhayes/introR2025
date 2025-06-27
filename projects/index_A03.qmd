@@ -32,9 +32,17 @@ The lesson will cover using `tidymodels` for:
 
     `devtools::install_github("tidymodels/learntidymodels")`
 
+::: callout-tip
+
+- You will be asked to do a lot of updates. Not all of these are necessary. Try selecting no to the first one (option 3). Then it will ask you again with a shorter list then you can say All (option 1).
+
+- A lot of text with fly by during the installation of the packages, that is ok and expected.
+
+:::
+
 # Run the Tutorial Course Setup
 
-5.  Run the tutorial by running the command below on the R Console
+5.  Run the tutorial by running the command below on the R Console. You may be asked to install an additional package say "yes". 
 
     `learnr::run_tutorial("pca_recipes", package = "learntidymodels")`
 
