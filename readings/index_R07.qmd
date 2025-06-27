@@ -22,7 +22,7 @@ draft: true
 
 ### Pre-class Tasks
 
-GitHub is a web-based resource that allows you to save files online, track changes to files, and share project files easily for better collaboration. It has gained popularity in the scientific community as an easy way to document project scripts as researchers work through them, documenting changes or mistakes that may have been encountered. 
+GitHub is a web-based platform that allows you to save files online, track changes to files, and share project files easily for improved collaboration. It has gained popularity in the scientific community as a straightforward way to document project scripts as researchers work through them, identifying changes or mistakes that may have been encountered.
 
 Please create accounts with Github and Github Desktop before our next class time:
 

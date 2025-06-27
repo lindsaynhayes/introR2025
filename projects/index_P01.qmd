@@ -4,6 +4,7 @@ author:
   - name: Eleana Cabello
     affiliation: Department of Microbiology and Immunology, OUHS
 date: 2025-7-18
+draft: True
 --- 
 # Background
 
@@ -32,6 +33,12 @@ Below is table of important dates and what is needed by those days:
 </table>
 ```
 
+
+# Submission
+
+Project submission will be done through your Github website we have previously created. Have your project file (.qmd file) in your website directory. However you would like to accomplish this: copying file into the directory, creating a new file and copying text over into the new file, or creating new qmd file in the directory and redoing your project) it does not matter what method is used. What matters is you push the new file changes (your new project file) to your Github repository, where these changes will be changed to HTML files and displayed on your website. 
+
+Afterwards, fill the following form to submit your project: [Project Google Form Submission](https://docs.google.com/forms/d/e/1FAIpQLScslu7SP6AF9CqL6q2oCCJ7sUUdYsbYFx3eXNojCArgYRnKnQ/viewform?usp=header)
 
 ### Rubric
 ```{=html}

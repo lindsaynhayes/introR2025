@@ -4,6 +4,7 @@ author:
   - name: Eleana Cabello
 description: "Sharing your science!"
 date: 2025-07-18
+draft: True
 ---
 
 # Why use Quarto and Github?
@@ -136,13 +137,15 @@ jobs:
 ### Creating Home Webpage
 - qmd file
 - markdown language
-- Previewing changes 
+- Previewing changes using quarto preview
+
+### Programming in R, Bash, and Python
+- Adding code blocks
+- Freeze function
 
 ### Customizing A Quarto Website 
 - Adding listing pages
 - Adding tabs
 - Changing css or scss file 
 
-### Programming in R, Bash, and Python
-- Adding code blocks
-- Freeze function
+## adding packages

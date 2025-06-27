@@ -3,74 +3,125 @@ title: "Building a Quarto Website and Using GitHub"
 author: "Eleana Cabello"
 format: revealjs
 draft: true
+slide-number: true
 ---
 
-#### 1. Setup Repository Online 
+## Github {.scrollable}
 
-- Click on the New Repo button.
+- Online based platform that is used, along with git, for version control of software projects and makes collaboration easier between developers
 
-![](../figures/L07/slides/github_new_repo_button.png){width=200 fig-align=center}
+- Version control means tracking modifications, creations, and deletions of files of a project
 
-- Name your Repo and click the Create Repository button.
+- Connects your local development enviroment, or local repository, to online/cloud based storage, remote reposiroty, to keep track of modifications and make it easier to share with others
 
-![](../figures/L07/slides/github_repo_create.png){width=200 fig-align=center}
-
-- Once on the page below, click Set up in Desktop.
-
-![](../figures/L07/slides/github_repo_setup.png){width=200 fig-align=center}
 ---
 
-#### 2. Set Up Remote Repository Locally through Github Desktop 
+## Github Repositories and Remotes
 
-- Once in Github Desktop, pick what directory you would like to store the repository locally. This action will create a remote repository connecting it to the one you have online.
+![](../figures/L07/slides/github_flow.jpg){width=500 fig-align=center}
 
-![](../figures/github_desktop_setup.png){width=500 fig-align=center}
+---
 
-#### 3. Open RStudio and Set Repository as Working Directory 
+## Quarto
 
-- Navigate to your remote repository through the files window.
+- Open-source scientific and technical publishing system that allows for the use of narrative text with code
 
-![](../figures/rstudio_files_window.png){width=500 fig-align=center}
+- However not just limited to a singular file, allows for easy setup of other types of project like websites, presentations, dashboards, books, etc. 
 
-- Once in the remote repository, click the gears icon and Set As Working Directory.
+- The ability to change formats easily and incoporate other languages than only R removes previous limitations and allows for better communication of projects and workflows 
+
+---
+
+## Project Benefits of using Github and Quarto
+
+- Easier Submission - Everything is together and well documented (hopefully🤞) to be submitted for publication
+
+- Reproducibility - allows others to easily have access to how an analysis was done and be able to replicate it
+
+- Branding - Having an online resume/cv of all your projects and those you have collaborated on with others
+
+---
+
+## 1 - Setup Repository Online {.scrollable}
+
+Click on the New Repo button.
+
+![](../figures/L07/slides/github_new_repo_button.png){width=500 fig-align=center}
+
+Name your Repo and click the Create Repository button.
+
+![](../figures/L07/slides/github_repo_create.png){width=500 fig-align=center}
+
+Once on the page below, click Set up in Desktop.
+
+![](../figures/L07/slides/github_repo_setup.png){width=500 fig-align=center}
+
+---
+
+## 2 - Set Up Remote Repository Locally through Github Desktop {.scrollable}
+
+Once in Github Desktop, pick what directory you would like to store the repository locally. This action will create a remote repository connecting it to the one you have online.
+
+![](../figures/L07/slides/github_desktop_setup.png){width=500 fig-align=center}
+---
+
+## 3 - Open RStudio and Set Repository as Working Directory {.scrollable}
+
+Navigate to your remote repository through the files window.
+
+![](../figures/L07/slides/rstudio_files_window.png){width=500 fig-align=center}
+
+Once in the remote repository, click the gears icon and Set As Working Directory.
 
 ![](../figures/rstudio_set_wd.png){width=500 fig-align=center}
 
-#### 4. Setting Up Quarto Website Project in Repository
-  - Type the following command in the terminal to create an RProject and setup a quarto website, a new window of RStudio will appear:
+---
+
+## 4 - Setting Up Quarto Website Project in Repository {.scrollable}
+Type the following command in the terminal to create an RProject and setup a quarto website, a new window of RStudio will appear:
   
 ```{.bash}
   quarto create project website
 ```
   
-  - On the new Rstudio window refresh and check out the new files by refreshing the files window.
+On the new Rstudio window refresh and check out the new files by refreshing the files window.
 
-#### 5. Commiting and Pushing to Github Repository
+---
 
-  - In Github desktop type a commit message and commit to main.
+## 5 - Commiting and Pushing to Github Repository {.scrollable}
+
+In Github desktop type a commit message and commit to main.
   
 ![](../figures/github_desktop_commit.png){width=500 fig-align=center}
 
-- After commiting your changes and message, hit publish to origin.
+After commiting your changes and message, hit publish to origin.
 
 ![](../figures/github_desktop_publish.png){width=500 fig-align=center}
 
-#### 6. Setting Up to Publish to Github Pages using a gh-pages branch
-  - In Github website refresh and view all branches in the repository by following the steps below:
+---
+
+## 6 - Setting Up to Publish to Github Pages using a gh-pages branch {.scrollable}
+In Github website refresh and view all branches in the repository by following the steps below:
   
 ![](../figures/branch_button.png){width=500 fig-align=center}
 
 ![](../figures/branch_new_button.png){width=500 fig-align=center}
 
-- Make sure to name it gh-pages, it has to be named this in order for your website to work. 
+Make sure to name it gh-pages, it has to be named this in order for your website to work. 
 
 ![](../figures/branch_create_button.png){width=500 fig-align=center}
 
-#### 7. Setting Up Github Pages and Workflows Locally 
-  - Back in R studio do the following:
-    - Create text file named ".nojekyll", it does not need to contain anything.
-    - Create ".github" folder, then a folder named workflows inside .github, then a text file named "publish.yml"
-    - Copy and paste below into the publish.yml:
+---
+
+## 7 - Setting Up Github Pages and Workflows Locally {.scrollable}
+
+Back in R studio do the following:
+    
+  - Create text file named ".nojekyll", it does not need to contain anything.
+    
+  - Create ".github" folder, then a folder named workflows inside .github, then a text file named "publish.yml"
+    
+  - Copy and paste below into the publish.yml:
   
 ```{.bash filename="publish.yml"}
 on:
@@ -100,19 +151,23 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 ```
 
-#### 8. Commit and Push Changes to Host Website on Github Pages
+---
 
-#### 9. Check Settings and Website
-  - Navigate to settings of your repository.
+## 8 - Commit and Push Changes to Host Website on Github Pages {.center}
+
+---
+
+## 9 - Check Settings and Website {.scrollable}
+Navigate to settings of your repository.
   
 ![](../figures/repo_settings.png){width=500 fig-align=center}
 
-- Then navigate to pages.
+Then navigate to pages.
 
 ![](../figures/repo_pages.png){width=500 fig-align=center}
 
-- In pages make sure that under Build and Deployment Source is Deploy from Branch. Also make sure that under Branch that gh-pages is selected from /(root) like below:
+In pages make sure that under Build and Deployment Source is Deploy from Branch. Also make sure that under Branch that gh-pages is selected from /(root) like below:
 
 ![](../figures/repo_pages_setup.png){width=500 fig-align=center}
-
-#### 10. Visit Your Website!
+---
+## 10 - Visit Your Website! {.center}
