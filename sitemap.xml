@@ -2,118 +2,122 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://lindsaynhayes.github.io/introR2025/syllabus.html</loc>
-    <lastmod>2025-06-30T18:36:29.259Z</lastmod>
+    <lastmod>2025-06-30T22:45:59.731Z</lastmod>
   </url>
   <url>
     <loc>https://lindsaynhayes.github.io/introR2025/readings/index_R06.html</loc>
-    <lastmod>2025-06-30T18:36:29.252Z</lastmod>
+    <lastmod>2025-06-30T22:45:59.725Z</lastmod>
   </url>
   <url>
     <loc>https://lindsaynhayes.github.io/introR2025/readings/index_R04.html</loc>
-    <lastmod>2025-06-30T18:36:29.252Z</lastmod>
+    <lastmod>2025-06-30T22:45:59.725Z</lastmod>
   </url>
   <url>
     <loc>https://lindsaynhayes.github.io/introR2025/readings/index_R02.html</loc>
-    <lastmod>2025-06-30T18:36:29.252Z</lastmod>
+    <lastmod>2025-06-30T22:45:59.725Z</lastmod>
   </url>
   <url>
     <loc>https://lindsaynhayes.github.io/introR2025/readings.html</loc>
-    <lastmod>2025-06-30T18:36:29.186Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lindsaynhayes.github.io/introR2025/projects/index_A02.html</loc>
-    <lastmod>2025-06-30T18:36:29.186Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lindsaynhayes.github.io/introR2025/projects.html</loc>
-    <lastmod>2025-06-30T18:36:29.186Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lindsaynhayes.github.io/introR2025/lectures/index_L05.html</loc>
-    <lastmod>2025-06-30T18:36:29.186Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lindsaynhayes.github.io/introR2025/lectures/index_L03.html</loc>
-    <lastmod>2025-06-30T18:36:29.186Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lindsaynhayes.github.io/introR2025/lectures/index_L01.html</loc>
-    <lastmod>2025-06-30T18:36:29.186Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lindsaynhayes.github.io/introR2025/index.html</loc>
-    <lastmod>2025-06-30T18:36:29.094Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lindsaynhayes.github.io/introR2025/activities/classwork05/PCA_Penguins.html</loc>
-    <lastmod>2025-06-30T18:36:29.069Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lindsaynhayes.github.io/introR2025/activities/classwork03/classwork_L03.html</loc>
-    <lastmod>2025-06-30T18:36:29.069Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lindsaynhayes.github.io/introR2025/activities/classwork01/palmerpenguins_intro.html</loc>
-    <lastmod>2025-06-30T18:36:29.060Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lindsaynhayes.github.io/introR2025/activities/a/classwork_L03_answers.html</loc>
-    <lastmod>2025-06-30T18:36:29.050Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lindsaynhayes.github.io/introR2025/activities.html</loc>
-    <lastmod>2025-06-30T18:36:29.050Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lindsaynhayes.github.io/introR2025/activities/a/classwork_L02_answers.html</loc>
-    <lastmod>2025-06-30T18:36:29.050Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lindsaynhayes.github.io/introR2025/activities/classwork02/classwork_L02.html</loc>
-    <lastmod>2025-06-30T18:36:29.069Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lindsaynhayes.github.io/introR2025/activities/classwork04/classwork_L04.html</loc>
-    <lastmod>2025-06-30T18:36:29.069Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lindsaynhayes.github.io/introR2025/activities/classwork06/Pred_Penguins.html</loc>
-    <lastmod>2025-06-30T18:36:29.070Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lindsaynhayes.github.io/introR2025/lectures.html</loc>
-    <lastmod>2025-06-30T18:36:29.094Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lindsaynhayes.github.io/introR2025/lectures/index_L02.html</loc>
-    <lastmod>2025-06-30T18:36:29.186Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lindsaynhayes.github.io/introR2025/lectures/index_L04.html</loc>
-    <lastmod>2025-06-30T18:36:29.186Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lindsaynhayes.github.io/introR2025/lectures/index_L06.html</loc>
-    <lastmod>2025-06-30T18:36:29.186Z</lastmod>
-  </url>
-  <url>
-    <loc>https://lindsaynhayes.github.io/introR2025/projects/index_A01.html</loc>
-    <lastmod>2025-06-30T18:36:29.186Z</lastmod>
+    <lastmod>2025-06-30T22:45:59.662Z</lastmod>
   </url>
   <url>
     <loc>https://lindsaynhayes.github.io/introR2025/projects/index_A03.html</loc>
-    <lastmod>2025-06-30T18:36:29.186Z</lastmod>
+    <lastmod>2025-06-30T22:45:59.662Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lindsaynhayes.github.io/introR2025/projects/index_A01.html</loc>
+    <lastmod>2025-06-30T22:45:59.662Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lindsaynhayes.github.io/introR2025/lectures/index_L06.html</loc>
+    <lastmod>2025-06-30T22:45:59.662Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lindsaynhayes.github.io/introR2025/lectures/index_L04.html</loc>
+    <lastmod>2025-06-30T22:45:59.662Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lindsaynhayes.github.io/introR2025/lectures/index_L02.html</loc>
+    <lastmod>2025-06-30T22:45:59.661Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lindsaynhayes.github.io/introR2025/lectures.html</loc>
+    <lastmod>2025-06-30T22:45:59.579Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lindsaynhayes.github.io/introR2025/activities/classwork06/Pred_Penguins.html</loc>
+    <lastmod>2025-06-30T22:45:59.559Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lindsaynhayes.github.io/introR2025/activities/classwork04/classwork_L04.html</loc>
+    <lastmod>2025-06-30T22:45:59.559Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lindsaynhayes.github.io/introR2025/activities/classwork02/classwork_L02.html</loc>
+    <lastmod>2025-06-30T22:45:59.558Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lindsaynhayes.github.io/introR2025/activities/a/classwork_L02_answers.html</loc>
+    <lastmod>2025-06-30T22:45:59.541Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lindsaynhayes.github.io/introR2025/activities.html</loc>
+    <lastmod>2025-06-30T22:45:59.541Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lindsaynhayes.github.io/introR2025/activities/a/classwork_L03_answers.html</loc>
+    <lastmod>2025-06-30T22:45:59.541Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lindsaynhayes.github.io/introR2025/activities/classwork01/palmerpenguins_intro.html</loc>
+    <lastmod>2025-06-30T22:45:59.550Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lindsaynhayes.github.io/introR2025/activities/classwork03/classwork_L03.html</loc>
+    <lastmod>2025-06-30T22:45:59.558Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lindsaynhayes.github.io/introR2025/activities/classwork05/PCA_Penguins.html</loc>
+    <lastmod>2025-06-30T22:45:59.559Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lindsaynhayes.github.io/introR2025/index.html</loc>
+    <lastmod>2025-06-30T22:45:59.579Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lindsaynhayes.github.io/introR2025/lectures/index_L01.html</loc>
+    <lastmod>2025-06-30T22:45:59.661Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lindsaynhayes.github.io/introR2025/lectures/index_L03.html</loc>
+    <lastmod>2025-06-30T22:45:59.662Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lindsaynhayes.github.io/introR2025/lectures/index_L05.html</loc>
+    <lastmod>2025-06-30T22:45:59.662Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lindsaynhayes.github.io/introR2025/projects.html</loc>
+    <lastmod>2025-06-30T22:45:59.662Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lindsaynhayes.github.io/introR2025/projects/index_A02.html</loc>
+    <lastmod>2025-06-30T22:45:59.662Z</lastmod>
+  </url>
+  <url>
+    <loc>https://lindsaynhayes.github.io/introR2025/projects/index_P01.html</loc>
+    <lastmod>2025-06-30T22:45:59.662Z</lastmod>
   </url>
   <url>
     <loc>https://lindsaynhayes.github.io/introR2025/readings/index_R01.html</loc>
-    <lastmod>2025-06-30T18:36:29.252Z</lastmod>
+    <lastmod>2025-06-30T22:45:59.724Z</lastmod>
   </url>
   <url>
     <loc>https://lindsaynhayes.github.io/introR2025/readings/index_R03.html</loc>
-    <lastmod>2025-06-30T18:36:29.252Z</lastmod>
+    <lastmod>2025-06-30T22:45:59.725Z</lastmod>
   </url>
   <url>
     <loc>https://lindsaynhayes.github.io/introR2025/readings/index_R05.html</loc>
-    <lastmod>2025-06-30T18:36:29.252Z</lastmod>
+    <lastmod>2025-06-30T22:45:59.725Z</lastmod>
   </url>
 </urlset>
