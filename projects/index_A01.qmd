@@ -32,9 +32,9 @@ In the Swirl lessons for this week, you will learn the following:
 
     `library("swirl")`
 
-2.  **Navigate** to this [link](https://github.com/lindsaynhayes/introR2025/tree/main/swirl). **Download** the Swirl lesson file `1_R_Programming_Mod.swc`. **Move** it into your working directory for the class.
+2.  **Navigate** to this [link](https://github.com/lindsaynhayes/introR2025/tree/main/swirl). **Download** the Swirl lesson file `1_R_Programming.swc`. **Move** it into your working directory for the class.
 
-3.  Once you have the file in your working directory, in the console of RStudio type the command below and after the `swc_path =` type `"` and then hit `tab` to interactively choose the `1_R_Programming_Mod.swc` file you just downloaded from your working directory. The command will look something like `install_course(swc_path = "1_R_Programming_Mod.swc")`. Run the command to install the course.
+3.  Once you have the file in your working directory, in the console of RStudio type the command below and after the `swc_path =` type `"` and then hit `tab` to interactively choose the `1_R_Programming.swc` file you just downloaded from your working directory. The command will look something like `install_course(swc_path = "1_R_Programming.swc")`. Run the command to install the course.
 
     `install_course(swc_path = )`
 
