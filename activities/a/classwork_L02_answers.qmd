@@ -88,7 +88,7 @@ starwars$name[which(homeworlds == "Naboo")]
 
 download the taylorswift.csv [here](https://github.com/lindsaynhayes/introR2025/blob/main/activities/classwork02/taylorswift.csv)
 
-```{r}
+```{.r}
 
 # import data frame into R. What do you need to know? 
 # 1) Where are you? What is your working directory
