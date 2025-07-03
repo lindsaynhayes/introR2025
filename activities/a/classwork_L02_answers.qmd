@@ -95,7 +95,7 @@ download the taylorswift.csv [here](https://github.com/lindsaynhayes/introR2025/
 # 2) Where is the file you're wanting to import?
 # 3) What is the path between the file and your working directory?
 
-taylor <- read_csv(file = "activities/a/taylorswift.csv")
+taylor <- read_csv(file = "../classwork02/taylorswift.csv")
 
 # what is the "class" of the object taylor?
 class(taylor)
