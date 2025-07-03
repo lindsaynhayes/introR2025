@@ -38,8 +38,6 @@ library(tidyverse)
 
 # activity: assign the variable my_age as the current year minus your year of birth. 
 
-
-
 ```
 
 ### 2. Create R objects
@@ -79,18 +77,22 @@ table(over100)
 # How many characters live on Naboo?
 
 
-
 # Who lives on Naboo? (hint use the "names" variable in the starwars data and the "which" function)
 
 ```
 
 ### B. Import and explore the dataframe called "taylor" from the csv "taylorswift.csv"
 
+download the taylorswift.csv [here](https://github.com/lindsaynhayes/introR2025/blob/main/activities/classwork02/taylorswift.csv)
+
 ```{r}
 #| error: true
 
-library(taylor)
-taylor <- taylor_all_songs
+# import data frame into R. What do you need to know? 
+# 1) Where are you? What is your working directory
+# 2) Where is the file you're wanting to import?
+# 3) What is the path between the file and your working directory?
+
 
 # what is the "class" of the object taylor?
 
@@ -109,12 +111,11 @@ taylor <- taylor_all_songs
 
 ```{r}
 #| error: true
+# library(taylor) #we may need, maybe not
 
 # pick what features of the data you want to explore
 
-
 # create a matrix of those features
-
 
 # evaluate the correlation matrix
 mat |> GGally::ggpairs()
@@ -129,7 +130,6 @@ mat |> GGally::ggpairs()
 #ggplot(taylor, aes(x=var1, y=var2)) + geom_point(size=3)
 #ggplot(taylor, aes(x=var3, y=var4)) + geom_point(size=3)
 
-#library(taylor)
 #ggplot(taylor, aes(x=loudness, y=energy, color = album_name)) + geom_point(size=3) + scale_color_albums() + facet_wrap(~album_name)
 
 #ggplot(taylor, aes(x=acousticness, y=energy, color = album_name)) + geom_point(size=3) + scale_color_albums() + facet_wrap(~album_name)

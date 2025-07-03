@@ -37,9 +37,6 @@ library(tidyverse)
 50/250 * 100
 
 # activity: assign the variable my_age as the current year minus your year of birth. 
-
-
-
 ```
 
 ### 2. Create R objects
@@ -98,7 +95,7 @@ download the taylorswift.csv [here](https://github.com/lindsaynhayes/introR2025/
 # 2) Where is the file you're wanting to import?
 # 3) What is the path between the file and your working directory?
 
-taylor <- read_csv(file = "../classwork02/taylorswift.csv")
+taylor <- read_csv(file = "activities/a/taylorswift.csv")
 
 # what is the "class" of the object taylor?
 class(taylor)
@@ -117,7 +114,7 @@ taylor |> count(album_name)
 ### C. Which numeric song features are correlated with one another? Hint create a correlation matrix.
 
 ```{r}
-library(taylor) # needed for scale_color_albums
+# library(taylor) #we may need, maybe not
 # pick what features of the data you want to explore
 colnames(taylor)
 
