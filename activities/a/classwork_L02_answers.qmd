@@ -114,7 +114,7 @@ taylor |> count(album_name)
 
 ### C. Which numeric song features are correlated with one another? Hint create a correlation matrix.
 
-```{r}
+```{.r}
 #library(taylor) #we may need, maybe not
 #taylor <- taylor_all_songs
 
