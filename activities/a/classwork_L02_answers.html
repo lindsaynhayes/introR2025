@@ -186,7 +186,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#create-r-objects" id="toc-create-r-objects" class="nav-link" data-scroll-target="#create-r-objects">2. Create R objects</a></li>
   <li><a href="#your-turn" id="toc-your-turn" class="nav-link" data-scroll-target="#your-turn">Your Turn</a></li>
   <li><a href="#a.-create-a-vector-of-all-the-homeworlds-in-starwars-using-the-starwars-data." id="toc-a.-create-a-vector-of-all-the-homeworlds-in-starwars-using-the-starwars-data." class="nav-link" data-scroll-target="#a.-create-a-vector-of-all-the-homeworlds-in-starwars-using-the-starwars-data.">A. Create a vector of all the <code>homeworlds</code> in starwars using the <code>starwars</code> data.</a></li>
-  <li><a href="#b.-import-and-explore-the-dataframe-called-taylor-from-the-csv-taylorswift.csv" id="toc-b.-import-and-explore-the-dataframe-called-taylor-from-the-csv-taylorswift.csv" class="nav-link" data-scroll-target="#b.-import-and-explore-the-dataframe-called-taylor-from-the-csv-taylorswift.csv">B. Import and explore the dataframe called “taylor” from the csv “taylorswift.csv”</a></li>
+  <li><a href="#b.-import-the-taylor-package-and-explore-the-taylor_album_songs-dataframe" id="toc-b.-import-the-taylor-package-and-explore-the-taylor_album_songs-dataframe" class="nav-link" data-scroll-target="#b.-import-the-taylor-package-and-explore-the-taylor_album_songs-dataframe">B. Import the <code>taylor</code> package and explore the <code>taylor_album_songs</code> dataframe</a></li>
   <li><a href="#c.-which-numeric-song-features-are-correlated-with-one-another-hint-create-a-correlation-matrix." id="toc-c.-which-numeric-song-features-are-correlated-with-one-another-hint-create-a-correlation-matrix." class="nav-link" data-scroll-target="#c.-which-numeric-song-features-are-correlated-with-one-another-hint-create-a-correlation-matrix.">C. Which numeric song features are correlated with one another? Hint create a correlation matrix.</a></li>
   </ul></li>
   </ul>
@@ -369,52 +369,716 @@ FALSE  TRUE
 </div>
 </div>
 </section>
-<section id="b.-import-and-explore-the-dataframe-called-taylor-from-the-csv-taylorswift.csv" class="level3">
-<h3 class="anchored" data-anchor-id="b.-import-and-explore-the-dataframe-called-taylor-from-the-csv-taylorswift.csv">B. Import and explore the dataframe called “taylor” from the csv “taylorswift.csv”</h3>
-<p>download the taylorswift.csv <a href="https://github.com/lindsaynhayes/introR2025/blob/main/activities/classwork02/taylorswift.csv">here</a></p>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="co"># import data frame into R. What do you need to know? </span></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 1) Where are you? What is your working directory</span></span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 2) Where is the file you're wanting to import?</span></span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 3) What is the path between the file and your working directory?</span></span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>taylor <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="at">file =</span> <span class="st">"activities/a/taylorswift.csv"</span>) <span class="co">#personal dir</span></span>
-<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="co">#taylor &lt;- read_csv(file = "../classwork02/taylorswift.csv") #github dir</span></span>
-<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a><span class="co"># what is the "class" of the object taylor?</span></span>
-<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(taylor)</span>
-<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a><span class="co"># what types of data are in the object taylor?</span></span>
-<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(taylor)</span>
-<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a><span class="fu">as.data.frame</span>(<span class="fu">map_chr</span>(taylor, class))</span>
-<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a><span class="co"># change the "key_mode" from class "character" to class "factor"</span></span>
-<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a>taylor<span class="sc">$</span>key_mode <span class="ot">&lt;-</span> <span class="fu">factor</span>(taylor<span class="sc">$</span>key_mode)</span>
-<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a><span class="co"># How many albums are in the data set &amp; how many songs on each album?</span></span>
-<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a>taylor <span class="sc">|&gt;</span> <span class="fu">count</span>(album_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<section id="b.-import-the-taylor-package-and-explore-the-taylor_album_songs-dataframe" class="level3">
+<h3 class="anchored" data-anchor-id="b.-import-the-taylor-package-and-explore-the-taylor_album_songs-dataframe">B. Import the <code>taylor</code> package and explore the <code>taylor_album_songs</code> dataframe</h3>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Try loading in the taylor package and viewing the taylor_album_songs dataframe</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(taylor)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>taylor_album_songs</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 240 × 29
+   album_name   ep    album_release track_number track_name     artist featuring
+   &lt;chr&gt;        &lt;lgl&gt; &lt;date&gt;               &lt;int&gt; &lt;chr&gt;          &lt;chr&gt;  &lt;chr&gt;    
+ 1 Taylor Swift FALSE 2006-10-24               1 Tim McGraw     Taylo… &lt;NA&gt;     
+ 2 Taylor Swift FALSE 2006-10-24               2 Picture To Bu… Taylo… &lt;NA&gt;     
+ 3 Taylor Swift FALSE 2006-10-24               3 Teardrops On … Taylo… &lt;NA&gt;     
+ 4 Taylor Swift FALSE 2006-10-24               4 A Place In Th… Taylo… &lt;NA&gt;     
+ 5 Taylor Swift FALSE 2006-10-24               5 Cold As You    Taylo… &lt;NA&gt;     
+ 6 Taylor Swift FALSE 2006-10-24               6 The Outside    Taylo… &lt;NA&gt;     
+ 7 Taylor Swift FALSE 2006-10-24               7 Tied Together… Taylo… &lt;NA&gt;     
+ 8 Taylor Swift FALSE 2006-10-24               8 Stay Beautiful Taylo… &lt;NA&gt;     
+ 9 Taylor Swift FALSE 2006-10-24               9 Should've Sai… Taylo… &lt;NA&gt;     
+10 Taylor Swift FALSE 2006-10-24              10 Mary's Song (… Taylo… &lt;NA&gt;     
+# ℹ 230 more rows
+# ℹ 22 more variables: bonus_track &lt;lgl&gt;, promotional_release &lt;date&gt;,
+#   single_release &lt;date&gt;, track_release &lt;date&gt;, danceability &lt;dbl&gt;,
+#   energy &lt;dbl&gt;, key &lt;int&gt;, loudness &lt;dbl&gt;, mode &lt;int&gt;, speechiness &lt;dbl&gt;,
+#   acousticness &lt;dbl&gt;, instrumentalness &lt;dbl&gt;, liveness &lt;dbl&gt;, valence &lt;dbl&gt;,
+#   tempo &lt;dbl&gt;, time_signature &lt;int&gt;, duration_ms &lt;int&gt;, explicit &lt;lgl&gt;,
+#   key_name &lt;chr&gt;, mode_name &lt;chr&gt;, key_mode &lt;chr&gt;, lyrics &lt;list&gt;</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="co"># what is the "class" of the object taylor_album_songs?</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a><span class="fu">class</span>(taylor_album_songs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] "tbl_df"     "tbl"        "data.frame"</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># what types of data are in the object taylor_album_songs?</span></span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="fu">glimpse</span>(taylor_album_songs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 240
+Columns: 29
+$ album_name          &lt;chr&gt; "Taylor Swift", "Taylor Swift", "Taylor Swift", "T…
+$ ep                  &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, F…
+$ album_release       &lt;date&gt; 2006-10-24, 2006-10-24, 2006-10-24, 2006-10-24, 2…
+$ track_number        &lt;int&gt; 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15,…
+$ track_name          &lt;chr&gt; "Tim McGraw", "Picture To Burn", "Teardrops On My …
+$ artist              &lt;chr&gt; "Taylor Swift", "Taylor Swift", "Taylor Swift", "T…
+$ featuring           &lt;chr&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA…
+$ bonus_track         &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, F…
+$ promotional_release &lt;date&gt; NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, NA, N…
+$ single_release      &lt;date&gt; 2006-06-19, 2008-02-03, 2007-02-19, NA, NA, NA, N…
+$ track_release       &lt;date&gt; 2006-06-19, 2006-10-24, 2006-10-24, 2006-10-24, 2…
+$ danceability        &lt;dbl&gt; 0.580, 0.658, 0.621, 0.576, 0.418, 0.589, 0.479, 0…
+$ energy              &lt;dbl&gt; 0.491, 0.877, 0.417, 0.777, 0.482, 0.805, 0.578, 0…
+$ key                 &lt;int&gt; 0, 7, 10, 9, 5, 5, 2, 8, 4, 2, 2, 8, 7, 4, 10, 5, …
+$ loudness            &lt;dbl&gt; -6.462, -2.098, -6.941, -2.881, -5.769, -4.055, -4…
+$ mode                &lt;int&gt; 1, 1, 1, 1, 1, 1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 1,…
+$ speechiness         &lt;dbl&gt; 0.0251, 0.0323, 0.0231, 0.0324, 0.0266, 0.0293, 0.…
+$ acousticness        &lt;dbl&gt; 0.57500, 0.17300, 0.28800, 0.05100, 0.21700, 0.004…
+$ instrumentalness    &lt;dbl&gt; 0.00e+00, 0.00e+00, 0.00e+00, 0.00e+00, 0.00e+00, …
+$ liveness            &lt;dbl&gt; 0.1210, 0.0962, 0.1190, 0.3200, 0.1230, 0.2400, 0.…
+$ valence             &lt;dbl&gt; 0.425, 0.821, 0.289, 0.428, 0.261, 0.591, 0.192, 0…
+$ tempo               &lt;dbl&gt; 76.009, 105.586, 99.953, 115.028, 175.558, 112.982…
+$ time_signature      &lt;int&gt; 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4,…
+$ duration_ms         &lt;int&gt; 232107, 173067, 203040, 199200, 239013, 207107, 24…
+$ explicit            &lt;lgl&gt; FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, F…
+$ key_name            &lt;chr&gt; "C", "G", "A#", "A", "F", "F", "D", "G#", "E", "D"…
+$ mode_name           &lt;chr&gt; "major", "major", "major", "major", "major", "majo…
+$ key_mode            &lt;chr&gt; "C major", "G major", "A# major", "A major", "F ma…
+$ lyrics              &lt;list&gt; [&lt;tbl_df[55 x 4]&gt;], [&lt;tbl_df[33 x 4]&gt;], [&lt;tbl_df[…</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">as.data.frame</span>(<span class="fu">map_chr</span>(taylor_album_songs, class))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>                    map_chr(taylor_album_songs, class)
+album_name                                   character
+ep                                             logical
+album_release                                     Date
+track_number                                   integer
+track_name                                   character
+artist                                       character
+featuring                                    character
+bonus_track                                    logical
+promotional_release                               Date
+single_release                                    Date
+track_release                                     Date
+danceability                                   numeric
+energy                                         numeric
+key                                            integer
+loudness                                       numeric
+mode                                           integer
+speechiness                                    numeric
+acousticness                                   numeric
+instrumentalness                               numeric
+liveness                                       numeric
+valence                                        numeric
+tempo                                          numeric
+time_signature                                 integer
+duration_ms                                    integer
+explicit                                       logical
+key_name                                     character
+mode_name                                    character
+key_mode                                     character
+lyrics                                            list</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="co"># change the "key_mode" from class "character" to class "factor"</span></span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>taylor_album_songs<span class="sc">$</span>key_mode <span class="ot">&lt;-</span> <span class="fu">factor</span>(taylor_album_songs<span class="sc">$</span>key_mode)</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a><span class="co"># How many albums are in the data set &amp; how many songs on each album?</span></span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>taylor_album_songs <span class="sc">|&gt;</span> <span class="fu">count</span>(album_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 11 × 2
+   album_name                        n
+   &lt;chr&gt;                         &lt;int&gt;
+ 1 1989 (Taylor's Version)          23
+ 2 Fearless (Taylor's Version)      26
+ 3 Lover                            18
+ 4 Midnights                        26
+ 5 Red (Taylor's Version)           30
+ 6 Speak Now (Taylor's Version)     22
+ 7 THE TORTURED POETS DEPARTMENT    31
+ 8 Taylor Swift                     15
+ 9 evermore                         17
+10 folklore                         17
+11 reputation                       15</code></pre>
+</div>
+</div>
 </section>
 <section id="c.-which-numeric-song-features-are-correlated-with-one-another-hint-create-a-correlation-matrix." class="level3">
 <h3 class="anchored" data-anchor-id="c.-which-numeric-song-features-are-correlated-with-one-another-hint-create-a-correlation-matrix.">C. Which numeric song features are correlated with one another? Hint create a correlation matrix.</h3>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="co">#library(taylor) #we may need, maybe not</span></span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="co">#taylor &lt;- taylor_all_songs</span></span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-4"><a href="#cb31-4" aria-hidden="true" tabindex="-1"></a><span class="co"># pick what features of the data you want to explore</span></span>
-<span id="cb31-5"><a href="#cb31-5" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(taylor)</span>
-<span id="cb31-6"><a href="#cb31-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-7"><a href="#cb31-7" aria-hidden="true" tabindex="-1"></a><span class="co"># create a matrix of those features</span></span>
-<span id="cb31-8"><a href="#cb31-8" aria-hidden="true" tabindex="-1"></a>mat <span class="ot">&lt;-</span> taylor[,<span class="fu">c</span>(<span class="dv">2</span>,<span class="dv">5</span>,<span class="dv">6</span>,<span class="dv">8</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">12</span>,<span class="dv">13</span>,<span class="dv">14</span>,<span class="dv">15</span>)]</span>
-<span id="cb31-9"><a href="#cb31-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-10"><a href="#cb31-10" aria-hidden="true" tabindex="-1"></a><span class="co"># evaluate the correlation matrix</span></span>
-<span id="cb31-11"><a href="#cb31-11" aria-hidden="true" tabindex="-1"></a>mat <span class="sc">|&gt;</span> GGally<span class="sc">::</span><span class="fu">ggpairs</span>()</span>
-<span id="cb31-12"><a href="#cb31-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-13"><a href="#cb31-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Which values show a positive correlation? Which values show a negative correlation?</span></span>
-<span id="cb31-14"><a href="#cb31-14" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(taylor, <span class="fu">aes</span>(<span class="at">x=</span>loudness, <span class="at">y=</span>energy)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">size=</span><span class="dv">3</span>)</span>
-<span id="cb31-15"><a href="#cb31-15" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(taylor, <span class="fu">aes</span>(<span class="at">x=</span>acousticness, <span class="at">y=</span>energy)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">size=</span><span class="dv">3</span>)</span>
-<span id="cb31-16"><a href="#cb31-16" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-17"><a href="#cb31-17" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(taylor, <span class="fu">aes</span>(<span class="at">x=</span>loudness, <span class="at">y=</span>energy, <span class="at">color =</span> album_name)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">size=</span><span class="dv">3</span>) <span class="sc">+</span> <span class="fu">scale_color_albums</span>() <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>album_name)</span>
-<span id="cb31-18"><a href="#cb31-18" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb31-19"><a href="#cb31-19" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(taylor, <span class="fu">aes</span>(<span class="at">x=</span>acousticness, <span class="at">y=</span>energy, <span class="at">color =</span> album_name)) <span class="sc">+</span> <span class="fu">geom_point</span>(<span class="at">size=</span><span class="dv">3</span>) <span class="sc">+</span> <span class="fu">scale_color_albums</span>() <span class="sc">+</span> <span class="fu">facet_wrap</span>(<span class="sc">~</span>album_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb40"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># pick what features of the data you want to explore</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(taylor_album_songs)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "album_name"          "ep"                  "album_release"      
+ [4] "track_number"        "track_name"          "artist"             
+ [7] "featuring"           "bonus_track"         "promotional_release"
+[10] "single_release"      "track_release"       "danceability"       
+[13] "energy"              "key"                 "loudness"           
+[16] "mode"                "speechiness"         "acousticness"       
+[19] "instrumentalness"    "liveness"            "valence"            
+[22] "tempo"               "time_signature"      "duration_ms"        
+[25] "explicit"            "key_name"            "mode_name"          
+[28] "key_mode"            "lyrics"             </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb42"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="co"># create a matrix of those features</span></span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>mat <span class="ot">&lt;-</span> taylor_album_songs[,<span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">10</span>,<span class="dv">11</span>,<span class="dv">12</span>,<span class="dv">13</span>,<span class="dv">14</span>,<span class="dv">15</span>,<span class="dv">17</span>,<span class="dv">18</span>,<span class="dv">19</span>,<span class="dv">20</span>,<span class="dv">21</span>,<span class="dv">22</span>)]</span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(mat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] "album_name"       "single_release"   "track_release"    "danceability"    
+ [5] "energy"           "key"              "loudness"         "speechiness"     
+ [9] "acousticness"     "instrumentalness" "liveness"         "valence"         
+[13] "tempo"           </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="co"># evaluate the correlation matrix</span></span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>mat <span class="sc">|&gt;</span> GGally<span class="sc">::</span><span class="fu">ggpairs</span>()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Registered S3 method overwritten by 'GGally':
+  method from   
+  +.gg   ggplot2</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 210 rows containing non-finite outside the scale range
+(`stat_boxplot()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing non-finite outside the scale range
+(`stat_boxplot()`).
+Removed 3 rows containing non-finite outside the scale range
+(`stat_boxplot()`).
+Removed 3 rows containing non-finite outside the scale range
+(`stat_boxplot()`).
+Removed 3 rows containing non-finite outside the scale range
+(`stat_boxplot()`).
+Removed 3 rows containing non-finite outside the scale range
+(`stat_boxplot()`).
+Removed 3 rows containing non-finite outside the scale range
+(`stat_boxplot()`).
+Removed 3 rows containing non-finite outside the scale range
+(`stat_boxplot()`).
+Removed 3 rows containing non-finite outside the scale range
+(`stat_boxplot()`).
+Removed 3 rows containing non-finite outside the scale range
+(`stat_boxplot()`).
+Removed 3 rows containing non-finite outside the scale range
+(`stat_boxplot()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 210 rows containing non-finite outside the scale range
+(`stat_bin()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 210 rows containing non-finite outside the scale range
+(`stat_density()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 210 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 210 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 210 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 210 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 210 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 210 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 210 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 210 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 210 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 210 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 210 rows containing missing values</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 210 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing non-finite outside the scale range
+(`stat_bin()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 210 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing non-finite outside the scale range
+(`stat_density()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing non-finite outside the scale range
+(`stat_bin()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 210 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing non-finite outside the scale range
+(`stat_density()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing non-finite outside the scale range
+(`stat_bin()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 210 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing non-finite outside the scale range
+(`stat_density()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing non-finite outside the scale range
+(`stat_bin()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 210 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing non-finite outside the scale range
+(`stat_density()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing non-finite outside the scale range
+(`stat_bin()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 210 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing non-finite outside the scale range
+(`stat_density()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing non-finite outside the scale range
+(`stat_bin()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 210 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing non-finite outside the scale range
+(`stat_density()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing non-finite outside the scale range
+(`stat_bin()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 210 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing non-finite outside the scale range
+(`stat_density()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing non-finite outside the scale range
+(`stat_bin()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 210 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing non-finite outside the scale range
+(`stat_density()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values
+Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing non-finite outside the scale range
+(`stat_bin()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 210 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing non-finite outside the scale range
+(`stat_density()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in ggally_statistic(data = data, mapping = mapping, na.rm = na.rm, :
+Removed 3 rows containing missing values</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>`stat_bin()` using `bins = 30`. Pick better value with `binwidth`.</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing non-finite outside the scale range
+(`stat_bin()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 210 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).
+Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing non-finite outside the scale range
+(`stat_density()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="classwork_L02_answers_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb114"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Which values show a positive correlation? Which values show a negative correlation?</span></span>
+<span id="cb114-2"><a href="#cb114-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb114-3"><a href="#cb114-3" aria-hidden="true" tabindex="-1"></a><span class="co">#var1 &lt;-</span></span>
+<span id="cb114-4"><a href="#cb114-4" aria-hidden="true" tabindex="-1"></a><span class="co">#var2 &lt;-</span></span>
+<span id="cb114-5"><a href="#cb114-5" aria-hidden="true" tabindex="-1"></a><span class="co">#var3 &lt;- </span></span>
+<span id="cb114-6"><a href="#cb114-6" aria-hidden="true" tabindex="-1"></a><span class="co">#var4 &lt;- </span></span>
+<span id="cb114-7"><a href="#cb114-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb114-8"><a href="#cb114-8" aria-hidden="true" tabindex="-1"></a><span class="co"># plot loudness vs energy</span></span>
+<span id="cb114-9"><a href="#cb114-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(taylor_album_songs, <span class="fu">aes</span>(<span class="at">x=</span>loudness, <span class="at">y=</span>energy)) <span class="sc">+</span> </span>
+<span id="cb114-10"><a href="#cb114-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="classwork_L02_answers_files/figure-html/unnamed-chunk-5-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb116"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot acousticness vs energy</span></span>
+<span id="cb116-2"><a href="#cb116-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(taylor_album_songs, <span class="fu">aes</span>(<span class="at">x=</span>acousticness, <span class="at">y=</span>energy)) <span class="sc">+</span> </span>
+<span id="cb116-3"><a href="#cb116-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size=</span><span class="dv">3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="classwork_L02_answers_files/figure-html/unnamed-chunk-5-3.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb118"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot loudness vs energy, color by album, facet by album</span></span>
+<span id="cb118-2"><a href="#cb118-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(taylor_album_songs, <span class="fu">aes</span>(<span class="at">x=</span>loudness, <span class="at">y=</span>energy, <span class="at">color =</span> album_name)) <span class="sc">+</span> </span>
+<span id="cb118-3"><a href="#cb118-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size=</span><span class="dv">3</span>) <span class="sc">+</span> </span>
+<span id="cb118-4"><a href="#cb118-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_albums</span>() <span class="sc">+</span> </span>
+<span id="cb118-5"><a href="#cb118-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>album_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="classwork_L02_answers_files/figure-html/unnamed-chunk-5-4.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb120"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a><span class="co"># plot acousticness vs energy, color by album, facet by album</span></span>
+<span id="cb120-2"><a href="#cb120-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(taylor_album_songs, <span class="fu">aes</span>(<span class="at">x=</span>acousticness, <span class="at">y=</span>energy, <span class="at">color =</span> album_name)) <span class="sc">+</span></span>
+<span id="cb120-3"><a href="#cb120-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size=</span><span class="dv">3</span>) <span class="sc">+</span> </span>
+<span id="cb120-4"><a href="#cb120-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_albums</span>() <span class="sc">+</span> </span>
+<span id="cb120-5"><a href="#cb120-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(<span class="sc">~</span>album_name)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning: Removed 3 rows containing missing values or values outside the scale range
+(`geom_point()`).</code></pre>
+</div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="classwork_L02_answers_files/figure-html/unnamed-chunk-5-5.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 
 
 </section>
