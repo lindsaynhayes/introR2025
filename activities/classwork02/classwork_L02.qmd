@@ -21,7 +21,6 @@ We will work our way through this quarto document together during class. The act
 
 ```{r}
 #| label: packages
-
 library(tidyverse)
 ```
 
@@ -55,7 +54,7 @@ class(y)
 
 # logical
 # testing each variable in the vector and outputting TRUE or FALSE
-over100 <- x>100
+over100 <- x > 100
 table(over100)
 ```
 
@@ -67,17 +66,36 @@ table(over100)
 
 # create vector called "homeworlds" and assign it the value "homeworld" from the starwars data set
 
+glimpse(starwars)
+
+homeworlds <- starwars$homeworld
+
+homeworlds
 
 # how many worlds are there? hint: use the unique function
 
+unique(homeworlds)
+
+starwars |> count(homeworld)
 
 # is there a world called "Ohio"? how would you test this with code?
+
+starwars |> count(homeworld == "Ohio")
+
+table(homeworlds == "Ohio")
 
 
 # How many characters live on Naboo?
 
+<<<<<<< Updated upstream
+=======
+starwars |> filter(homeworld == "Naboo")
+>>>>>>> Stashed changes
 
 # Who lives on Naboo? (hint use the "names" variable in the starwars data and the "which" function)
+
+starwars |> filter(homeworld == "Naboo") |> select(name)
+
 
 ```
 
@@ -85,7 +103,16 @@ table(over100)
 
 ```{r}
 
+<<<<<<< Updated upstream
 # Try loading in the taylor package and viewing the taylor_album_songs dataframe
+=======
+# install.packages("taylor")
+
+library(taylor)
+taylor <- taylor_all_songs
+
+# what is the "class" of the object taylor?
+>>>>>>> Stashed changes
 
 
 # what is the "class" of the object taylor_album_songs?
