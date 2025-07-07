@@ -6,6 +6,7 @@ date: 2025-07-03
 draft: true
 editor_options: 
   chunk_output_type: console
+eval: false
 ---
 
 # Lecture

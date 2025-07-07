@@ -87,14 +87,7 @@ table(homeworlds == "Ohio")
 
 # How many characters live on Naboo?
 
-<<<<<<< Updated upstream
-<<<<<<< Updated upstream
-=======
 starwars |> filter(homeworld == "Naboo")
->>>>>>> Stashed changes
-=======
-starwars |> filter(homeworld == "Naboo")
->>>>>>> Stashed changes
 
 # Who lives on Naboo? (hint use the "names" variable in the starwars data and the "which" function)
 
@@ -107,9 +100,8 @@ starwars |> filter(homeworld == "Naboo") |> select(name)
 
 ```{r}
 
-<<<<<<< Updated upstream
 # Try loading in the taylor package and viewing the taylor_album_songs dataframe
-=======
+
 # install.packages("taylor")
 
 # install.packages("taylor")
@@ -118,7 +110,7 @@ library(taylor)
 taylor <- taylor_all_songs
 
 # what is the "class" of the object taylor?
->>>>>>> Stashed changes
+
 
 
 # what is the "class" of the object taylor_album_songs?
