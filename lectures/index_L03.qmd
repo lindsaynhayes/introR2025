@@ -37,6 +37,4 @@ Before class, read the [pre-reading materials](https://lindsaynhayes.github.io/i
 
 # Post-lecture Practice
 
-- Please complete the following assignment: [Assignment 2](https://lindsaynhayes.github.io/introR2025/projects/index_A02.html){target="_blank"}
-
 - Want to learn by listening? David Robinson a Data Scientist has a free lecture on [DataCamp](https://app.datacamp.com/learn/courses/exploratory-data-analysis-in-r-case-study). The first lecture on Data cleaning and summarizing with dplyr is free. You do need to sign up for a free datacamp account.

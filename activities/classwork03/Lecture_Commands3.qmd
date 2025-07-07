@@ -1,0 +1,42 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
+
+```{r}
+
+glimpse(starwars)
+
+# lets look at the first row of starwars
+starwars[1,]
+
+starwars$starships[1]
+
+starwars |>
+  select(name, films) |>
+  unnest_longer(films)
+
+```
+
+
+```{r}
+table(starwars$sex)
+
+
+starwars |>
+  group_by(sex) 
+
+
+starwars |> count(sex)
+
+
+starwars |>
+  drop_na(height, sex) |>
+  group_by(sex) |>
+  summarize(mean_height = mean(height),
+            sd_height = sd(height))
+
+```
+

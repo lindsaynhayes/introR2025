@@ -48,4 +48,5 @@ For more examples, you can checkout a YouTube video series on ggplot from Dr. La
 
 # Post-lecture Practice
 
-- Please complete the following assignment: [Assignment 3](https://lindsaynhayes.github.io/introR2025/projects/index_A03.html){target="_blank"}
+- Please complete the following assignment: [Assignment 2](https://lindsaynhayes.github.io/introR2025/projects/index_A02.html){target="_blank"}
+
