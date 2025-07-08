@@ -14,13 +14,16 @@ eval: false
 glimpse(starwars)
 
 # lets look at the first row of starwars
-starwars[1,]
+starwars[1,11:14]
 
 starwars$starships[1]
 
 starwars |>
   select(name, films) |>
   unnest_longer(films)
+
+taylor |> select(track_name, lyrics) |> 
+  unnest_longer(lyrics)
 
 ```
 
@@ -34,6 +37,12 @@ starwars |>
 
 
 starwars |> count(sex)
+
+starwars |>
+  group_by(sex) |>
+  summarize(mean_height = mean(height),
+            sd_height = sd(height))
+
 
 
 starwars |>

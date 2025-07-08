@@ -50,10 +50,19 @@ AP_df$Year <- rownames(AP_matrix)
 ```{r}
 AP_df
 
+AP_long <- AP_df |> pivot_longer(cols = 1:12, names_to = "months", values_to = "count")
+
 ```
 
 ### B. How can we extract the the most and least traveled months each year? 
 ```{r}
+
+AP_long |> 
+  group_by(months) |>
+  summarise(max_travel = max(count)) |>
+  arrange(max_travel) |>
+  ggplot(aes(x = months, y = max_travel)) + geom_col()
+
 
 ```
 
@@ -63,7 +72,10 @@ AP_df
 
 # how can we add the ratio to get the percent increase?
 
+AP_long
 
+AP_df |> mutate(ratio = ((Aug/Nov)-1) *100) |>
+  select(ratio)
 
 ```
 
@@ -77,7 +89,27 @@ glimpse(ChickWeight)
 
 ### A. Count how many timepoints were measured and how many chicks were on each Diet. 
 ```{r}
-# How can you count the timeponits, chicks, and diets, and chicks nested in diets?
+# How can you count the timepoints, chicks, and diets, and chicks nested in diets?
+
+ChickWeight |> count(Diet)
+
+ChickWeight |> count(Time)
+
+ChickWeight |> count(Chick)
+
+
+ChickWeight |> 
+  filter(Time == "0") |>
+  count(Diet) 
+
+ChickWeight |>
+  group_by(Diet) |>
+  summarise(no.chicks = n_distinct(Chick))
+
+
+table(ChickWeight$Time, ChickWeight$Diet)
+  
+
 
 ```
 
@@ -92,9 +124,54 @@ ChickWeight |>
 
 
 
+ChickWeight |>
+  ggplot(aes(x = Time, y = weight, group = Chick, color = Diet)) + 
+  geom_line() +
+  theme_cowplot() +
+  facet_wrap(~ Diet)
+
+
+
+
 
 
 ```
+
+
+# How much weight gain from each Diet
+```{r}
+
+data <- ChickWeight |> 
+  pivot_wider(names_from = Time, names_prefix = "day_", values_from = weight)
+
+
+data <- data |> mutate(weight.gain = day_18 - day_0)
+
+data |>
+  ggplot(aes(x = Diet, y = weight.gain, fill = Diet)) + 
+  geom_boxplot() + 
+  geom_point()
+
+
+
+mod <- aov(weight.gain ~ Diet, data = data)
+
+summary(mod)
+TukeyHSD(mod)
+pairwise.t.test(data$weight.gain, data$Diet, p.adjust.method = "BH")
+
+
+library(lme4)
+library(lmerTest)
+
+
+mod2 <- lmer(weight ~ Diet * Time + (1 | Chick), data = ChickWeight)
+summary(mod2)
+
+```
+
+
+
 
 
 
