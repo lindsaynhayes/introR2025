@@ -126,6 +126,12 @@ mat |> GGally::ggpairs()
 #var3 <- 
 #var4 <- 
 
+
+# Plot the correlations
+
+#ggplot(taylor, aes(x=var1, y=var2)) + geom_point(size=3)
+#ggplot(taylor, aes(x=var3, y=var4)) + geom_point(size=3)
+
 # plot loudness vs energy
 ggplot(taylor_album_songs, aes(x=loudness, y=energy)) + 
   geom_point(size=3)
@@ -145,5 +151,6 @@ ggplot(taylor_album_songs, aes(x=acousticness, y=energy, color = album_name)) +
   geom_point(size=3) + 
   scale_color_albums() + 
   facet_wrap(~album_name)
+
 ```
 

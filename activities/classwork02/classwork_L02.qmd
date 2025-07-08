@@ -131,7 +131,7 @@ taylor <- taylor_album_songs
 ### C. Which numeric song features are correlated with one another? Hint create a correlation matrix.
 
 ```{r}
-# look at the columns in taylor_album_songs and pick what features of the data you want to explore
+# look at the columns in taylor_album_songs and pick what features of the data you want to explore (hint choose all the numeric variables)
 
 # create a matrix of those features
 
@@ -144,12 +144,12 @@ taylor <- taylor_album_songs
 #var3 <- 
 #var4 <- 
 
-# plot loudness vs energy
 
-# plot acousticness vs energy
+# Plot the correlations
 
-# plot loudness vs energy, color by album, facet by album
+#ggplot(taylor_album_songs, aes(x=var1, y=var2)) + geom_point(size=3)
 
-# plot acousticness vs energy, color by album, facet by album
+
+#ggplot(taylor_album_songs, aes(x=var3, y=var4)) + geom_point(size=3)
 
 ```
