@@ -107,8 +107,6 @@ starwars$name[which(homeworlds == "Naboo")]
 
 # install.packages("taylor")
 
-# install.packages("taylor")
-
 library(taylor)
 taylor <- taylor_album_songs
 
