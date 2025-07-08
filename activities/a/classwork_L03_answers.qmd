@@ -54,7 +54,7 @@ glimpse(dat)
 dat$month <- factor(dat$month, levels = month.abb)
 
 
-# B. How can we extract the the most and least traveled months each year? 
+# B. How can we extract the the most and least traveled months of the year? 
 
 dat |>
   group_by(Year) |>
