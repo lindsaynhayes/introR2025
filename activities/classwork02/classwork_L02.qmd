@@ -107,7 +107,7 @@ starwars |> filter(homeworld == "Naboo") |> select(name)
 # install.packages("taylor")
 
 library(taylor)
-taylor <- taylor_all_songs
+taylor <- taylor_album_songs
 
 # what is the "class" of the object taylor?
 
