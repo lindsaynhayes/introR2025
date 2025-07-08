@@ -76,7 +76,7 @@ homeworlds
 
 unique(homeworlds)
 
-starwars |> count(homeworld)
+starwars |> count(homeworld) # NOTE IT INCLUDES missing values (NA)
 
 # is there a world called "Ohio"? how would you test this with code?
 
@@ -87,13 +87,16 @@ table(homeworlds == "Ohio")
 
 # How many characters live on Naboo?
 
-starwars |> filter(homeworld == "Naboo")
+table(homeworlds == "Naboo")
+starwars |> filter(homeworld == "Naboo") |> count(homeworld)
 
 # Who lives on Naboo? (hint use the "names" variable in the starwars data and the "which" function)
 
 starwars |> filter(homeworld == "Naboo") |> select(name)
 
-
+homeworlds == "Naboo"
+which(homeworlds == "Naboo")
+starwars$name[which(homeworlds == "Naboo")]
 ```
 
 ### B. Import the `taylor` package and explore the `taylor_album_songs` dataframe
@@ -149,7 +152,7 @@ taylor <- taylor_album_songs
 
 #ggplot(taylor_album_songs, aes(x=var1, y=var2)) + geom_point(size=3)
 
-
 #ggplot(taylor_album_songs, aes(x=var3, y=var4)) + geom_point(size=3)
+
 
 ```
