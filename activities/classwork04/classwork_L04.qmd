@@ -32,7 +32,7 @@ library(taylor)
 ## Histogram & Density plots
 Use the `palmerpenguins` data to plot some histograms. Histograms are good for evaluating the distribution of continuous data.
 
-#### 1. How would you describe the distribution? Is it uni-modal or bi-modal?
+#### 1. How would you describe the distributions in the penguins dataset? Are they uni-modal or bi-modal or other?
 ```{r}
 
 penguins |> head()
@@ -50,14 +50,23 @@ ggplot(penguins, aes(x = body_mass_g)) +
 # histograms are impacted by the "bin" or how each bar is averaging (how thick the bars are). We can change that will `bin` or `binwidth`
 
 ggplot(penguins, aes(x = body_mass_g)) + 
-  geom_histogram(binwidth = 25, fill = "deeppink") + 
+  geom_histogram(binwidth = 500, fill = "deeppink") + 
   theme_cowplot()
 
 # add some more labels
 
 ggplot(penguins, aes(x = body_mass_g)) + 
-  geom_histogram(binwidth = 50, fill = "deeppink") + 
+  geom_histogram(binwidth = 25, fill = "deeppink") + 
   theme_cowplot() +
+  labs(title = "Distribution of Penguin Body Mass",
+         x = "Body Mass (g)",
+         y ="Count")
+
+# color by species to gain insight into the distribution
+
+ggplot(penguins, aes(x = body_mass_g, fill = species)) + 
+  geom_histogram(binwidth = 100) + 
+  theme_cowplot() + facet_wrap(~species) +
   labs(title = "Distribution of Penguin Body Mass",
          x = "Body Mass (g)",
          y ="Count")
@@ -109,22 +118,13 @@ Another type of distribution and count data is of categorical data. Count data f
 taylor_album_songs$key <- str_sub(taylor_album_songs$key_name, 1, 1)
 taylor_album_songs$album_name <- fct_inorder(taylor_album_songs$album_name)
 
-# You can see both the difference in the number of songs per album, but also in the numbers in each key. 
+# Lets look at the distribution of muscal keys usage across TS albums.
 
-ggplot(taylor_album_songs, aes(y = album_name, fill = key)) + 
-  geom_bar() +
-  theme_cowplot() +
-  labs(title = "Keys of TS albums",
-       x = "Count", 
-       y = "") + scale_fill_brewer(palette="Set2")
+
 
 # Now lest look at the proportions
-ggplot(taylor_album_songs, aes(y = album_name, fill = key)) + 
-  geom_bar(position = "fill") +
-  theme_cowplot() +
-  labs(title = "Keys of TS albums",
-       x = "Proportion", 
-       y = "") + scale_fill_brewer(palette="Set2")
+
+
 
 ```
 

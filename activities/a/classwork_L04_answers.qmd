@@ -15,10 +15,10 @@ editor_options:
 
 3) Open it in RStudio.
 
-We will work our way through this quarto document together during class. The activity will cover plotting data with ggplot2 in detail!
+We will work our way through this quarto document together during class. The activity will cover plotting data with ggplot2!
 
 ## Load the Packages
-The `tidyverse` library includes `ggplot2` and I added `cowplot` to make the plots prettier
+The `tidyverse` library includes `ggplot2` and I added `cowplot` to make the plots prettier. We will use data from the `palmerpenguins` and the `taylor` packages.
 ```{r}
 #| label: packages
 #| message: false
@@ -36,7 +36,6 @@ Lets use the `palmerpenguins` data to plot some histograms. Histograms are good 
 ```{r}
 
 penguins |> head()
-
 
 # plot the distribution of the penguins' body mass using geom_histogram()
 
@@ -70,7 +69,7 @@ ggplot(penguins, aes(x = body_mass_g)) +
 
 penguins |> head()
 
-
+# try 3
 ggplot(penguins, aes(x = bill_length_mm)) + 
   geom_histogram(binwidth = 1, fill = "purple") + 
   theme_cowplot() +
