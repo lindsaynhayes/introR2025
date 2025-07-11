@@ -385,74 +385,116 @@
     "text": "Overview\nDue date: 07/08/25 at 11:59pm\nMost programming languages are similar in their underlying logic, but differ in execution, efficiency, and, more importantly, their syntax. R is one of the most popular languages used for data analysis in biomedical research. Its programming syntax is unique and differs from other popular languages in the same category as it like Python. Gaining a better understanding of R’s core features and becoming familiar with its syntax will help you perform analyses more effectively and efficiently.\nIn the Swirl lessons for this week, you will learn the following:\n\nNavigating files and directories\nAssigning and using variables\nCreating, modifying, and subsetting vectors\nCreating and modifying sequences\nHandling missing values\nSimple matrices and dataframes\nLogics (TRUE, FALSE, AND, OR, etc.) in R\nGain experience with base features in R\n\n\n\nSwirl Course Setup\n\nIn RStudio, install and load the swirl package\ninstall.packages(\"swirl\")\nlibrary(\"swirl\")\nNavigate to this link. Download the Swirl lesson file 1_R_Programming.swc. Move it into your working directory for the class.\nOnce you have the file in your working directory, in the console of RStudio type the command below and after the swc_path = type \" and then hit tab to interactively choose the 1_R_Programming.swc file you just downloaded from your working directory. The command will look something like install_course(swc_path = \"1_R_Programming.swc\"). Run the command to install the course.\ninstall_course(swc_path = )\nStart Swirl by typing the following command\nswirl()\n\n\n\nWorking through the Lessons\n\nPlease enter your full name together when asked what you want to be called by e.g. JaneDoe\nComplete all lessons:\n\n\n1: Basic Building Blocks\n2: Workspace and Files\n3: Sequences of Numbers\n4: Vectors\n5: Missing Values\n6: Subsetting Vectors\n7: Matrices and Data Frames\n8: Logic\n\n\n\n\n\n\n\nImportant\n\n\n\n\nYou can take breaks between lessons (like shutting down Swirl and exiting RStudio), just use the same name when logging in for documenting purposes on the instructor’s end.\nIf you start a lesson, please complete it fully before taking a break. If you stop RStudio in the middle of a lesson, your progress for that lesson may still be saved in the history for that package locally, but will not be saved or sent to us on the instructor’s end.\nIf you do not get to the Google Form end of any lesson, please email one of the instructors as soon as possible.\n\n\n\n\n\nSubmission\n\n\n\n\n\n\nNote\n\n\n\n\nFYI: You need a google account to submit the assignment.\nSwirl will navigate you to the submission Google Form of each lesson. However, review the instructions below before submitting to make sure you are able to submit correctly.\nWhen submitting please make sure the box is not empty, if it is please email one of the instructors.\n\n\n\n\nAt the end of each lesson the following question will appear, enter the selection Yes to be redirected to your autofilled Google Form submission\n\nOnce you’ve been redirected, your Swirl activity will be autofilled into the submission box, just hit the Submit button\n\n\n\n\n\n\n\n\nImportant\n\n\n\n\nIf you do not get to the Google Form at the end of any lesson, please email one of the instructors as soon as possible."
   },
   {
-    "objectID": "lectures/index_L06.html",
-    "href": "lectures/index_L06.html",
-    "title": "Machine Learning with tidymodels",
+    "objectID": "lectures/index_L05.html",
+    "href": "lectures/index_L05.html",
+    "title": "Dimension Reduction with tidymodels",
+    "section": "",
+    "text": "Before class, watch this video from Data Scientists Julie Silge from RStudio. She does a real-time data analysis using Principal Component Analysis (PCA) of the best hip hop songs of all time according to critics ratings. This video is not a detailed explanation of what PCA is or how it works (there is a lot of that maths on the internet if you want). In contrast, it is a live, real-time, analysis that asks the question what song features make a hip hop song the best. I want you to see that PCA is often a first line of inquiry when exploring a dataset.\n\nFor background, TidyTuesday is a weekly podcast and community activity that brings an interesting dataset to the data science community each week to do some cool plotting or analysis on. It provides interesting data to use for teaching purposes or code testing.\nThis video goes pretty fast but all the code she uses is below the video."
+  },
+  {
+    "objectID": "lectures/index_L05.html#learning-objectives",
+    "href": "lectures/index_L05.html#learning-objectives",
+    "title": "Dimension Reduction with tidymodels",
+    "section": "Learning objectives",
+    "text": "Learning objectives\n\n\n\n\n\n\nLearning objectives\n\n\n\nAt the end of class you will be able to:\n\nDefine dimension reduction\nExplain why dimension reduction is used\nBuild a model to perform PCA on a dataset"
+  },
+  {
+    "objectID": "lectures/index_L05.html#slides",
+    "href": "lectures/index_L05.html#slides",
+    "title": "Dimension Reduction with tidymodels",
+    "section": "Slides",
+    "text": "Slides\n\nLecture 05: Dimension Reduction in tidymodels\nIn-Class Activity"
+  },
+  {
+    "objectID": "lectures/index_L03.html",
+    "href": "lectures/index_L03.html",
+    "title": "Data Wrangling with tidyverse",
     "section": "",
     "text": "Before class, read the pre-reading materials."
   },
   {
-    "objectID": "lectures/index_L06.html#learning-objectives",
-    "href": "lectures/index_L06.html#learning-objectives",
-    "title": "Machine Learning with tidymodels",
+    "objectID": "lectures/index_L03.html#learning-objectives",
+    "href": "lectures/index_L03.html#learning-objectives",
+    "title": "Data Wrangling with tidyverse",
     "section": "Learning objectives",
-    "text": "Learning objectives\n\n\n\n\n\n\nLearning objectives\n\n\n\nAt the end of class you will be able to:\n\nUnderstand the purpose of data modeling, specifically machine learning classification.\nIdentify the packages and tools used to implement machine learning algorithms for data analysis."
+    "text": "Learning objectives\n\n\n\n\n\n\nLearning objectives\n\n\n\nAt the end of class you will be able to:\n\nRecognize and define an untidy dataset\nRecognize and convert between long and wide data formats\nUnderstand when to use both formats\nPipe functions together to perform multiple commands in sequence"
   },
   {
-    "objectID": "lectures/index_L06.html#slides",
-    "href": "lectures/index_L06.html#slides",
-    "title": "Machine Learning with tidymodels",
+    "objectID": "lectures/index_L03.html#slides",
+    "href": "lectures/index_L03.html#slides",
+    "title": "Data Wrangling with tidyverse",
     "section": "Slides",
-    "text": "Slides\n\nLecture 06: Predictive Modeling with tidymodels\nIn-Class Activity"
+    "text": "Slides\n\nLecture 03: Data Wrangling\nIn-Class Activity"
   },
   {
-    "objectID": "lectures/index_L04.html",
-    "href": "lectures/index_L04.html",
-    "title": "Data Visualization with ggplot2",
+    "objectID": "lectures/index_L01.html",
+    "href": "lectures/index_L01.html",
+    "title": "Welcome to the Course!",
     "section": "",
-    "text": "Before class, read chapter 4 titled “Visualizing Data in the Tidyverse” from the Tidyverse Skills for Data Science Book by Carrie Wright, Shannon E. Ellis, Stephanie C. Hicks, and Roger D. Peng.\nReading: Visualizing Data in the Tidyverse\nFor more examples, you can checkout a YouTube video series on ggplot from Dr. Lace Padilla.\n\nMastering ggplot2 in R [17 min]\nMastering Axes in ggplot2 [16 min]\nColor Magic in ggplot2 [12.5 min]\nMastering Facet_Wrap in ggplot2 [15 min]"
+    "text": "The course will exclusively use R in the integrated development environment (IDE) called R Studio. Since the summer semester is only 1 month (10 classes), it is critical to have your computer set up and ready to go before the first day of class.\nThroughout the course, there will be a set of pre-lecture activities and/or readings for you to complete. These activities prepare you for the in-class activities. Failure to complete them will put you behind in an already compressed course.\nTo prepare for the first class:\n\nInstall R and R Studio\n\ninstallation video tutorial\nDetailed instructions on installing R and R Studio are available on swirl.\n\nComplete step 1 and step 2\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nSwirl is a great tool to learn R interactively that we will use in the course. Feel free to explore more.\n\n\n\nIn the first class, we will begin to get familiar with R. Complete the Pre-reading material about R. Pre-reading materials for each class are located under Resources. Sometimes, pre-reading materials are direct links to external resources for you to read in advance of the lecture."
   },
   {
-    "objectID": "lectures/index_L04.html#learning-objectives",
-    "href": "lectures/index_L04.html#learning-objectives",
-    "title": "Data Visualization with ggplot2",
+    "objectID": "lectures/index_L01.html#learning-objectives",
+    "href": "lectures/index_L01.html#learning-objectives",
+    "title": "Welcome to the Course!",
     "section": "Learning objectives",
-    "text": "Learning objectives\n\n\n\n\n\n\nLearning objectives\n\n\n\nAt the end of class you will be able to:\n\nDistinguish between good and bad plots\nMatch the type of plots with the type of data input\nList the features of the grammer of graphics\nBuild complex graphics in ggplot2"
+    "text": "Learning objectives\n\n\n\n\n\n\nLearning objectives\n\n\n\nAt the end of this lesson you will:\n\nGet an overview of the course (including staff, format, grading, etc)\nBe able to recognize and operate an Integrated Developer Environment (IDE).\nBe able to recognize a Quarto document and describe reasons why to use a unified authoring framework.\nBe able to create a R project & Quarto document."
   },
   {
-    "objectID": "lectures/index_L04.html#slides",
-    "href": "lectures/index_L04.html#slides",
-    "title": "Data Visualization with ggplot2",
+    "objectID": "lectures/index_L01.html#slides",
+    "href": "lectures/index_L01.html#slides",
+    "title": "Welcome to the Course!",
     "section": "Slides",
-    "text": "Slides\n\nLecture 04: Data Visualization in ggplot\nIn-Class Activity"
+    "text": "Slides\n\nLecture 01: Welcome and Introductions\nIn-Class Activity"
   },
   {
-    "objectID": "lectures/index_L02.html",
-    "href": "lectures/index_L02.html",
-    "title": "Navigating Data Types in R",
+    "objectID": "lectures/index_L01.html#acknowledgements",
+    "href": "lectures/index_L01.html#acknowledgements",
+    "title": "Welcome to the Course!",
+    "section": "Acknowledgements",
+    "text": "Acknowledgements\nMaterial for this lecture was borrowed and adopted from\n\nsw carpentry: https://carpentries-incubator.github.io/bioc-intro/20-r-rstudio.html\ndata carpentry: https://datacarpentry.github.io/genomics-r-intro/00-introduction.html"
+  },
+  {
+    "objectID": "lectures/index_L01.html#summary",
+    "href": "lectures/index_L01.html#summary",
+    "title": "Welcome to the Course!",
+    "section": "Summary",
+    "text": "Summary\n\nAccess all course material on the course website (https://lindsaynhayes.github.io/introR2025/).\nRStudio makes you a more efficient programmer and gives you easy access to all the components of data analysis.\nQuarto is an open-source scientific and technical publishing system to create reproducible, production quality data analysis reports and much more. During the course we will primarily use the HTML output format."
+  },
+  {
+    "objectID": "lectures/index_L01.html#additional-practice",
+    "href": "lectures/index_L01.html#additional-practice",
+    "title": "Welcome to the Course!",
+    "section": "Additional practice",
+    "text": "Additional practice\nHere are some additional practice questions to help you think about the material discussed.\nCheck out this article on the 10 Best Practices for Data Science here\n\n\n\n\n\n\nPractice Tasks\n\n\n\n\nIn RStudio, create a new R project and then create a new Quarto document in that R project. Read the instructions. Practice running the chunks individually using the “play” button and the keyboard short cut.\nChange the settings of the Quarto document to display the output “inline” or in the “console”.\nRender the document and view the HTML output. Verify that you can modify the code, re-run it, and see modified output."
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Welcome",
     "section": "",
-    "text": "Before class, read the pre-reading materials."
+    "text": "Welcome to the Course Website for Cell 6351 Intro to Reproducible Data Analysis Using R!"
   },
   {
-    "objectID": "lectures/index_L02.html#learning-objectives",
-    "href": "lectures/index_L02.html#learning-objectives",
-    "title": "Navigating Data Types in R",
-    "section": "Learning objectives",
-    "text": "Learning objectives\n\n\n\n\n\n\nLearning objectives\n\n\n\nAt the end of class you will be able to:\n\nGenerate and navigate a quarto document\nUnderstand what packages are and how to use them\nGet data in and out of R\nRecognize and create various data types in R"
+    "objectID": "index.html#overview",
+    "href": "index.html#overview",
+    "title": "Welcome",
+    "section": "Overview",
+    "text": "Overview\nCurrent biomedical research regularly generates large datasets that require increasing computational skills to process and analyze including in genomics, behavior, imaging, and molecular biology. As a result, scientists today require fundamental computational and programming skill-sets to efficiently perform data analyses, generate complex models for testing, develop reproducible data analyses, and effectively communicate results through clear and meaningful graphics. However, these skills are often challenging due to a lack of structured training in data science.\nIntro to Reproducible Data Analysis Using R is a hands-on course that will introduce the R statistical software including data structures, wrangling data, plotting data, basic statistics, data modeling, and literate coding practices. There is no textbook for the course. All course materials will be provided on Canvas or this website. While no formal background in statistics or programming is necessary, a general knowledge of basic statistics, experimental design, and computer file storage systems will be helpful. All classes will involve active learning/coding activities so a laptop with power cord is required for all sessions. Students will be expected to complete readings prior to class, attend lectures to dive deeper into those topics in class, participate in classroom activities, complete projects practicing and reinforcing the computing and programming skills. There will be a final project, which will include a class presentation."
   },
   {
-    "objectID": "lectures/index_L02.html#slides",
-    "href": "lectures/index_L02.html#slides",
-    "title": "Navigating Data Types in R",
-    "section": "Slides",
-    "text": "Slides\n\nLecture 02: Data Types\nIn-Class Activity"
+    "objectID": "index.html#course-information",
+    "href": "index.html#course-information",
+    "title": "Welcome",
+    "section": "Course Information",
+    "text": "Course Information\n\nCourse Staff: Prof. Lindsay Hayes\nCourse Staff: TA. Eleana Cabello\nLectures: 10:30am-noon\nLocation: BMSB 324\nOffice Hours: by email"
   },
   {
-    "objectID": "lectures.html",
-    "href": "lectures.html",
-    "title": "Course Content",
-    "section": "",
-    "text": "Course content for each lecture is below:\n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nAuthor\n\n\n\n\n\n\n\n\n2025-07-01\n\n\nWelcome to the Course!\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-03\n\n\nNavigating Data Types in R\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-08\n\n\nData Wrangling with tidyverse\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-10\n\n\nData Visualization with ggplot2\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-14\n\n\nDimension Reduction with tidymodels\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-16\n\n\nMachine Learning with tidymodels\n\n\nLindsay Hayes\n\n\n\n\n\n\nNo matching items"
+    "objectID": "index.html#course-details",
+    "href": "index.html#course-details",
+    "title": "Welcome",
+    "section": "Course Details",
+    "text": "Course Details\nAll course details are available on the Course page. The syllabus is available online here, download here, or on Canvas."
   },
   {
     "objectID": "activities/classwork06/Pred_Penguins.html",
@@ -655,7 +697,7 @@
     "href": "activities/classwork02/classwork_L02.html#first-load-the-tidyverse-package",
     "title": "Navigating Data Types in R",
     "section": "First Load the Tidyverse Package",
-    "text": "First Load the Tidyverse Package\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.2     ✔ tibble    3.3.0\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.0.4     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors"
+    "text": "First Load the Tidyverse Package\n\nlibrary(tidyverse)\n\n── Attaching core tidyverse packages ──────────────────────── tidyverse 2.0.0 ──\n✔ dplyr     1.1.4     ✔ readr     2.1.5\n✔ forcats   1.0.0     ✔ stringr   1.5.1\n✔ ggplot2   3.5.2     ✔ tibble    3.3.0\n✔ lubridate 1.9.4     ✔ tidyr     1.3.1\n✔ purrr     1.1.0     \n── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──\n✖ dplyr::filter() masks stats::filter()\n✖ dplyr::lag()    masks stats::lag()\nℹ Use the conflicted package (&lt;http://conflicted.r-lib.org/&gt;) to force all conflicts to become errors"
   },
   {
     "objectID": "activities/classwork02/classwork_L02.html#ways-to-use-r",
@@ -749,116 +791,74 @@
     "text": "Evaluate the PCA\n\n# tidy type can be: \"coef\", \"variance\", \n\n# Plot the percent of variance explained by each principal component\npenguin_prep %&gt;% \n  tidy(id = \"pca\", type = \"variance\") |&gt; \n  dplyr::filter(terms == \"percent variance\") |&gt; \n  ggplot(aes(x = component, y = value)) + \n  geom_col(fill = \"#b6dfe2\") + \n  xlim(c(0, 5)) + \n  ylab(\"% of total variance\") +\n   geom_text(aes(label=round(value,1)), vjust = 1.5)\n\nWarning: Removed 1 row containing missing values or values outside the scale range\n(`geom_col()`).\n\n\n\n\n\n\n\n\n\n\n# Plot which predictors/variables are explained in each principal component\npenguin_prep |&gt;\n  tidy(id = \"pca\", type = \"coef\") |&gt; \n  ggplot(aes(abs(value), terms, fill = value &gt; 0)) +\n  geom_col() +\n  facet_wrap(~component, scales = \"free_y\") +\n  scale_fill_manual(values = c(\"#b6dfe2\", \"#0A537D\")) +\n  labs(\n    x = \"Absolute value of contribution\",\n    y = NULL, fill = \"Pos Affil\") \n\n\n\n\n\n\n\n\n\n# Plot the PCA\npca_plot &lt;- penguin_bake |&gt; \n  ggplot(aes(PC1, PC2)) +\n  geom_point(aes(color = species, shape = species), \n             alpha = 0.8, \n             size = 2) +\n  scale_colour_manual(values = c(\"darkorange\",\"purple\",\"cyan4\")) +\n  theme_bw()\n\npca_plot\n\n\n\n\n\n\n\n# Add the vectors for how the variables are explained by each PC\n\npca_wider &lt;- penguin_prep |&gt; \n              tidy(id = \"pca\", type = \"coef\") |&gt;\n              pivot_wider(names_from = component, id_cols = terms)\n\narrow_style &lt;- arrow(length = unit(.05, \"inches\"), type = \"closed\")\n\npca_plot +\n  geom_segment(data = pca_wider,\n               aes(xend = PC1, yend = PC2), \n               x = 0, \n               y = 0, \n               arrow = arrow_style) + \n  geom_text(data = pca_wider,\n            aes(x = PC1, y = PC2, label = terms), \n            hjust = 0, \n            vjust = 1,\n            size = 5, \n            color = '#0A537D') \n\n\n\n\n\n\n\n\n\nWe can see that year is having a large impact of PC2 and obscuring the effect of the other metrics. So we can exclude PC2 and plot PC1 and PC3 instead.\n\npca_plot &lt;- penguin_bake |&gt; \n  ggplot(aes(PC1, PC3)) +\n  geom_point(aes(color = species, shape = species), \n             alpha = 0.8, \n             size = 2) +\n  scale_colour_manual(values = c(\"darkorange\",\"purple\",\"cyan4\")) +\n  theme_bw()\n\npca_plot\n\n\n\n\n\n\n\narrow_style &lt;- arrow(length = unit(.05, \"inches\"), type = \"closed\")\n\npca_plot +\n  geom_segment(data = pca_wider,\n               aes(xend = PC1, yend = PC3), \n               x = 0, \n               y = 0, \n               arrow = arrow_style) + \n  geom_text(data = pca_wider,\n            aes(x = PC1, y = PC3, label = terms), \n            hjust = 0, \n            vjust = 1,\n            size = 5, \n            color = '#0A537D') \n\n\n\n\n\n\n\n\n\nsessionInfo()\n\nR version 4.4.1 (2024-06-14)\nPlatform: aarch64-apple-darwin20\nRunning under: macOS Sonoma 14.5\n\nMatrix products: default\nBLAS:   /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRblas.0.dylib \nLAPACK: /Library/Frameworks/R.framework/Versions/4.4-arm64/Resources/lib/libRlapack.dylib;  LAPACK version 3.12.0\n\nlocale:\n[1] en_US.UTF-8/en_US.UTF-8/en_US.UTF-8/C/en_US.UTF-8/en_US.UTF-8\n\ntime zone: America/Chicago\ntzcode source: internal\n\nattached base packages:\n[1] stats     graphics  grDevices utils     datasets  methods   base     \n\nother attached packages:\n [1] palmerpenguins_0.1.1 yardstick_1.3.2      workflowsets_1.1.1  \n [4] workflows_1.2.0      tune_1.3.0           rsample_1.3.0       \n [7] recipes_1.3.1        parsnip_1.3.2        modeldata_1.4.0     \n[10] infer_1.0.8          dials_1.4.0          scales_1.3.0        \n[13] broom_1.0.7          tidymodels_1.3.0     lubridate_1.9.4     \n[16] forcats_1.0.0        stringr_1.5.1        dplyr_1.1.4         \n[19] purrr_1.0.4          readr_2.1.5          tidyr_1.3.1         \n[22] tibble_3.2.1         ggplot2_3.5.2        tidyverse_2.0.0     \n\nloaded via a namespace (and not attached):\n [1] tidyselect_1.2.1    timeDate_4041.110   farver_2.1.2       \n [4] fastmap_1.2.0       digest_0.6.37       rpart_4.1.24       \n [7] timechange_0.3.0    lifecycle_1.0.4     survival_3.8-3     \n[10] magrittr_2.0.3      compiler_4.4.1      rlang_1.1.5        \n[13] tools_4.4.1         utf8_1.2.4          yaml_2.3.10        \n[16] data.table_1.17.0   knitr_1.50          labeling_0.4.3     \n[19] htmlwidgets_1.6.4   DiceDesign_1.10     withr_3.0.2        \n[22] nnet_7.3-20         grid_4.4.1          colorspace_2.1-1   \n[25] future_1.49.0       globals_0.18.0      iterators_1.0.14   \n[28] MASS_7.3-64         cli_3.6.4           rmarkdown_2.29     \n[31] generics_0.1.3      rstudioapi_0.17.1   future.apply_1.11.3\n[34] tzdb_0.4.0          splines_4.4.1       parallel_4.4.1     \n[37] vctrs_0.6.5         hardhat_1.4.1       Matrix_1.7-2       \n[40] jsonlite_1.9.1      hms_1.1.3           listenv_0.9.1      \n[43] foreach_1.5.2       gower_1.0.2         glue_1.8.0         \n[46] parallelly_1.45.0   codetools_0.2-20    stringi_1.8.4      \n[49] gtable_0.3.6        munsell_0.5.1       GPfit_1.0-9        \n[52] pillar_1.10.1       furrr_0.3.1         htmltools_0.5.8.1  \n[55] ipred_0.9-15        lava_1.8.1          R6_2.6.1           \n[58] lhs_1.2.0           evaluate_1.0.3      lattice_0.22-6     \n[61] backports_1.5.0     class_7.3-23        Rcpp_1.0.14        \n[64] prodlim_2024.06.25  xfun_0.51           pkgconfig_2.0.3"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "Welcome",
+    "objectID": "lectures.html",
+    "href": "lectures.html",
+    "title": "Course Content",
     "section": "",
-    "text": "Welcome to the Course Website for Cell 6351 Intro to Reproducible Data Analysis Using R!"
+    "text": "Course content for each lecture is below:\n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nAuthor\n\n\n\n\n\n\n\n\n2025-07-01\n\n\nWelcome to the Course!\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-03\n\n\nNavigating Data Types in R\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-08\n\n\nData Wrangling with tidyverse\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-10\n\n\nData Visualization with ggplot2\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-14\n\n\nDimension Reduction with tidymodels\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-16\n\n\nMachine Learning with tidymodels\n\n\nLindsay Hayes\n\n\n\n\n\n\nNo matching items"
   },
   {
-    "objectID": "index.html#overview",
-    "href": "index.html#overview",
-    "title": "Welcome",
-    "section": "Overview",
-    "text": "Overview\nCurrent biomedical research regularly generates large datasets that require increasing computational skills to process and analyze including in genomics, behavior, imaging, and molecular biology. As a result, scientists today require fundamental computational and programming skill-sets to efficiently perform data analyses, generate complex models for testing, develop reproducible data analyses, and effectively communicate results through clear and meaningful graphics. However, these skills are often challenging due to a lack of structured training in data science.\nIntro to Reproducible Data Analysis Using R is a hands-on course that will introduce the R statistical software including data structures, wrangling data, plotting data, basic statistics, data modeling, and literate coding practices. There is no textbook for the course. All course materials will be provided on Canvas or this website. While no formal background in statistics or programming is necessary, a general knowledge of basic statistics, experimental design, and computer file storage systems will be helpful. All classes will involve active learning/coding activities so a laptop with power cord is required for all sessions. Students will be expected to complete readings prior to class, attend lectures to dive deeper into those topics in class, participate in classroom activities, complete projects practicing and reinforcing the computing and programming skills. There will be a final project, which will include a class presentation."
-  },
-  {
-    "objectID": "index.html#course-information",
-    "href": "index.html#course-information",
-    "title": "Welcome",
-    "section": "Course Information",
-    "text": "Course Information\n\nCourse Staff: Prof. Lindsay Hayes\nCourse Staff: TA. Eleana Cabello\nLectures: 10:30am-noon\nLocation: BMSB 324\nOffice Hours: by email"
-  },
-  {
-    "objectID": "index.html#course-details",
-    "href": "index.html#course-details",
-    "title": "Welcome",
-    "section": "Course Details",
-    "text": "Course Details\nAll course details are available on the Course page. The syllabus is available online here, download here, or on Canvas."
-  },
-  {
-    "objectID": "lectures/index_L01.html",
-    "href": "lectures/index_L01.html",
-    "title": "Welcome to the Course!",
-    "section": "",
-    "text": "The course will exclusively use R in the integrated development environment (IDE) called R Studio. Since the summer semester is only 1 month (10 classes), it is critical to have your computer set up and ready to go before the first day of class.\nThroughout the course, there will be a set of pre-lecture activities and/or readings for you to complete. These activities prepare you for the in-class activities. Failure to complete them will put you behind in an already compressed course.\nTo prepare for the first class:\n\nInstall R and R Studio\n\ninstallation video tutorial\nDetailed instructions on installing R and R Studio are available on swirl.\n\nComplete step 1 and step 2\n\n\n\n\n\n\n\n\n\nTip\n\n\n\nSwirl is a great tool to learn R interactively that we will use in the course. Feel free to explore more.\n\n\n\nIn the first class, we will begin to get familiar with R. Complete the Pre-reading material about R. Pre-reading materials for each class are located under Resources. Sometimes, pre-reading materials are direct links to external resources for you to read in advance of the lecture."
-  },
-  {
-    "objectID": "lectures/index_L01.html#learning-objectives",
-    "href": "lectures/index_L01.html#learning-objectives",
-    "title": "Welcome to the Course!",
-    "section": "Learning objectives",
-    "text": "Learning objectives\n\n\n\n\n\n\nLearning objectives\n\n\n\nAt the end of this lesson you will:\n\nGet an overview of the course (including staff, format, grading, etc)\nBe able to recognize and operate an Integrated Developer Environment (IDE).\nBe able to recognize a Quarto document and describe reasons why to use a unified authoring framework.\nBe able to create a R project & Quarto document."
-  },
-  {
-    "objectID": "lectures/index_L01.html#slides",
-    "href": "lectures/index_L01.html#slides",
-    "title": "Welcome to the Course!",
-    "section": "Slides",
-    "text": "Slides\n\nLecture 01: Welcome and Introductions\nIn-Class Activity"
-  },
-  {
-    "objectID": "lectures/index_L01.html#acknowledgements",
-    "href": "lectures/index_L01.html#acknowledgements",
-    "title": "Welcome to the Course!",
-    "section": "Acknowledgements",
-    "text": "Acknowledgements\nMaterial for this lecture was borrowed and adopted from\n\nsw carpentry: https://carpentries-incubator.github.io/bioc-intro/20-r-rstudio.html\ndata carpentry: https://datacarpentry.github.io/genomics-r-intro/00-introduction.html"
-  },
-  {
-    "objectID": "lectures/index_L01.html#summary",
-    "href": "lectures/index_L01.html#summary",
-    "title": "Welcome to the Course!",
-    "section": "Summary",
-    "text": "Summary\n\nAccess all course material on the course website (https://lindsaynhayes.github.io/introR2025/).\nRStudio makes you a more efficient programmer and gives you easy access to all the components of data analysis.\nQuarto is an open-source scientific and technical publishing system to create reproducible, production quality data analysis reports and much more. During the course we will primarily use the HTML output format."
-  },
-  {
-    "objectID": "lectures/index_L01.html#additional-practice",
-    "href": "lectures/index_L01.html#additional-practice",
-    "title": "Welcome to the Course!",
-    "section": "Additional practice",
-    "text": "Additional practice\nHere are some additional practice questions to help you think about the material discussed.\nCheck out this article on the 10 Best Practices for Data Science here\n\n\n\n\n\n\nPractice Tasks\n\n\n\n\nIn RStudio, create a new R project and then create a new Quarto document in that R project. Read the instructions. Practice running the chunks individually using the “play” button and the keyboard short cut.\nChange the settings of the Quarto document to display the output “inline” or in the “console”.\nRender the document and view the HTML output. Verify that you can modify the code, re-run it, and see modified output."
-  },
-  {
-    "objectID": "lectures/index_L03.html",
-    "href": "lectures/index_L03.html",
-    "title": "Data Wrangling with tidyverse",
+    "objectID": "lectures/index_L02.html",
+    "href": "lectures/index_L02.html",
+    "title": "Navigating Data Types in R",
     "section": "",
     "text": "Before class, read the pre-reading materials."
   },
   {
-    "objectID": "lectures/index_L03.html#learning-objectives",
-    "href": "lectures/index_L03.html#learning-objectives",
-    "title": "Data Wrangling with tidyverse",
+    "objectID": "lectures/index_L02.html#learning-objectives",
+    "href": "lectures/index_L02.html#learning-objectives",
+    "title": "Navigating Data Types in R",
     "section": "Learning objectives",
-    "text": "Learning objectives\n\n\n\n\n\n\nLearning objectives\n\n\n\nAt the end of class you will be able to:\n\nRecognize and define an untidy dataset\nRecognize and convert between long and wide data formats\nUnderstand when to use both formats\nPipe functions together to perform multiple commands in sequence"
+    "text": "Learning objectives\n\n\n\n\n\n\nLearning objectives\n\n\n\nAt the end of class you will be able to:\n\nGenerate and navigate a quarto document\nUnderstand what packages are and how to use them\nGet data in and out of R\nRecognize and create various data types in R"
   },
   {
-    "objectID": "lectures/index_L03.html#slides",
-    "href": "lectures/index_L03.html#slides",
-    "title": "Data Wrangling with tidyverse",
+    "objectID": "lectures/index_L02.html#slides",
+    "href": "lectures/index_L02.html#slides",
+    "title": "Navigating Data Types in R",
     "section": "Slides",
-    "text": "Slides\n\nLecture 03: Data Wrangling\nIn-Class Activity"
+    "text": "Slides\n\nLecture 02: Data Types\nIn-Class Activity"
   },
   {
-    "objectID": "lectures/index_L05.html",
-    "href": "lectures/index_L05.html",
-    "title": "Dimension Reduction with tidymodels",
+    "objectID": "lectures/index_L04.html",
+    "href": "lectures/index_L04.html",
+    "title": "Data Visualization with ggplot2",
     "section": "",
-    "text": "Before class, watch this video from Data Scientists Julie Silge from RStudio. She does a real-time data analysis using Principal Component Analysis (PCA) of the best hip hop songs of all time according to critics ratings. This video is not a detailed explanation of what PCA is or how it works (there is a lot of that maths on the internet if you want). In contrast, it is a live, real-time, analysis that asks the question what song features make a hip hop song the best. I want you to see that PCA is often a first line of inquiry when exploring a dataset.\n\nFor background, TidyTuesday is a weekly podcast and community activity that brings an interesting dataset to the data science community each week to do some cool plotting or analysis on. It provides interesting data to use for teaching purposes or code testing.\nThis video goes pretty fast but all the code she uses is below the video."
+    "text": "Before class, read chapter 4 titled “Visualizing Data in the Tidyverse” from the Tidyverse Skills for Data Science Book by Carrie Wright, Shannon E. Ellis, Stephanie C. Hicks, and Roger D. Peng.\nReading: Visualizing Data in the Tidyverse\nFor more examples, you can checkout a YouTube video series on ggplot from Dr. Lace Padilla.\n\nMastering ggplot2 in R [17 min]\nMastering Axes in ggplot2 [16 min]\nColor Magic in ggplot2 [12.5 min]\nMastering Facet_Wrap in ggplot2 [15 min]"
   },
   {
-    "objectID": "lectures/index_L05.html#learning-objectives",
-    "href": "lectures/index_L05.html#learning-objectives",
-    "title": "Dimension Reduction with tidymodels",
+    "objectID": "lectures/index_L04.html#learning-objectives",
+    "href": "lectures/index_L04.html#learning-objectives",
+    "title": "Data Visualization with ggplot2",
     "section": "Learning objectives",
-    "text": "Learning objectives\n\n\n\n\n\n\nLearning objectives\n\n\n\nAt the end of class you will be able to:\n\nDefine dimension reduction\nExplain why dimension reduction is used\nBuild a model to perform PCA on a dataset"
+    "text": "Learning objectives\n\n\n\n\n\n\nLearning objectives\n\n\n\nAt the end of class you will be able to:\n\nDistinguish between good and bad plots\nMatch the type of plots with the type of data input\nList the features of the grammer of graphics\nBuild complex graphics in ggplot2"
   },
   {
-    "objectID": "lectures/index_L05.html#slides",
-    "href": "lectures/index_L05.html#slides",
-    "title": "Dimension Reduction with tidymodels",
+    "objectID": "lectures/index_L04.html#slides",
+    "href": "lectures/index_L04.html#slides",
+    "title": "Data Visualization with ggplot2",
     "section": "Slides",
-    "text": "Slides\n\nLecture 05: Dimension Reduction in tidymodels\nIn-Class Activity"
+    "text": "Slides\n\nLecture 04: Data Visualization in ggplot\nIn-Class Activity"
+  },
+  {
+    "objectID": "lectures/index_L06.html",
+    "href": "lectures/index_L06.html",
+    "title": "Machine Learning with tidymodels",
+    "section": "",
+    "text": "Before class, read the pre-reading materials."
+  },
+  {
+    "objectID": "lectures/index_L06.html#learning-objectives",
+    "href": "lectures/index_L06.html#learning-objectives",
+    "title": "Machine Learning with tidymodels",
+    "section": "Learning objectives",
+    "text": "Learning objectives\n\n\n\n\n\n\nLearning objectives\n\n\n\nAt the end of class you will be able to:\n\nUnderstand the purpose of data modeling, specifically machine learning classification.\nIdentify the packages and tools used to implement machine learning algorithms for data analysis."
+  },
+  {
+    "objectID": "lectures/index_L06.html#slides",
+    "href": "lectures/index_L06.html#slides",
+    "title": "Machine Learning with tidymodels",
+    "section": "Slides",
+    "text": "Slides\n\nLecture 06: Predictive Modeling with tidymodels\nIn-Class Activity"
   },
   {
     "objectID": "projects.html",

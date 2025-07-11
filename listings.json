@@ -11,17 +11,6 @@
     ]
   },
   {
-    "listing": "/lectures.html",
-    "items": [
-      "/lectures/index_L01.html",
-      "/lectures/index_L02.html",
-      "/lectures/index_L03.html",
-      "/lectures/index_L04.html",
-      "/lectures/index_L05.html",
-      "/lectures/index_L06.html"
-    ]
-  },
-  {
     "listing": "/activities.html",
     "items": [
       "/activities/classwork01/palmerpenguins_intro.html",
@@ -30,6 +19,17 @@
       "/activities/classwork03/classwork_L03.html",
       "/activities/classwork05/PCA_Penguins.html",
       "/activities/classwork06/Pred_Penguins.html"
+    ]
+  },
+  {
+    "listing": "/lectures.html",
+    "items": [
+      "/lectures/index_L01.html",
+      "/lectures/index_L02.html",
+      "/lectures/index_L03.html",
+      "/lectures/index_L04.html",
+      "/lectures/index_L05.html",
+      "/lectures/index_L06.html"
     ]
   },
   {

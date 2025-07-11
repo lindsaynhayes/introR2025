@@ -10,6 +10,7 @@
   <meta name="generator" content="quarto-1.7.32">
 
   <meta name="author" content="Eleana Cabello">
+  <meta name="dcterms.date" content="2025-07-18">
   <title>Intro to Reproducible Data Analysis Using R – Building a Quarto Website and Using GitHub</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -192,7 +193,7 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" class="quarto-title-block center">
+<section id="title-slide" data-background-image="figures/template/title_2.png" class="quarto-title-block center">
   <h1 class="title">Building a Quarto Website and Using GitHub</h1>
 
 <div class="quarto-title-authors">
@@ -203,20 +204,17 @@ Eleana Cabello
 </div>
 </div>
 
+  <p class="date">2025-07-18</p>
 </section>
-<section id="github" class="slide level2 scrollable">
+<section id="github" class="slide level2 center" data-background-image="figures/template/border_1.png">
 <h2>Github</h2>
 <ul>
 <li><p>Online based platform that is used, along with git, for version control of software projects and makes collaboration easier between developers</p></li>
-<li><p>Version control means tracking modifications, creations, and deletions of files of a project</p></li>
+<li><p>Version control means tracking modifications, creations, and deletions of project files</p></li>
 <li><p>Connects your local development enviroment, or local repository, to online/cloud based storage, remote reposiroty, to keep track of modifications and make it easier to share with others</p></li>
 </ul>
 </section>
-<section id="github-repositories-and-remotes" class="slide level2">
-<h2>Github Repositories and Remotes</h2>
-
-<img data-src="../figures/L07/slides/github_flow.jpg" class="quarto-figure quarto-figure-center r-stretch" width="500"></section>
-<section id="quarto" class="slide level2">
+<section id="quarto" class="slide level2 center" data-background-image="figures/template/border_1.png">
 <h2>Quarto</h2>
 <ul>
 <li><p>Open-source scientific and technical publishing system that allows for the use of narrative text with code</p></li>
@@ -224,35 +222,44 @@ Eleana Cabello
 <li><p>The ability to change formats easily and incoporate other languages than only R removes previous limitations and allows for better communication of projects and workflows</p></li>
 </ul>
 </section>
-<section id="project-benefits-of-using-github-and-quarto" class="slide level2">
+<section id="project-benefits-of-using-github-and-quarto" class="slide level2 center" data-background-image="figures/template/border_1.png">
 <h2>Project Benefits of using Github and Quarto</h2>
 <ul>
-<li><p>Easier Submission - Everything is together and well documented (hopefully🤞) to be submitted for publication</p></li>
-<li><p>Reproducibility - allows others to easily have access to how an analysis was done and be able to replicate it</p></li>
-<li><p>Branding - Having an online resume/cv of all your projects and those you have collaborated on with others</p></li>
+<li><p><strong>Easier Publication Submission</strong> - Everything is together and well documented (hopefully🤞) to be submitted for publication</p></li>
+<li><p><strong>Reproducibility</strong> - allows others to easily have access to how an analysis was done and be able to replicate it</p></li>
+<li><p><strong>Branding</strong> - Having an online resume/cv of all your projects and those you have collaborated on with others</p></li>
 </ul>
 </section>
-<section id="setting-up-your-first-quarto-website-on-github" class="slide level2 center">
+<section id="example-websites" class="slide level2 center" data-background-image="figures/template/border_1.png">
+<h2>Example Websites</h2>
+<ul>
+<li><a href="https://lindsaynhayes.github.io/" target="_blank">Dr.&nbsp;Hayes Website</a></li>
+<li><a href="https://sta210-s22.github.io/website/" target="_blank">Course Website</a></li>
+<li><a href="https://realworlddatascience.net/" target="_blank">Community and Sharing Information</a></li>
+<li><a href="https://quarto.org/docs/gallery/#websites" target="_blank">Gallery of Quarto Websites</a></li>
+</ul>
+</section>
+<section id="setting-up-your-first-quarto-website-on-github" class="slide level2 center" data-background-image="figures/template/title_1.png">
 <h2>Setting Up Your First Quarto Website on GitHub</h2>
 </section>
-<section id="setup-repository-online" class="slide level2 scrollable">
+<section id="setup-repository-online" class="slide level2 scrollable center">
 <h2>1 - Setup Repository Online</h2>
 <p>Click on the New Repo button.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../figures/L07/slides/github_new_repo_button.png" class="quarto-figure quarto-figure-center" width="500"></p>
+<p><img data-src="figures/L07/slides/github_new_repo_button.png" class="quarto-figure quarto-figure-center" width="900"></p>
 </figure>
 </div>
 <p>Name your Repo and click the Create Repository button.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../figures/L07/slides/github_repo_create.png" class="quarto-figure quarto-figure-center" width="500"></p>
+<p><img data-src="figures/L07/slides/github_repo_create.png" class="quarto-figure quarto-figure-center" width="900"></p>
 </figure>
 </div>
 <p>Once on the page below, click Set up in Desktop.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../figures/L07/slides/github_repo_setup.png" class="quarto-figure quarto-figure-center" width="500"></p>
+<p><img data-src="figures/L07/slides/github_repo_setup.png" class="quarto-figure quarto-figure-center" width="900"></p>
 </figure>
 </div>
 </section>
@@ -261,20 +268,20 @@ Eleana Cabello
 <p>Once in Github Desktop, pick what directory you would like to store the repository locally. This action will create a remote repository connecting it to the one you have online.</p>
 </section>
 <section id="section" class="slide level2">
-<h2><img data-src="../figures/L07/slides/github_desktop_setup.png" class="quarto-figure quarto-figure-center" width="500"></h2>
+<h2><img data-src="figures/L07/slides/github_desktop_setup.png" class="quarto-figure quarto-figure-center" width="900"></h2>
 </section>
 <section id="open-rstudio-and-set-repository-as-working-directory" class="slide level2 scrollable">
 <h2>3 - Open RStudio and Set Repository as Working Directory</h2>
 <p>Navigate to your remote repository through the files window.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../figures/L07/slides/rstudio_files_window.png" class="quarto-figure quarto-figure-center" width="500"></p>
+<p><img data-src="figures/L07/slides/rstudio_files_window.png" class="quarto-figure quarto-figure-center" width="900"></p>
 </figure>
 </div>
 <p>Once in the remote repository, click the gears icon and Set As Working Directory.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../figures/rstudio_set_wd.png" class="quarto-figure quarto-figure-center" width="500"></p>
+<p><img data-src="figures/L07/slides/rstudio_set_wd.png" class="quarto-figure quarto-figure-center" width="900"></p>
 </figure>
 </div>
 </section>
@@ -282,7 +289,7 @@ Eleana Cabello
 <h2>4 - Setting Up Quarto Website Project in Repository</h2>
 <p>Type the following command in the terminal to create an RProject and setup a quarto website, a new window of RStudio will appear:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a>  <span class="ex">quarto</span> create project website</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>On the new Rstudio window refresh and check out the new files by refreshing the files window.</p>
+<p>On the new Rstudio window refresh and check out the new files by refreshing the files window:</p>
 <ul>
 <li>_quarto.yml</li>
 <li>index.qmd</li>
@@ -295,13 +302,13 @@ Eleana Cabello
 <p>In Github desktop type a commit message and commit to main.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../figures/github_desktop_commit.png" class="quarto-figure quarto-figure-center" width="500"></p>
+<p><img data-src="figures/L07/slides/github_desktop_commit.png" class="quarto-figure quarto-figure-center" width="900"></p>
 </figure>
 </div>
 <p>After commiting your changes and message, hit publish to origin.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../figures/github_desktop_publish.png" class="quarto-figure quarto-figure-center" width="500"></p>
+<p><img data-src="figures/L07/slides/github_desktop_publish.png" class="quarto-figure quarto-figure-center" width="900"></p>
 </figure>
 </div>
 </section>
@@ -310,18 +317,18 @@ Eleana Cabello
 <p>In Github website refresh and view all branches in the repository by following the steps below:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../figures/branch_button.png" class="quarto-figure quarto-figure-center" width="500"></p>
+<p><img data-src="figures/L07/slides/branch_button.png" class="quarto-figure quarto-figure-center" width="900"></p>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../figures/branch_new_button.png" class="quarto-figure quarto-figure-center" width="500"></p>
+<p><img data-src="figures/L07/slides/branch_new_button.png" class="quarto-figure quarto-figure-center" width="900"></p>
 </figure>
 </div>
 <p>Make sure to name it gh-pages, it has to be named this in order for your website to work.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../figures/branch_create_button.png" class="quarto-figure quarto-figure-center" width="500"></p>
+<p><img data-src="figures/L07/slides/branch_create_button.png" class="quarto-figure quarto-figure-center" width="900"></p>
 </figure>
 </div>
 </section>
@@ -372,22 +379,211 @@ Eleana Cabello
 <p>Navigate to settings of your repository.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../figures/repo_settings.png" class="quarto-figure quarto-figure-center" width="500"></p>
+<p><img data-src="figures/L07/slides/repo_settings.png" class="quarto-figure quarto-figure-center" width="900"></p>
 </figure>
 </div>
 <p>Then navigate to pages.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="../figures/repo_pages.png" class="quarto-figure quarto-figure-center" width="500"></p>
+<p><img data-src="figures/L07/slides/repo_pages.png" class="quarto-figure quarto-figure-center" width="900"></p>
 </figure>
 </div>
 <p>In pages make sure that under Build and Deployment Source is Deploy from Branch. Also make sure that under Branch that gh-pages is selected from /(root) like below:</p>
-</section>
-<section id="section-1" class="slide level2">
-<h2><img data-src="../figures/repo_pages_setup.png" class="quarto-figure quarto-figure-center" width="500"></h2>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/L07/slides/repo_pages_setup.png" class="quarto-figure quarto-figure-center" width="900"></p>
+</figure>
+</div>
 </section>
 <section id="visit-your-website" class="slide level2 center">
 <h2>10 - Visit Your Website!</h2>
+
+<img data-src="figures/L07/slides/website_link.png" class="quarto-figure quarto-figure-center r-stretch" width="900"></section>
+<section id="customizing-your-website" class="slide level2 center" data-background-image="figures/template/title_1.png">
+<h2>Customizing Your Website</h2>
+</section>
+<section id="lets-edit-your-home-page-index.qmd" class="slide level2 center" data-background-image="figures/template/border_2.png">
+<h2>Lets edit your Home Page: <code>index.qmd</code></h2>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>publish.yml</strong></pre>
+</div>
+<div class="sourceCode" id="cb3" data-filename="publish.yml"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a></a><span class="ex">---</span></span>
+<span id="cb3-2"><a></a><span class="ex">title:</span> <span class="st">"NAME"</span></span>
+<span id="cb3-3"><a></a><span class="ex">image:</span> headshot.png</span>
+<span id="cb3-4"><a></a><span class="ex">toc:</span> false</span>
+<span id="cb3-5"><a></a><span class="ex">about:</span></span>
+<span id="cb3-6"><a></a>  <span class="ex">template:</span> trestles</span>
+<span id="cb3-7"><a></a>  <span class="ex">links:</span></span>
+<span id="cb3-8"><a></a>    <span class="ex">-</span> text: GitHub</span>
+<span id="cb3-9"><a></a>      <span class="ex">href:</span> link</span>
+<span id="cb3-10"><a></a>    <span class="ex">-</span> text: Email</span>
+<span id="cb3-11"><a></a>      <span class="ex">href:</span> link</span>
+<span id="cb3-12"><a></a><span class="ex">---</span></span>
+<span id="cb3-13"><a></a></span>
+<span id="cb3-14"><a></a><span class="ex">:::</span> {.column-page}</span>
+<span id="cb3-15"><a></a></span>
+<span id="cb3-16"><a></a><span class="co">## Bio</span></span>
+<span id="cb3-17"><a></a></span>
+<span id="cb3-18"><a></a><span class="co">## Research Goals</span></span>
+<span id="cb3-19"><a></a></span>
+<span id="cb3-20"><a></a><span class="co">## Experience</span></span>
+<span id="cb3-21"><a></a></span>
+<span id="cb3-22"><a></a><span class="ex">:::</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="setting-up-your-project" class="slide level2 scrollable" data-background-image="figures/template/border_2.png">
+<h2>Setting up your project</h2>
+<ul>
+<li>Create a new Quarto document named projects - <code>projects.qmd</code> - with the following content:</li>
+</ul>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>projects.qmd</strong></pre>
+</div>
+<div class="sourceCode" id="cb4" data-filename="projects.qmd"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a></a><span class="ex">---</span></span>
+<span id="cb4-2"><a></a><span class="ex">title:</span> <span class="st">"Projects"</span></span>
+<span id="cb4-3"><a></a><span class="ex">listing:</span></span>
+<span id="cb4-4"><a></a>  <span class="ex">id:</span> projects-listings</span>
+<span id="cb4-5"><a></a>  <span class="ex">contents:</span> projects</span>
+<span id="cb4-6"><a></a>  <span class="ex">sort:</span> <span class="st">"date asc"</span></span>
+<span id="cb4-7"><a></a>  <span class="ex">type:</span> table</span>
+<span id="cb4-8"><a></a>  <span class="ex">categories:</span> false</span>
+<span id="cb4-9"><a></a>  <span class="ex">sort-ui:</span> false</span>
+<span id="cb4-10"><a></a>  <span class="ex">filter-ui:</span> false</span>
+<span id="cb4-11"><a></a><span class="ex">page-layout:</span> full</span>
+<span id="cb4-12"><a></a><span class="ex">title-block-banner:</span> false</span>
+<span id="cb4-13"><a></a><span class="ex">date-format:</span> <span class="st">"MM-DD-YYYY"</span></span>
+<span id="cb4-14"><a></a><span class="ex">---</span></span>
+<span id="cb4-15"><a></a></span>
+<span id="cb4-16"><a></a><span class="ex">:::</span> {#Projects-listings}</span>
+<span id="cb4-17"><a></a><span class="ex">:::</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li><p>Create a <strong>projects</strong> folder</p></li>
+<li><p>Move <code>about.qmd</code> to the projects folder and rename it to your <strong>project_title.qmd</strong></p></li>
+<li><p>Now change the listing in the <code>_quarto.yml</code>:</p></li>
+</ul>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>_quarto.yml</strong></pre>
+</div>
+<div class="sourceCode" id="cb5" data-filename="_quarto.yml"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a></a><span class="ex">website:</span></span>
+<span id="cb5-2"><a></a>  <span class="ex">title:</span> <span class="st">"Test_website"</span></span>
+<span id="cb5-3"><a></a>  <span class="ex">navbar:</span></span>
+<span id="cb5-4"><a></a>    <span class="ex">right:</span></span>
+<span id="cb5-5"><a></a>      <span class="ex">-</span> href: index.qmd</span>
+<span id="cb5-6"><a></a>        <span class="ex">text:</span> Home</span>
+<span id="cb5-7"><a></a>      <span class="ex">-</span> href: projects.qmd</span>
+<span id="cb5-8"><a></a>        <span class="ex">text:</span> Projects</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="changing-your-publish.yml-to-run-r-code" class="slide level2 scrollable" data-background-image="figures/template/border_2.png">
+<h2>Changing your <code>publish.yml</code> to run R code</h2>
+<p>To run your Quarto R code cells and have their output displayed on your website (without errors) you must add R enviroment development step to your workflow file:</p>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>publish.yml</strong></pre>
+</div>
+<div class="sourceCode" id="cb6" data-filename="publish.yml"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a></a><span class="ex">name:</span> Quarto Publish</span>
+<span id="cb6-2"><a></a></span>
+<span id="cb6-3"><a></a><span class="ex">on:</span></span>
+<span id="cb6-4"><a></a>  <span class="ex">workflow_dispatch:</span></span>
+<span id="cb6-5"><a></a>  <span class="ex">push:</span></span>
+<span id="cb6-6"><a></a>    <span class="ex">branches:</span> main</span>
+<span id="cb6-7"><a></a>    </span>
+<span id="cb6-8"><a></a><span class="ex">jobs:</span></span>
+<span id="cb6-9"><a></a>  <span class="ex">build-deploy:</span></span>
+<span id="cb6-10"><a></a>    <span class="ex">runs-on:</span> ubuntu-latest</span>
+<span id="cb6-11"><a></a>    <span class="ex">permissions:</span></span>
+<span id="cb6-12"><a></a>      <span class="ex">contents:</span> write</span>
+<span id="cb6-13"><a></a>    <span class="ex">steps:</span></span>
+<span id="cb6-14"><a></a>      <span class="ex">-</span> name: Check out repository</span>
+<span id="cb6-15"><a></a>        <span class="ex">uses:</span> actions/checkout@v4</span>
+<span id="cb6-16"><a></a></span>
+<span id="cb6-17"><a></a>      <span class="ex">-</span> name: Set up R</span>
+<span id="cb6-18"><a></a>        <span class="ex">uses:</span> r-lib/actions/setup-r@v2</span>
+<span id="cb6-19"><a></a>        <span class="ex">with:</span></span>
+<span id="cb6-20"><a></a>          <span class="ex">r-version:</span> <span class="st">'4.2'</span></span>
+<span id="cb6-21"><a></a>      </span>
+<span id="cb6-22"><a></a>      <span class="ex">-</span> name: Set up R Dependencies </span>
+<span id="cb6-23"><a></a>        <span class="ex">uses:</span> r-lib/actions/setup-r-dependencies@v2</span>
+<span id="cb6-24"><a></a>        <span class="ex">with:</span></span>
+<span id="cb6-25"><a></a>          <span class="ex">packages:</span></span>
+<span id="cb6-26"><a></a>            <span class="ex">any::knitr</span></span>
+<span id="cb6-27"><a></a>            <span class="ex">any::rmarkdown</span></span>
+<span id="cb6-28"><a></a>            <span class="ex">any::tidyverse</span></span>
+<span id="cb6-29"><a></a>            <span class="ex">any::taylor</span></span>
+<span id="cb6-30"><a></a>            <span class="ex">any::GGally</span></span>
+<span id="cb6-31"><a></a>            <span class="ex">any::ggstats</span></span>
+<span id="cb6-32"><a></a>            <span class="ex">any::cowplot</span></span>
+<span id="cb6-33"><a></a>            <span class="ex">any::lme4</span></span>
+<span id="cb6-34"><a></a>            <span class="ex">any::lmerTest</span></span>
+<span id="cb6-35"><a></a>            <span class="ex">any::palmerpenguins</span></span>
+<span id="cb6-36"><a></a>            <span class="ex">any::tidymodels</span></span>
+<span id="cb6-37"><a></a>            <span class="ex">any::psycModel</span> </span>
+<span id="cb6-38"><a></a>            </span>
+<span id="cb6-39"><a></a>      <span class="ex">-</span> name: Set up Quarto</span>
+<span id="cb6-40"><a></a>        <span class="ex">uses:</span> quarto-dev/quarto-actions/setup@v2</span>
+<span id="cb6-41"><a></a></span>
+<span id="cb6-42"><a></a>      <span class="ex">-</span> name: Render and Publish</span>
+<span id="cb6-43"><a></a>        <span class="ex">uses:</span> quarto-dev/quarto-actions/publish@v2</span>
+<span id="cb6-44"><a></a>        <span class="ex">with:</span></span>
+<span id="cb6-45"><a></a>          <span class="ex">target:</span> gh-pages</span>
+<span id="cb6-46"><a></a>        <span class="ex">env:</span></span>
+<span id="cb6-47"><a></a>          <span class="ex">GITHUB_TOKEN:</span> <span class="va">${</span><span class="er">{ secrets.GITHUB_TOKEN </span><span class="va">}</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="add-your-dataset-to-your-working-directory" class="slide level2 center" data-background-image="figures/template/border_2.png">
+<h2>Add your dataset to your working directory</h2>
+</section>
+<section id="since-we-have-time---make-it-more-personal" class="slide level2 scrollable" data-background-image="figures/template/border_3.png">
+<h2>Since we have time - Make it more personal</h2>
+<ul>
+<li>Change .css to .scss and change the file to the following:</li>
+</ul>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>styles.scss</strong></pre>
+</div>
+<div class="sourceCode" id="cb7" data-filename="styles.scss"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a></a><span class="ex">/*--</span> scss:defaults <span class="at">--</span><span class="pp">*</span>/</span>
+<span id="cb7-2"><a></a></span>
+<span id="cb7-3"><a></a><span class="ex">//</span> Colors</span>
+<span id="cb7-4"><a></a><span class="va">$dark</span><span class="ex">-green:</span> <span class="co">#596b57;</span></span>
+<span id="cb7-5"><a></a><span class="va">$light</span><span class="ex">-green:</span> <span class="co">#D1D9CE;</span></span>
+<span id="cb7-6"><a></a><span class="va">$cream</span><span class="ex">:</span> <span class="co">#FDFBF7;</span></span>
+<span id="cb7-7"><a></a><span class="va">$gray</span><span class="ex">:</span> <span class="co">#64605f;</span></span>
+<span id="cb7-8"><a></a><span class="va">$purple</span><span class="ex">:</span> <span class="co">#9158A2;</span></span>
+<span id="cb7-9"><a></a><span class="va">$orange</span><span class="ex">:</span> <span class="co">#ad7237;</span></span>
+<span id="cb7-10"><a></a><span class="va">$black</span><span class="ex">:</span> <span class="co">#151617;</span></span>
+<span id="cb7-11"><a></a></span>
+<span id="cb7-12"><a></a><span class="ex">//</span> Base document colors</span>
+<span id="cb7-13"><a></a><span class="va">$navbar</span><span class="ex">-bg:</span> <span class="va">$dark</span>-green<span class="kw">;</span> <span class="ex">//</span> navbar</span>
+<span id="cb7-14"><a></a><span class="va">$navbar</span><span class="ex">-fg:</span> <span class="va">$cream</span><span class="kw">;</span> <span class="ex">//</span> navbar foreground elements</span>
+<span id="cb7-15"><a></a><span class="va">$navbar</span><span class="ex">-hl:</span> <span class="va">$light</span>-green<span class="kw">;</span> <span class="ex">//</span> highlight color when hovering over navbar links</span>
+<span id="cb7-16"><a></a><span class="va">$body</span><span class="ex">-bg:</span> <span class="va">$cream</span><span class="kw">;</span> <span class="ex">//</span> page background </span>
+<span id="cb7-17"><a></a><span class="va">$body</span><span class="ex">-color:</span> <span class="va">$black</span><span class="kw">;</span> <span class="ex">//</span> page text </span>
+<span id="cb7-18"><a></a><span class="va">$footer</span><span class="ex">-bg:</span> <span class="va">$cream</span><span class="kw">;</span> <span class="ex">//</span> footer </span>
+<span id="cb7-19"><a></a></span>
+<span id="cb7-20"><a></a><span class="ex">//</span> Inline code</span>
+<span id="cb7-21"><a></a><span class="va">$code</span><span class="ex">-bg:</span> <span class="va">$cream</span><span class="kw">;</span> <span class="ex">//</span> inline code background color</span>
+<span id="cb7-22"><a></a><span class="va">$code</span><span class="ex">-color:</span> <span class="va">$orange</span><span class="kw">;</span> <span class="ex">//</span> inline code text color</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>In <code>_quarto.yml</code> change the following:</li>
+</ul>
+<div class="code-with-filename">
+<div class="code-with-filename-file">
+<pre><strong>_quarto.yml</strong></pre>
+</div>
+<div class="sourceCode" id="cb8" data-filename="_quarto.yml"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a></a><span class="ex">format:</span></span>
+<span id="cb8-2"><a></a>  <span class="ex">html:</span></span>
+<span id="cb8-3"><a></a>    <span class="ex">theme:</span> styles.scss</span>
+<span id="cb8-4"><a></a>    <span class="ex">toc:</span> true</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="section-1" class="slide level2" data-background-image="figures/template/title_2.png">
+<h2></h2>
 
 
 </section>
