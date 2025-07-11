@@ -71,6 +71,7 @@ Once on the page below, click Set up in Desktop.
 Once in Github Desktop, pick what directory you would like to store the repository locally. This action will create a remote repository connecting it to the one you have online.
 
 ![](figures/L07/slides/github_desktop_setup.png){width=900 fig-align=center}
+
 ---
 
 ## 3 - Open RStudio and Set Repository as Working Directory {.scrollable}
