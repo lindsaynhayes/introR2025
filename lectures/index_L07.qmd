@@ -2,157 +2,29 @@
 title: "Building a Quarto Website and Using GitHub"
 author: 
   - name: Eleana Cabello
-description: "Sharing your science!"
 date: 2025-07-18
-draft: True
+draft: true
 ---
 
-# Why use Quarto and Github?
-PROS 👍:
+# Pre-lecture activities
 
-- Used by many researchers already 
-- Allows for someone else to view your workflow easily 
-- Version control! Can go back and keep track of changes to your project or scripts
-- Free! Not behind a paywall or monthly subsciption
-- Easy for someone to download to their local computer and run the same scripts 
+Before class, complete the tasks listed in the [pre-reading materials](https://lindsaynhayes.github.io/introR2025/readings/index_R07.html).
 
-CONS 👎:
+# Lecture
 
-- A little hard to understand how it works but after the learning curve it's great!
-- Can only have a static website
+## Learning objectives
 
-# Setting A Quarto Website through Github Pages
+::: callout-note
+### Learning objectives
 
-#### 1. Setup Repository Online 
+**At the end of this lesson you will be able to:**
 
-- Click on the New Repo button.
+- Create a Github repository 
+- Setup a Quarto Website
+- Publish your Quarto website through Github Pages
+- Customize your Quarto Website
+:::
 
-![](figures/L07/lecture/github_new_repo_button.png){width=500 fig-align=center}
+## Slides
 
-- Name your Repo and click the Create Repository button.
-
-![](figures/L07/lecture/github_repo_create.png){width=500 fig-align=center}
-
-- Once on the page below, click Set up in Desktop.
-
-![](figures/L07/lecture/github_repo_setup.png){width=500 fig-align=center}
-
-#### 2. Set Up Remote Repository Locally through Github Desktop 
-
-- Once in Github Desktop, pick what directory you would like to store the repository locally. This action will create a remote repository connecting it to the one you have online.
-
-![](figures/L07/lecture/github_desktop_setup.png){width=500 fig-align=center}
-
-#### 3. Open RStudio and Set Repository as Working Directory 
-
-- Navigate to your remote repository through the files window.
-
-![](figures/L07/lecture/rstudio_files_window.png){width=500 fig-align=center}
-
-- Once in the remote repository, click the gears icon and Set As Working Directory.
-
-![](figures/L07/lecture/rstudio_set_wd.png){width=500 fig-align=center}
-
-#### 4. Setting Up Quarto Website Project in Repository
-  - Type the following command in the terminal to create an RProject and setup a quarto website, a new window of RStudio will appear:
-  
-```{.bash}
-  quarto create project website
-```
-  
-  - On the new Rstudio window refresh and check out the new files by refreshing the files window.
-
-#### 5. Commiting and Pushing to Github Repository
-
-  - In Github desktop type a commit message and commit to main.
-  
-![](figures/L07/lecture/github_desktop_commit.png){width=500 fig-align=center}
-
-- After commiting your changes and message, hit publish to origin.
-
-![](figures/L07/lecture/github_desktop_publish.png){width=500 fig-align=center}
-
-#### 6. Setting Up to Publish to Github Pages using a gh-pages branch
-  - In Github website refresh and view all branches in the repository by following the steps below:
-  
-![](figures/L07/lecture/branch_button.png){width=500 fig-align=center}
-
-![](figures/L07/lecture/branch_new_button.png){width=500 fig-align=center}
-
-- Make sure to name it gh-pages, it has to be named this in order for your website to work. 
-
-![](figures/L07/lecture/branch_create_button.png){width=500 fig-align=center}
-
-#### 7. Setting Up Github Pages and Workflows Locally 
-  - Back in R studio do the following:
-    - Create text file named ".nojekyll", it does not need to contain anything.
-    - Create ".github" folder, then a folder named workflows inside .github, then a text file named "publish.yml"
-    - Copy and paste below into the publish.yml:
-  
-```{.bash filename="publish.yml"}
-on:
-  workflow_dispatch:
-  push:
-    branches: main
-
-name: Quarto Publish
-
-jobs:
-  build-deploy:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
-    steps:
-      - name: Check out repository
-        uses: actions/checkout@v4
-
-      - name: Set up Quarto
-        uses: quarto-dev/quarto-actions/setup@v2
-
-      - name: Render and Publish
-        uses: quarto-dev/quarto-actions/publish@v2
-        with:
-          target: gh-pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-```
-
-#### 8. Commit and Push Changes to Host Website on Github Pages
-
-#### 9. Check Settings and Website
-  - Navigate to settings of your repository.
-  
-![](figures/L07/lecture/repo_settings.png){width=500 fig-align=center}
-
-- Then navigate to pages.
-
-![](figures/L07/lecture/repo_pages.png){width=500 fig-align=center}
-
-- In pages make sure that under Build and Deployment Source is Deploy from Branch. Also make sure that under Branch that gh-pages is selected from /(root) like below:
-
-![](figures/L07/lecture/repo_pages_setup.png){width=500 fig-align=center}
-
-#### 10. Visit Your Website!
-
-### Creating Home Webpage
-- qmd file
-- markdown language
-- Previewing changes using quarto preview
-
-### Programming in R, Bash, and Python
-- Adding code blocks
-
-### Customizing A Quarto Website 
-- Adding listing pages
-- Adding tabs
-- Changing css or scss file 
-
-## Adding packages
-
-## Listing Pages
-
-## Bio
-
-## Lindsays Website 
-
-
+-   [Lecture 07: Building a Quarto Website and Using GitHub](https://lindsaynhayes.github.io/introR2025/activities/classwork07/slides/index_L07_slides.html)
