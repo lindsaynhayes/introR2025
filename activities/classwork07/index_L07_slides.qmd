@@ -46,8 +46,6 @@ title-slide-attributes:
 - [Community and Sharing Information](https://realworlddatascience.net/){target="_blank"}
 - [Gallery of Quarto Websites](https://quarto.org/docs/gallery/#websites){target="_blank"}
 
----
-
 ## Setting Up Your First Quarto Website on GitHub {.center background-image="figures/template/title_1.png"}
 
 ## 1 - Setup Repository Online {.scrollable .center}
@@ -64,13 +62,11 @@ Once on the page below, click Set up in Desktop.
 
 ![](figures/L07/slides/github_repo_setup.png){width=900 fig-align=center}
 
----
-
 ## 2 - Set Up Remote Repository Locally through Github Desktop {.scrollable}
 
 Once in Github Desktop, pick what directory you would like to store the repository locally. This action will create a remote repository connecting it to the one you have online.
 
-![](figures/L07/slides/github_desktop_setup.png){width=900 fig-align=center}
+![](figures/L07/slides/github_desktop_setup.png){width=800 fig-align=center}
 
 ---
 
