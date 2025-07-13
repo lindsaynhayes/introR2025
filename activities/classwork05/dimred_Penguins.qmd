@@ -1,5 +1,5 @@
 ---
-title: "PCA Analysis using tidymodels"
+title: "Dimension Reduction using tidymodels"
 author: "Lindsay N. Hayes"
 date: 2025-07-14
 draft: false
