@@ -37,7 +37,7 @@ Before class, watch this [video](https://juliasilge.com/blog/best-hip-hop/) from
 
 -   [Lecture 05: Dimension Reduction in tidymodels](https://docs.google.com/presentation/d/1qXvqQSIotCCkQNO3O-3AIlM9QfIXIwzCjKL35xqYwPk/edit?usp=sharing)
 
--   [In-Class Activity](https://lindsaynhayes.github.io/introR2025/activities/classwork05/PCA_Penguins.html)
+-   [In-Class Activity](https://lindsaynhayes.github.io/introR2025/activities/classwork05/dimred_Penguins.html)
 
 
 # Post-lecture Practice
