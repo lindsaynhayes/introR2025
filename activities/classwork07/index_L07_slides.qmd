@@ -15,7 +15,7 @@ title-slide-attributes:
 
 - Version control means tracking modifications, creations, and deletions of project files
 
-- Connects your local development enviroment, or local repository, to online/cloud based storage, remote reposiroty, to keep track of modifications and make it easier to share with others
+- Connects your local development enviroment, or local repository, to online/cloud based storage, remote repository, to keep track of modifications and make it easier to share with others
 
 ---
 
@@ -48,13 +48,19 @@ title-slide-attributes:
 
 ## Setting Up Your First Quarto Website on GitHub {.center background-image="figures/template/title_1.png"}
 
-## 1 - Setup Repository Online {.scrollable .center}
+## 0 - Create a GitHub Folder for all your future projects {.center}
+
+## 1 - Setup Repository Online {.scrollable}
+
+Log in to your GitHub account. 
 
 Click on the New Repo button.
 
 ![](figures/L07/slides/github_new_repo_button.png){width=900 fig-align=center}
 
-Name your Repo and click the Create Repository button.
+Name your repo with purpose (your name for a personal website, a project name, a course name, etc.)
+
+Click the Create Repository button.
 
 ![](figures/L07/slides/github_repo_create.png){width=900 fig-align=center}
 
@@ -66,9 +72,9 @@ Once on the page below, click Set up in Desktop.
 
 Once in Github Desktop, pick what directory you would like to store the repository locally. This action will create a remote repository connecting it to the one you have online.
 
-![](figures/L07/slides/github_desktop_setup.png){width=800 fig-align=center}
+Try to keep organized and do this in a directory dedicated to your GitHub projects.
 
----
+![](figures/L07/slides/github_desktop_setup.png){height=500 fig-align=center}
 
 ## 3 - Open RStudio and Set Repository as Working Directory {.scrollable}
 
@@ -83,12 +89,21 @@ Once in the remote repository, click the gears icon and Set As Working Directory
 ---
 
 ## 4 - Setting Up Quarto Website Project in Repository {.scrollable}
+
+Find the terminal tab in your RStudio window:
+
+![](figures/L07/slides/quarto_create_project_terminal.png){width=900 fig-align=center}  
+
+---
+
+## 4 - Setting Up Quarto Website Project in Repository {.scrollable}
+
 Type the following command in the terminal to create an RProject and setup a quarto website, a new window of RStudio will appear:
-  
+
 ```{.bash}
-  quarto create project website
+quarto create project website
 ```
-  
+
 On the new Rstudio window refresh and check out the new files by refreshing the files window:
 
   - _quarto.yml
@@ -107,6 +122,14 @@ In Github desktop type a commit message and commit to main.
 After commiting your changes and message, hit publish to origin.
 
 ![](figures/L07/slides/github_desktop_publish.png){width=900 fig-align=center}
+
+Back in your GitHub account, you should see the brown circle indicating GitHub is going through your workflow file and setting up your website:
+
+![](figures/L07/slides/publish_progress.png){width=900 fig-align=center}
+
+After it has completed successfully the brown circle should turn to a green check mark, if it is not successful it will turn into a red x: 
+
+![](figures/L07/slides/publish_completed.png){width=900 fig-align=center}
 
 ---
 
@@ -127,11 +150,19 @@ Make sure to name it gh-pages, it has to be named this in order for your website
 
 Back in R studio do the following:
     
-  - Create text file named ".nojekyll", it does not need to contain anything.
+  - Create text file named `.nojekyll`, it does not need to contain anything
+  
+![](figures/L07/slides/select_text_file.png){width=500 fig-align=center}
+
+![](figures/L07/slides/nojekyll_naming.png){width=800 fig-align=center}
     
-  - Create ".github" folder, then a folder named workflows inside .github, then a text file named "publish.yml"
+  - Create `.github` folder in your working directory
+  
+  - Create a folder named `workflows` inside the `.github` folder
+  
+  - Create a text file named `publish.yml` inside the folder `.github/workflows`
     
-  - Copy and paste below into the publish.yml:
+  - Copy and paste below into the `publish.yml`:
   
 ```{.bash filename="publish.yml"}
 on:
@@ -192,7 +223,7 @@ In pages make sure that under Build and Deployment Source is Deploy from Branch.
 
 ## Lets edit your Home Page: `index.qmd` { background-image="figures/template/border_2.png" .center}
 
-```{.bash filename="publish.yml"}
+```{.bash filename="index.qmd"}
 ---
 title: "NAME"
 image: headshot.png
@@ -245,7 +276,7 @@ date-format: "MM-DD-YYYY"
 
 - Create a **projects** folder
 
-- Move `about.qmd` to the projects folder and rename it to your **project_title.qmd**
+- Move `about.qmd` to the projects folder and rename it to your **project_title.qmd** (Change to your project title or something descriptive!)
 
 - Now change the listing in the `_quarto.yml`:
 
@@ -262,7 +293,7 @@ website:
 
 ## Changing your `publish.yml` to run R code {.scrollable background-image="figures/template/border_2.png"}
 
-To run your Quarto R code cells and have their output displayed on your website (without errors) you must add R enviroment development step to your workflow file:
+To run your Quarto R code cells/blocks and have their output displayed on your website (without errors) you must add R enviroment development step to your workflow file:
 
 ```{.bash filename="publish.yml"}
 name: Quarto Publish
@@ -293,14 +324,12 @@ jobs:
             any::knitr
             any::rmarkdown
             any::tidyverse
-            any::taylor
+            any::tidymodels
             any::GGally
             any::ggstats
             any::cowplot
             any::lme4
             any::lmerTest
-            any::palmerpenguins
-            any::tidymodels
             any::psycModel 
             
       - name: Set up Quarto
