@@ -29,3 +29,5 @@ Please create accounts with GitHub and GitHub Desktop before our next class time
 - [Set up a Github Account Online](https://docs.github.com/en/get-started/start-your-journey/creating-an-account-on-github){target="_blank"} - Follow the steps from the **Signing up for a new personal account** section.
 
 - [Set up Github Desktop Account on your computer](https://docs.github.com/en/desktop/installing-and-authenticating-to-github-desktop/installing-github-desktop){target="_blank"} - If you run into any problems with the installer for your operating system, email us as soon as possible. 
+
+**Please write down your login information for Friday's class!**
