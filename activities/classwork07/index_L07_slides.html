@@ -211,7 +211,7 @@ Eleana Cabello
 <ul>
 <li><p>Online based platform that is used, along with git, for version control of software projects and makes collaboration easier between developers</p></li>
 <li><p>Version control means tracking modifications, creations, and deletions of project files</p></li>
-<li><p>Connects your local development enviroment, or local repository, to online/cloud based storage, remote reposiroty, to keep track of modifications and make it easier to share with others</p></li>
+<li><p>Connects your local development enviroment, or local repository, to online/cloud based storage, remote repository, to keep track of modifications and make it easier to share with others</p></li>
 </ul>
 </section>
 <section id="quarto" class="slide level2 center" data-background-image="figures/template/border_1.png">
@@ -242,15 +242,20 @@ Eleana Cabello
 <section id="setting-up-your-first-quarto-website-on-github" class="slide level2 center" data-background-image="figures/template/title_1.png">
 <h2>Setting Up Your First Quarto Website on GitHub</h2>
 </section>
-<section id="setup-repository-online" class="slide level2 scrollable center">
+<section id="create-a-github-folder-for-all-your-future-projects" class="slide level2 center">
+<h2>0 - Create a GitHub Folder for all your future projects</h2>
+</section>
+<section id="setup-repository-online" class="slide level2 scrollable">
 <h2>1 - Setup Repository Online</h2>
+<p>Log in to your GitHub account.</p>
 <p>Click on the New Repo button.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="figures/L07/slides/github_new_repo_button.png" class="quarto-figure quarto-figure-center" width="900"></p>
 </figure>
 </div>
-<p>Name your Repo and click the Create Repository button.</p>
+<p>Name your repo with purpose (your name for a personal website, a project name, a course name, etc.)</p>
+<p>Click the Create Repository button.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="figures/L07/slides/github_repo_create.png" class="quarto-figure quarto-figure-center" width="900"></p>
@@ -266,8 +271,13 @@ Eleana Cabello
 <section id="set-up-remote-repository-locally-through-github-desktop" class="slide level2 scrollable">
 <h2>2 - Set Up Remote Repository Locally through Github Desktop</h2>
 <p>Once in Github Desktop, pick what directory you would like to store the repository locally. This action will create a remote repository connecting it to the one you have online.</p>
-
-<img data-src="figures/L07/slides/github_desktop_setup.png" class="quarto-figure quarto-figure-center r-stretch" width="800"></section>
+<p>Try to keep organized and do this in a directory dedicated to your GitHub projects.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/L07/slides/github_desktop_setup.png" class="quarto-figure quarto-figure-center" height="500"></p>
+</figure>
+</div>
+</section>
 <section id="open-rstudio-and-set-repository-as-working-directory" class="slide level2 scrollable">
 <h2>3 - Open RStudio and Set Repository as Working Directory</h2>
 <p>Navigate to your remote repository through the files window.</p>
@@ -285,8 +295,13 @@ Eleana Cabello
 </section>
 <section id="setting-up-quarto-website-project-in-repository" class="slide level2 scrollable">
 <h2>4 - Setting Up Quarto Website Project in Repository</h2>
+<p>Find the terminal tab in your RStudio window:</p>
+
+<img data-src="figures/L07/slides/quarto_create_project_terminal.png" class="quarto-figure quarto-figure-center r-stretch" width="900"></section>
+<section id="setting-up-quarto-website-project-in-repository-1" class="slide level2 scrollable">
+<h2>4 - Setting Up Quarto Website Project in Repository</h2>
 <p>Type the following command in the terminal to create an RProject and setup a quarto website, a new window of RStudio will appear:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a>  <span class="ex">quarto</span> create project website</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a></a><span class="ex">quarto</span> create project website</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>On the new Rstudio window refresh and check out the new files by refreshing the files window:</p>
 <ul>
 <li>_quarto.yml</li>
@@ -307,6 +322,18 @@ Eleana Cabello
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="figures/L07/slides/github_desktop_publish.png" class="quarto-figure quarto-figure-center" width="900"></p>
+</figure>
+</div>
+<p>Back in your GitHub account, you should see the brown circle indicating GitHub is going through your workflow file and setting up your website:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/L07/slides/publish_progress.png" class="quarto-figure quarto-figure-center" width="900"></p>
+</figure>
+</div>
+<p>After it has completed successfully the brown circle should turn to a green check mark, if it is not successful it will turn into a red x:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/L07/slides/publish_completed.png" class="quarto-figure quarto-figure-center" width="900"></p>
 </figure>
 </div>
 </section>
@@ -334,9 +361,23 @@ Eleana Cabello
 <h2>7 - Setting Up Github Pages and Workflows Locally</h2>
 <p>Back in R studio do the following:</p>
 <ul>
-<li><p>Create text file named “.nojekyll”, it does not need to contain anything.</p></li>
-<li><p>Create “.github” folder, then a folder named workflows inside .github, then a text file named “publish.yml”</p></li>
-<li><p>Copy and paste below into the publish.yml:</p></li>
+<li>Create text file named <code>.nojekyll</code>, it does not need to contain anything</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/L07/slides/select_text_file.png" class="quarto-figure quarto-figure-center" width="500"></p>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="figures/L07/slides/nojekyll_naming.png" class="quarto-figure quarto-figure-center" width="800"></p>
+</figure>
+</div>
+<ul>
+<li><p>Create <code>.github</code> folder in your working directory</p></li>
+<li><p>Create a folder named <code>workflows</code> inside the <code>.github</code> folder</p></li>
+<li><p>Create a text file named <code>publish.yml</code> inside the folder <code>.github/workflows</code></p></li>
+<li><p>Copy and paste below into the <code>publish.yml</code>:</p></li>
 </ul>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
@@ -404,9 +445,9 @@ Eleana Cabello
 <h2>Lets edit your Home Page: <code>index.qmd</code></h2>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
-<pre><strong>publish.yml</strong></pre>
+<pre><strong>index.qmd</strong></pre>
 </div>
-<div class="sourceCode" id="cb3" data-filename="publish.yml"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a></a><span class="ex">---</span></span>
+<div class="sourceCode" id="cb3" data-filename="index.qmd"><pre class="sourceCode numberSource bash number-lines code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a></a><span class="ex">---</span></span>
 <span id="cb3-2"><a></a><span class="ex">title:</span> <span class="st">"NAME"</span></span>
 <span id="cb3-3"><a></a><span class="ex">image:</span> headshot.png</span>
 <span id="cb3-4"><a></a><span class="ex">toc:</span> false</span>
@@ -459,7 +500,7 @@ Eleana Cabello
 </div>
 <ul>
 <li><p>Create a <strong>projects</strong> folder</p></li>
-<li><p>Move <code>about.qmd</code> to the projects folder and rename it to your <strong>project_title.qmd</strong></p></li>
+<li><p>Move <code>about.qmd</code> to the projects folder and rename it to your <strong>project_title.qmd</strong> (Change to your project title or something descriptive!)</p></li>
 <li><p>Now change the listing in the <code>_quarto.yml</code>:</p></li>
 </ul>
 <div class="code-with-filename">
@@ -478,7 +519,7 @@ Eleana Cabello
 </section>
 <section id="changing-your-publish.yml-to-run-r-code" class="slide level2 scrollable" data-background-image="figures/template/border_2.png">
 <h2>Changing your <code>publish.yml</code> to run R code</h2>
-<p>To run your Quarto R code cells and have their output displayed on your website (without errors) you must add R enviroment development step to your workflow file:</p>
+<p>To run your Quarto R code cells/blocks and have their output displayed on your website (without errors) you must add R enviroment development step to your workflow file:</p>
 <div class="code-with-filename">
 <div class="code-with-filename-file">
 <pre><strong>publish.yml</strong></pre>
@@ -511,25 +552,23 @@ Eleana Cabello
 <span id="cb6-26"><a></a>            <span class="ex">any::knitr</span></span>
 <span id="cb6-27"><a></a>            <span class="ex">any::rmarkdown</span></span>
 <span id="cb6-28"><a></a>            <span class="ex">any::tidyverse</span></span>
-<span id="cb6-29"><a></a>            <span class="ex">any::taylor</span></span>
+<span id="cb6-29"><a></a>            <span class="ex">any::tidymodels</span></span>
 <span id="cb6-30"><a></a>            <span class="ex">any::GGally</span></span>
 <span id="cb6-31"><a></a>            <span class="ex">any::ggstats</span></span>
 <span id="cb6-32"><a></a>            <span class="ex">any::cowplot</span></span>
 <span id="cb6-33"><a></a>            <span class="ex">any::lme4</span></span>
 <span id="cb6-34"><a></a>            <span class="ex">any::lmerTest</span></span>
-<span id="cb6-35"><a></a>            <span class="ex">any::palmerpenguins</span></span>
-<span id="cb6-36"><a></a>            <span class="ex">any::tidymodels</span></span>
-<span id="cb6-37"><a></a>            <span class="ex">any::psycModel</span> </span>
-<span id="cb6-38"><a></a>            </span>
-<span id="cb6-39"><a></a>      <span class="ex">-</span> name: Set up Quarto</span>
-<span id="cb6-40"><a></a>        <span class="ex">uses:</span> quarto-dev/quarto-actions/setup@v2</span>
-<span id="cb6-41"><a></a></span>
-<span id="cb6-42"><a></a>      <span class="ex">-</span> name: Render and Publish</span>
-<span id="cb6-43"><a></a>        <span class="ex">uses:</span> quarto-dev/quarto-actions/publish@v2</span>
-<span id="cb6-44"><a></a>        <span class="ex">with:</span></span>
-<span id="cb6-45"><a></a>          <span class="ex">target:</span> gh-pages</span>
-<span id="cb6-46"><a></a>        <span class="ex">env:</span></span>
-<span id="cb6-47"><a></a>          <span class="ex">GITHUB_TOKEN:</span> <span class="va">${</span><span class="er">{ secrets.GITHUB_TOKEN </span><span class="va">}</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb6-35"><a></a>            <span class="ex">any::psycModel</span> </span>
+<span id="cb6-36"><a></a>            </span>
+<span id="cb6-37"><a></a>      <span class="ex">-</span> name: Set up Quarto</span>
+<span id="cb6-38"><a></a>        <span class="ex">uses:</span> quarto-dev/quarto-actions/setup@v2</span>
+<span id="cb6-39"><a></a></span>
+<span id="cb6-40"><a></a>      <span class="ex">-</span> name: Render and Publish</span>
+<span id="cb6-41"><a></a>        <span class="ex">uses:</span> quarto-dev/quarto-actions/publish@v2</span>
+<span id="cb6-42"><a></a>        <span class="ex">with:</span></span>
+<span id="cb6-43"><a></a>          <span class="ex">target:</span> gh-pages</span>
+<span id="cb6-44"><a></a>        <span class="ex">env:</span></span>
+<span id="cb6-45"><a></a>          <span class="ex">GITHUB_TOKEN:</span> <span class="va">${</span><span class="er">{ secrets.GITHUB_TOKEN </span><span class="va">}</span>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 <section id="add-your-dataset-to-your-working-directory" class="slide level2 center" data-background-image="figures/template/border_2.png">
