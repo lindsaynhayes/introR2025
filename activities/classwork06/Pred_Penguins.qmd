@@ -45,7 +45,7 @@ set.seed(462)
 # split the data into training and testing sets. We will train the model on the training set and then test how well it worked on the testing data.
 
 # split the data 70% for training and 30% for testing. The bulk of the data is usually used for training the models. 
-split_data <- initial_split(penguins, prop=0.7, strata = species) 
+split_data <- initial_split(penguins, prop=0.7, strata = species)
 data_training <- training(split_data)
 data_testing <- testing(split_data)
 
@@ -63,7 +63,7 @@ data_testing |>
 
 # The recipe sets up what data we are going to use and how it to be treated before doing the modeling.
 penguin_recipe <-
-  recipe( species ~ bill_length_mm + bill_depth_mm + flipper_length_mm + body_mass_g, data = penguins) %>%
+  recipe( species ~ bill_length_mm + bill_depth_mm + flipper_length_mm + body_mass_g, data = penguins) |>
   step_normalize(all_predictors())
 
 penguin_recipe
