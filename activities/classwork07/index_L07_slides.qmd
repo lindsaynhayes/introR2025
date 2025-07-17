@@ -3,10 +3,25 @@ title: "Building a Quarto Website and Using GitHub"
 author: "Eleana Cabello"
 date: 2025-07-18
 format: revealjs
-draft: true
+draft: false
 slide-number: true
 title-slide-attributes:
   data-background-image: figures/template/title_2.png
+---
+
+## Class Reminders {background-image="figures/template/border_1.png" .center}
+
+- **Final Project Proposal** 
+  - Submit to Canvas by July 22nd
+  - ~5 min presentation on July 22nd
+
+- **[Final Project Presentations](https://lindsaynhayes.github.io/introR2025/projects/index_P01.html
+)**
+  - Dates - July 24th and 28th 
+  - 5-10 min walkthrough of your .qmd file from your website
+
+- **Assignment 1-3 due July 25th!**
+
 ---
 
 ## Github {background-image="figures/template/border_1.png" .center}
@@ -103,6 +118,10 @@ Type the following command in the terminal to create an RProject and setup a qua
 ```{.bash}
 quarto create project website
 ```
+
+When asked for **Directory** put `.` for the current directory and when asked for a **Title** give it the title of your project with no spaces (use _ instead):
+
+![](figures/L07/slides/quarto_project_qs.png){height=200 fig-align=center}
 
 On the new Rstudio window refresh and check out the new files by refreshing the files window:
 
