@@ -311,6 +311,8 @@ website:
         text: Projects
 ```
 
+- **Change the title of your website here as well!**
+
 ## Changing your `publish.yml` to run R code {.scrollable background-image="figures/template/border_2.png"}
 
 To run your Quarto R code cells/blocks and have their output displayed on your website (without errors) you must add R enviroment development step to your workflow file:
@@ -377,7 +379,6 @@ $dark-green: #596b57;
 $light-green: #D1D9CE;
 $cream: #FDFBF7;
 $gray: #64605f;
-$purple: #9158A2;
 $orange: #ad7237;
 $black: #151617;
 
@@ -404,5 +405,11 @@ format:
 ```
 
 ---
+
+## Other Resources {.center background-image="figures/template/border_2.png"}
+
+- [Quarto Guide](https://quarto.org/docs/websites/)
+
+- [UCSB Guide](https://ucsb-meds.github.io/customizing-quarto-websites/#/title-slide)
 
 ## {background-image="figures/template/title_2.png"}
