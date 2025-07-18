@@ -37,6 +37,7 @@ jobs:
             any::psycModel
             any::embed
             any::ranger
+            any::calendR
             
       - name: Set up Quarto
         uses: quarto-dev/quarto-actions/setup@v2
