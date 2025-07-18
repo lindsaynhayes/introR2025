@@ -105,6 +105,8 @@ Once in the remote repository, click the gears icon and Set As Working Directory
 
 ## 4 - Setting Up Quarto Website Project in Repository {.scrollable}
 
+**Make sure your working directory is in your local repository**
+
 Find the terminal tab in your RStudio window:
 
 ![](figures/L07/slides/quarto_create_project_terminal.png){width=900 fig-align=center}  
@@ -245,7 +247,6 @@ In pages make sure that under Build and Deployment Source is Deploy from Branch.
 ```{.bash filename="index.qmd"}
 ---
 title: "NAME"
-image: headshot.png
 toc: false
 about:
   template: trestles
