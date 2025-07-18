@@ -12,17 +12,12 @@
     ]
   },
   {
-    "listing": "/activities.html",
+    "listing": "/projects.html",
     "items": [
-      "/activities/classwork01/palmerpenguins_intro.html",
-      "/activities/a/classwork_L02_answers.html",
-      "/activities/classwork02/classwork_L02.html",
-      "/activities/a/classwork_L03_answers.html",
-      "/activities/classwork03/Lecture_Commands3.html",
-      "/activities/classwork03/classwork_L03.html",
-      "/activities/classwork05/dimred_Penguins.html",
-      "/activities/classwork06/Pred_Penguins.html",
-      "/activities/classwork07/index_L07_slides.html"
+      "/projects/index_A01.html",
+      "/projects/index_A02.html",
+      "/projects/index_A03.html",
+      "/projects/index_P01.html"
     ]
   },
   {
@@ -38,12 +33,17 @@
     ]
   },
   {
-    "listing": "/projects.html",
+    "listing": "/activities.html",
     "items": [
-      "/projects/index_A01.html",
-      "/projects/index_A02.html",
-      "/projects/index_A03.html",
-      "/projects/index_P01.html"
+      "/activities/classwork01/palmerpenguins_intro.html",
+      "/activities/a/classwork_L02_answers.html",
+      "/activities/classwork02/classwork_L02.html",
+      "/activities/a/classwork_L03_answers.html",
+      "/activities/classwork03/Lecture_Commands3.html",
+      "/activities/classwork03/classwork_L03.html",
+      "/activities/classwork05/dimred_Penguins.html",
+      "/activities/classwork06/Pred_Penguins.html",
+      "/activities/classwork07/index_L07_slides.html"
     ]
   }
 ]
