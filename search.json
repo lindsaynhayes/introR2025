@@ -536,7 +536,7 @@
     "href": "activities/classwork07/index_L07_slides.html#setting-up-quarto-website-project-in-repository",
     "title": "Building a Quarto Website and Using GitHub",
     "section": "4 - Setting Up Quarto Website Project in Repository",
-    "text": "4 - Setting Up Quarto Website Project in Repository\nFind the terminal tab in your RStudio window:"
+    "text": "4 - Setting Up Quarto Website Project in Repository\nMake sure your working directory is in your local repository\nFind the terminal tab in your RStudio window:"
   },
   {
     "objectID": "activities/classwork07/index_L07_slides.html#setting-up-quarto-website-project-in-repository-1",
@@ -599,7 +599,7 @@
     "href": "activities/classwork07/index_L07_slides.html#lets-edit-your-home-page-index.qmd",
     "title": "Building a Quarto Website and Using GitHub",
     "section": "Lets edit your Home Page: index.qmd",
-    "text": "Lets edit your Home Page: index.qmd\n\n\nindex.qmd\n\n---\ntitle: \"NAME\"\nimage: headshot.png\ntoc: false\nabout:\n  template: trestles\n  links:\n    - text: GitHub\n      href: link\n    - text: Email\n      href: link\n---\n\n::: {.column-page}\n\n## Bio\n\n## Research Goals\n\n## Experience\n\n:::"
+    "text": "Lets edit your Home Page: index.qmd\n\n\nindex.qmd\n\n---\ntitle: \"NAME\"\ntoc: false\nabout:\n  template: trestles\n  links:\n    - text: GitHub\n      href: link\n    - text: Email\n      href: link\n---\n\n::: {.column-page}\n\n## Bio\n\n## Research Goals\n\n## Experience\n\n:::"
   },
   {
     "objectID": "activities/classwork07/index_L07_slides.html#setting-up-your-project",
