@@ -823,14 +823,7 @@
     "href": "activities.html",
     "title": "In-Class Activities",
     "section": "",
-    "text": "In-class activities are listed below:\n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nAuthor\n\n\n\n\n\n\n\n\n2025-07-01\n\n\nIntroduction to the Palmer Penguins\n\n\n \n\n\n\n\n\n\n2025-07-03\n\n\nNavigating Data Types in R\n\n\nLindsay N. Hayes\n\n\n\n\n\n\n2025-07-08\n\n\nData Wrangling with tidyverse\n\n\nLindsay N. Hayes\n\n\n\n\n\n\n2025-07-08\n\n\nData Wrangling with tidyverse\n\n\nLindsay N. Hayes\n\n\n\n\n\n\n2025-07-14\n\n\nDimension Reduction using tidymodels\n\n\nLindsay N. Hayes\n\n\n\n\n\n\n2025-07-16\n\n\nMachine Learning using tidymodels\n\n\nLindsay N. Hayes\n\n\n\n\n\n\n2025-07-18\n\n\nBuilding a Quarto Website and Using GitHub\n\n\nEleana Cabello\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "activities/classwork03/Lecture_Commands3.html",
-    "href": "activities/classwork03/Lecture_Commands3.html",
-    "title": "Data Wrangling with tidyverse",
-    "section": "",
-    "text": "glimpse(starwars)\n\n# lets look at the first row of starwars\nstarwars[1,11:14]\n\nstarwars$starships[1]\n\nstarwars |&gt;\n  select(name, films) |&gt;\n  unnest_longer(films)\n\ntaylor |&gt; select(track_name, lyrics) |&gt; \n  unnest_longer(lyrics)\n\n\ntable(starwars$sex)\n\n\nstarwars |&gt;\n  group_by(sex) \n\n\nstarwars |&gt; count(sex)\n\nstarwars |&gt;\n  group_by(sex) |&gt;\n  summarize(mean_height = mean(height),\n            sd_height = sd(height))\n\n\n\nstarwars |&gt;\n  drop_na(height, sex) |&gt;\n  group_by(sex) |&gt;\n  summarize(mean_height = mean(height),\n            sd_height = sd(height))"
+    "text": "In-class activities are listed below:\n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nAuthor\n\n\n\n\n\n\n\n\n2025-07-01\n\n\nIntroduction to the Palmer Penguins\n\n\n \n\n\n\n\n\n\n2025-07-03\n\n\nNavigating Data Types in R\n\n\nLindsay N. Hayes\n\n\n\n\n\n\n2025-07-08\n\n\nData Wrangling with tidyverse\n\n\nLindsay N. Hayes\n\n\n\n\n\n\n2025-07-14\n\n\nDimension Reduction using tidymodels\n\n\nLindsay N. Hayes\n\n\n\n\n\n\n2025-07-16\n\n\nMachine Learning using tidymodels\n\n\nLindsay N. Hayes\n\n\n\n\n\n\n2025-07-18\n\n\nBuilding a Quarto Website and Using GitHub\n\n\nEleana Cabello\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "activities/classwork06/Pred_Penguins.html",
