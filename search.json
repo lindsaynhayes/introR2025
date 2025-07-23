@@ -1047,7 +1047,7 @@
     "href": "projects/project_template.html#cleaning",
     "title": "Project Template",
     "section": "Cleaning",
-    "text": "Cleaning\n\nSeperating datetime to date and time, seperate columns\nCast date variable as Date\nTurn course name to factors\nTurn student id to factors\n\n\ndata &lt;- data %&gt;% separate_wider_delim(datetime, \" \", names = c(\"date\", \"time\"))\ndata$date &lt;- as.Date(data$date)\ndata$course_name &lt;- factor(data$course_name, levels = c('R Programming', 'Exploratory_Data_Analysis'))\ndata$student_id &lt;- factor(data$student_id)"
+    "text": "Cleaning\n\nSeparating datetime to date and time, seperate columns\nCast date variable as Date\nTurn course name to factors\nTurn student id to factors\n\n\ndata &lt;- data %&gt;% separate_wider_delim(datetime, \" \", names = c(\"date\", \"time\"))\ndata$date &lt;- as.Date(data$date)\ndata$course_name &lt;- factor(data$course_name, levels = c('R Programming', 'Exploratory_Data_Analysis'))\ndata$student_id &lt;- factor(data$student_id)"
   },
   {
     "objectID": "projects/project_template.html#quick-glimpse",
