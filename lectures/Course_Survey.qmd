@@ -14,12 +14,12 @@ editor_options:
 
 *hope you like my made up titles*
 
-https://ousurvey.qualtrics.com/jfe/form/SV_5oiKzZOwwTfRqIe
+[survey](https://ousurvey.qualtrics.com/jfe/form/SV_5oiKzZOwwTfRqIe)
 
 ![](images/FanFavorite.png)
 
 ## Course Survey
 
-https://ousurvey.qualtrics.com/jfe/form/SV_9RJm8pIuPnUEcxU
+[survey](https://ousurvey.qualtrics.com/jfe/form/SV_9RJm8pIuPnUEcxU)
 
 ![](images/CourseSurvey_QR.png)

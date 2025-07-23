@@ -1,6 +1,6 @@
 ---
 title: "Project Template"
-date: 2025-07-18
+date: 2025-07-28
 draft: false
 editor_options: 
   chunk_output_type: inline
@@ -28,7 +28,7 @@ data <- read.csv('IntroToR-SubmissionsDecodedMasked-07172025.csv')
 
 ## Cleaning
 
-- Seperating datetime to date and time, seperate columns 
+- Separating datetime to date and time, seperate columns 
 - Cast date variable as Date
 - Turn course name to factors
 - Turn student id to factors
