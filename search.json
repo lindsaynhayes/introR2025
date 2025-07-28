@@ -455,6 +455,27 @@
     "text": "Slides\n\nLecture 02: Data Types\nIn-Class Activity"
   },
   {
+    "objectID": "lectures/Course_Survey.html",
+    "href": "lectures/Course_Survey.html",
+    "title": "Fan Favorite & Course Evaluation",
+    "section": "",
+    "text": "hope you like my made up titles\nsurvey"
+  },
+  {
+    "objectID": "lectures/Course_Survey.html#survey-for-fan-favorite-final-presentation",
+    "href": "lectures/Course_Survey.html#survey-for-fan-favorite-final-presentation",
+    "title": "Fan Favorite & Course Evaluation",
+    "section": "",
+    "text": "hope you like my made up titles\nsurvey"
+  },
+  {
+    "objectID": "lectures/Course_Survey.html#course-survey",
+    "href": "lectures/Course_Survey.html#course-survey",
+    "title": "Fan Favorite & Course Evaluation",
+    "section": "Course Survey",
+    "text": "Course Survey\nsurvey"
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
     "title": "Welcome",
@@ -900,7 +921,7 @@
     "href": "lectures.html",
     "title": "Course Content",
     "section": "",
-    "text": "Course content for each lecture is below:\n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nAuthor\n\n\n\n\n\n\n\n\n2025-07-01\n\n\nWelcome to the Course!\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-03\n\n\nNavigating Data Types in R\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-08\n\n\nData Wrangling with tidyverse\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-10\n\n\nData Visualization with ggplot2\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-14\n\n\nDimension Reduction with tidymodels\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-16\n\n\nMachine Learning with tidymodels\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-18\n\n\nBuilding a Quarto Website and Using GitHub\n\n\nEleana Cabello\n\n\n\n\n\n\nNo matching items"
+    "text": "Course content for each lecture is below:\n\n\n\n\n\n\nDate\n\n\n\nTitle\n\n\n\nAuthor\n\n\n\n\n\n\n\n\n2025-07-01\n\n\nWelcome to the Course!\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-03\n\n\nNavigating Data Types in R\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-08\n\n\nData Wrangling with tidyverse\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-10\n\n\nData Visualization with ggplot2\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-14\n\n\nDimension Reduction with tidymodels\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-16\n\n\nMachine Learning with tidymodels\n\n\nLindsay Hayes\n\n\n\n\n\n\n2025-07-18\n\n\nBuilding a Quarto Website and Using GitHub\n\n\nEleana Cabello\n\n\n\n\n\n\n2025-07-28\n\n\nFan Favorite & Course Evaluation\n\n\nLindsay Hayes\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "lectures/index_L01.html",
